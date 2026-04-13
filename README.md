@@ -10,6 +10,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
 - [🌿 Minimalist](#-minimalist)
 - [🎨 Creative](#-creative)
   - [Creative Spark](#creative-spark)
+  - [Artisan Rust](#artisan-rust)
 - [🚀 How to Use](#-how-to-use)
 - [🛠️ Contribution](#-contribution)
 
@@ -163,6 +164,37 @@ slide_layout_templates:
     usage: "Showcasing multiple works or images"
   - type: "Impact_Results_Table"
     usage: "Presenting data with high contrast"
+```
+
+#### Artisan Rust
+Warm, handcrafted, and organic design. Uses a textured rust-colored background with hand-drawn white doodles and tall condensed typography for an artisan feel.
+
+![Artisan Rust Preview](assets/artisan_rust_preview.png)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Warm, handcrafted, and organic. Textured rust canvas with hand-drawn doodles."
+    typography: 
+      primary_heading: "Tall condensed sans-serif (e.g., Anton)"
+      secondary_heading: "Clean minimal sans-serif"
+      body_text: "Functional sans-serif"
+    color_palette:
+      primary_color: "#FFFFFF"
+      background: "#B34D2E"
+      text_main: "#F5F5DC"
+    key_visual_elements: 
+      - "Hand-drawn white doodles"
+      - "Grainy paper texture"
+      - "Sticker-style image cutouts"
+
+slide_layout_templates:
+  - type: "Artisan_Portfolio"
+    usage: "Showcasing projects with a handcrafted vibe"
+  - type: "Process_Timeline"
+    usage: "Visualizing steps or history"
+  - type: "Sticker_Callout"
+    usage: "Focusing on a specific person or object"
 ```
 
 ---

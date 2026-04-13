@@ -1,0 +1,42 @@
+design_system:
+  global_style:
+    theme: "Warm, handcrafted, and organic. Uses a textured rust-colored canvas with hand-drawn white doodles and tall condensed typography for an artisan feel."
+    typography: 
+      primary_heading: "Tall condensed sans-serif with organic edges (e.g., Anton, Steelfish)"
+      secondary_heading: "Clean minimal sans-serif, uppercase"
+      body_text: "Functional sans-serif, high legibility"
+    color_palette:
+      primary_color: "#FFFFFF"    # Pure White (Doodles and Text)
+      background: "#B34D2E"       # Textured Rust/Terracotta
+      text_main: "#F5F5DC"        # Cream/Off-white for body
+      accent_color: "#D97757"     # Lighter terracotta for tonal variety
+    key_visual_elements: 
+      - "Hand-drawn white doodles (hearts, stars, underlines, lightning bolts)"
+      - "Grainy paper texture on the background"
+      - "Sticker-style cutouts for images (white borders)"
+      - "Circular/Oval hand-inked frames for highlight text"
+
+  image_generation_prompts:
+    style_guidelines: "Warm earthy tones, grainy film texture, handcrafted feel, daylight photography, organic shadows, white sticker-style borders around subjects."
+    themes:
+      - target: "Artisan Studio"
+        prompt_elements: "Pottery studio with warm terracotta walls, sunlight filtering through, artisan tools, organic textures."
+
+slide_layout_templates:
+  - type: "Artisan_Portfolio"
+    usage: "Showcasing projects with a handcrafted vibe"
+    components:
+      - "Layout: Grid of image blocks with thin white borders"
+      - "Visual: Large condensed title on the left with hand-drawn underline"
+
+  - "Process_Timeline"
+    usage: "Visualizing steps or history"
+    components:
+      - "Layout: Simple horizontal line with nodes"
+      - "Visual: Hand-drawn doodle icons marking each milestone"
+
+  - type: "Sticker_Callout"
+    usage: "Focusing on a person or specific tool"
+    components:
+      - "Layout: Hero image with a thick white sticker-style border"
+      - "Visual: Hand-drawn lightning bolt doodles surrounding the subject"
