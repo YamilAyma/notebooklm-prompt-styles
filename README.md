@@ -17,6 +17,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
   - [Vintage Charm](#vintage-charm)
   - [Scholar's Journal](#scholars-journal)
   - [Neon Pulsar](#neon-pulsar)
+  - [Cobalt Editorial](#cobalt-editorial)
 - [🚀 How to Use](#-how-to-use)
 - [🛠️ Contribution](#-contribution)
 
@@ -394,6 +395,38 @@ slide_layout_templates:
     usage: "Showing features around a core concept"
   - type: "Neon_Bento_Grid"
     usage: "Showcasing tech specs or team members"
+```
+
+#### Cobalt Editorial
+Bold editorial and Swiss-inspired design. High contrast between Electric Blue and Cream, featuring large brutalist typography, liquid organic textures, and iconic symbols like asterisks and plus signs.
+
+![Cobalt Editorial Preview](assets/cobalt_editorial_preview.png)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Bold editorial, Swiss-inspired. Electric Blue & Cream."
+    typography: 
+      primary_heading: "Extra-bold brutalist sans-serif (e.g., Inter)"
+      secondary_heading: "Bold sans-serif, vertical layouts"
+      body_text: "Clean sans-serif, high legibility"
+    color_palette:
+      primary_color: "#2B59FF"
+      background: "#FDF5E6"
+      text_main: "#000000"
+    key_visual_elements: 
+      - "Electric Blue asterisks (*) and plus signs (+)"
+      - "Liquid, rippled, or smoky textures"
+      - "Split-screen layouts"
+      - "Pill-shaped buttons with blue outlines"
+
+slide_layout_templates:
+  - type: "Editorial_Split"
+    usage: "Core sections or chapter starts"
+  - type: "Vertical_Type_List"
+    usage: "Detailed overviews or content lists"
+  - type: "Modular_Brand_Focus"
+    usage: "Presenting mission statements or pillars"
 ```
 
 ---
