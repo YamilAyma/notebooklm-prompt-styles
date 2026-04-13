@@ -12,6 +12,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
   - [Silicon Refined](#silicon-refined)
   - [Lush Minimal](#lush-minimal)
   - [Structured Mint](#structured-mint)
+  - [Architectural Mono](#architectural-mono)
 - [🎨 Creative](#-creative)
   - [Creative Spark](#creative-spark)
   - [Artisan Rust](#artisan-rust)
@@ -296,6 +297,44 @@ slide_layout_templates:
     usage: "Listing steps or structured points"
   - type: "Content_Focus_Split"
     usage: "Image and text side-by-side"
+```
+
+#### Architectural Mono
+Modern brutalist, monochromatic, and architectural design. Inspired by minimalist gallery aesthetics, it features high-contrast grayscale photography, large technical stamps, and sleek sans-serif typography.
+
+![Architectural Mono Preview](assets/architectural_mono_preview.png)
+
+> [!TIP]
+> Esta es una vista previa simplificada. [Ver YAML completo](styles/architectural_mono.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Modern brutalist, monochromatic, and architectural. High-contrast grayscale."
+    typography: 
+      primary_heading: "Clean modern sans-serif (e.g., Inter, Helvetica), bold"
+      secondary_heading: "Refined sans-serif, standard weight"
+      body_text: "Functional sans-serif, technical feel"
+      accent_mono: "Monospace for technical labels"
+    color_palette:
+      primary_color: "#111111"
+      background: "#E8E8E8"
+      text_main: "#111111"
+      accent_gray: "#B0B0B0"
+    key_visual_elements: 
+      - "High-contrast grayscale architectural photography"
+      - "Large year stamps (e.g., '20 | 25')"
+      - "Thin horizontal technical dividers"
+      - "Thin arrow icons (→)"
+      - "Vertical section labels"
+
+slide_layout_templates:
+  - type: "Architectural_Cover"
+    usage: "Impactful intro with full-page imagery"
+  - type: "Mission_Grid"
+    usage: "Masonry grid for multiple references"
+  - type: "Sliver_About"
+    usage: "Vertical image sliver presentation"
 ```
 
 ### 🎨 Creative
