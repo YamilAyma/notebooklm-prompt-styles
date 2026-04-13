@@ -1,0 +1,58 @@
+design_system:
+  global_style:
+    theme: "Modern corporate, dynamic, and professional. Features a strong navy and vivid blue foundation with energetic yellow/orange accents and distinctive corner 'ribbon' layers."
+    typography: 
+      primary_heading: "Bold geometric sans-serif (e.g., Inter, Montserrat), uppercase for impact"
+      secondary_heading: "Medium-bold sans-serif, often in accent yellow/orange"
+      body_text: "Clean sans-serif with generous line-height for business readability"
+      info_label: "Small bold uppercase sans-serif on accent pill backgrounds"
+    color_palette:
+      primary_color: "#101D42" # Deep Navy
+      secondary_color: "#4A6CF7" # Vivid Blue
+      accent_yellow: "#FFB400" # Energetic Yellow/Orange
+      background: "#F5F7FA" # Light corporate gray
+      text_main: "#101D42" # Navy for text
+    key_visual_elements: 
+      - "Layered corner 'ribbons' (Navy and Blue stacking)"
+      - "Pill-shaped accent backgrounds for roles and labels"
+      - "Bold circular iconography with solid blue backgrounds"
+      - "Rounded cards for services and team members"
+      - "Two-tone headings (Navy + Yellow contrast)"
+
+  image_generation_prompts:
+    style_guidelines: "Professional business photography, bright natural lighting, modern office environments, diversity and collaboration themes, clean compositions with corporate blue color grading."
+    themes:
+      - target: "Collaborative Team"
+        prompt_elements: "Diverse professional team working in a bright modern office, smiling, whiteboard in background, high-quality corporate photography, natural light."
+      - target: "Business Growth"
+        prompt_elements: "Close-up of hands placing coins in a glass jar, minimalist wooden table, soft-focus office background, professional finance theme."
+
+slide_layout_templates:
+  - type: "Ensign_Cover"
+    usage: "Professional business introduction"
+    components:
+      - "Layout: Centered bold title on navy corner-ribbon background"
+      - "Button: Yellow pill-shaped subtitle button at the bottom center"
+
+  - type: "Ribbon_Team"
+    usage: "Team introduction with individual roles"
+    components:
+      - "Layout: 2x2 grid of team profiles"
+      - "Profiles: Rounded image frame with bold blue border, name in navy, role in yellow pill label"
+
+  - type: "Icon_Service_Grid"
+    usage: "Listing core services or product features"
+    components:
+      - "Layout: 4 vertical cards with large circular icons at the top center of each card"
+      - "Icons: White glyph on vibrant blue circular background"
+
+  - type: "Data_Target_Focus"
+    usage: "Presenting target audience or key statistics"
+    components:
+      - "Layout: Large lifestyle image on the left, big data point (e.g., '60%') on a blue rounded card on the right"
+      - "Imagery: Human icons (isotype) representing population"
+
+  - type: "Corporate_Closing"
+    usage: "Call to action and contact information"
+    components:
+      - "Layout: Large 'Thank You!' heading, b&w architectural background with blue ribbon overlay"

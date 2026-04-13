@@ -26,6 +26,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
   - [Botanical Journal](#botanical-journal)
   - [Y2K Nostalgia](#y2k-nostalgia)
   - [Creative Workshop](#creative-workshop)
+  - [Ensign Corporate](#ensign-corporate)
 - [🚀 How to Use](#-how-to-use)
 - [🛠️ Contribution](#-contribution)
 
@@ -761,6 +762,43 @@ slide_layout_templates:
     usage: "Listing activities or topics"
   - type: "Showcase_Gallery"
     usage: "Highlighting events or work"
+```
+
+#### Ensign Corporate
+Modern corporate, dynamic, and professional design. Features a strong navy and vivid blue foundation with energetic yellow/orange accents and distinctive corner 'ribbon' layers for a high-impact business presentation.
+
+![Ensign Corporate Preview](assets/ensign_corporate_preview.png)
+
+> [!TIP]
+> Esta es una vista previa simplificada. [Ver YAML completo](styles/ensign_corporate.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Modern corporate, dynamic, professional. Navy/Blue with Yellow accents."
+    typography: 
+      primary_heading: "Bold geometric sans-serif, uppercase"
+      secondary_heading: "Medium-bold sans-serif, accent color"
+      body_text: "Clean sans-serif, business readability"
+      info_label: "Small bold uppercase pill labels"
+    color_palette:
+      primary_color: "#101D42"
+      secondary_color: "#4A6CF7"
+      accent_yellow: "#FFB400"
+      background: "#F5F7FA"
+    key_visual_elements: 
+      - "Layered corner 'ribbons' (Navy and Blue stacking)"
+      - "Pill-shaped accent backgrounds for labels"
+      - "Bold circular iconography"
+      - "Rounded cards for content blocks"
+
+slide_layout_templates:
+  - type: "Ensign_Cover"
+    usage: "Professional business introduction"
+  - type: "Ribbon_Team"
+    usage: "Team introduction with individual roles"
+  - type: "Icon_Service_Grid"
+    usage: "Listing core services or features"
 ```
 
 ---
