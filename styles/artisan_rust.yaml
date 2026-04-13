@@ -29,7 +29,7 @@ slide_layout_templates:
       - "Layout: Grid of image blocks with thin white borders"
       - "Visual: Large condensed title on the left with hand-drawn underline"
 
-  - "Process_Timeline"
+  - type: "Process_Timeline"
     usage: "Visualizing steps or history"
     components:
       - "Layout: Simple horizontal line with nodes"
