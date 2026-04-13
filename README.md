@@ -8,6 +8,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
   - [Visual Discovery](#visual-discovery)
   - [Executive Report](#executive-report)
 - [🌿 Minimalist](#-minimalist)
+  - [Geometric Mono](#geometric-mono)
 - [🎨 Creative](#-creative)
   - [Creative Spark](#creative-spark)
   - [Artisan Rust](#artisan-rust)
@@ -131,7 +132,38 @@ slide_layout_templates:
 ---
 
 ### 🌿 Minimalist
-*Incoming soon...*
+
+#### Geometric Mono
+Professional, architectural, and monochromatic design. It uses a strong grayscale palette with geometric shapes and high-contrast photography to convey precision, structure, and corporate excellence.
+
+![Geometric Mono Preview](assets/geometric_mono_preview.png)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Professional, architectural, and monochromatic. Precision and structure."
+    typography: 
+      primary_heading: "Bold geometric sans-serif (e.g., Montserrat), uppercase"
+      secondary_heading: "Medium weight sans-serif, clean"
+      body_text: "Functional sans-serif, high contrast"
+    color_palette:
+      primary_color: "#FFFFFF"
+      background: "#E0E0E0"
+      text_main: "#000000"
+      accent_color: "#333333"
+    key_visual_elements: 
+      - "High-contrast architectural grayscale photography"
+      - "Diagonals and geometric color blocks"
+      - "Circular icons with thin white outlines"
+
+slide_layout_templates:
+  - type: "Corporate_Summary"
+    usage: "Executive summary or project overview"
+  - type: "Geometric_Split"
+    usage: "Comparing data or value propositions"
+  - type: "Architectural_Timeline"
+    usage: "Visualizing project phases or milestones"
+```
 
 ### 🎨 Creative
 

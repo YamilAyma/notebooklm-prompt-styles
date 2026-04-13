@@ -1,0 +1,42 @@
+design_system:
+  global_style:
+    theme: "Professional, architectural, and monochromatic. Uses a strong grayscale palette with geometric shapes and high-contrast photography to convey precision and structure."
+    typography: 
+      primary_heading: "Bold geometric sans-serif (e.g., Montserrat, Archivo), uppercase"
+      secondary_heading: "Medium weight sans-serif, clean"
+      body_text: "Functional sans-serif, high contrast"
+    color_palette:
+      primary_color: "#FFFFFF"    # Pure White
+      background: "#E0E0E0"       # Light Gray/Silver
+      text_main: "#000000"        # Pure Black
+      accent_color: "#333333"     # Dark Charcoal
+    key_visual_elements: 
+      - "High-contrast black and white architectural photography"
+      - "Diagonals and geometric color blocks (Black/Gray)"
+      - "Circular icons with thin white outlines"
+      - "Minimalist monochromatic charts"
+
+  image_generation_prompts:
+    style_guidelines: "Black and white architectural photography, high contrast, sharp geometric lines, glass and steel textures, professional corporate atmosphere."
+    themes:
+      - target: "Modern Skyscraper"
+        prompt_elements: "Low angle shot of a glass skyscraper, black and white, high contrast, dramatic shadows, geometric composition."
+
+slide_layout_templates:
+  - type: "Corporate_Summary"
+    usage: "Executive summary or project overview"
+    components:
+      - "Header: Large bold title in white"
+      - "Visual: Semi-transparent black block over an architectural grayscale image"
+
+  - type: "Geometric_Split"
+    usage: "Comparing data or value propositions"
+    components:
+      - "Layout: 50/50 vertical split between charcoal and light gray"
+      - "Visual: White box outlines for total values or metrics"
+
+  - type: "Architectural_Timeline"
+    usage: "Visualizing project phases or milestones"
+    components:
+      - "Layout: Thick horizontal charcoal bar"
+      - "Visual: Centered milestone nodes with sharp triangle pointers"
