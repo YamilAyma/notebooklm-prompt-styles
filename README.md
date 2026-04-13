@@ -11,6 +11,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
   - [Geometric Mono](#geometric-mono)
   - [Silicon Refined](#silicon-refined)
   - [Lush Minimal](#lush-minimal)
+  - [Structured Mint](#structured-mint)
 - [🎨 Creative](#-creative)
   - [Creative Spark](#creative-spark)
   - [Artisan Rust](#artisan-rust)
@@ -259,6 +260,42 @@ slide_layout_templates:
     usage: "Presenting multiple points or objectives"
   - type: "Sage_Data"
     usage: "Presenting metrics or growth"
+```
+
+#### Structured Mint
+Professional, structured, and refreshing corporate design. Features distinctive tiered corner frames in mint green and dark teal, offering a clean and organized frame for business presentations.
+
+![Structured Mint Preview](assets/structured_mint_preview.png)
+
+> [!TIP]
+> Esta es una vista previa simplificada. [Ver YAML completo](styles/structured_mint.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Corporate, structured, and refreshing. Tiered corner frames and mint accents."
+    typography: 
+      primary_heading: "Bold geometric sans-serif (e.g., Montserrat), uppercase"
+      secondary_heading: "Medium sans-serif, clean"
+      body_text: "Functional sans-serif, optimized for readability"
+    color_palette:
+      primary_color: "#557A68"
+      background: "#FFFFFF"
+      accent_mint: "#B2EBF2"
+      text_main: "#263238"
+    key_visual_elements: 
+      - "Tiered corner frames (Mint and Teal accents)"
+      - "Pill-shaped category tags"
+      - "Numbered grid boxes"
+      - "Vertical mint-green accent bars"
+
+slide_layout_templates:
+  - type: "Structured_Cover"
+    usage: "Impactful intro with tiered frames"
+  - type: "Grid_Methodology"
+    usage: "Listing steps or structured points"
+  - type: "Content_Focus_Split"
+    usage: "Image and text side-by-side"
 ```
 
 ### 🎨 Creative
