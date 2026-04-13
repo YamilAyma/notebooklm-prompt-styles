@@ -1,0 +1,22 @@
+design_system:
+  global_style:
+    theme: "Professional, data-dense, and executive. Inspired by high-end consulting report standards."
+    typography: 
+      primary_heading: "Authoritative serif (e.g., Times New Roman, Georgia), bold"
+      secondary_heading: "Clean professional sans-serif (e.g., Helvetica), bold"
+      body_text: "Functional sans-serif, high density"
+    color_palette:
+      primary_color: "#051C2C"
+      background: "#FFFFFF"
+      text_main: "#333333"
+      accent_color: "#007DBB"
+    key_visual_elements: 
+      - "Full-width horizontal dividers"
+      - "Action Title block at the top"
+      - "Source and Footer attribution blocks"
+
+slide_layout_templates:
+  - type: "Executive_Action_Title"
+    usage: "Standard consulting slide with a key insight title"
+  - type: "Waterfall_Insight"
+    usage: "Dynamic financial or process flow visualization"

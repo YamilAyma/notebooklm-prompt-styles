@@ -4,9 +4,9 @@ A curated collection of visual design styles (YAML) to customize the output of N
 
 ## 📖 Table of Contents
 - [🏷️ Brand Inspired](#-brand-inspired)
-  - [Claude Aesthetic](#claude-aesthetic)
-  - [Pinterest Aesthetic](#pinterest-aesthetic)
-  - [McKinsey Aesthetic](#mckinsey-aesthetic)
+  - [Editorial Essence](#editorial-essence)
+  - [Visual Discovery](#visual-discovery)
+  - [Executive Report](#executive-report)
 - [🌿 Minimalist](#-minimalist)
 - [🎨 Creative](#-creative)
 - [🚀 How to Use](#-how-to-use)
@@ -18,15 +18,15 @@ A curated collection of visual design styles (YAML) to customize the output of N
 
 ### 🏷️ Brand Inspired
 
-#### Claude Aesthetic
-Inspired by Anthropic's sophisticated, editorial, and human-centric design language. It uses warm cream backgrounds, bold terracotta accents, and elegant serif typography to create a "book-like" presentation feel.
+#### Editorial Essence
+Sophisticated, editorial, and human-centric design language. It uses warm cream backgrounds, bold terracotta accents, and elegant serif typography to create a "book-like" presentation feel.
 
-![Claude Style Preview](assets/claude_preview.png)
+![Editorial Essence Preview](assets/editorial_essence_preview.png)
 
 ```yaml
 design_system:
   global_style:
-    theme: "Minimalist, sophisticated, and human-centric. Inspired by Anthropic's 'Claude' brand identity."
+    theme: "Minimalist, sophisticated, and human-centric. High-end editorial style."
     typography: 
       primary_heading: "Elegant serif (e.g., Lora, Playfair Display), bold"
       secondary_heading: "Clean sans-serif (e.g., Poppins, Inter), uppercase"
@@ -47,15 +47,15 @@ slide_layout_templates:
     usage: "40/60 text-image split"
 ```
 
-#### Pinterest Aesthetic
-Inspired by Pinterest's signature discovery aesthetic. This style focuses on visual-first layouts, card-based components with high border-radius, and vibrant red accents to drive engagement and focus.
+#### Visual Discovery
+Focuses on visual-first layouts, card-based components with high border-radius, and vibrant red accents to drive engagement and focus. Inspired by modern discovery feeds.
 
-![Pinterest Style Preview](assets/pinterest_preview.png)
+![Visual Discovery Preview](assets/visual_discovery_preview.png)
 
 ```yaml
 design_system:
   global_style:
-    theme: "Modern, visual-first, and organized. Inspired by Pinterest's discovery aesthetic."
+    theme: "Modern, visual-first, and organized. Inspired by card-based discovery aesthetics."
     typography: 
       primary_heading: "Clean rounded sans-serif (e.g., Roboto, Helvetica Rounded), bold"
       secondary_heading: "Simple sans-serif, medium weight, clean"
@@ -67,7 +67,7 @@ design_system:
       accent_color: "#EFEFEF"
     key_visual_elements: 
       - "Rounded corners (16px to 24px) for cards and images"
-      - "Drop shadows for depth (Pin-style)"
+      - "Drop shadows for depth"
       - "Grid-based image distribution"
 
 slide_layout_templates:
@@ -77,18 +77,18 @@ slide_layout_templates:
     usage: "Presenting multiple features in card format"
 ```
 
-#### McKinsey Aesthetic
-Inspired by the data-dense, executive style of McKinsey & Company consulting decks. Focuses on statement-driven "Action Titles", rigorous grid structures, and professional high-fidelity visuals.
+#### Executive Report
+Data-dense, executive style for professional reports. Focuses on statement-driven "Action Titles", rigorous grid structures, and professional high-fidelity visuals.
 
-![McKinsey Style Preview](assets/mckinsey_preview.png)
+![Executive Report Preview](assets/executive_report_preview.png)
 
 ```yaml
 design_system:
   global_style:
-    theme: "Professional, data-dense, and executive. Inspired by McKinsey consulting decks."
+    theme: "Professional, data-dense, and executive. Inspired by high-end consulting report standards."
     typography: 
-      primary_heading: "Authoritative serif (e.g., Bower, Times New Roman), bold"
-      secondary_heading: "Clean professional sans-serif (e.g., Helvetica Neue), bold"
+      primary_heading: "Authoritative serif (e.g., Times New Roman, Georgia), bold"
+      secondary_heading: "Clean professional sans-serif (e.g., Helvetica), bold"
       body_text: "Functional sans-serif, high density"
     color_palette:
       primary_color: "#051C2C"

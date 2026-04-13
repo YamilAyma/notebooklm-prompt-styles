@@ -1,0 +1,22 @@
+design_system:
+  global_style:
+    theme: "Modern, visual-first, and organized. Inspired by card-based discovery aesthetics."
+    typography: 
+      primary_heading: "Clean rounded sans-serif (e.g., Roboto, Helvetica Rounded), bold"
+      secondary_heading: "Simple sans-serif, medium weight, clean"
+      body_text: "Functional sans-serif, high contrast on white"
+    color_palette:
+      primary_color: "#E60023"
+      background: "#FFFFFF"
+      text_main: "#111111"
+      accent_color: "#EFEFEF"
+    key_visual_elements: 
+      - "Rounded corners (16px to 24px) for cards and images"
+      - "Drop shadows for depth"
+      - "Grid-based image distribution"
+
+slide_layout_templates:
+  - type: "Cover_Discovery"
+    usage: "Impactful intro slide"
+  - type: "Card_Grid_Insights"
+    usage: "Presenting multiple features in card format"

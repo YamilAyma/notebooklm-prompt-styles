@@ -1,0 +1,21 @@
+design_system:
+  global_style:
+    theme: "Minimalist, sophisticated, and human-centric. High-end editorial style."
+    typography: 
+      primary_heading: "Elegant serif (e.g., Lora, Playfair Display), bold"
+      secondary_heading: "Clean sans-serif (e.g., Poppins, Inter), uppercase"
+      body_text: "Refined serif (e.g., Lora), airy line-height"
+    color_palette:
+      primary_color: "#D97757"
+      background: "#FAF9F5"
+      text_main: "#141413"
+    key_visual_elements: 
+      - "Generous whitespace (Editorial layout)"
+      - "Abstract geometric line art"
+      - "Pill-shaped labels"
+
+slide_layout_templates:
+  - type: "Cover_Editorial"
+    usage: "Main title slide"
+  - type: "Split_Insight"
+    usage: "40/60 text-image split"
