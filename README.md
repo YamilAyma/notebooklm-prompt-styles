@@ -14,6 +14,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
 - [🎨 Creative](#-creative)
   - [Creative Spark](#creative-spark)
   - [Artisan Rust](#artisan-rust)
+  - [Vintage Charm](#vintage-charm)
 - [🚀 How to Use](#-how-to-use)
 - [🛠️ Contribution](#-contribution)
 
@@ -293,6 +294,39 @@ slide_layout_templates:
     usage: "Visualizing steps or history"
   - type: "Sticker_Callout"
     usage: "Focusing on a specific person or object"
+```
+
+#### Vintage Charm
+Romantic, nostalgic, and layered design inspired by coquette and scrapbooking aesthetics. It uses pastel tones, torn paper textures, and elegant accents like bows and pearls for a high-jewelry, vintage feel.
+
+![Vintage Charm Preview](assets/vintage_charm_preview.png)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Romantic, nostalgic, and layered. Vintage scrapbook aesthetic."
+    typography: 
+      primary_heading: "Elegant vintage serif (e.g., Playfair Display)"
+      secondary_heading: "Soft serif or clean traditional sans"
+      body_text: "Functional serif with a classic feel"
+    color_palette:
+      primary_color: "#E67E7E"
+      background: "#F8E1E1"
+      text_main: "#4A3B3B"
+      accent_color: "#D2C1A5"
+    key_visual_elements: 
+      - "Pink/Red ribbons and bows"
+      - "Torn paper edges and layered textures"
+      - "Vintage illustrations (floral/portraits)"
+      - "Washi tape and pearls"
+
+slide_layout_templates:
+  - type: "Scrapbook_Header"
+    usage: "Dynamic intro or section transitions"
+  - type: "Layered_Referents"
+    usage: "Showcasing aesthetic or historical references"
+  - type: "Numbered_Vintage_Grid"
+    usage: "Listing steps, characteristics, or points"
 ```
 
 ---

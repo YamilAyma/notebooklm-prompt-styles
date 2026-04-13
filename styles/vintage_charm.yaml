@@ -1,0 +1,44 @@
+design_system:
+  global_style:
+    theme: "Romantic, nostalgic, and layered. Inspired by vintage scrapbooking and coquette aesthetics. Focuses on pastel tones, torn paper textures, and elegant feminine accents like bows and pearls."
+    typography: 
+      primary_heading: "Elegant vintage serif (e.g., Playfair Display, Recoleta)"
+      secondary_heading: "Soft serif or a clean traditional sans-serif"
+      body_text: "Functional serif with a classic feel"
+    color_palette:
+      primary_color: "#E67E7E"    # Dusty Rose / Ribbon Red
+      background: "#F8E1E1"       # Soft Pastel Pink
+      text_main: "#4A3B3B"        # Deep Cocoa / Warm Brown
+      accent_color: "#D2C1A5"     # Antique Paper Beige
+      secondary_accent: "#F2E8D5" # Cream
+    key_visual_elements: 
+      - "Red and pink bows/ribbons as decorative anchors"
+      - "Torn paper edges and layered textures"
+      - "Vintage floral illustrations and victorian portraits"
+      - "Washi tape strips and pearl string accents"
+      - "Scrapbook-style photo layering"
+
+  image_generation_prompts:
+    style_guidelines: "Vintage aesthetic, soft warm lighting, nostalgic atmosphere, layered textures, victorian-inspired subjects, pastel color grading, grainy film effect."
+    themes:
+      - target: "Vintage Bouquet"
+        prompt_elements: "Dried roses and wildflowers on a torn piece of antique paper, pink silk ribbon bow, soft natural light, nostalgic scrapbook style."
+
+slide_layout_templates:
+  - type: "Scrapbook_Header"
+    usage: "Dynamic intro or section transitions"
+    components:
+      - "Layout: Large torn paper block in the center with a decorative bow"
+      - "Visual: Background layered with floral patterns and washi tape"
+
+  - type: "Layered_Referents"
+    usage: "Showcasing historical or aesthetic references"
+    components:
+      - "Layout: Asymmetric photo collage with white borders"
+      - "Visual: Images tilted slightly, overlapping with paper textures and illustrations"
+
+  - type: "Numbered_Vintage_Grid"
+    usage: "Listing steps, characteristics, or points"
+    components:
+      - "Layout: 2x3 grid of small paper patches"
+      - "Visual: Large serif numbers placed on top of subtle paper textures"
