@@ -13,6 +13,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
   - [Lush Minimal](#lush-minimal)
   - [Structured Mint](#structured-mint)
   - [Architectural Mono](#architectural-mono)
+  - [Architectural Cobalt](#architectural-cobalt)
 - [🎨 Creative](#-creative)
   - [Creative Spark](#creative-spark)
   - [Artisan Rust](#artisan-rust)
@@ -335,6 +336,43 @@ slide_layout_templates:
     usage: "Masonry grid for multiple references"
   - type: "Sliver_About"
     usage: "Vertical image sliver presentation"
+```
+
+#### Architectural Cobalt
+Technical, dark architectural, and blueprint-inspired design. Features deep charcoal backgrounds with vibrant cobalt blue gradients and precise 'sight' crosshair visual elements for a high-end engineering feel.
+
+![Architectural Cobalt Preview](assets/architectural_cobalt_preview.png)
+
+> [!TIP]
+> Esta es una vista previa simplificada. [Ver YAML completo](styles/architectural_cobalt.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Technical, dark architectural, blueprint-inspired. Deep charcoal with cobalt blue."
+    typography: 
+      primary_heading: "Bold high-contrast sans-serif"
+      secondary_heading: "Medium sans-serif, clean"
+      body_text: "Functional sans-serif, optimized for dark mode"
+      technical_label: "Small uppercase sans-serif, spaced"
+    color_palette:
+      primary_color: "#304FFE"
+      background: "#111111"
+      text_main: "#FFFFFF"
+      accent_overlay: "rgba(48, 79, 254, 0.2)"
+    key_visual_elements: 
+      - "Circular crosshair/sight icons"
+      - "Vibrant cobalt blue gradient overlays"
+      - "Dark, high-shadow architectural photography"
+      - "Thin white structural grid lines"
+
+slide_layout_templates:
+  - type: "Cobalt_Impact_Cover"
+    usage: "Impactful intro with technical structural visuals"
+  - type: "Dark_Project_Detail"
+    usage: "Showcasing projects with technical metadata"
+  - type: "Expertise_Profile"
+    usage: "Team introduction or profile highlights"
 ```
 
 ### 🎨 Creative
