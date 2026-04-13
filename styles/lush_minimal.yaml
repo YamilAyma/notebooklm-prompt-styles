@@ -1,0 +1,43 @@
+design_system:
+  global_style:
+    theme: "Nature-inspired, organic, and soft. Focuses on botanical imagery, sage greens, and large rounded corners to create a peaceful and professional atmosphere."
+    typography: 
+      primary_heading: "Bold rounded sans-serif (e.g., Lexend, Quicksand)"
+      secondary_heading: "Regular weight sans-serif, friendly"
+      body_text: "Clean sans-serif with generous line-spacing"
+    color_palette:
+      primary_color: "#4A4A4A"    # Warm Charcoal
+      background: "#F5F7F5"       # Very soft minty white
+      text_main: "#4A4A4A"        # Soft black
+      accent_color: "#7A906E"     # Sage Green
+      secondary_accent: "#A6B89A" # Light Olive
+    key_visual_elements: 
+      - "High-quality botanical photography (monstera, succulents, eucalyptus)"
+      - "Large rounded corners on image containers (24px+)"
+      - "Floating cards with soft, subtle drop shadows"
+      - "Donut charts with thick, organic strokes"
+
+  image_generation_prompts:
+    style_guidelines: "Soft natural lighting, botanical subjects, isolated on off-white backgrounds, shallow depth of field, organic textures, peaceful and clean aesthetic."
+    themes:
+      - target: "Green Leaf"
+        prompt_elements: "Close-up of a monstera leaf with water droplets, soft morning light, off-white studio background, organic and fresh."
+
+slide_layout_templates:
+  - type: "Botanical_Split"
+    usage: "Intro slides or service highlights"
+    components:
+      - "Layout: 60/40 horizontal split with overlapping text"
+      - "Visual: Large plant image with 30px rounded corners on one edge"
+
+  - type: "Organic_Goals"
+    usage: "Presenting multiple points or objectives"
+    components:
+      - "Layout: Grid of tall vertical cards"
+      - "Visual: Each card topped with a different botanical photo and rounded corners"
+
+  - type: "Sage_Data"
+    usage: "Presenting metrics or growth"
+    components:
+      - "Layout: Clean centered text with sage green accents"
+      - "Visual: Donut charts using the Sage and Olive palette"

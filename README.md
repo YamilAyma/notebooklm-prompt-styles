@@ -10,6 +10,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
 - [🌿 Minimalist](#-minimalist)
   - [Geometric Mono](#geometric-mono)
   - [Silicon Refined](#silicon-refined)
+  - [Lush Minimal](#lush-minimal)
 - [🎨 Creative](#-creative)
   - [Creative Spark](#creative-spark)
   - [Artisan Rust](#artisan-rust)
@@ -196,6 +197,38 @@ slide_layout_templates:
     usage: "Showcasing multiple features or specifications"
   - type: "Feature_Gradient"
     usage: "Highlighting a breakthrough benefit"
+```
+
+#### Lush Minimal
+Nature-inspired, organic, and soft design. It focuses on botanical imagery, sage greens, and large rounded corners to create a peaceful yet professional atmosphere.
+
+![Lush Minimal Preview](assets/lush_minimal_preview.png)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Nature-inspired, organic, and soft. Botanical focus."
+    typography: 
+      primary_heading: "Bold rounded sans-serif (e.g., Lexend)"
+      secondary_heading: "Regular weight sans-serif"
+      body_text: "Clean sans-serif with generous spacing"
+    color_palette:
+      primary_color: "#4A4A4A"
+      background: "#F5F7F5"
+      text_main: "#4A4A4A"
+      accent_color: "#7A906E"
+    key_visual_elements: 
+      - "Botanical photography (monstera, succulents)"
+      - "Large rounded corners (24px+)"
+      - "Soft, subtle drop shadows"
+
+slide_layout_templates:
+  - type: "Botanical_Split"
+    usage: "Intro slides or service highlights"
+  - type: "Organic_Goals"
+    usage: "Presenting multiple points or objectives"
+  - type: "Sage_Data"
+    usage: "Presenting metrics or growth"
 ```
 
 ### 🎨 Creative
