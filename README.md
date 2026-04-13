@@ -35,7 +35,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
 ## 🎨 Themes
 
 > [!IMPORTANT]
-> Los fragmentos de código que se muestran a continuación son **vistas previas simplificadas** enfocadas en los tokens de diseño. Para obtener la configuración completa (incluyendo prompts de generación de imagen y componentes detallados), utiliza el enlace **[Ver YAML completo]** en cada sección.
+> The code snippets below are **simplified previews** focused on design tokens. To get the full configuration (including image generation prompts and detailed components), use the **[View Full YAML]** link in each section.
 
 ### 🏷️ Brand Inspired
 
@@ -45,7 +45,7 @@ Sophisticated, editorial, and human-centric design language. It uses warm cream 
 ![Editorial Essence Preview](assets/editorial_essence_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/editorial_essence.yaml)
+> This is a simplified preview. [View Full YAML](styles/editorial_essence.yaml)
 
 ```yaml
 design_system:
@@ -83,7 +83,7 @@ Focuses on visual-first layouts, card-based components with high border-radius, 
 ![Visual Discovery Preview](assets/visual_discovery_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/visual_discovery.yaml)
+> This is a simplified preview. [View Full YAML](styles/visual_discovery.yaml)
 
 ```yaml
 design_system:
@@ -122,7 +122,7 @@ Data-dense, executive style for professional reports. Focuses on statement-drive
 ![Executive Report Preview](assets/executive_report_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/executive_report.yaml)
+> This is a simplified preview. [View Full YAML](styles/executive_report.yaml)
 
 ```yaml
 design_system:
@@ -166,7 +166,7 @@ Professional, architectural, and monochromatic design. It uses a strong grayscal
 ![Geometric Mono Preview](assets/geometric_mono_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/geometric_mono.yaml)
+> This is a simplified preview. [View Full YAML](styles/geometric_mono.yaml)
 
 ```yaml
 design_system:
@@ -201,7 +201,7 @@ Ultra-minimalist, premium, and sleek. Focuses on generous whitespace, precision 
 ![Silicon Refined Preview](assets/silicon_refined_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/silicon_refined.yaml)
+> This is a simplified preview. [View Full YAML](styles/silicon_refined.yaml)
 
 ```yaml
 design_system:
@@ -236,7 +236,7 @@ Nature-inspired, organic, and soft design. It focuses on botanical imagery, sage
 ![Lush Minimal Preview](assets/lush_minimal_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/lush_minimal.yaml)
+> This is a simplified preview. [View Full YAML](styles/lush_minimal.yaml)
 
 ```yaml
 design_system:
@@ -271,7 +271,7 @@ Professional, structured, and refreshing corporate design. Features distinctive 
 ![Structured Mint Preview](assets/structured_mint_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/structured_mint.yaml)
+> This is a simplified preview. [View Full YAML](styles/structured_mint.yaml)
 
 ```yaml
 design_system:
@@ -307,7 +307,7 @@ Modern brutalist, monochromatic, and architectural design. Inspired by minimalis
 ![Architectural Mono Preview](assets/architectural_mono_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/architectural_mono.yaml)
+> This is a simplified preview. [View Full YAML](styles/architectural_mono.yaml)
 
 ```yaml
 design_system:
@@ -345,7 +345,7 @@ Technical, dark architectural, and blueprint-inspired design. Features deep char
 ![Architectural Cobalt Preview](assets/architectural_cobalt_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/architectural_cobalt.yaml)
+> This is a simplified preview. [View Full YAML](styles/architectural_cobalt.yaml)
 
 ```yaml
 design_system:
@@ -384,7 +384,7 @@ Vibrant, creative, and high-impact design. Uses a deep dark canvas with neon pur
 ![Creative Spark Preview](assets/creative_spark_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/creative_spark.yaml)
+> This is a simplified preview. [View Full YAML](styles/creative_spark.yaml)
 
 ```yaml
 design_system:
@@ -418,7 +418,7 @@ Warm, handcrafted, and organic design. Uses a textured rust-colored background w
 ![Artisan Rust Preview](assets/artisan_rust_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/artisan_rust.yaml)
+> This is a simplified preview. [View Full YAML](styles/artisan_rust.yaml)
 
 ```yaml
 design_system:
@@ -452,7 +452,7 @@ Romantic, nostalgic, and layered design inspired by coquette and scrapbooking ae
 ![Vintage Charm Preview](assets/vintage_charm_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/vintage_charm.yaml)
+> This is a simplified preview. [View Full YAML](styles/vintage_charm.yaml)
 
 ```yaml
 design_system:
@@ -488,7 +488,7 @@ Academic, vintage, and scientific design. Inspired by 19th-century botanical eng
 ![Scholar's Journal Preview](assets/scholars_journal_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/scholars_journal.yaml)
+> This is a simplified preview. [View Full YAML](styles/scholars_journal.yaml)
 
 ```yaml
 design_system:
@@ -522,7 +522,7 @@ Futuristic, high-energy, and tech-focused design. This dark mode aesthetic uses 
 ![Neon Pulsar Preview](assets/neon_pulsar_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/neon_pulsar.yaml)
+> This is a simplified preview. [View Full YAML](styles/neon_pulsar.yaml)
 
 ```yaml
 design_system:
@@ -559,7 +559,7 @@ Bold editorial and Swiss-inspired design. High contrast between Electric Blue an
 ![Cobalt Editorial Preview](assets/cobalt_editorial_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/cobalt_editorial.yaml)
+> This is a simplified preview. [View Full YAML](styles/cobalt_editorial.yaml)
 
 ```yaml
 design_system:
@@ -594,7 +594,7 @@ Modern, tech-utilitarian design with a high-contrast matte black base and vibran
 ![Midnight Tactical Preview](assets/midnight_tactical_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/midnight_tactical.yaml)
+> This is a simplified preview. [View Full YAML](styles/midnight_tactical.yaml)
 
 ```yaml
 design_system:
@@ -630,7 +630,7 @@ Playful, warm, and educational design. Inspired by primary school classrooms and
 ![Creative Classroom Preview](assets/creative_classroom_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/creative_classroom.yaml)
+> This is a simplified preview. [View Full YAML](styles/creative_classroom.yaml)
 
 ```yaml
 design_system:
@@ -665,7 +665,7 @@ Eco-friendly, natural, and scrapbook-inspired design. Features hand-drawn botani
 ![Botanical Journal Preview](assets/botanical_journal_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/botanical_journal.yaml)
+> This is a simplified preview. [View Full YAML](styles/botanical_journal.yaml)
 
 ```yaml
 design_system:
@@ -700,7 +700,7 @@ Bubblegum pop, iridescent textures, and early digital nostalgia. Features CD-ROM
 ![Y2K Nostalgia Preview](assets/y2k_nostalgia_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/y2k_nostalgia.yaml)
+> This is a simplified preview. [View Full YAML](styles/y2k_nostalgia.yaml)
 
 ```yaml
 design_system:
@@ -735,7 +735,7 @@ Artistic, youthful, and workshop-oriented design. Features notebook grid backgro
 ![Creative Workshop Preview](assets/creative_workshop_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/creative_workshop.yaml)
+> This is a simplified preview. [View Full YAML](styles/creative_workshop.yaml)
 
 ```yaml
 design_system:
@@ -770,7 +770,7 @@ Modern corporate, dynamic, and professional design. Features a strong navy and v
 ![Ensign Corporate Preview](assets/ensign_corporate_preview.png)
 
 > [!TIP]
-> Esta es una vista previa simplificada. [Ver YAML completo](styles/ensign_corporate.yaml)
+> This is a simplified preview. [View Full YAML](styles/ensign_corporate.yaml)
 
 ```yaml
 design_system:
