@@ -1,0 +1,44 @@
+design_system:
+  global_style:
+    theme: "Eco-friendly, natural, and scrapbook-inspired. Features hand-drawn botanical doodles, washi tape accents, and torn notebook paper textures on a warm cream background."
+    typography: 
+      primary_heading: "Bubbly hand-drawn sans-serif (e.g., Fredoka One, Luckiest Guy)"
+      secondary_heading: "Handwritten or friendly rounded sans-serif"
+      body_text: "Clean legible sans-serif or friendly monospace"
+    color_palette:
+      primary_color: "#7CB342"    # Natural Leaf Green
+      background: "#F9F7F1"       # Warm Cream/Eco-Paper
+      text_main: "#333333"        # Dark Gray
+      accent_lime: "#D4E157"      # Bright Lime
+      accent_teal: "#26A69A"      # Muted Teal
+    key_visual_elements: 
+      - "Torn binder paper textures for content modules"
+      - "Decorative washi tape strips (with dot/stripe patterns)"
+      - "Hand-drawn botanical doodles (leaves, vines, flowers)"
+      - "Crayon-style scribbles and organic background shapes"
+      - "Circular or oval photo frames for nature imagery"
+
+  image_generation_prompts:
+    style_guidelines: "Hand-drawn botanical illustration style, scrapbook aesthetic, warm eco-friendly colors, organic shapes, soft paper textures, nature photography focus, friendly and sustainable atmosphere."
+    themes:
+      - target: "Natural Landscape"
+        prompt_elements: "Vibrant forest landscape inside a circular frame, botanical doodles in the corners, soft cream background."
+
+slide_layout_templates:
+  - type: "Botanical_Hero"
+    usage: "Main title or environmental intros"
+    components:
+      - "Layout: Large hand-drawn title centered"
+      - "Visual: Dense arrangement of leaf and flower doodles on the margins"
+
+  - type: "Notebook_Scrapbook"
+    usage: "Detailed points or mission objectives"
+    components:
+      - "Layout: Content presented on 'torn' notebook paper elements"
+      - "Visual: Washi tape strips holding the paper in place"
+
+  - type: "Eco_Profile"
+    usage: "Nature focus or project overviews"
+    components:
+      - "Layout: Oval photo container with a solid green border"
+      - "Visual: Scribble doodle motifs in the background corners"

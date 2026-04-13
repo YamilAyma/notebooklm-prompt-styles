@@ -20,6 +20,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
   - [Cobalt Editorial](#cobalt-editorial)
   - [Midnight Tactical](#midnight-tactical)
   - [Creative Classroom](#creative-classroom)
+  - [Botanical Journal](#botanical-journal)
 - [🚀 How to Use](#-how-to-use)
 - [🛠️ Contribution](#-contribution)
 
@@ -494,6 +495,38 @@ slide_layout_templates:
     usage: "Core lesson content or discussion"
   - type: "Object_Focus_Detail"
     usage: "Summaries or conceptual focuses"
+```
+
+#### Botanical Journal
+Eco-friendly, natural, and scrapbook-inspired design. Features hand-drawn botanical doodles (leaves, vines, flowers), washi tape accents, and torn notebook paper textures on a warm cream background.
+
+![Botanical Journal Preview](assets/botanical_journal_preview.png)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Eco Scrapbook. Natural & Botanical."
+    typography: 
+      primary_heading: "Bubbly hand-drawn sans-serif (e.g., Fredoka One)"
+      secondary_heading: "Friendly rounded sans-serif"
+      body_text: "Clean legible sans-serif"
+    color_palette:
+      primary_color: "#7CB342"
+      background: "#F9F7F1"
+      accent_lime: "#D4E157"
+    key_visual_elements: 
+      - "Torn binder paper textures"
+      - "Decorative washi tape strips"
+      - "Hand-drawn botanical doodles"
+      - "Circular or oval photo frames"
+
+slide_layout_templates:
+  - type: "Botanical_Hero"
+    usage: "Main title or environmental intros"
+  - type: "Notebook_Scrapbook"
+    usage: "Detailed points or objectives"
+  - type: "Eco_Profile"
+    usage: "Nature focus or overviews"
 ```
 
 ---
