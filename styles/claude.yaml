@@ -1,0 +1,47 @@
+design_system:
+  global_style:
+    theme: "Minimalist, sophisticated, and human-centric. Inspired by Anthropic's 'Claude' brand identity. Focuses on an editorial/book-like feel with warm tones and elegant typography."
+    typography: 
+      primary_heading: "Elegant serif (e.g., Lora, Playfair Display, or Georgia), bold, with refined letter-spacing"
+      secondary_heading: "Clean sans-serif (e.g., Poppins, Inter), uppercase, small caps"
+      body_text: "Refined serif (e.g., Lora, EB Garamond), airy line-height (1.6x), highly legible"
+    color_palette:
+      primary_color: "#D97757" # Terracotta / Burnt Orange
+      background: "#FAF9F5"    # Warm Off-white / Cream
+      text_main: "#141413"     # Near Black / Charcoal
+      accent_color: "#788C5D"  # Muted Sage Green
+    key_visual_elements: 
+      - "Generous whitespace (Editorial layout)"
+      - "Abstract geometric line art and organic tech patterns"
+      - "Pill-shaped labels for categories"
+      - "Minimalist horizontal flowcharts and diagrams"
+
+  image_generation_prompts:
+    style_guidelines: "Minimalist, organic-tech, soft natural textures, neutral warm color palette (cream, terracotta, sage), high-end editorial photography style, soft shadows, geometric abstraction."
+    themes:
+      - target: "Abstract Background"
+        prompt_elements: "Minimalist geometric abstraction, thin lines, organic paper textures, cream and terracotta color palette, soft lighting, sophisticated, 8k"
+      - target: "Conceptual Object"
+        prompt_elements: "Macro photography of a single minimalist ceramic object, earthy tones, dramatic soft lighting, isolated on cream background"
+
+slide_layout_templates:
+  - type: "Cover_Editorial"
+    usage: "Main title slide"
+    components:
+      - "Title: Large serif font, left-aligned, upper-middle placement"
+      - "Subtitle: Small uppercase sans-serif text below the title"
+      - "Footer: Subtle logo or website link in the bottom left"
+
+  - type: "Split_Insight"
+    usage: "Detailed analysis or feature highlight"
+    components:
+      - "Layout: 40/60 split (Text/Image)"
+      - "Visual: Abstract geometric art or neutral-toned photography"
+      - "Text: Bold category tag + Serif heading + Clean body paragraph"
+
+  - type: "Framework_Grid"
+    usage: "Process description or component list"
+    components:
+      - "Heading: Centered serif title"
+      - "Grid: Clean cards with terracotta accent borders or subtle sage backgrounds"
+      - "Content: Small icons (line art) + Concise text"
