@@ -1,0 +1,43 @@
+design_system:
+  global_style:
+    theme: "Ultra-minimalist, premium, and sleek. Inspired by high-end consumer technology product marketing. Focuses on whitespace, precision typography, and high-fidelity visuals."
+    typography: 
+      primary_heading: "Clean high-quality sans-serif (e.g., Inter, SF Pro style), medium-bold, tight tracking"
+      secondary_heading: "Lightweight sans-serif, uppercase, wide tracking"
+      body_text: "Refined sans-serif, high legibility, airy line-height"
+    color_palette:
+      primary_color: "#1D1D1F" # Space Gray/Jet Black
+      background: "#FFFFFF"    # Pure White
+      text_main: "#1D1D1F"     # Main body text
+      accent_color: "#0071E3"  # Vibrant Tech Blue
+      secondary_accent: "#F5F5F7" # Ultra-light gray for subtle sections
+    key_visual_elements: 
+      - "Generous whitespace for a 'breathing' layout"
+      - "High-resolution product-focused macro photography"
+      - "Soft drop shadows and subtle gradients"
+      - "Bento-style grids for feature lists"
+
+  image_generation_prompts:
+    style_guidelines: "Ultra-clean white studio lighting, soft shadows, macro photography, premium glass and aluminum textures, minimal clutter, elegant product-centric focus."
+    themes:
+      - target: "Hardware Detail"
+        prompt_elements: "Close-up of polished brushed aluminum, soft blue accent lighting, clean reflections, Apple-style macro shot, elegant textures."
+
+slide_layout_templates:
+  - type: "Hero_Breathe"
+    usage: "Impactful intro or single-statement slide"
+    components:
+      - "Layout: Large centered title on a pure white background"
+      - "Visual: Single high-fidelity product or abstract image centered above/below"
+
+  - type: "Bento_Grid_Specs"
+    usage: "Showcasing multiple features or technical specifications"
+    components:
+      - "Layout: Grid of varying-sized cards with rounded corners (12px)"
+      - "Visual: Sublte gray backgrounds (#F5F5F7) for cards"
+
+  - type: "Feature_Gradient"
+    usage: "Highlighting a breakthrough or main benefit"
+    components:
+      - "Layout: Large bold text with a subtle blue/purple gradient"
+      - "Visual: Minimalist white background to maximize contrast"

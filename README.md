@@ -9,6 +9,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
   - [Executive Report](#executive-report)
 - [🌿 Minimalist](#-minimalist)
   - [Geometric Mono](#geometric-mono)
+  - [Silicon Refined](#silicon-refined)
 - [🎨 Creative](#-creative)
   - [Creative Spark](#creative-spark)
   - [Artisan Rust](#artisan-rust)
@@ -163,6 +164,38 @@ slide_layout_templates:
     usage: "Comparing data or value propositions"
   - type: "Architectural_Timeline"
     usage: "Visualizing project phases or milestones"
+```
+
+#### Silicon Refined
+Ultra-minimalist, premium, and sleek. Focuses on generous whitespace, precision typography, and high-fidelity visuals. Designed for high-end technology presentations where clarity and elegance are paramount.
+
+![Silicon Refined Preview](assets/silicon_refined_preview.png)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Ultra-minimalist, premium, and sleek. Generous whitespace and precision."
+    typography: 
+      primary_heading: "Clean high-quality sans-serif (e.g., SF Pro style), bold"
+      secondary_heading: "Lightweight sans-serif, wide tracking"
+      body_text: "Refined sans-serif, airy line-height"
+    color_palette:
+      primary_color: "#1D1D1F"
+      background: "#FFFFFF"
+      text_main: "#1D1D1F"
+      accent_color: "#0071E3"
+    key_visual_elements: 
+      - "Generous whitespace (Airy layout)"
+      - "High-resolution product-focused photography"
+      - "Bento-style grids for features"
+
+slide_layout_templates:
+  - type: "Hero_Breathe"
+    usage: "Impactful intro or single-statement slide"
+  - type: "Bento_Grid_Specs"
+    usage: "Showcasing multiple features or specifications"
+  - type: "Feature_Gradient"
+    usage: "Highlighting a breakthrough benefit"
 ```
 
 ### 🎨 Creative
