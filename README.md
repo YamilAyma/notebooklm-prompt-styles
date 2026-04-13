@@ -16,6 +16,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
   - [Artisan Rust](#artisan-rust)
   - [Vintage Charm](#vintage-charm)
   - [Scholar's Journal](#scholars-journal)
+  - [Neon Pulsar](#neon-pulsar)
 - [🚀 How to Use](#-how-to-use)
 - [🛠️ Contribution](#-contribution)
 
@@ -359,6 +360,40 @@ slide_layout_templates:
     usage: "Presenting concepts with a visual anchor"
   - type: "Balanced_Journal"
     usage: "Summary or Q&A slides"
+```
+
+#### Neon Pulsar
+Futuristic, high-energy, and tech-focused design. This dark mode aesthetic uses vibrant neon gradients (Cyan, Magenta, Purple) and glassmorphic elements to create a cutting-edge startup atmosphere.
+
+![Neon Pulsar Preview](assets/neon_pulsar_preview.png)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Futuristic, high-energy, tech-focused. Dark mode neon."
+    typography: 
+      primary_heading: "Extra-bold modern sans-serif (e.g., Inter)"
+      secondary_heading: "Medium sans-serif, high contrast"
+      body_text: "Clean sans-serif for dark mode"
+    color_palette:
+      primary_color: "#FFFFFF"
+      background: "#000000"
+      accent_cyan: "#00F2FF"
+      accent_purple: "#7000FF"
+      accent_magenta: "#FF00E5"
+    key_visual_elements: 
+      - "Blurred neon gradient spheres"
+      - "Concentric rings and digital orbits"
+      - "Pill-shaped containers"
+      - "Glassmorphic cards with neon borders"
+
+slide_layout_templates:
+  - type: "Tech_Startup_Hero"
+    usage: "Main title or key announcement"
+  - type: "Service_Orbits"
+    usage: "Showing features around a core concept"
+  - type: "Neon_Bento_Grid"
+    usage: "Showcasing tech specs or team members"
 ```
 
 ---

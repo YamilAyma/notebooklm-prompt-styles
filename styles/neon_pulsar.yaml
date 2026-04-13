@@ -1,0 +1,45 @@
+design_system:
+  global_style:
+    theme: "Futuristic, high-energy, and tech-focused. Dark mode aesthetic with vibrant neon gradients (Cyan, Magenta, Purple) and glassmorphic elements."
+    typography: 
+      primary_heading: "Extra-bold modern sans-serif (e.g., Inter, Montserrat)"
+      secondary_heading: "Medium sans-serif, high contrast"
+      body_text: "Clean sans-serif, optimized for dark backgrounds"
+    color_palette:
+      primary_color: "#FFFFFF"    # Pure White for text
+      background: "#000000"       # Deep Black
+      text_main: "#E0E0E0"        # Light Gray for legibility
+      accent_cyan: "#00F2FF"      # Vibrant Neon Cyan
+      accent_purple: "#7000FF"    # Electric Purple
+      accent_magenta: "#FF00E5"   # Neon Magenta
+    key_visual_elements: 
+      - "Blurred neon gradient spheres in the background"
+      - "Concentric rings and digital orbit motifs"
+      - "Pill-shaped containers for data and lists"
+      - "Glassmorphic cards with subtle neon borders"
+      - "High-energy tech imagery with cyan/magenta color grading"
+
+  image_generation_prompts:
+    style_guidelines: "Futuristic tech aesthetic, dark environment, neon cyan and magenta lighting, glowing elements, soft bokeh, cinematic startup atmosphere, sharp focus on modern devices or collaborative teams."
+    themes:
+      - target: "Abstract Network"
+        prompt_elements: "Glowing digital lines and nodes, neon purple and cyan gradients, dark background, futuristic data visualization aesthetic."
+
+slide_layout_templates:
+  - type: "Tech_Startup_Hero"
+    usage: "Main title or key announcement"
+    components:
+      - "Layout: Large bold heading on the left"
+      - "Visual: Large blurred neon gradient sphere floating in the background"
+
+  - type: "Service_Orbits"
+    usage: "Showing features or services around a core concept"
+    components:
+      - "Layout: Central title with concentric thin neon rings"
+      - "Visual: Floating circular images placed along the orbits"
+
+  - type: "Neon_Bento_Grid"
+    usage: "Showcasing multiple tech specifications or team members"
+    components:
+      - "Layout: Grid of dark cards with subtle neon top-borders"
+      - "Visual: Gradient fills for icons and data points (Cyan to Purple)"
