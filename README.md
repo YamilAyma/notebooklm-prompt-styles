@@ -15,6 +15,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
   - [Creative Spark](#creative-spark)
   - [Artisan Rust](#artisan-rust)
   - [Vintage Charm](#vintage-charm)
+  - [Scholar's Journal](#scholars-journal)
 - [🚀 How to Use](#-how-to-use)
 - [🛠️ Contribution](#-contribution)
 
@@ -327,6 +328,37 @@ slide_layout_templates:
     usage: "Showcasing aesthetic or historical references"
   - type: "Numbered_Vintage_Grid"
     usage: "Listing steps, characteristics, or points"
+```
+
+#### Scholar's Journal
+Academic, vintage, and scientific design. Inspired by 19th-century botanical engravings and researcher journals. It features heavy coarse paper textures and deep indigo line art illustrations for a scholarly feel.
+
+![Scholar's Journal Preview](assets/scholars_journal_preview.png)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Academic, vintage, and scientific. Botanical engravings focus."
+    typography: 
+      primary_heading: "Traditional serif or slab serif (e.g., Trocchi)"
+      secondary_heading: "Classic serif, clean"
+      body_text: "Functional traditional serif"
+    color_palette:
+      primary_color: "#3E4E63"
+      background: "#D1D1D1"
+      text_main: "#2D3436"
+    key_visual_elements: 
+      - "Etched/Engraved line art illustrations"
+      - "Heavy coarse paper texture grain"
+      - "Indigo on Parchment monochromatic scheme"
+
+slide_layout_templates:
+  - type: "Scholar_Intro"
+    usage: "Title slides or section starts"
+  - type: "Illustration_Focus"
+    usage: "Presenting concepts with a visual anchor"
+  - type: "Balanced_Journal"
+    usage: "Summary or Q&A slides"
 ```
 
 ---
