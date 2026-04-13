@@ -1,6 +1,6 @@
 design_system:
   global_style:
-    theme: "Minimalist, sophisticated, and human-centric. High-end editorial style."
+    theme: "Minimalist, sophisticated, and human-centric. High-end editorial style using warm cream backgrounds and bold terracotta accents."
     typography: 
       primary_heading: "Elegant serif (e.g., Lora, Playfair Display), bold"
       secondary_heading: "Clean sans-serif (e.g., Poppins, Inter), uppercase"
@@ -14,8 +14,20 @@ design_system:
       - "Abstract geometric line art"
       - "Pill-shaped labels"
 
+  image_generation_prompts:
+    style_guidelines: "Editorial photography style, warm natural lighting, high-end magazine aesthetic, minimalist cream background, terracotta accents, sophisticated vibe."
+    themes:
+      - target: "Abstract Connection"
+        prompt_elements: "Minimalist geometric shapes, warm earth tones, fine line art, editorial layout, premium paper texture."
+
 slide_layout_templates:
   - type: "Cover_Editorial"
-    usage: "Main title slide"
+    usage: "Main title slide with high-impact serif typography"
+    components:
+      - "Layout: Large centered title with generous top margin"
+      - "Visual: Subtle terracotta line art at the bottom right"
+
   - type: "Split_Insight"
-    usage: "40/60 text-image split"
+    usage: "40/60 text-image split for conceptual explanations"
+    components:
+      - "Layout: Text on the left (terracotta subheadings), full-height editorial image on the right"
