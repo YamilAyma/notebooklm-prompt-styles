@@ -1,0 +1,45 @@
+design_system:
+  global_style:
+    theme: "Y2K aesthetics, bubblegum pop, and early digital nostalgia. Features holographic textures, CD-ROM reflections, fluffy clouds, and 3D 'plastic' icons (gummy bears, hearts, cupids) on pastel gradients."
+    typography: 
+      primary_heading: "Bold quirky block letters (e.g., Bubblegum Sans, WordArt-style)"
+      secondary_heading: "Pixellated or typewriter monospace"
+      body_text: "Clean legible monospace (e.g., Courier New, VT323)"
+    color_palette:
+      primary_color: "#FF85A1"    # Bubblegum Pink
+      background: "#FDEFF4"       # Soft Pastel Pink
+      accent_purple: "#B19CD9"    # Lavender
+      accent_blue: "#89CFF0"      # Baby Blue
+      holographic: "Iridescent silver to teal gradients"
+    key_visual_elements: 
+      - "Torn binder paper with realistic paper grain"
+      - "CD-ROM discs with rainbow prismatic reflections"
+      - "Glittering 4-pointed stars and sparkles"
+      - "Polaroid-style photo frames with metal clips"
+      - "3D translucent gummy bears and glossy hearts"
+      - "Airbrushed fluffy clouds in backgrounds"
+
+  image_generation_prompts:
+    style_guidelines: "Y2K bubblegum aesthetic, holographic textures, iridescent gradients, 2000s teen magazine style, plastic 3D icons, high-gloss finish, airbrushed clouds, sparkling overlays."
+    themes:
+      - target: "Music & Tech"
+        prompt_elements: "Iridescent CD-ROM disc, pink glossy laptop, floating hearts, lavender background with glitter."
+
+slide_layout_templates:
+  - type: "Pop_Culture_Hero"
+    usage: "Dynamic titles or mood setters"
+    components:
+      - "Layout: Large WordArt-style title centered"
+      - "Visual: Background with stippled clouds and floating glossy cupids"
+
+  - type: "Digital_Dairy"
+    usage: "Storytelling or personal anecdotes"
+    components:
+      - "Layout: Text inside a 'torn' paper block held by a paperclip"
+      - "Visual: Prismatic rainbow CD reflection in the corner"
+
+  - type: "Memory_Gallery"
+    usage: "Photos or event highlights"
+    components:
+      - "Layout: Polaroid frames scattered at slight angles"
+      - "Visual: Heart-shaped translucent gummies as decorative 'pins'"

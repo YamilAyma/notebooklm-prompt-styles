@@ -21,6 +21,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
   - [Midnight Tactical](#midnight-tactical)
   - [Creative Classroom](#creative-classroom)
   - [Botanical Journal](#botanical-journal)
+  - [Y2K Nostalgia](#y2k-nostalgia)
 - [🚀 How to Use](#-how-to-use)
 - [🛠️ Contribution](#-contribution)
 
@@ -527,6 +528,38 @@ slide_layout_templates:
     usage: "Detailed points or objectives"
   - type: "Eco_Profile"
     usage: "Nature focus or overviews"
+```
+
+#### Y2K Nostalgia
+Bubblegum pop, iridescent textures, and early digital nostalgia. Features CD-ROM reflections, fluffy clouds, and 3D 'plastic' icons (gummy bears, hearts, cupids) on pastel gradients.
+
+![Y2K Nostalgia Preview](assets/y2k_nostalgia_preview.png)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Retro Digital. Bubblegum & Holographic."
+    typography: 
+      primary_heading: "Bold quirky block letters"
+      secondary_heading: "Pixellated or typewriter monospace"
+      body_text: "Clean legible monospace (e.g., Courier New)"
+    color_palette:
+      primary_color: "#FF85A1"
+      background: "#FDEFF4"
+      accent_purple: "#B19CD9"
+    key_visual_elements: 
+      - "CD-ROM rainbow reflections"
+      - "Holographic/Iridescent textures"
+      - "3D plastic gummy bears and icons"
+      - "Polaroid photo frames"
+
+slide_layout_templates:
+  - type: "Pop_Culture_Hero"
+    usage: "Dynamic titles or mood setters"
+  - type: "Digital_Dairy"
+    usage: "Storytelling or personal anecdotes"
+  - type: "Memory_Gallery"
+    usage: "Photos or event highlights"
 ```
 
 ---
