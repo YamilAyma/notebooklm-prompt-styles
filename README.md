@@ -9,6 +9,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
   - [Executive Report](#executive-report)
 - [🌿 Minimalist](#-minimalist)
 - [🎨 Creative](#-creative)
+  - [Creative Spark](#creative-spark)
 - [🚀 How to Use](#-how-to-use)
 - [🛠️ Contribution](#-contribution)
 
@@ -132,7 +133,37 @@ slide_layout_templates:
 *Incoming soon...*
 
 ### 🎨 Creative
-*Incoming soon...*
+
+#### Creative Spark
+Vibrant, creative, and high-impact design. Uses a deep dark canvas with neon purple accents, combining elegant script typography with bold, heavy block fonts for maximum contrast.
+
+![Creative Spark Preview](assets/creative_spark_preview.png)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Vibrant, creative, and high-impact. Dark canvas with neon purple accents."
+    typography: 
+      primary_heading: "Bold heavy sans-serif (e.g., Montserrat Black)"
+      accent_heading: "Elegant cursive script (e.g., Great Vibes)"
+      body_text: "Clean modern sans-serif"
+    color_palette:
+      primary_color: "#B18CFF"
+      background: "#0F0F0F"
+      text_main: "#FFFFFF"
+    key_visual_elements: 
+      - "Four-pointed sparkle icons"
+      - "Thick vertical color blocks on edges"
+      - "High-contrast tables"
+
+slide_layout_templates:
+  - type: "Cover_Spark"
+    usage: "High-impact opening slide"
+  - type: "Stitched_Portfolio"
+    usage: "Showcasing multiple works or images"
+  - type: "Impact_Results_Table"
+    usage: "Presenting data with high contrast"
+```
 
 ---
 
