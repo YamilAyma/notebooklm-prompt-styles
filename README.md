@@ -22,6 +22,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
   - [Creative Classroom](#creative-classroom)
   - [Botanical Journal](#botanical-journal)
   - [Y2K Nostalgia](#y2k-nostalgia)
+  - [Creative Workshop](#creative-workshop)
 - [🚀 How to Use](#-how-to-use)
 - [🛠️ Contribution](#-contribution)
 
@@ -560,6 +561,38 @@ slide_layout_templates:
     usage: "Storytelling or personal anecdotes"
   - type: "Memory_Gallery"
     usage: "Photos or event highlights"
+```
+
+#### Creative Workshop
+Artistic, youthful, and workshop-oriented design. Features notebook grid backgrounds, pastel pink wavy accents, and friendly 2D art supply doodles (pencils, rainbows, stars).
+
+![Creative Workshop Preview](assets/creative_workshop_preview.png)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Art Studio. Creative & Playful."
+    typography: 
+      primary_heading: "Bold blocky sans-serif (Multi-color)"
+      secondary_heading: "Rounded friendly sans-serif"
+      body_text: "Clean legible sans-serif"
+    color_palette:
+      primary_color: "#F48FB1"
+      background: "#FFFFFF"
+      grid_lines: "#E1F5FE"
+    key_visual_elements: 
+      - "Ruled background textures"
+      - "Organic wavy pink blobs"
+      - "Smiling art supply illustrations"
+      - "Pill-shaped category tags"
+
+slide_layout_templates:
+  - type: "Workshop_Hero"
+    usage: "Project titles or starters"
+  - type: "Activity_Grid"
+    usage: "Listing activities or topics"
+  - type: "Showcase_Gallery"
+    usage: "Highlighting events or work"
 ```
 
 ---

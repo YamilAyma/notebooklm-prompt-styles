@@ -1,0 +1,44 @@
+design_system:
+  global_style:
+    theme: "Artistic, youthful, and workshop-oriented. Features notebook grid backgrounds, pastel pink wavy accents, and friendly 2D art supply doodles (pencils, rainbows, stars)."
+    typography: 
+      primary_heading: "Bold blocky sans-serif in multi-color or pastel palettes"
+      secondary_heading: "Rounded friendly sans-serif"
+      body_text: "Clean legible sans-serif"
+    color_palette:
+      primary_color: "#F48FB1"    # Soft Pink
+      background: "#FFFFFF"       # Paper White
+      grid_lines: "#E1F5FE"       # Faint Notebook Blue
+      accent_yellow: "#FFF176"    # Sunny Yellow
+      accent_blue: "#81D4FA"      # Sky Blue
+    key_visual_elements: 
+      - "Ruled or grid notebook paper background textures"
+      - "Organic wavy pink blobs framing corners"
+      - "Kawaii-style art supply illustrations (smiling pencils, crayons)"
+      - "Rainbow and star doodle accents"
+      - "Pill-shaped category tags in pastel colors"
+
+  image_generation_prompts:
+    style_guidelines: "Children's art class aesthetic, bright and airy, notebook paper background, soft pastel colors, cute 2D vector illustrations, playful and inspiring, high-key lighting."
+    themes:
+      - target: "Art Supplies"
+        prompt_elements: "Smiling yellow pencil with a pink eraser, floating stars and a small rainbow, notebook grid background."
+
+slide_layout_templates:
+  - type: "Workshop_Hero"
+    usage: "Project titles or module starters"
+    components:
+      - "Layout: Large blocky title with each word in a different pastel color"
+      - "Visual: Large pencil doodle on the left, wavy pink blob in the top-right"
+
+  - type: "Activity_Grid"
+    usage: "Listing workshop activities or topics"
+    components:
+      - "Layout: Keywords inside colorful rounded pill-shaped tags"
+      - "Visual: Faint blue notebook lines as a background layer"
+
+  - type: "Showcase_Gallery"
+    usage: "Highlighting specific events or student work"
+    components:
+      - "Layout: Photos inside rounded rectangular containers with soft shadows"
+      - "Visual: Rainbow doodle arching over the content area"
