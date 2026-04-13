@@ -18,6 +18,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
   - [Scholar's Journal](#scholars-journal)
   - [Neon Pulsar](#neon-pulsar)
   - [Cobalt Editorial](#cobalt-editorial)
+  - [Midnight Tactical](#midnight-tactical)
 - [🚀 How to Use](#-how-to-use)
 - [🛠️ Contribution](#-contribution)
 
@@ -427,6 +428,39 @@ slide_layout_templates:
     usage: "Detailed overviews or content lists"
   - type: "Modular_Brand_Focus"
     usage: "Presenting mission statements or pillars"
+```
+
+#### Midnight Tactical
+Modern, tech-utilitarian design with a high-contrast matte black base and vibrant lime green accents. Features industrial aesthetic elements like tilted boxes, double chevrons, and monospace metadata.
+
+![Midnight Tactical Preview](assets/midnight_tactical_preview.png)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Modern tech-utilitarian. Matte Black & Lime Green."
+    typography: 
+      primary_heading: "Bold geometric sans-serif (e.g., Space Grotesk)"
+      secondary_heading: "Medium sans-serif, high contrast white"
+      body_text: "Clean sans-serif for dark backgrounds"
+      accent_mono: "Monospace for technical labels"
+    color_palette:
+      primary_color: "#C6FF00"
+      background: "#000000"
+      text_main: "#FFFFFF"
+    key_visual_elements: 
+      - "Tilted lime green highlight boxes (fractional labels)"
+      - "Pill-shaped labels in dark green"
+      - "Double chevron accents (<<)"
+      - "Rounded-corner modular grid containers"
+
+slide_layout_templates:
+  - type: "Tactical_Hero"
+    usage: "Section headers or main announcements"
+  - type: "Utility_Agenda"
+    usage: "Agenda or multi-point summaries"
+  - type: "Textured_Gallery"
+    usage: "Showcasing visual references or products"
 ```
 
 ---
