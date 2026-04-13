@@ -6,6 +6,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
 - [🏷️ Brand Inspired](#-brand-inspired)
   - [Claude Aesthetic](#claude-aesthetic)
   - [Pinterest Aesthetic](#pinterest-aesthetic)
+  - [McKinsey Aesthetic](#mckinsey-aesthetic)
 - [🌿 Minimalist](#-minimalist)
 - [🎨 Creative](#-creative)
 - [🚀 How to Use](#-how-to-use)
@@ -74,6 +75,36 @@ slide_layout_templates:
     usage: "Impactful intro slide"
   - type: "Card_Grid_Insights"
     usage: "Presenting multiple features in card format"
+```
+
+#### McKinsey Aesthetic
+Inspired by the data-dense, executive style of McKinsey & Company consulting decks. Focuses on statement-driven "Action Titles", rigorous grid structures, and professional high-fidelity visuals.
+
+![McKinsey Style Preview](assets/mckinsey_preview.png)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Professional, data-dense, and executive. Inspired by McKinsey consulting decks."
+    typography: 
+      primary_heading: "Authoritative serif (e.g., Bower, Times New Roman), bold"
+      secondary_heading: "Clean professional sans-serif (e.g., Helvetica Neue), bold"
+      body_text: "Functional sans-serif, high density"
+    color_palette:
+      primary_color: "#051C2C"
+      background: "#FFFFFF"
+      text_main: "#333333"
+      accent_color: "#007DBB"
+    key_visual_elements: 
+      - "Full-width horizontal dividers"
+      - "Action Title block at the top"
+      - "Source and Footer attribution blocks"
+
+slide_layout_templates:
+  - type: "Executive_Action_Title"
+    usage: "Standard consulting slide with a key insight title"
+  - type: "Waterfall_Insight"
+    usage: "Dynamic financial or process flow visualization"
 ```
 
 ---
