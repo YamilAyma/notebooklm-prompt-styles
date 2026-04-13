@@ -1,0 +1,45 @@
+design_system:
+  global_style:
+    theme: "Playful, warm, and educational. Inspired by primary school classrooms and hand-drawn doodle aesthetics. Features soft cream backgrounds and iconic chalkboard elements."
+    typography: 
+      primary_heading: "Playful hand-drawn bold sans-serif (e.g., Fredoka One, Comic Neue)"
+      secondary_heading: "Rounded friendly sans-serif"
+      body_text: "Clean legible sans-serif with a soft touch"
+    color_palette:
+      primary_color: "#557A68"    # Chalkboard Green
+      background: "#FFF9E6"       # Soft Ivory/Cream
+      text_main: "#2D3436"        # Dark Charcoal (not pure black)
+      accent_wood: "#C4A484"      # Light Wood Brown
+      accent_red: "#E17055"       # Muted Red
+      accent_blue: "#74B9FF"      # Soft Blue
+    key_visual_elements: 
+      - "Chalkboard-themed content frames with wood borders"
+      - "Flat, 2D vector illustrations of classroom objects and characters"
+      - "ABC alphabet blocks and educational icons"
+      - "Irregular, hand-drawn edges for borders and shapes"
+      - "Warm, low-contrast color palette"
+
+  image_generation_prompts:
+    style_guidelines: "Flat 2D illustration style, educational theme, warm pastel colors, thick clean lines, playful atmosphere, classroom environment, hand-drawn doodle aesthetic, soft studio lighting."
+    themes:
+      - target: "Educational Icon"
+        prompt_elements: "Flat illustration of a globe and a potted plant on a wooden desk, soft cream background, playful 2D style."
+
+slide_layout_templates:
+  - type: "Classroom_Hero"
+    usage: "Main title or module introductions"
+    components:
+      - "Layout: Large chalkboard title center-left"
+      - "Visual: Flat illustration of a teacher or student on the right"
+
+  - type: "Informational_Board"
+    usage: "Core lesson content or discussion questions"
+    components:
+      - "Layout: Content contained within a large chalkboard frame"
+      - "Visual: Small icons like ABC blocks or sunflowers in corner"
+
+  - type: "Object_Focus_Detail"
+    usage: "Summaries or specific conceptual focuses"
+    components:
+      - "Layout: Large classroom object illustration (e.g. cabinet) on one side"
+      - "Visual: Clean text on the other side with hand-drawn header"

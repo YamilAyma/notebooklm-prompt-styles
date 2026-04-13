@@ -19,6 +19,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
   - [Neon Pulsar](#neon-pulsar)
   - [Cobalt Editorial](#cobalt-editorial)
   - [Midnight Tactical](#midnight-tactical)
+  - [Creative Classroom](#creative-classroom)
 - [🚀 How to Use](#-how-to-use)
 - [🛠️ Contribution](#-contribution)
 
@@ -461,6 +462,38 @@ slide_layout_templates:
     usage: "Agenda or multi-point summaries"
   - type: "Textured_Gallery"
     usage: "Showcasing visual references or products"
+```
+
+#### Creative Classroom
+Playful, warm, and educational design. Inspired by primary school classrooms and hand-drawn doodle aesthetics. Features soft cream backgrounds, chalkboard content frames, and flat 2D illustrations of classroom objects.
+
+![Creative Classroom Preview](assets/creative_classroom_preview.png)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Playful educational. Classroom & Doodles."
+    typography: 
+      primary_heading: "Hand-drawn bold sans-serif (e.g., Fredoka One)"
+      secondary_heading: "Rounded friendly sans-serif"
+      body_text: "Clean legible sans-serif"
+    color_palette:
+      primary_color: "#557A68"
+      background: "#FFF9E6"
+      accent_wood: "#C4A484"
+    key_visual_elements: 
+      - "Chalkboard-themed content frames"
+      - "Flat, 2D vector illustrations (globes, books)"
+      - "ABC alphabet blocks"
+      - "Irregular hand-drawn edges"
+
+slide_layout_templates:
+  - type: "Classroom_Hero"
+    usage: "Main title or module introductions"
+  - type: "Informational_Board"
+    usage: "Core lesson content or discussion"
+  - type: "Object_Focus_Detail"
+    usage: "Summaries or conceptual focuses"
 ```
 
 ---
