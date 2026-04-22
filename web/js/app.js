@@ -13,6 +13,7 @@ import { initNavigation } from './navigation.js';
 
 let stylesData = null;
 let imageRotationTimers = new Map();
+let showOnlyFavorites = false;
 
 // ─── Init ───────────────────────────────────────────────────────────
 
@@ -67,6 +68,8 @@ async function init() {
   initTooltip();
   initNavigation(stylesData.categories, category);
   initBottomSheet();
+  initFavFilter();
+  updateFavBadge();
 }
 
 // ─── Render Grid ────────────────────────────────────────────────────
@@ -116,9 +119,23 @@ function createCard(style) {
   favBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     const nowFav = toggleFavorite(style.id);
+    
+    // Pulse animation
+    favBtn.classList.remove('style-card__fav--active');
+    if (nowFav) {
+      void favBtn.offsetWidth; // trigger reflow
+      favBtn.classList.add('style-card__fav--active');
+    }
+    
     favBtn.innerHTML = nowFav ? '♥' : '♡';
     favBtn.classList.toggle('style-card__fav--active', nowFav);
     favBtn.setAttribute('aria-label', `${nowFav ? 'Remove from' : 'Add to'} favorites`);
+    updateFavBadge();
+    
+    // If we are in favorites view and removed one, re-render
+    if (showOnlyFavorites && !nowFav) {
+      setTimeout(() => filterStyles(), 300);
+    }
   });
   card.appendChild(favBtn);
 
@@ -236,6 +253,62 @@ function closeBottomSheet() {
   sheet.setAttribute('data-visible', 'false');
   document.body.style.overflow = '';
   setTimeout(() => { sheet.hidden = true; }, 400);
+}
+
+// ─── Favorites Filter ─────────────────────────────────────────────
+
+function initFavFilter() {
+  const favTrigger = document.getElementById('fav-trigger');
+  if (!favTrigger) return;
+
+  favTrigger.addEventListener('click', () => {
+    showOnlyFavorites = !showOnlyFavorites;
+    favTrigger.classList.toggle('fab-fav--active', showOnlyFavorites);
+    favTrigger.querySelector('.fab-fav__icon').textContent = showOnlyFavorites ? '♥' : '♡';
+    filterStyles();
+  });
+}
+
+function filterStyles() {
+  const app = document.getElementById('app');
+  const category = app?.getAttribute('data-category') || 'all';
+
+  const visibleCategories = category === 'all'
+    ? stylesData.categories
+    : stylesData.categories.filter(c => c.id === category);
+
+  let filteredStyles = visibleCategories.flatMap(c => c.styles);
+
+  if (showOnlyFavorites) {
+    filteredStyles = filteredStyles.filter(s => isFavorite(s.id));
+  }
+
+  if (filteredStyles.length === 0) {
+    showEmptyState();
+  } else {
+    const grid = document.getElementById('styles-grid');
+    const empty = document.getElementById('empty-state');
+    if (grid) grid.hidden = false;
+    if (empty) empty.hidden = true;
+    renderGrid(filteredStyles);
+  }
+
+  // Update style count
+  const countEl = document.getElementById('style-count');
+  if (countEl) countEl.textContent = filteredStyles.length;
+}
+
+function updateFavBadge() {
+  const badge = document.getElementById('fav-badge');
+  const trigger = document.getElementById('fav-trigger');
+  if (!badge || !trigger) return;
+
+  // We need getFavorites from favorites.js, but it's not exported. 
+  // I'll calculate it using the styles data if needed, or just import it after editing favorites.js
+  const count = stylesData.categories.flatMap(c => c.styles).filter(s => isFavorite(s.id)).length;
+  
+  badge.textContent = count;
+  trigger.classList.toggle('fab-fav--has-items', count > 0);
 }
 
 // ─── Helpers ────────────────────────────────────────────────────────

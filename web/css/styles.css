@@ -244,7 +244,8 @@ body::before {
 .style-card__image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #f8f8f8; /* Very light neutral gray for transparency */
   transition: opacity var(--duration-slow) var(--ease-out);
 }
 
@@ -321,6 +322,13 @@ body::before {
 
 .style-card__fav--active {
   color: var(--color-heart);
+  animation: heart-pulse 0.4s var(--ease-spring);
+}
+
+@keyframes heart-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
 }
 
 /* ─── YAML Tooltip (Desktop) ─────────────────────────────────────── */
@@ -644,6 +652,66 @@ body::before {
 
 .fab--open .fab__lines span:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ─── Favorites FAB ────────────────────────────────────────────── */
+
+.fab-fav {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  z-index: 300;
+  font-size: 1.5rem;
+  transition:
+    transform var(--duration-fast) var(--ease-spring),
+    background var(--duration-fast),
+    box-shadow var(--duration-fast);
+}
+
+.fab-fav:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.fab-fav--active {
+  background: var(--color-text);
+  color: var(--color-heart);
+  border-color: var(--color-text);
+}
+
+.fab-fav__badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--color-heart);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-surface);
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.3s var(--ease-spring), opacity 0.3s;
+}
+
+.fab-fav--has-items .fab-fav__badge {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* ─── Toast ──────────────────────────────────────────────────────── */
