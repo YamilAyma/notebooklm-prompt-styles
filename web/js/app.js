@@ -70,6 +70,7 @@ async function init() {
   initBottomSheet();
   initFavFilter();
   updateFavBadge();
+  initShare();
 }
 
 // ─── Render Grid ────────────────────────────────────────────────────
@@ -309,6 +310,43 @@ function updateFavBadge() {
   
   badge.textContent = count;
   trigger.classList.toggle('fab-fav--has-items', count > 0);
+}
+
+// ─── Share ─────────────────────────────────────────────────────────
+
+function initShare() {
+  const shareBtn = document.getElementById('share-trigger');
+  const url = window.location.href;
+  const encodedUrl = encodeURIComponent(url);
+  const title = encodeURIComponent('NotebookLM Slide Styles: Curated visual design prompts for your research!');
+
+  // Platform specific links
+  const linkedin = document.getElementById('share-linkedin');
+  const reddit = document.getElementById('share-reddit');
+  const x = document.getElementById('share-x');
+
+  if (linkedin) linkedin.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+  if (reddit) reddit.href = `https://www.reddit.com/submit?url=${encodedUrl}&title=${title}`;
+  if (x) x.href = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${title}`;
+
+  if (!shareBtn) return;
+
+  shareBtn.addEventListener('click', () => {
+    const shareData = {
+      title: 'NotebookLM Slide Styles',
+      text: 'Check out these awesome visual design styles for NotebookLM!',
+      url: url
+    };
+
+    if (navigator.share) {
+      navigator.share(shareData).catch(err => console.log('Error sharing:', err));
+    } else {
+      // Fallback: Copy to clipboard
+      navigator.clipboard.writeText(url).then(() => {
+        showToast();
+      });
+    }
+  });
 }
 
 // ─── Helpers ────────────────────────────────────────────────────────

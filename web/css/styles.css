@@ -656,10 +656,43 @@ body::before {
 
 /* ─── Favorites FAB ────────────────────────────────────────────── */
 
-.fab-fav {
+.top-actions {
   position: fixed;
-  top: 40px;
-  right: 40px;
+  top: 32px;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  z-index: 300;
+}
+
+.action-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform var(--duration-fast) var(--ease-spring), background var(--duration-fast);
+  padding: 10px;
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+  background: var(--color-accent-soft);
+}
+
+.action-btn__icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fab-fav {
   width: 56px;
   height: 56px;
   border: 1px solid var(--color-border);
@@ -670,12 +703,47 @@ body::before {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  z-index: 300;
   font-size: 1.5rem;
   transition:
     transform var(--duration-fast) var(--ease-spring),
     background var(--duration-fast),
     box-shadow var(--duration-fast);
+}
+
+@media (max-width: 768px) {
+  .top-actions {
+    top: 20px;
+    right: 20px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-actions {
+    top: 12px;
+    right: 12px;
+    gap: 6px;
+  }
+  
+  .action-btn {
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+  }
+  
+  .fab-fav {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
+  
+  .fab-fav__badge {
+    width: 16px;
+    height: 16px;
+    font-size: 0.65rem;
+    top: -4px;
+    right: -4px;
+  }
 }
 
 .fab-fav:hover {
