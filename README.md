@@ -823,3 +823,16 @@ slide_layout_templates:
 
 ## 🛠️ Contribution
 Feel free to add more styles by creating a YAML file in the `styles/` folder and updating this README under the appropriate category.
+
+---
+
+## 🏗️ Acknowledgements
+
+Preview images in this repository and on the showcase website are generated using **NotebookLM's Slide Decks** feature.
+
+This project is made possible by:
+- **Vercel** (Hosting & Platform)
+- **Social Icons:** [thesvg.org](https://www.thesvg.org/)
+- **NotebookLM** (AI Presentation Engine)
+- **Gemini** (AI Foundation)
+- **Antigravity** (AI Engineering Assistant)
