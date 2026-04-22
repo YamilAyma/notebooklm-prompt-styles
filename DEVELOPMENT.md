@@ -74,8 +74,37 @@ The frontend is built with **Vanilla CSS** located in `web/css/styles.css`.
 - **Interactivity**: Handled in `web/js/app.js` using native DOM APIs and a modular approach (tooltips, favorites, navigation).
 - **Responsive**: Uses a CSS grid (Bento style) and a mobile-specific "Bottom Sheet" for YAML viewing.
 
+## 📜 Git Guidelines
+
+To maintain a professional and accessible project for the international community, all commit messages and documentation must be in **English**.
+
+### Commit Message Format
+We follow a simplified semantic commit convention:
+- `type (Scope) - Imperative description`
+- Examples: 
+  - `feat (Web/UX) - Add social sharing buttons`
+  - `fix (Preview) - Normalize folder names`
+  - `docs - Update README acknowledgements`
+
+### History Maintenance
+If you accidentally commit in another language or need to clean up local history before pushing, you can follow the "Cherry-pick & Reword" strategy used to sanitize the initial repository history:
+
+1. **Create a backup branch**: `git branch temp-save`
+2. **Reset to the last valid commit**: `git reset --hard [last_english_commit_hash]`
+3. **Re-apply and reword**: 
+   - `git cherry-pick [spanish_commit_hash]`
+   - `git commit --amend -m "New English Message"`
+4. **Repeat** for each commit until the history is clean.
+5. **Delete backup**: `git branch -D temp-save`
+
+This ensures a clean, understandable, and strictly English history for all public contributors.
+
 ## 🚀 Deployment
 
-The site is configured to be deployed as a static site (e.g., GitHub Pages).
+The site is configured to be deployed as a static site (e.g., Vercel, GitHub Pages).
 - Run `npm run build`.
-- The output will be in the `dist/` directory (if configured) or simply serve the `web/` folder after running the build data script.
+- The output will be in the `dist/` directory.
+- **Vercel Settings**:
+  - **Framework Preset**: Vite
+  - **Build Command**: `npm run build`
+  - **Output Directory**: `dist`
