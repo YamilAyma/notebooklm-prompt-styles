@@ -1,0 +1,21 @@
+{
+  "name": "notebooklm-styles-prompt",
+  "version": "1.0.0",
+  "description": "Showcase website for NotebookLM Slide Styles collection",
+  "type": "module",
+  "scripts": {
+    "build:data": "node scripts/build-data.js",
+    "dev": "npm run build:data && vite serve web",
+    "build": "npm run build:data && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "vite": "^6.3.1",
+    "vitest": "^3.1.1"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}

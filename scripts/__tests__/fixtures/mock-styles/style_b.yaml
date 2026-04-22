@@ -1,0 +1,17 @@
+design_system:
+  global_style:
+    theme: "Test theme B — minimal and clean"
+    typography:
+      primary_heading: "Serif (e.g., Georgia)"
+      body_text: "Sans-serif"
+    color_palette:
+      primary_color: "#0000FF"
+      background: "#F5F5F5"
+      text_main: "#333333"
+    key_visual_elements:
+      - "Whitespace"
+      - "Sharp corners"
+
+slide_layout_templates:
+  - type: "Cover_B"
+    usage: "Minimal intro"

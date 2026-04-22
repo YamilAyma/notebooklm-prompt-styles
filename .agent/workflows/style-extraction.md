@@ -1,3 +1,7 @@
+---
+description: 
+---
+
 # Workflow: Style Extraction & Documentation
 
 This protocol defines the standard procedure for extracting visual design systems from references and integrating them into the NotebookLM Slide Styles repository.
@@ -27,7 +31,7 @@ Update the `README.md` following these steps:
 5. **Preview Code**: Add a **simplified** version of the YAML (tokens only).
 6. **Disclaimer & Link**: Add the standard "Quick Preview" disclaimer and a relative link to the full YAML.
    > [!TIP]
-   > Esta es una vista previa simplificada. [Ver YAML completo](styles/filename.yaml)
+   > This is a simplified preview. [View full YAML](styles/filename.yaml)
 
 ## 4. Git Workflow
 Persistence is key. Follow these rules:

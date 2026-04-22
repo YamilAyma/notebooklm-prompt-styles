@@ -2,6 +2,19 @@
 
 A curated collection of visual design styles (YAML) to customize the output of NotebookLM slide generation.
 
+## 🌐 Showcase Website
+
+Explore the collection interactively through our high-performance showcase site. Preview styles with rotating thumbnails, copy YAML prompts with a single click, and save your favorites.
+
+- **Local Development:**
+  ```bash
+  npm install
+  npm run dev
+  ```
+- **Live Version:** [View the Showcase](https://yamilayma.github.io/notebooklm-styles-prompt/) *(Placeholder)*
+
+---
+
 ## 📖 Table of Contents
 - [🏷️ Brand Inspired](#-brand-inspired)
   - [Editorial Essence](#editorial-essence)

@@ -1,0 +1,26 @@
+design_system:
+  global_style:
+    theme: "Test theme A — bold and modern"
+    typography:
+      primary_heading: "Bold sans-serif (e.g., Inter)"
+      secondary_heading: "Medium sans-serif"
+      body_text: "Clean sans-serif"
+    color_palette:
+      primary_color: "#FF0000"
+      background: "#FFFFFF"
+      text_main: "#111111"
+      accent_color: "#00FF00"
+    key_visual_elements:
+      - "Element one"
+      - "Element two"
+      - "Element three"
+
+  image_generation_prompts:
+    style_guidelines: "Test style guidelines for mock style A"
+
+slide_layout_templates:
+  - type: "Cover_A"
+    usage: "Main title slide"
+    components:
+      - "Header: Bold title"
+      - "Body: Subtitle text"
