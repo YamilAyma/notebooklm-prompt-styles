@@ -7,6 +7,7 @@ export const translations = {
     heroTitle: "Premium Styles for NotebookLM",
     heroSub: "curated YAML prompts for NotebookLM",
     navAll: "All Styles",
+    navGetSkill: "Get Skill",
     "nav-brand-inspired": "Brand Inspired",
     "nav-minimalist": "Minimalist",
     "nav-creative": "Creative",
@@ -58,12 +59,20 @@ export const translations = {
     faqQ2: "Do I need to pay for this?",
     faqA2: "No, this is a community-driven open-source project. All prompts are free to use.",
     faqQ3: "Can I contribute my own styles?",
-    faqA3: "Yes! Check our Contribution Guide on GitHub to learn how to add your own designs."
+    faqA3: "Yes! Check our Contribution Guide on GitHub to learn how to add your own designs.",
+    getSkillTitle: "Get the NotebookLM Designer Skill",
+    getSkillIntro: "Turn your AI assistant into a professional slide designer. This skill allows Claude or ChatGPT to generate YAML prompts from any image or brand guide.",
+    getSkillStep1: "Copy the prompt below.",
+    getSkillStep2: "Paste it into your AI assistant's Custom Instructions or System Prompt.",
+    getSkillStep3: "Upload an image and ask: 'Create a NotebookLM style based on this'.",
+    copyPrompt: "Copy Prompt",
+    promptCopied: "Prompt copied!"
   },
   es: {
     heroTitle: "Estilos Premium para NotebookLM",
     heroSub: "prompts de diseño visual para NotebookLM",
     navAll: "Todos",
+    navGetSkill: "Obtener Skill",
     "nav-brand-inspired": "Inspiración de Marca",
     "nav-minimalist": "Minimalistas",
     "nav-creative": "Creativos",
@@ -115,12 +124,20 @@ export const translations = {
     faqQ2: "¿Tengo que pagar por esto?",
     faqA2: "No, este es un proyecto de código abierto impulsado por la comunidad. Todos los prompts son gratuitos.",
     faqQ3: "¿Puedo contribuir con mis propios estilos?",
-    faqA3: "¡Sí! Consulta nuestra Guía de Contribución en GitHub para aprender a añadir tus propios diseños."
+    faqA3: "¡Sí! Revisa nuestra Guía de Contribución en GitHub para aprender cómo agregar tus propios diseños.",
+    getSkillTitle: "Obtén la Skill de Diseñador para NotebookLM",
+    getSkillIntro: "Convierte a tu asistente de IA en un diseñador de diapositivas profesional. Esta skill permite que Claude o ChatGPT generen prompts YAML a partir de cualquier imagen o guía de marca.",
+    getSkillStep1: "Copia el prompt de abajo.",
+    getSkillStep2: "Pégalo en las Instrucciones Personalizadas o System Prompt de tu IA.",
+    getSkillStep3: "Sube una imagen y di: 'Crea un estilo de NotebookLM basado en esto'.",
+    copyPrompt: "Copiar Prompt",
+    promptCopied: "¡Prompt copiado!"
   },
   pt: {
     heroTitle: "Estilos Premium para NotebookLM",
     heroSub: "prompts de design visual para NotebookLM",
     navAll: "Todos",
+    navGetSkill: "Obter Skill",
     "nav-brand-inspired": "Inspiração de Marca",
     "nav-minimalist": "Minimalistas",
     "nav-creative": "Criativos",
@@ -172,7 +189,14 @@ export const translations = {
     faqQ2: "Preciso pagar por isso?",
     faqA2: "Não, este é um projeto de código aberto voltado para a comunidade. Todos os prompts são gratuitos.",
     faqQ3: "Posso contribuir com meus próprios estilos?",
-    faqA3: "Sim! Confira nosso Guia de Contribuição no GitHub para aprender a adicionar seus próprios designs."
+    faqA3: "Sim! Confira nosso Guia de Contribuição no GitHub para aprender como adicionar seus próprios designs.",
+    getSkillTitle: "Obtenha a Skill de Designer para NotebookLM",
+    getSkillIntro: "Transforme seu assistente de IA em un designer de slides profissional. Esta skill permite que o Claude ou ChatGPT gerem prompts YAML a partir de qualquer imagem ou guia de marca.",
+    getSkillStep1: "Copie o prompt abaixo.",
+    getSkillStep2: "Cole-o nas Instruções Personalizadas ou System Prompt da sua IA.",
+    getSkillStep3: "Suba uma imagem e diga: 'Crie um estilo do NotebookLM baseado nisso'.",
+    copyPrompt: "Copiar Prompt",
+    promptCopied: "Prompt copiado!"
   }
 };
 

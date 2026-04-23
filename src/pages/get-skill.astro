@@ -1,0 +1,170 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Get NotebookLM Designer Skill">
+  <main id="skill-page" class="skill-page">
+    <header class="skill-hero">
+      <div class="skill-hero__container">
+        <h1 class="skill-hero__title" data-i18n="getSkillTitle">Get the NotebookLM Designer Skill</h1>
+        <p class="skill-hero__subtitle" data-i18n="getSkillIntro">
+          Turn your AI assistant into a professional slide designer. This skill allows Claude or ChatGPT to generate YAML prompts from any image or brand guide.
+        </p>
+      </div>
+    </header>
+
+    <section class="skill-content">
+      <div class="skill-content__container">
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-card__number">1</div>
+            <p data-i18n="getSkillStep1">Copy the prompt below.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-card__number">2</div>
+            <p data-i18n="getSkillStep2">Paste it into your AI assistant's Custom Instructions or System Prompt.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-card__number">3</div>
+            <p data-i18n="getSkillStep3">Upload an image and ask: 'Create a NotebookLM style based on this'.</p>
+          </div>
+        </div>
+
+        <div class="prompt-box">
+          <div class="prompt-box__header">
+            <span>System Prompt / Skill</span>
+            <button id="copy-skill-btn" class="btn btn--primary btn--small">
+              <span data-i18n="copyPrompt">Copy Prompt</span>
+            </button>
+          </div>
+          <pre class="prompt-box__content"><code id="skill-code"># NotebookLM Slide Styles Skill
+
+Act as a professional UI/UX designer specializing in NotebookLM. Your goal is to translate visual inputs (images, PDFs, descriptions) into a valid YAML style configuration.
+
+## Workflow
+1. Analyze typography, colors, and key visual elements from the input.
+2. Map these to slide templates (Cover, Split, Lists, Timelines).
+3. Generate image generation prompts for AI tools.
+4. Output ONLY a valid YAML following this structure:
+
+```yaml
+design_system:
+  global_style:
+    theme: "[Description]"
+    typography: 
+      primary_heading: "[Font]"
+      body_text: "[Font]"
+    color_palette:
+      primary_color: "[HEX]"
+      background: "[HEX]"
+      text_main: "[HEX]"
+    key_visual_elements: ["Element 1", "Element 2"]
+slide_layout_templates:
+  - type: "[Name]"
+    usage: "[Usage]"
+```</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .skill-page {
+      padding-bottom: var(--space-4xl);
+    }
+    .skill-hero {
+      padding: var(--space-4xl) var(--space-lg);
+      background: var(--color-accent-soft);
+      text-align: center;
+    }
+    .skill-hero__container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .skill-hero__title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      margin-bottom: var(--space-lg);
+    }
+    .skill-hero__subtitle {
+      font-size: 1.25rem;
+      color: var(--color-text-secondary);
+    }
+    .skill-content {
+      padding: var(--space-4xl) var(--space-lg);
+    }
+    .skill-content__container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-xl);
+      margin-bottom: var(--space-4xl);
+    }
+    .step-card {
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+      background: var(--color-surface);
+      padding: var(--space-xl);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+    }
+    .step-card__number {
+      width: 40px;
+      height: 40px;
+      background: var(--color-text);
+      color: var(--color-surface);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .prompt-box {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      overflow: hidden;
+    }
+    .prompt-box__header {
+      padding: var(--space-md) var(--space-xl);
+      background: var(--color-accent-soft);
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+    }
+    .prompt-box__content {
+      padding: var(--space-xl);
+      margin: 0;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      white-space: pre-wrap;
+      max-height: 500px;
+      overflow-y: auto;
+    }
+    .btn--small {
+      padding: var(--space-xs) var(--space-lg);
+      font-size: 0.875rem;
+    }
+  </style>
+
+  <script>
+    import { showToast } from '../scripts/utils.js';
+    import { t } from '../scripts/i18n.js';
+
+    const copyBtn = document.getElementById('copy-skill-btn');
+    const code = document.getElementById('skill-code');
+
+    copyBtn?.addEventListener('click', () => {
+      if (!code) return;
+      navigator.clipboard.writeText(code.textContent || '');
+      showToast(t('promptCopied'));
+    });
+  </script>
+</Layout>

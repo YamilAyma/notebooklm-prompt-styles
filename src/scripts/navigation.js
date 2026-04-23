@@ -58,6 +58,19 @@ function buildNavList(categories, currentCategory) {
     </li>
   `;
 
+  // "Get Skill" link
+  const isSkill = window.location.pathname === '/get-skill';
+  const skillActive = isSkill ? ' nav-modal__link--active' : '';
+  html += `
+    <li class="nav-modal__item">
+      <a href="/get-skill" class="nav-modal__link${skillActive}">
+        <span class="nav-modal__emoji">🛠️</span>
+        ${t('navGetSkill')}
+      </a>
+    </li>
+    <li class="nav-modal__divider"></li>
+  `;
+
   for (const cat of categories) {
     const active = currentCategory === cat.id ? ' nav-modal__link--active' : '';
     const label = t('nav-' + cat.id) || cat.name;
