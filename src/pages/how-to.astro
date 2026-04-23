@@ -1,0 +1,238 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="How to Use - NotebookLM Styles">
+  <main class="how-to-page">
+    <header class="how-to-header">
+      <div class="container">
+        <h1 class="how-to-header__title" data-i18n="howToTitle">How to Use Styles</h1>
+        <p class="how-to-header__subtitle" data-i18n="howToSub">A simple guide to transform your NotebookLM slides.</p>
+      </div>
+    </header>
+
+    <section class="steps-section">
+      <div class="container">
+        <div class="steps-grid">
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-card__content">
+              <h2 class="step-card__title" data-i18n="step1Title">1. Choose a Style</h2>
+              <p class="step-card__desc" data-i18n="step1Desc">Explore our collection and copy the YAML code of your favorite style.</p>
+            </div>
+            <div class="step-card__image-container">
+              <img src="/images/how-to/step1.png" alt="Step 1" class="step-card__img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="image-placeholder" style="display: none;">
+                <span>[Placeholder: step1.png]</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card">
+            <div class="step-card__content">
+              <h2 class="step-card__title" data-i18n="step2Title">2. Open Studio</h2>
+              <p class="step-card__desc" data-i18n="step2Desc">Go to your notebook and open the 'Studio' panel on the right.</p>
+            </div>
+            <div class="step-card__image-container">
+              <img src="/images/how-to/step2.png" alt="Step 2" class="step-card__img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="image-placeholder" style="display: none;">
+                <span>[Placeholder: step2.png]</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card">
+            <div class="step-card__content">
+              <h2 class="step-card__title" data-i18n="step3Title">3. Configure Deck</h2>
+              <p class="step-card__desc" data-i18n="step3Desc">Find the 'Slide Deck' section and click the pencil icon to customize.</p>
+            </div>
+            <div class="step-card__image-container">
+              <img src="/images/how-to/step3.png" alt="Step 3" class="step-card__img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="image-placeholder" style="display: none;">
+                <span>[Placeholder: step3.png]</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-card">
+            <div class="step-card__content">
+              <h2 class="step-card__title" data-i18n="step4Title">4. Paste Prompt</h2>
+              <p class="step-card__desc" data-i18n="step4Desc">Paste the YAML code you copied into the custom instructions box.</p>
+            </div>
+            <div class="step-card__image-container">
+              <img src="/images/how-to/step4.png" alt="Step 4" class="step-card__img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="image-placeholder" style="display: none;">
+                <span>[Placeholder: step4.png]</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="step-card">
+            <div class="step-card__content">
+              <h2 class="step-card__title" data-i18n="step5Title">5. Generate</h2>
+              <p class="step-card__desc" data-i18n="step5Desc">Click 'Generate' and watch NotebookLM transform your sources into a stunning presentation.</p>
+            </div>
+            <div class="step-card__image-container">
+              <img src="/images/how-to/step5.png" alt="Step 5" class="step-card__img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="image-placeholder" style="display: none;">
+                <span>[Placeholder: step5.png]</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="how-to-cta">
+          <a href="/" class="btn-primary">Explore Styles</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .how-to-page {
+    padding-top: var(--space-4xl);
+  }
+
+  .how-to-header {
+    text-align: center;
+    padding: var(--space-4xl) 0;
+    background: var(--color-surface-soft);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .how-to-header__title {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    margin-bottom: var(--space-md);
+    line-height: 1;
+  }
+
+  .how-to-header__subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .steps-section {
+    padding: var(--space-4xl) 0;
+  }
+
+  .steps-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4xl);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .step-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    transition: transform 0.3s var(--ease-spring), box-shadow 0.3s;
+  }
+
+  .step-card:nth-child(even) {
+    direction: rtl;
+  }
+
+  .step-card:nth-child(even) .step-card__content {
+    direction: ltr;
+  }
+
+  .step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent-soft);
+  }
+
+  .step-card__title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: var(--space-md);
+    letter-spacing: -0.03em;
+  }
+
+  .step-card__desc {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .step-card__image-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--color-surface-soft);
+    border-radius: var(--radius-lg);
+    border: 1px dashed var(--color-border-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .step-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .image-placeholder {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    text-align: center;
+    padding: var(--space-xl);
+  }
+
+  .how-to-cta {
+    text-align: center;
+    margin-top: var(--space-4xl);
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--color-text);
+    color: var(--color-surface);
+    padding: var(--space-md) var(--space-2xl);
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+  }
+
+  .btn-primary:hover {
+    transform: scale(1.05);
+    background: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .step-card {
+      grid-template-columns: 1fr;
+      direction: ltr !important;
+      padding: var(--space-xl);
+      gap: var(--space-xl);
+    }
+    
+    .step-card:nth-child(even) .step-card__content {
+      direction: ltr;
+    }
+
+    .step-card__title {
+      font-size: 1.5rem;
+    }
+  }
+</style>

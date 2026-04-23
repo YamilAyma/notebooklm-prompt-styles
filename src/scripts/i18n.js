@@ -11,6 +11,7 @@ export const translations = {
     "nav-minimalist": "Minimalist",
     "nav-creative": "Creative",
     "nav-about": "About",
+    "nav-how-to": "How to Use",
     favBadge: "Favorites",
     favEmpty: "You haven't saved any styles yet.",
     searchPlaceholder: "Search styles...",
@@ -30,7 +31,19 @@ export const translations = {
     footerAbout: "About the Project",
     footerReport: "Report Issue",
     footerCopy: "Images are generated using NotebookLM's Slide Decks feature.",
-    footerText: "Made for the NotebookLM community."
+    footerText: "Made for the NotebookLM community.",
+    howToTitle: "How to Use Styles",
+    howToSub: "A simple guide to transform your NotebookLM slides.",
+    step1Title: "1. Choose a Style",
+    step1Desc: "Explore our collection and copy the YAML code of your favorite style.",
+    step2Title: "2. Open Studio",
+    step2Desc: "Go to your notebook and open the 'Studio' panel on the right.",
+    step3Title: "3. Configure Deck",
+    step3Desc: "Find the 'Slide Deck' section and click the pencil icon to customize.",
+    step4Title: "4. Paste Prompt",
+    step4Desc: "Paste the YAML code you copied into the custom instructions box.",
+    step5Title: "5. Generate",
+    step5Desc: "Click 'Generate' and watch NotebookLM transform your sources into a stunning presentation."
   },
   es: {
     heroTitle: "Estilos Premium para NotebookLM",
@@ -40,6 +53,7 @@ export const translations = {
     "nav-minimalist": "Minimalistas",
     "nav-creative": "Creativos",
     "nav-about": "Acerca de",
+    "nav-how-to": "Cómo Usar",
     favBadge: "Favoritos",
     favEmpty: "Aún no has guardado ningún estilo.",
     searchPlaceholder: "Buscar estilos...",
@@ -59,7 +73,19 @@ export const translations = {
     footerAbout: "Acerca del Proyecto",
     footerReport: "Reportar Problema",
     footerCopy: "Las imágenes son generadas usando la función Slide Decks de NotebookLM.",
-    footerText: "Creado para la comunidad de NotebookLM."
+    footerText: "Creado para la comunidad de NotebookLM.",
+    howToTitle: "Cómo Usar los Estilos",
+    howToSub: "Una guía sencilla para transformar tus diapositivas en NotebookLM.",
+    step1Title: "1. Elige un Estilo",
+    step1Desc: "Explora nuestra colección y copia el código YAML de tu estilo favorito.",
+    step2Title: "2. Abre el Studio",
+    step2Desc: "Ve a tu libreta y abre el panel de 'Studio' a la derecha.",
+    step3Title: "3. Configura el Deck",
+    step3Desc: "Busca la sección de 'Slide Deck' y haz clic en el icono del lápiz para personalizar.",
+    step4Title: "4. Pega el Prompt",
+    step4Desc: "Pega el código YAML que copiaste en el cuadro de instrucciones personalizadas.",
+    step5Title: "5. Generar",
+    step5Desc: "Haz clic en 'Generar' y observa cómo NotebookLM transforma tus fuentes en una presentación increíble."
   },
   pt: {
     heroTitle: "Estilos Premium para NotebookLM",
@@ -69,6 +95,7 @@ export const translations = {
     "nav-minimalist": "Minimalistas",
     "nav-creative": "Criativos",
     "nav-about": "Sobre",
+    "nav-how-to": "Como Usar",
     favBadge: "Favoritos",
     favEmpty: "Você ainda não salvou nenhum estilo.",
     searchPlaceholder: "Buscar estilos...",
@@ -88,7 +115,19 @@ export const translations = {
     footerAbout: "Sobre o Projeto",
     footerReport: "Reportar Problema",
     footerCopy: "As imagens são geradas usando o recurso Slide Decks do NotebookLM.",
-    footerText: "Criado para a comunidade do NotebookLM."
+    footerText: "Criado para a comunidade do NotebookLM.",
+    howToTitle: "Como Usar os Estilos",
+    howToSub: "Um guia simples para transformar seus slides no NotebookLM.",
+    step1Title: "1. Escolha um Estilo",
+    step1Desc: "Explore nossa coleção e copie o código YAML do seu estilo favorito.",
+    step2Title: "2. Abra o Studio",
+    step2Desc: "Vá para o seu caderno e abra o painel 'Studio' à direita.",
+    step3Title: "3. Configure o Deck",
+    step3Desc: "Encontre a seção 'Slide Deck' e clique no ícone de lápis para personalizar.",
+    step4Title: "4. Cole o Prompt",
+    step4Desc: "Cole o código YAML que você copiou na caixa de instruções personalizadas.",
+    step5Title: "5. Gerar",
+    step5Desc: "Clique em 'Gerar' e veja o NotebookLM transformar suas fontes em uma apresentação incrível."
   }
 };
 

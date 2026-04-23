@@ -58,6 +58,18 @@ function buildNavList(categories, currentCategory) {
     `;
   }
   
+  // "How To" link
+  const howToActive = window.location.pathname === '/how-to' ? ' nav-modal__link--active' : '';
+  html += `
+    <li class="nav-modal__divider"></li>
+    <li class="nav-modal__item">
+      <a href="/how-to" class="nav-modal__link${howToActive}">
+        <span class="nav-modal__emoji">📖</span>
+        ${t('nav-how-to')}
+      </a>
+    </li>
+  `;
+
   // "About" link
   const aboutActive = window.location.pathname === '/about' ? ' nav-modal__link--active' : '';
   html += `
