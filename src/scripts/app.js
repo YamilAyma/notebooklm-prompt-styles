@@ -10,6 +10,7 @@ import { initBottomSheet } from './ui/bottomSheet.js';
 import { initShare } from './ui/share.js';
 import { createCard } from './ui/card.js';
 import { showToast } from './utils.js';
+import { applyTranslations, setLang, getLang } from './i18n.js';
 
 // ─── State ──────────────────────────────────────────────────────────
 
@@ -46,10 +47,62 @@ async function init() {
   initBottomSheet();
   initShare();
   initTheme();
+  initI18n();
   
   initFavFilter();
   initPagination();
   updateFavBadge();
+}
+
+function initI18n() {
+  const trigger = document.getElementById('lang-trigger');
+  const menu = document.getElementById('lang-menu');
+  const codeEl = document.getElementById('current-lang-code');
+
+  if (!trigger || !menu) return;
+
+  const updateTrigger = () => {
+    if (codeEl) codeEl.textContent = getLang().toUpperCase();
+  };
+
+  updateTrigger();
+  applyTranslations();
+
+  trigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isVisible = menu.getAttribute('data-visible') === 'true';
+    if (isVisible) {
+      closeMenu();
+    } else {
+      menu.hidden = false;
+      setTimeout(() => menu.setAttribute('data-visible', 'true'), 10);
+    }
+  });
+
+  const closeMenu = () => {
+    menu.setAttribute('data-visible', 'false');
+    setTimeout(() => { 
+      if (menu.getAttribute('data-visible') === 'false') menu.hidden = true; 
+    }, 300);
+  };
+
+  document.addEventListener('click', closeMenu);
+
+  menu.querySelectorAll('[data-lang]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.getAttribute('data-lang');
+      setLang(lang);
+      updateTrigger();
+      closeMenu();
+      
+      // Refresh dynamic content
+      const app = document.getElementById('app');
+      applyFilters(app?.getAttribute('data-category') || 'all');
+      
+      // Also notify navigation to re-render with new language
+      initNavigation(stylesData.categories, app?.getAttribute('data-category') || 'all');
+    });
+  });
 }
 
 async function handlePreloader() {

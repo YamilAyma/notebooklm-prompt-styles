@@ -8,33 +8,33 @@ const year = new Date().getFullYear();
         <img src="/favicon.svg" alt="NotebookLM Styles Logo" width="32" height="32" />
         <span class="footer__logo-text">NotebookLM Styles</span>
       </div>
-      <p class="footer__description">
+      <p class="footer__description" data-i18n="footerDesc">
         A curated collection of visual design styles to transform your NotebookLM slide generation.
       </p>
     </div>
 
     <div class="footer__nav">
       <div class="footer__group">
-        <h4 class="footer__group-title">Explore</h4>
+        <h4 class="footer__group-title" data-i18n="footerExplore">Explore</h4>
         <ul class="footer__links">
-          <li><a href="/">All Styles</a></li>
-          <li><a href="/creative">Creative</a></li>
-          <li><a href="/minimalist">Minimalist</a></li>
-          <li><a href="/brand-inspired">Brand Inspired</a></li>
+          <li><a href="/" data-i18n="navAll">All Styles</a></li>
+          <li><a href="/creative" data-i18n="nav-creative">Creative</a></li>
+          <li><a href="/minimalist" data-i18n="nav-minimalist">Minimalist</a></li>
+          <li><a href="/brand-inspired" data-i18n="nav-brand-inspired">Brand Inspired</a></li>
         </ul>
       </div>
 
       <div class="footer__group">
-        <h4 class="footer__group-title">Project</h4>
+        <h4 class="footer__group-title" data-i18n="footerProject">Project</h4>
         <ul class="footer__links">
-          <li><a href="/about">About the Project</a></li>
+          <li><a href="/about" data-i18n="footerAbout">About the Project</a></li>
           <li><a href="https://github.com/YamilAyma/notebooklm-prompt-styles" target="_blank" rel="noopener">GitHub Repo</a></li>
-          <li><a href="https://github.com/YamilAyma/notebooklm-prompt-styles/issues" target="_blank" rel="noopener">Report Issue</a></li>
+          <li><a href="https://github.com/YamilAyma/notebooklm-prompt-styles/issues" target="_blank" rel="noopener" data-i18n="footerReport">Report Issue</a></li>
         </ul>
       </div>
 
       <div class="footer__group">
-        <h4 class="footer__group-title">Credits</h4>
+        <h4 class="footer__group-title" data-i18n="footerCredits">Credits</h4>
         <ul class="footer__links">
           <li><a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a></li>
           <li><a href="https://www.thesvg.org/" target="_blank" rel="noopener">thesvg.org</a></li>
@@ -46,7 +46,7 @@ const year = new Date().getFullYear();
 
     <div class="footer__bottom">
       <p class="footer__copy">
-        &copy; {year} NotebookLM Styles Showcase. Images are generated using NotebookLM's Slide Decks feature.
+        &copy; {year} NotebookLM Styles Showcase. <span data-i18n="footerCopy">Images are generated using NotebookLM's Slide Decks feature.</span>
       </p>
     </div>
   </div>

@@ -6,9 +6,9 @@ import Layout from '../layouts/Layout.astro';
   <main id="app" data-category="all">
     <header class="hero">
       <div class="hero__container">
-        <h1 class="hero__title">Styles for slides</h1>
+        <h1 class="hero__title" data-i18n="heroTitle">Styles for slides</h1>
         <p class="hero__subtitle">
-          <span id="style-count">0</span> curated YAML prompts for NotebookLM
+          <span id="style-count">0</span> <span data-i18n="heroSub">curated YAML prompts for NotebookLM</span>
         </p>
       </div>
     </header>
@@ -17,10 +17,10 @@ import Layout from '../layouts/Layout.astro';
       <div id="styles-grid" class="bento-grid"></div>
       
       <div id="pagination" class="pagination" hidden>
-        <button id="load-more" class="load-more-btn">Explore More Styles</button>
+        <button id="load-more" class="load-more-btn" data-i18n="loadMore">Explore More Styles</button>
       </div>
 
-      <p id="empty-state" class="empty-state" hidden>
+      <p id="empty-state" class="empty-state" hidden data-i18n="emptyState">
         No styles with preview images available yet. Check back soon.
       </p>
     </section>

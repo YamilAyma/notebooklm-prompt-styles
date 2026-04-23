@@ -2,6 +2,8 @@
  * navigation.js — Floating hamburger menu + category modal
  */
 
+import { t } from './i18n.js';
+
 let navModal, navList, navTrigger, backdrop;
 let isOpen = false;
 
@@ -37,7 +39,7 @@ function buildNavList(categories, currentCategory) {
     <li class="nav-modal__item">
       <a href="/" class="nav-modal__link${allActive}">
         <span class="nav-modal__emoji">✦</span>
-        All Styles
+        ${t('navAll')}
       </a>
     </li>
     <li class="nav-modal__divider"></li>
@@ -45,11 +47,12 @@ function buildNavList(categories, currentCategory) {
 
   for (const cat of categories) {
     const active = currentCategory === cat.id ? ' nav-modal__link--active' : '';
+    const label = t('nav-' + cat.id) || cat.name;
     html += `
       <li class="nav-modal__item">
         <a href="/${cat.id}" class="nav-modal__link${active}">
           <span class="nav-modal__emoji">${cat.emoji}</span>
-          ${cat.name}
+          ${label}
         </a>
       </li>
     `;
@@ -62,7 +65,7 @@ function buildNavList(categories, currentCategory) {
     <li class="nav-modal__item">
       <a href="/about" class="nav-modal__link${aboutActive}">
         <span class="nav-modal__emoji">ℹ️</span>
-        About
+        ${t('nav-about')}
       </a>
     </li>
   `;

@@ -79,7 +79,7 @@ const { title = "NotebookLM Slide Styles", category = "all" } = Astro.props;
       </div>
       <button id="sheet-copy" class="copy-btn">
         <span class="copy-btn__icon">⎘</span>
-        <span class="copy-btn__text">Copy YAML</span>
+        <span class="copy-btn__text" data-i18n="sheetCopy">Copy YAML</span>
       </button>
     </div>
   </div>
@@ -89,7 +89,7 @@ const { title = "NotebookLM Slide Styles", category = "all" } = Astro.props;
     <pre class="yaml-tooltip__code"><code id="tooltip-yaml"></code></pre>
     <button id="tooltip-copy" class="copy-btn copy-btn--small">
       <span class="copy-btn__icon">⎘</span>
-      <span class="copy-btn__text">Copy</span>
+      <span class="copy-btn__text" data-i18n="copyLink">Copy</span>
     </button>
   </div>
 
@@ -119,9 +119,21 @@ const { title = "NotebookLM Slide Styles", category = "all" } = Astro.props;
       </div>
     </button>
 
+    <!-- Language Selector -->
+    <div class="lang-selector">
+      <button id="lang-trigger" class="action-btn lang-trigger" aria-label="Change language">
+        <span id="current-lang-code" class="lang-code">EN</span>
+      </button>
+      <div id="lang-menu" class="lang-menu" hidden>
+        <button data-lang="en" class="lang-menu__item">English</button>
+        <button data-lang="es" class="lang-menu__item">Español</button>
+        <button data-lang="pt" class="lang-menu__item">Português</button>
+      </div>
+    </div>
+
     <!-- Social Hub -->
     <div class="social-hub">
-      <button id="social-trigger" class="action-btn social-trigger" aria-label="Share and Social">
+      <button id="social-trigger" class="action-btn social-trigger" aria-label="Share and Social" data-i18n-aria="shareTitle">
         <img src="/icons/share.svg" alt="" class="action-btn__icon">
       </button>
 
@@ -154,7 +166,7 @@ const { title = "NotebookLM Slide Styles", category = "all" } = Astro.props;
   <div id="social-modal" class="social-modal" hidden>
     <div class="social-modal__backdrop"></div>
     <div class="social-modal__panel">
-      <h3 class="social-modal__title">Connect & Share</h3>
+      <h3 class="social-modal__title" data-i18n="shareTitle">Connect & Share</h3>
       <div class="social-modal__grid">
         <a href="https://github.com/YamilAyma/notebooklm-prompt-styles" target="_blank" rel="noopener" class="social-modal__item">
           <img src="/icons/github.svg" alt="" class="action-btn__icon">
@@ -174,7 +186,7 @@ const { title = "NotebookLM Slide Styles", category = "all" } = Astro.props;
         </a>
         <button id="modal-copy" class="social-modal__item">
           <img src="/icons/share.svg" alt="" class="action-btn__icon">
-          <span>Copy Link</span>
+          <span data-i18n="copyLink">Copy Link</span>
         </button>
       </div>
     </div>
