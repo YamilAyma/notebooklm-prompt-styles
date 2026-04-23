@@ -74,7 +74,9 @@ const { title = "NotebookLM Slide Styles", category = "all" } = Astro.props;
         <h3 id="sheet-title" class="bottom-sheet__title"></h3>
         <button id="sheet-close" class="bottom-sheet__close" aria-label="Close">&times;</button>
       </div>
-      <pre class="bottom-sheet__code"><code id="sheet-yaml"></code></pre>
+      <div class="bottom-sheet__code-wrapper">
+        <pre class="bottom-sheet__code"><code id="sheet-yaml"></code></pre>
+      </div>
       <button id="sheet-copy" class="copy-btn">
         <span class="copy-btn__icon">⎘</span>
         <span class="copy-btn__text">Copy YAML</span>

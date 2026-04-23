@@ -192,13 +192,11 @@ function createCard(style) {
   card.appendChild(info);
 
   // ─── Interactions ─────────────────────────────────────────────
-
-  // Image rotation on hover
   let rotationIndex = startIndex;
 
-  card.addEventListener('mouseenter', () => {
-    if (style.previews.length <= 1) return;
-
+  const startRotation = () => {
+    if (style.previews.length <= 1 || imageRotationTimers.has(style.id)) return;
+    
     const timer = setInterval(() => {
       rotationIndex = (rotationIndex + 1) % style.previews.length;
       img.classList.add('style-card__image--fading');
@@ -206,23 +204,44 @@ function createCard(style) {
         img.src = style.previews[rotationIndex];
         img.classList.remove('style-card__image--fading');
       }, 250);
-    }, 1500);
+    }, 2500);
 
     imageRotationTimers.set(style.id, timer);
+  };
 
-    // Show tooltip (desktop only)
-    const rect = card.getBoundingClientRect();
-    showTooltip(style, rect);
-  });
-
-  card.addEventListener('mouseleave', () => {
+  const stopRotation = () => {
     const timer = imageRotationTimers.get(style.id);
     if (timer) {
       clearInterval(timer);
       imageRotationTimers.delete(style.id);
     }
-    hideTooltip();
-  });
+  };
+
+  // Detect mobile
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+  if (isMobile) {
+    // Intersection observer for mobile auto-rotate
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) startRotation();
+        else stopRotation();
+      });
+    }, { threshold: 0.1 });
+    observer.observe(card);
+  } else {
+    // Desktop hover
+    card.addEventListener('mouseenter', () => {
+      startRotation();
+      const rect = card.getBoundingClientRect();
+      showTooltip(style, rect);
+    });
+
+    card.addEventListener('mouseleave', () => {
+      stopRotation();
+      hideTooltip();
+    });
+  }
 
   // Bottom sheet on click (mobile + fallback)
   card.addEventListener('click', () => {
