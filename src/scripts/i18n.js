@@ -70,7 +70,8 @@ export const translations = {
     promptCopied: "Prompt copied!",
     footerDisclaimer: "This project is an independent community initiative and is not affiliated with, endorsed by, or associated with Google LLC or the official NotebookLM project. \"NotebookLM\" is a trademark of Google LLC.",
     skillContributionNote: "Important: All contributions must follow our standardized YAML structure to ensure compatibility with the gallery and NotebookLM Custom Instructions.",
-    skillViewRepo: "View in Repository"
+    skillViewRepo: "View in Repository",
+    viewResult: "View Final Result (PDF)"
   },
   es: {
     heroTitle: "Estilos Premium para NotebookLM",
@@ -139,7 +140,8 @@ export const translations = {
     promptCopied: "¡Prompt copiado!",
     footerDisclaimer: "Este proyecto es una iniciativa comunitaria independiente y no está afiliado, respaldado ni asociado con Google LLC o el proyecto oficial NotebookLM. \"NotebookLM\" es una marca comercial de Google LLC.",
     skillContributionNote: "Importante: Todas las contribuciones deben seguir nuestra estructura YAML estandarizada para asegurar la compatibilidad con la galería y las Instrucciones Personalizadas de NotebookLM.",
-    skillViewRepo: "Ver en el Repositorio"
+    skillViewRepo: "Ver en el Repositorio",
+    viewResult: "Ver Resultado Final (PDF)"
   },
   pt: {
     heroTitle: "Estilos Premium para NotebookLM",
@@ -208,7 +210,8 @@ export const translations = {
     promptCopied: "Prompt copiado!",
     footerDisclaimer: "Este projeto é uma iniciativa comunitária independente e não está afiliado, endossado ou associado ao Google LLC ou ao projeto oficial NotebookLM. \"NotebookLM\" é uma marca comercial do Google LLC.",
     skillContributionNote: "Importante: Todas as contribuições devem seguir nossa estrutura YAML padronizada para garantir a compatibilidade com a galeria e as Instruções Personalizadas do NotebookLM.",
-    skillViewRepo: "Ver no Repositório"
+    skillViewRepo: "Ver no Repositório",
+    viewResult: "Ver Resultado Final (PDF)"
   }
 };
 
