@@ -1,5 +1,6 @@
 ---
 import Footer from '../components/Footer.astro';
+import FAQ from '../components/FAQ.astro';
 
 interface Props {
   title?: string;
@@ -105,6 +106,7 @@ const { title = "NotebookLM Slide Styles", category = "all" } = Astro.props;
   </div>
 
   <!-- Footer -->
+  <FAQ />
   <Footer />
 
   <!-- Toast -->
