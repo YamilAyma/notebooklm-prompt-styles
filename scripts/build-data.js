@@ -106,7 +106,12 @@ export function parseTocContent(content) {
 }
 
 export function nameToId(name) {
-  return name.toLowerCase().replace(/['']/g, '').replace(/\s+/g, '_');
+  return name
+    .toLowerCase()
+    .replace(/&#39;/g, '') // Handle common HTML entity
+    .replace(/[^a-z0-9\s]/g, '') // Remove everything except alphanumeric and spaces
+    .trim()
+    .replace(/\s+/g, '_'); // Replace spaces with underscores
 }
 
 export function scanPreviews(previewDir) {

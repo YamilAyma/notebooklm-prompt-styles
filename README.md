@@ -29,7 +29,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Creative Spark](#creative-spark)
   - [Artisan Rust](#artisan-rust)
   - [Vintage Charm](#vintage-charm)
-  - [Scholar&#39;s Journal](#scholars-journal)
+  - [Scholar's Journal](#scholars-journal)
   - [Neon Pulsar](#neon-pulsar)
   - [Cobalt Editorial](#cobalt-editorial)
   - [Midnight Tactical](#midnight-tactical)
@@ -93,7 +93,7 @@ slide_layout_templates:
 
 Focuses on visual-first layouts, card-based components with high border-radius, and vibrant red accents to drive engagement and focus. Inspired by modern discovery feeds.
 
-![Visual Discovery Preview](assets/visual_discovery_preview.png)
+![Visual Discovery Preview](preview/visual_discovery_preview.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/visual_discovery.yaml)
@@ -214,7 +214,7 @@ slide_layout_templates:
 
 Ultra-minimalist, premium, and sleek. Focuses on generous whitespace, precision typography, and high-fidelity visuals. Designed for high-end technology presentations where clarity and elegance are paramount.
 
-![Silicon Refined Preview](assets/silicon_refined_preview.png)
+![Silicon Refined Preview](preview/silicon_refined/silicon_refined_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/silicon_refined.yaml)
@@ -250,7 +250,7 @@ slide_layout_templates:
 
 Nature-inspired, organic, and soft design. It focuses on botanical imagery, sage greens, and large rounded corners to create a peaceful yet professional atmosphere.
 
-![Lush Minimal Preview](assets/lush_minimal_preview.png)
+![Lush Minimal Preview](preview/lush_minimal/lush_minimal_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/lush_minimal.yaml)
@@ -286,7 +286,7 @@ slide_layout_templates:
 
 Professional, structured, and refreshing corporate design. Features distinctive tiered corner frames in mint green and dark teal, offering a clean and organized frame for business presentations.
 
-![Structured Mint Preview](assets/structured_mint_preview.png)
+![Structured Mint Preview](preview/structured_mint/structured_mint_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/structured_mint.yaml)
@@ -472,7 +472,7 @@ slide_layout_templates:
 
 Romantic, nostalgic, and layered design inspired by coquette and scrapbooking aesthetics. It uses pastel tones, torn paper textures, and elegant accents like bows and pearls for a high-jewelry, vintage feel.
 
-![Vintage Charm Preview](assets/vintage_charm_preview.png)
+![Vintage Charm Preview](preview/vintage_charm/vintage_charm_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/vintage_charm.yaml)
@@ -509,7 +509,7 @@ slide_layout_templates:
 
 Academic, vintage, and scientific design. Inspired by 19th-century botanical engravings and researcher journals. It features heavy coarse paper textures and deep indigo line art illustrations for a scholarly feel.
 
-![Scholar's Journal Preview](assets/scholars_journal_preview.png)
+![Scholar's Journal Preview](preview/scholars_journal/scholars_journal_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/scholars_journal.yaml)
@@ -544,7 +544,7 @@ slide_layout_templates:
 
 Futuristic, high-energy, and tech-focused design. This dark mode aesthetic uses vibrant neon gradients (Cyan, Magenta, Purple) and glassmorphic elements to create a cutting-edge startup atmosphere.
 
-![Neon Pulsar Preview](assets/neon_pulsar_preview.png)
+![Neon Pulsar Preview](preview/neon_pulsar/neon_pulsar_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/neon_pulsar.yaml)
@@ -618,7 +618,7 @@ slide_layout_templates:
 
 Modern, tech-utilitarian design with a high-contrast matte black base and vibrant lime green accents. Features industrial aesthetic elements like tilted boxes, double chevrons, and monospace metadata.
 
-![Midnight Tactical Preview](assets/midnight_tactical_preview.png)
+![Midnight Tactical Preview](preview/midnight_tactical/midnight_tactical_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/midnight_tactical.yaml)
@@ -727,7 +727,7 @@ slide_layout_templates:
 
 Bubblegum pop, iridescent textures, and early digital nostalgia. Features CD-ROM reflections, fluffy clouds, and 3D 'plastic' icons (gummy bears, hearts, cupids) on pastel gradients.
 
-![Y2K Nostalgia Preview](assets/y2k_nostalgia_preview.png)
+![Y2K Nostalgia Preview](preview/y2k_nostalgia/y2k_nostalgia_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/y2k_nostalgia.yaml)

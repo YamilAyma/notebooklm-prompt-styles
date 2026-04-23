@@ -31,7 +31,7 @@ Update the `README.md` following these steps:
 5. **Preview Code**: Add a **simplified** version of the YAML (tokens only).
 6. **Disclaimer & Link**: Add the standard "Quick Preview" disclaimer and a relative link to the full YAML.
    > [!TIP]
-   > This is a simplified preview. [View full YAML](styles/filename.yaml)
+   > This is a simplified preview. [View full YAML](styles/filename.yaml)a
 
 ## 4. Git Workflow
 Persistence is key. Follow these rules:
