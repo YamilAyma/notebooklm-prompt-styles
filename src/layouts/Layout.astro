@@ -22,6 +22,20 @@ const { title = "NotebookLM Slide Styles", category = "all" } = Astro.props;
   <meta name="description" content="A curated collection of visual design styles for NotebookLM slide generation. Browse, preview, and copy YAML prompts.">
   <meta name="google-site-verification" content="2UF3L_fQMu61h2rfdzqpw1tDhVwaZpAArh1o_1N4e3c" />
   
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="A curated collection of visual design styles for NotebookLM slide generation. Browse, preview, and copy YAML prompts.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://notebooklm-prompt-styles.vercel.app/">
+  <meta property="og:image" content="https://notebooklm-prompt-styles.vercel.app/og-image.png">
+  <meta property="og:site_name" content="NotebookLM Styles Showcase">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="A curated collection of visual design styles for NotebookLM slide generation. Browse, preview, and copy YAML prompts.">
+  <meta name="twitter:image" content="https://notebooklm-prompt-styles.vercel.app/og-image.png">
+  
   <script is:inline>
     const theme = (() => {
       if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
