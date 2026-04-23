@@ -6,17 +6,174 @@ import Layout from '../layouts/Layout.astro';
   <main id="landing">
     <!-- Hero Section -->
     <section class="landing-hero">
-      <div class="landing-hero__container">
-        <h1 class="landing-hero__title" data-i18n="landingHeroTitle">Elevate Your NotebookLM Slides</h1>
-        <p class="landing-hero__subtitle" data-i18n="landingHeroSub">The ultimate collection of professional YAML styles for high-impact presentations.</p>
-        <div class="landing-hero__actions">
-          <a href="/styles" class="btn btn--primary" data-i18n="landingCtaBtn">Explore Gallery</a>
-          <a href="#how-it-works" class="btn btn--secondary" data-i18n="landingHowItWorks">How it Works</a>
+      <div class="hero-bg-grid">
+        <div class="hero-bg-grid__track">
+          <!-- Column 1 -->
+          <div class="hero-bg-grid__col">
+            <img src="/preview/editorial_essence/editorial_essence_1.png" alt="" />
+            <img src="/preview/geometric_mono/geometric_mono_1.png" alt="" />
+            <img src="/preview/architectural_cobalt/architectural_cobalt_1.png" alt="" />
+            <img src="/preview/artisan_rust/artisan_rust_1.png" alt="" />
+            <img src="/preview/creative_classroom/creative_classroom_1.png" alt="" />
+          </div>
+          <!-- Column 2 -->
+          <div class="hero-bg-grid__col hero-bg-grid__col--reverse">
+            <img src="/preview/executive_report/executive_report_1.png" alt="" />
+            <img src="/preview/architectural_mono/architectural_mono_1.png" alt="" />
+            <img src="/preview/creative_spark/creative_spark_1.png" alt="" />
+            <img src="/preview/cobalt_editorial/cobalt_editorial_1.png" alt="" />
+            <img src="/preview/botanical_journal/botanical_journal_1.png" alt="" />
+          </div>
+          <!-- Column 3 -->
+          <div class="hero-bg-grid__col">
+            <img src="/preview/creative_workshop/creative_workshop_1.png" alt="" />
+            <img src="/preview/ensign_corporate/ensign_corporate_1.png" alt="" />
+            <img src="/preview/editorial_essence/editorial_essence_2.png" alt="" />
+            <img src="/preview/geometric_mono/geometric_mono_2.png" alt="" />
+            <img src="/preview/architectural_cobalt/architectural_cobalt_2.png" alt="" />
+          </div>
+          <!-- Column 4 -->
+          <div class="hero-bg-grid__col hero-bg-grid__col--reverse">
+            <img src="/preview/artisan_rust/artisan_rust_2.png" alt="" />
+            <img src="/preview/creative_spark/creative_spark_2.png" alt="" />
+            <img src="/preview/cobalt_editorial/cobalt_editorial_2.png" alt="" />
+            <img src="/preview/creative_classroom/creative_classroom_2.png" alt="" />
+            <img src="/preview/ensign_corporate/ensign_corporate_2.png" alt="" />
+          </div>
         </div>
       </div>
-      <div class="landing-hero__blob landing-hero__blob--1"></div>
-      <div class="landing-hero__blob landing-hero__blob--2"></div>
+
+      <div class="hero-overlay"></div>
+
+      <div class="landing-hero__container">
+        <div class="hero-content-box">
+          <h1 class="landing-hero__title" data-i18n="landingHeroTitle">Elevate Your NotebookLM Slides</h1>
+          <p class="landing-hero__subtitle" data-i18n="landingHeroSub">The ultimate collection of professional YAML styles for high-impact presentations.</p>
+          <div class="landing-hero__actions">
+            <a href="/styles" class="btn btn--primary" data-i18n="landingCtaBtn">Explore Gallery</a>
+            <a href="#how-it-works" class="btn btn--secondary" data-i18n="landingHowItWorks">How it Works</a>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <style>
+      .landing-hero {
+        position: relative;
+        height: 90vh;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: #f0f0f0;
+      }
+
+      .hero-bg-grid {
+        position: absolute;
+        inset: -10%;
+        z-index: 1;
+        opacity: 0.4;
+        filter: grayscale(0.5) blur(2px);
+        transform: rotate(-5deg) scale(1.1);
+      }
+
+      .hero-bg-grid__track {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-lg);
+        height: 100%;
+      }
+
+      .hero-bg-grid__col {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-lg);
+        animation: scroll-up 60s linear infinite;
+      }
+
+      .hero-bg-grid__col--reverse {
+        animation: scroll-down 60s linear infinite;
+      }
+
+      .hero-bg-grid img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        border-radius: var(--radius-md);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        background: white;
+      }
+
+      @keyframes scroll-up {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-50%); }
+      }
+
+      @keyframes scroll-down {
+        0% { transform: translateY(-50%); }
+        100% { transform: translateY(0); }
+      }
+
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        background: radial-gradient(circle at center, transparent 0%, rgba(255,255,255,0.8) 100%);
+      }
+
+      .landing-hero__container {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        max-width: 800px;
+        padding: 0 var(--space-lg);
+      }
+
+      .hero-content-box {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: var(--space-3xl) var(--space-2xl);
+        border-radius: var(--radius-xl);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        text-align: center;
+        border: 1px solid rgba(255,255,255,0.5);
+      }
+
+      .landing-hero__title {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        line-height: 1.1;
+        margin-bottom: var(--space-lg);
+        color: #000;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+      }
+
+      .landing-hero__subtitle {
+        font-size: 1.25rem;
+        color: var(--color-text-secondary);
+        margin-bottom: var(--space-2xl);
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .landing-hero__actions {
+        display: flex;
+        gap: var(--space-md);
+        justify-content: center;
+      }
+
+      @media (max-width: 768px) {
+        .hero-bg-grid {
+          grid-template-columns: repeat(2, 1fr);
+          transform: rotate(0) scale(1);
+        }
+        .hero-content-box {
+          padding: var(--space-2xl) var(--space-xl);
+        }
+      }
+    </style>
 
     <!-- Examples Section -->
     <section class="landing-section">
