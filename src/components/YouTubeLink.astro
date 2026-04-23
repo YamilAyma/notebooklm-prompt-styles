@@ -1,0 +1,49 @@
+---
+interface Props {
+  href?: string;
+  class?: string;
+}
+
+const { href = "#", class: className = "" } = Astro.props;
+---
+
+<div class={`video-link-container ${className}`}>
+  <a href={href} target="_blank" rel="noopener" class="video-link">
+    <svg class="video-link__icon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 4-8 4z"/>
+    </svg>
+    <span data-i18n="watchVideo">Watch Video Tutorial</span>
+  </a>
+</div>
+
+<style>
+  .video-link-container {
+    text-align: center;
+  }
+  
+  .video-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-xl);
+    background: #fff;
+    border: 2px solid #ff0000;
+    color: #ff0000;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s var(--ease-spring);
+  }
+  
+  .video-link:hover {
+    background: #ff0000;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
+  }
+  
+  .video-link__icon {
+    width: 24px;
+    height: 24px;
+  }
+</style>

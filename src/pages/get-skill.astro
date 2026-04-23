@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import YouTubeLink from '../components/YouTubeLink.astro';
 ---
 
 <Layout title="Get NotebookLM Designer Skill">
@@ -18,6 +19,8 @@ import Layout from '../layouts/Layout.astro';
         <p class="skill-hero__subtitle" data-i18n="getSkillIntro">
           Turn your AI assistant into a professional slide designer. This skill allows Claude or ChatGPT to generate YAML prompts from any image or brand guide.
         </p>
+
+        <YouTubeLink class="skill-hero__video" />
       </div>
     </header>
 
@@ -159,6 +162,10 @@ slide_layout_templates:
     .skill-hero__subtitle {
       font-size: 1.25rem;
       opacity: 0.9;
+      margin-bottom: var(--space-2xl);
+    }
+    .skill-hero__video {
+      margin-top: var(--space-xl);
     }
     .skill-content {
       padding: var(--space-4xl) var(--space-lg);
