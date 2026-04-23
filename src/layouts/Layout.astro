@@ -1,4 +1,6 @@
 ---
+import Footer from '../components/Footer.astro';
+
 interface Props {
   title?: string;
   category?: string;
@@ -15,6 +17,12 @@ const { title = "NotebookLM Slide Styles", category = "all" } = Astro.props;
   <title>{title}</title>
   <meta name="description" content="A curated collection of visual design styles for NotebookLM slide generation. Browse, preview, and copy YAML prompts.">
   <meta name="google-site-verification" content="2UF3L_fQMu61h2rfdzqpw1tDhVwaZpAArh1o_1N4e3c" />
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -97,23 +105,7 @@ const { title = "NotebookLM Slide Styles", category = "all" } = Astro.props;
   </div>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p class="footer__credits">
-        Images are generated using <strong>NotebookLM's Slide Decks</strong> feature.
-      </p>
-      <div class="footer__thanks">
-        <span class="footer__thanks-label">Acknowledgements:</span>
-        <div class="footer__thanks-list">
-          <a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a>
-          <a href="https://www.thesvg.org/" target="_blank" rel="noopener">thesvg.org</a>
-          <span>NotebookLM</span>
-          <span>Gemini</span>
-          <span>Antigravity</span>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <Footer />
 
   <!-- Toast -->
   <div id="toast" class="toast" hidden>Copied to clipboard</div>

@@ -1,0 +1,168 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="container footer__container">
+    <div class="footer__brand">
+      <div class="footer__logo">
+        <img src="/favicon.svg" alt="NotebookLM Styles Logo" width="32" height="32" />
+        <span class="footer__logo-text">NotebookLM Styles</span>
+      </div>
+      <p class="footer__description">
+        A curated collection of visual design styles to transform your NotebookLM slide generation.
+      </p>
+    </div>
+
+    <div class="footer__nav">
+      <div class="footer__group">
+        <h4 class="footer__group-title">Explore</h4>
+        <ul class="footer__links">
+          <li><a href="/">All Styles</a></li>
+          <li><a href="/creative">Creative</a></li>
+          <li><a href="/minimalist">Minimalist</a></li>
+          <li><a href="/brand-inspired">Brand Inspired</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__group">
+        <h4 class="footer__group-title">Project</h4>
+        <ul class="footer__links">
+          <li><a href="/about">About the Project</a></li>
+          <li><a href="https://github.com/YamilAyma/notebooklm-prompt-styles" target="_blank" rel="noopener">GitHub Repo</a></li>
+          <li><a href="https://github.com/YamilAyma/notebooklm-prompt-styles/issues" target="_blank" rel="noopener">Report Issue</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__group">
+        <h4 class="footer__group-title">Credits</h4>
+        <ul class="footer__links">
+          <li><a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a></li>
+          <li><a href="https://www.thesvg.org/" target="_blank" rel="noopener">thesvg.org</a></li>
+          <li><span>Gemini</span></li>
+          <li><span>Antigravity</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">
+        &copy; {year} NotebookLM Styles Showcase. Images are generated using NotebookLM's Slide Decks feature.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    margin-top: var(--space-4xl);
+    padding: var(--space-4xl) 0 var(--space-2xl);
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+  }
+
+  .footer__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+    gap: var(--space-4xl);
+  }
+
+  .footer__brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .footer__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .footer__logo-text {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-text);
+    letter-spacing: -0.03em;
+  }
+
+  .footer__description {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    max-width: 320px;
+  }
+
+  .footer__nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .footer__group-title {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text);
+    margin-bottom: var(--space-xl);
+  }
+
+  .footer__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .footer__links a, 
+  .footer__links span {
+    font-size: 0.875rem;
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    transition: color var(--duration-fast);
+  }
+
+  .footer__links a:hover {
+    color: var(--color-text);
+  }
+
+  .footer__bottom {
+    grid-column: 1 / -1;
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+  }
+
+  .footer__copy {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+  }
+
+  @media (max-width: 992px) {
+    .footer__container {
+      grid-template-columns: 1fr;
+      gap: var(--space-3xl);
+    }
+    
+    .footer__brand {
+      text-align: center;
+      align-items: center;
+    }
+    
+    .footer__nav {
+      justify-items: center;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer__nav {
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+    }
+  }
+</style>
