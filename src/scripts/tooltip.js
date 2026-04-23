@@ -50,7 +50,7 @@ export function show(styleData, anchorRect) {
   clearTimeout(hideTimeout);
   currentStyleData = styleData;
 
-  // Show first ~20 lines of YAML
+  // Show first ~20 lines of YAML (Preview only)
   const lines = styleData.yamlContent.split('\n').slice(0, 20);
   tooltipYaml.textContent = lines.join('\n');
 
