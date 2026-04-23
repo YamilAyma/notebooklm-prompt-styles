@@ -1,5 +1,5 @@
 ---
-description: 
+description: Protocol for extracting and documenting NotebookLM styles.
 ---
 
 # Workflow: Style Extraction & Documentation
@@ -8,8 +8,7 @@ This protocol defines the standard procedure for extracting visual design system
 
 ## 0. Initial Research & Context
 Before acting, the agent **MUST** read the `README.md` and explore existing files in `styles/`.
-- Identify the current "categories" (Minimalist, Creative, etc.).
-- Understand the established aesthetic level (High-fidelity tokens).
+- Identify the current categories (Minimalist, Creative, Brand Inspired).
 - Maintain consistency in tone and formatting.
 
 ## 1. Visual Style Extraction
@@ -17,24 +16,32 @@ Use the `notebooklm-slide-styles` skill as the primary engine.
 - **Input**: Provide images, descriptions, or URLs to the skill.
 - **Output Audit**: Review the generated YAML to ensure it captures subtle details (textures, border styles, complex palettes).
 
-## 2. File Implementation (Full source)
+## 2. File Implementation
 Create a new `.yaml` file in the `styles/` folder.
-- **Naming**: Use `snake_case` (e.g., `structured_mint.yaml`).
+- **Naming (Simple ID)**: Use `snake_case` and keep the ID simple, without special characters or HTML entities (e.g., `scholars_journal.yaml`).
 - **Completeness**: Include `image_generation_prompts` and detailed `slide_layout_templates`.
 
 ## 3. Documentation (README.md)
 Update the `README.md` following these steps:
-1. **Update Table of Contents**: Add the new style name under the appropriate category.
-2. **Add Section**: Create a new `#### Style Name` section.
-3. **Draft Description**: A concise, premium-sounding summary of the aesthetic.
-4. **Image Placeholder**: Add an image reference to `assets/style_name_preview.png`.
+1. **Table of Contents (TOC)**: Add the style name under the correct category. **Avoid HTML entities like `&#39;`**.
+2. **Section**: Create a new `#### Style Name` section.
+3. **Description**: A concise, premium-sounding summary of the aesthetic.
+4. **Image Reference**: Point to `preview/style_name/style_name_1.png`.
 5. **Preview Code**: Add a **simplified** version of the YAML (tokens only).
-6. **Disclaimer & Link**: Add the standard "Quick Preview" disclaimer and a relative link to the full YAML.
+6. **Link to YAML**: Add the standard disclaimer and relative link to the full file.
    > [!TIP]
-   > This is a simplified preview. [View full YAML](styles/filename.yaml)a
+   > This is a simplified preview. [View Full YAML](styles/filename.yaml)
 
-## 4. Git Workflow
-Persistence is key. Follow these rules:
-- **Audit History**: Run `git log --oneline` to see the current commit style.
-- **Language**: All commit messages must be in **English**.
-- **Format**: Follow the `type: description` pattern (e.g., `feat: add structured mint design style`).
+## 4. Data Synchronization
+**It is mandatory** to regenerate the data file so the website reflects the changes:
+```bash
+npm run build:data
+```
+*The script reads the README TOC and YAML files to generate `public/data/styles.json`.*
+
+## 5. Git Workflow
+Follow these rules for persisting changes:
+- **Language**: Analyze history with `git log -n 5 --oneline` to determine the dominant language (e.g., **English** for this repository).
+- **Format**: Use the `type (Scope) - Imperative description` pattern.
+  - Example: `feat (Styles) - Add Scholars Journal design style`
+- **Tool**: Always use the `commits` skill to generate messages, which will analyze the history to determine the language.
