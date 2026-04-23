@@ -20,15 +20,22 @@ let showOnlyFavorites = false;
 async function init() {
   // ─── Handle Preloader ──────────────────────────────────────────────
   const preloader = document.getElementById('preloader');
+  const hasSeenPreloader = sessionStorage.getItem('preloaderShown');
+
   if (preloader) {
-    document.body.style.overflow = 'hidden';
-    setTimeout(() => {
-      preloader.classList.add('preloader--hidden');
-      document.body.style.overflow = '';
+    if (hasSeenPreloader) {
+      preloader.style.display = 'none';
+    } else {
+      document.body.style.overflow = 'hidden';
       setTimeout(() => {
-        preloader.style.display = 'none';
+        preloader.classList.add('preloader--hidden');
+        document.body.style.overflow = '';
+        sessionStorage.setItem('preloaderShown', 'true');
+        setTimeout(() => {
+          preloader.style.display = 'none';
+        }, 2000);
       }, 2000);
-    }, 2000);
+    }
   }
 
   try {
