@@ -54,7 +54,7 @@ Explore the collection interactively through our high-performance showcase site.
 
 Sophisticated, editorial, and human-centric design language. It uses warm cream backgrounds, bold terracotta accents, and elegant serif typography to create a "book-like" presentation feel.
 
-![Editorial Essence Preview](public/preview/editorial_essence/editorial_essence_1.png)
+![Editorial Essence Preview](preview/editorial_essence/editorial_essence_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/editorial_essence.yaml)
@@ -133,7 +133,7 @@ slide_layout_templates:
 
 Data-dense, executive style for professional reports. Focuses on statement-driven "Action Titles", rigorous grid structures, and professional high-fidelity visuals.
 
-![Executive Report Preview](public/preview/executive_report/executive_report_1.png)
+![Executive Report Preview](preview/executive_report/executive_report_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/executive_report.yaml)
@@ -178,7 +178,7 @@ slide_layout_templates:
 
 Professional, architectural, and monochromatic design. It uses a strong grayscale palette with geometric shapes and high-contrast photography to convey precision, structure, and corporate excellence.
 
-![Geometric Mono Preview](public/preview/geometric_mono/geometric_mono_1.png)
+![Geometric Mono Preview](preview/geometric_mono/geometric_mono_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/geometric_mono.yaml)
@@ -323,7 +323,7 @@ slide_layout_templates:
 
 Modern brutalist, monochromatic, and architectural design. Inspired by minimalist gallery aesthetics, it features high-contrast grayscale photography, large technical stamps, and sleek sans-serif typography.
 
-![Architectural Mono Preview](public/preview/architectural_mono/architectural_mono_1.png)
+![Architectural Mono Preview](preview/architectural_mono/architectural_mono_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/architectural_mono.yaml)
@@ -362,7 +362,7 @@ slide_layout_templates:
 
 Technical, dark architectural, and blueprint-inspired design. Features deep charcoal backgrounds with vibrant cobalt blue gradients and precise 'sight' crosshair visual elements for a high-end engineering feel.
 
-![Architectural Cobalt Preview](public/preview/architectural_cobalt/architectural_cobalt_1.png)
+![Architectural Cobalt Preview](preview/architectural_cobalt/architectural_cobalt_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/architectural_cobalt.yaml)
@@ -402,7 +402,7 @@ slide_layout_templates:
 
 Vibrant, creative, and high-impact design. Uses a deep dark canvas with neon purple accents, combining elegant script typography with bold, heavy block fonts for maximum contrast.
 
-![Creative Spark Preview](public/preview/creative_spark/creative_spark_1.png)
+![Creative Spark Preview](preview/creative_spark/creative_spark_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/creative_spark.yaml)
@@ -437,7 +437,7 @@ slide_layout_templates:
 
 Warm, handcrafted, and organic design. Uses a textured rust-colored background with hand-drawn white doodles and tall condensed typography for an artisan feel.
 
-![Artisan Rust Preview](public/preview/artisan_rust/artisan_rust_1.png)
+![Artisan Rust Preview](preview/artisan_rust/artisan_rust_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/artisan_rust.yaml)
@@ -582,7 +582,7 @@ slide_layout_templates:
 
 Bold editorial and Swiss-inspired design. High contrast between Electric Blue and Cream, featuring large brutalist typography, liquid organic textures, and iconic symbols like asterisks and plus signs.
 
-![Cobalt Editorial Preview](public/preview/cobalt_editorial/cobalt_editorial_1.png)
+![Cobalt Editorial Preview](preview/cobalt_editorial/cobalt_editorial_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/cobalt_editorial.yaml)
@@ -655,7 +655,7 @@ slide_layout_templates:
 
 Playful, warm, and educational design. Inspired by primary school classrooms and hand-drawn doodle aesthetics. Features soft cream backgrounds, chalkboard content frames, and flat 2D illustrations of classroom objects.
 
-![Creative Classroom Preview](public/preview/creative_classroom/creative_classroom_1.png)
+![Creative Classroom Preview](preview/creative_classroom/creative_classroom_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/creative_classroom.yaml)
@@ -691,7 +691,7 @@ slide_layout_templates:
 
 Eco-friendly, natural, and scrapbook-inspired design. Features hand-drawn botanical doodles (leaves, vines, flowers), washi tape accents, and torn notebook paper textures on a warm cream background.
 
-![Botanical Journal Preview](public/preview/botanical_journal/botanical_journal_1.png)
+![Botanical Journal Preview](preview/botanical_journal/botanical_journal_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/botanical_journal.yaml)
@@ -763,7 +763,7 @@ slide_layout_templates:
 
 Artistic, youthful, and workshop-oriented design. Features notebook grid backgrounds, pastel pink wavy accents, and friendly 2D art supply doodles (pencils, rainbows, stars).
 
-![Creative Workshop Preview](public/preview/creative_workshop/creative_workshop_1.png)
+![Creative Workshop Preview](preview/creative_workshop/creative_workshop_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/creative_workshop.yaml)
@@ -799,7 +799,7 @@ slide_layout_templates:
 
 Modern corporate, dynamic, and professional design. Features a strong navy and vivid blue foundation with energetic yellow/orange accents and distinctive corner 'ribbon' layers for a high-impact business presentation.
 
-![Ensign Corporate Preview](public/preview/ensign_corporate/ensign_corporate_1.png)
+![Ensign Corporate Preview](preview/ensign_corporate/ensign_corporate_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/ensign_corporate.yaml)
