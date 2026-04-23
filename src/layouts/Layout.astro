@@ -31,6 +31,11 @@ const { title = "NotebookLM Slide Styles", category = "all" } = Astro.props;
 </head>
 <body>
   <div id="preloader" class="preloader">
+    <script is:inline>
+      if (sessionStorage.getItem('preloaderShown')) {
+        document.getElementById('preloader').style.display = 'none';
+      }
+    </script>
     <div class="preloader__content">
       <h1 class="preloader__title">NotebookLM Prompt Styles</h1>
       <div class="preloader__line"></div>
