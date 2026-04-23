@@ -1,0 +1,102 @@
+---
+---
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+    <style>
+        .stroke-main {
+            fill: #ffffff;
+            stroke: #1a1a1a;
+            stroke-width: 10;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .stroke-line {
+            fill: none;
+            stroke: #1a1a1a;
+            stroke-width: 10;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .dash {
+            fill: none;
+            stroke: #1a1a1a;
+            stroke-width: 10;
+            stroke-linecap: round;
+        }
+        
+        /* Page flip animation */
+        .page {
+            transform-origin: 240px 300px;
+            animation: flipPage 2.4s infinite ease-in-out;
+            transform-style: preserve-3d;
+        }
+        .page-1 { animation-delay: 0s; }
+        .page-2 { animation-delay: 0.8s; }
+        .page-3 { animation-delay: 1.6s; }
+
+        @keyframes flipPage {
+            0%   { transform: scaleX(1); opacity: 0; }
+            2%   { transform: scaleX(1); opacity: 1; }
+            20%  { transform: scaleX(1); opacity: 1; }
+            50%  { transform: scaleX(0); opacity: 1; }
+            70%  { transform: scaleX(-0.8); opacity: 1; }
+            80%  { transform: scaleX(-1); opacity: 0; }
+            100% { transform: scaleX(1); opacity: 0; }
+        }
+
+        /* Star winking and bouncing animation */
+        .star {
+            transform-origin: 420px 150px;
+            animation: floatWink 3s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        @keyframes floatWink {
+            0%, 100% { transform: translateY(0) scale(1); }
+            25%      { transform: translateY(-18px) scale(1.25); }
+            50%      { transform: translateY(0) scale(0.15); }
+            75%      { transform: translateY(18px) scale(1.25); }
+        }
+    </style>
+
+    <!-- Background Layer: Right Stacked Pages -->
+    <path class="stroke-main" d="M 240 400 L 400 320 L 400 370 L 240 450 Z" />
+    <path class="stroke-main" d="M 240 410 L 380 340 L 380 365 L 240 435 Z" />
+
+    <!-- Left Cover -->
+    <path class="stroke-main" d="M 240 180 Q 180 180 120 200 L 120 390 L 240 450 Z" />
+    <path class="stroke-line" d="M 150 205 L 150 405" />
+    <path class="stroke-line" d="M 180 195 L 180 420" />
+
+    <!-- Main Right Base Page (Static background page) -->
+    <path class="stroke-main" d="M 240 180 Q 300 180 360 200 L 360 360 L 240 420 Z" />
+    <path class="dash" d="M 265 235 H 295 M 315 235 H 335" />
+    <path class="dash" d="M 275 265 H 315 M 335 265 H 345" />
+    <path class="dash" d="M 265 295 H 285 M 305 295 H 335" />
+
+    <!-- Animated Flipping Pages -->
+    <g class="page page-3">
+        <path class="stroke-main" vector-effect="non-scaling-stroke" d="M 240 180 Q 300 180 360 200 L 360 360 L 240 420 Z" />
+        <path class="dash" vector-effect="non-scaling-stroke" d="M 265 235 H 295 M 315 235 H 335" />
+        <path class="dash" vector-effect="non-scaling-stroke" d="M 275 265 H 315 Bull; M 335 265 H 345" />
+        <path class="dash" vector-effect="non-scaling-stroke" d="M 265 295 H 285 M 305 295 H 335" />
+    </g>
+
+    <g class="page page-2">
+        <path class="stroke-main" vector-effect="non-scaling-stroke" d="M 240 180 Q 300 180 360 200 L 360 360 L 240 420 Z" />
+        <path class="dash" vector-effect="non-scaling-stroke" d="M 265 235 H 295 M 315 235 H 335" />
+        <path class="dash" vector-effect="non-scaling-stroke" d="M 275 265 H 315 M 335 265 H 345" />
+        <path class="dash" vector-effect="non-scaling-stroke" d="M 265 295 H 285 M 305 295 H 335" />
+    </g>
+
+    <g class="page page-1">
+        <path class="stroke-main" vector-effect="non-scaling-stroke" d="M 240 180 Q 300 180 360 200 L 360 360 L 240 420 Z" />
+        <path class="dash" vector-effect="non-scaling-stroke" d="M 265 235 H 295 M 315 235 H 335" />
+        <path class="dash" vector-effect="non-scaling-stroke" d="M 275 265 H 315 M 335 265 H 345" />
+        <path class="dash" vector-effect="non-scaling-stroke" d="M 265 295 H 285 M 305 295 H 335" />
+    </g>
+
+    <path class="stroke-line" d="M 240 180 L 240 420" />
+
+    <g class="star">
+        <path class="stroke-main" d="M 420 110 Q 420 150 460 150 Q 420 150 420 190 Q 420 150 380 150 Q 420 150 420 110 Z" />
+    </g>
+</svg>

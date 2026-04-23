@@ -3,6 +3,7 @@ import Footer from '../components/Footer.astro';
 import FAQ from '../components/FAQ.astro';
 import SunIcon from '~icons/carbon/sun';
 import MoonIcon from '~icons/carbon/moon';
+import PreloaderIcon from '../components/PreloaderIcon.astro';
 
 interface Props {
   title?: string;
@@ -58,8 +59,9 @@ const { title = "NotebookLM Slide Styles", category = "all" } = Astro.props;
       }
     </script>
     <div class="preloader__content">
-      <h1 class="preloader__title">NotebookLM Prompt Styles</h1>
-      <div class="preloader__line"></div>
+      <div class="preloader__icon-wrapper">
+        <PreloaderIcon />
+      </div>
     </div>
   </div>
 

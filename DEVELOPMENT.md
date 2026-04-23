@@ -79,13 +79,13 @@ Commit messages must follow the project standard to keep history readable.
 
 ### Commit Message Format
 `type (Scope) - Imperative description`
-**Language:** Spanish (Imperative).
+**Language:** English (Imperative).
 
 **Examples:**
-- `feat (i18n/UI) - Implementar selector de idiomas`
-- `fix (UI/Card) - Corregir borde animado en móviles`
-- `brand (Styles) - Actualizar colores corporativos`
-- `docs (Dev) - Actualizar documentación de arquitectura`
+- `feat (i18n/UI) - Implement language selector`
+- `fix (UI/Card) - Correct animated border on mobile`
+- `brand (Styles) - Update corporate colors`
+- `docs (Dev) - Update architecture documentation`
 
 ## 🚀 Deployment
 

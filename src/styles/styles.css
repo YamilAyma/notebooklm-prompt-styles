@@ -173,7 +173,7 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 2s cubic-bezier(0.85, 0, 0.15, 1);
+  transition: transform 1s cubic-bezier(0.85, 0, 0.15, 1);
 }
 
 .preloader--hidden {
@@ -188,30 +188,40 @@ body::before {
   gap: var(--space-md);
 }
 
-.preloader__title {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  color: var(--color-text);
-  margin-bottom: 0;
-  animation: preloader-fade-in 1.2s var(--ease-out) forwards;
+.preloader__icon-wrapper {
+  width: 450px;
+  max-width: 90vw;
+  height: auto;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.preloader__line {
-  width: 40px;
-  height: 2px;
-  background: var(--color-text);
-  animation: preloader-line-grow 1s var(--ease-spring) 0.5s forwards;
-  transform: scaleX(0);
+.preloader__icon-wrapper svg {
+  width: 100%;
+  height: 100%;
 }
 
-@keyframes preloader-fade-in {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Dynamic Theme Colors for SVG */
+.preloader__icon-wrapper .stroke-main {
+  fill: #fff;
+  stroke: #1a1a1a;
+  transition: all 0.3s ease;
+}
+.preloader__icon-wrapper .stroke-line,
+.preloader__icon-wrapper .dash {
+  stroke: #1a1a1a;
+  transition: all 0.3s ease;
 }
 
-@keyframes preloader-line-grow {
-  to { transform: scaleX(1); width: 100px; }
+[data-theme="dark"] .preloader__icon-wrapper .stroke-main {
+  fill: #111;
+  stroke: #fff;
+}
+[data-theme="dark"] .preloader__icon-wrapper .stroke-line,
+[data-theme="dark"] .preloader__icon-wrapper .dash {
+  stroke: #fff;
 }
 
 @property --angle {
@@ -1476,7 +1486,7 @@ body::before {
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
   z-index: 2;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(2px);
 }
 
 .cta-video-section__content {
