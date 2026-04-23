@@ -1,22 +1,19 @@
+![Header of project. Generated with ChatGPT](header.png)
+
 # NotebookLM Slide Styles Collection
 
 A curated collection of visual design styles (YAML) to customize the output of NotebookLM slide generation.
 
-## 🌐 Showcase Website
+## 🌐 Website
 
 Explore the collection interactively through our high-performance showcase site. Preview styles with rotating thumbnails, copy YAML prompts with a single click, and save your favorites.
 
-- **Local Development:**
-  ```bash
-  npm install
-  npm run build:data
-  npm run dev
-  ```
 - **Live Version:** [View the Showcase](https://notebooklm-prompt-styles.vercel.app/)
 
 ---
 
 ## 📖 Table of Contents
+
 - [🏷️ Brand Inspired](#-brand-inspired)
   - [Editorial Essence](#editorial-essence)
   - [Visual Discovery](#visual-discovery)
@@ -32,7 +29,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Creative Spark](#creative-spark)
   - [Artisan Rust](#artisan-rust)
   - [Vintage Charm](#vintage-charm)
-  - [Scholar's Journal](#scholars-journal)
+  - [Scholar&#39;s Journal](#scholars-journal)
   - [Neon Pulsar](#neon-pulsar)
   - [Cobalt Editorial](#cobalt-editorial)
   - [Midnight Tactical](#midnight-tactical)
@@ -54,6 +51,7 @@ Explore the collection interactively through our high-performance showcase site.
 ### 🏷️ Brand Inspired
 
 #### Editorial Essence
+
 Sophisticated, editorial, and human-centric design language. It uses warm cream backgrounds, bold terracotta accents, and elegant serif typography to create a "book-like" presentation feel.
 
 ![Editorial Essence Preview](public/preview/editorial_essence/editorial_essence_1.png)
@@ -92,6 +90,7 @@ slide_layout_templates:
 ```
 
 #### Visual Discovery
+
 Focuses on visual-first layouts, card-based components with high border-radius, and vibrant red accents to drive engagement and focus. Inspired by modern discovery feeds.
 
 ![Visual Discovery Preview](assets/visual_discovery_preview.png)
@@ -131,6 +130,7 @@ slide_layout_templates:
 ```
 
 #### Executive Report
+
 Data-dense, executive style for professional reports. Focuses on statement-driven "Action Titles", rigorous grid structures, and professional high-fidelity visuals.
 
 ![Executive Report Preview](public/preview/executive_report/executive_report_1.png)
@@ -175,6 +175,7 @@ slide_layout_templates:
 ### 🌿 Minimalist
 
 #### Geometric Mono
+
 Professional, architectural, and monochromatic design. It uses a strong grayscale palette with geometric shapes and high-contrast photography to convey precision, structure, and corporate excellence.
 
 ![Geometric Mono Preview](public/preview/geometric_mono/geometric_mono_1.png)
@@ -210,6 +211,7 @@ slide_layout_templates:
 ```
 
 #### Silicon Refined
+
 Ultra-minimalist, premium, and sleek. Focuses on generous whitespace, precision typography, and high-fidelity visuals. Designed for high-end technology presentations where clarity and elegance are paramount.
 
 ![Silicon Refined Preview](assets/silicon_refined_preview.png)
@@ -245,6 +247,7 @@ slide_layout_templates:
 ```
 
 #### Lush Minimal
+
 Nature-inspired, organic, and soft design. It focuses on botanical imagery, sage greens, and large rounded corners to create a peaceful yet professional atmosphere.
 
 ![Lush Minimal Preview](assets/lush_minimal_preview.png)
@@ -280,6 +283,7 @@ slide_layout_templates:
 ```
 
 #### Structured Mint
+
 Professional, structured, and refreshing corporate design. Features distinctive tiered corner frames in mint green and dark teal, offering a clean and organized frame for business presentations.
 
 ![Structured Mint Preview](assets/structured_mint_preview.png)
@@ -316,6 +320,7 @@ slide_layout_templates:
 ```
 
 #### Architectural Mono
+
 Modern brutalist, monochromatic, and architectural design. Inspired by minimalist gallery aesthetics, it features high-contrast grayscale photography, large technical stamps, and sleek sans-serif typography.
 
 ![Architectural Mono Preview](public/preview/architectural_mono/architectural_mono_1.png)
@@ -354,6 +359,7 @@ slide_layout_templates:
 ```
 
 #### Architectural Cobalt
+
 Technical, dark architectural, and blueprint-inspired design. Features deep charcoal backgrounds with vibrant cobalt blue gradients and precise 'sight' crosshair visual elements for a high-end engineering feel.
 
 ![Architectural Cobalt Preview](public/preview/architectural_cobalt/architectural_cobalt_1.png)
@@ -393,6 +399,7 @@ slide_layout_templates:
 ### 🎨 Creative
 
 #### Creative Spark
+
 Vibrant, creative, and high-impact design. Uses a deep dark canvas with neon purple accents, combining elegant script typography with bold, heavy block fonts for maximum contrast.
 
 ![Creative Spark Preview](public/preview/creative_spark/creative_spark_1.png)
@@ -427,6 +434,7 @@ slide_layout_templates:
 ```
 
 #### Artisan Rust
+
 Warm, handcrafted, and organic design. Uses a textured rust-colored background with hand-drawn white doodles and tall condensed typography for an artisan feel.
 
 ![Artisan Rust Preview](public/preview/artisan_rust/artisan_rust_1.png)
@@ -461,6 +469,7 @@ slide_layout_templates:
 ```
 
 #### Vintage Charm
+
 Romantic, nostalgic, and layered design inspired by coquette and scrapbooking aesthetics. It uses pastel tones, torn paper textures, and elegant accents like bows and pearls for a high-jewelry, vintage feel.
 
 ![Vintage Charm Preview](assets/vintage_charm_preview.png)
@@ -497,6 +506,7 @@ slide_layout_templates:
 ```
 
 #### Scholar's Journal
+
 Academic, vintage, and scientific design. Inspired by 19th-century botanical engravings and researcher journals. It features heavy coarse paper textures and deep indigo line art illustrations for a scholarly feel.
 
 ![Scholar's Journal Preview](assets/scholars_journal_preview.png)
@@ -531,6 +541,7 @@ slide_layout_templates:
 ```
 
 #### Neon Pulsar
+
 Futuristic, high-energy, and tech-focused design. This dark mode aesthetic uses vibrant neon gradients (Cyan, Magenta, Purple) and glassmorphic elements to create a cutting-edge startup atmosphere.
 
 ![Neon Pulsar Preview](assets/neon_pulsar_preview.png)
@@ -568,6 +579,7 @@ slide_layout_templates:
 ```
 
 #### Cobalt Editorial
+
 Bold editorial and Swiss-inspired design. High contrast between Electric Blue and Cream, featuring large brutalist typography, liquid organic textures, and iconic symbols like asterisks and plus signs.
 
 ![Cobalt Editorial Preview](public/preview/cobalt_editorial/cobalt_editorial_1.png)
@@ -603,6 +615,7 @@ slide_layout_templates:
 ```
 
 #### Midnight Tactical
+
 Modern, tech-utilitarian design with a high-contrast matte black base and vibrant lime green accents. Features industrial aesthetic elements like tilted boxes, double chevrons, and monospace metadata.
 
 ![Midnight Tactical Preview](assets/midnight_tactical_preview.png)
@@ -639,6 +652,7 @@ slide_layout_templates:
 ```
 
 #### Creative Classroom
+
 Playful, warm, and educational design. Inspired by primary school classrooms and hand-drawn doodle aesthetics. Features soft cream backgrounds, chalkboard content frames, and flat 2D illustrations of classroom objects.
 
 ![Creative Classroom Preview](public/preview/creative_classroom/creative_classroom_1.png)
@@ -674,6 +688,7 @@ slide_layout_templates:
 ```
 
 #### Botanical Journal
+
 Eco-friendly, natural, and scrapbook-inspired design. Features hand-drawn botanical doodles (leaves, vines, flowers), washi tape accents, and torn notebook paper textures on a warm cream background.
 
 ![Botanical Journal Preview](public/preview/botanical_journal/botanical_journal_1.png)
@@ -709,6 +724,7 @@ slide_layout_templates:
 ```
 
 #### Y2K Nostalgia
+
 Bubblegum pop, iridescent textures, and early digital nostalgia. Features CD-ROM reflections, fluffy clouds, and 3D 'plastic' icons (gummy bears, hearts, cupids) on pastel gradients.
 
 ![Y2K Nostalgia Preview](assets/y2k_nostalgia_preview.png)
@@ -744,6 +760,7 @@ slide_layout_templates:
 ```
 
 #### Creative Workshop
+
 Artistic, youthful, and workshop-oriented design. Features notebook grid backgrounds, pastel pink wavy accents, and friendly 2D art supply doodles (pencils, rainbows, stars).
 
 ![Creative Workshop Preview](public/preview/creative_workshop/creative_workshop_1.png)
@@ -779,6 +796,7 @@ slide_layout_templates:
 ```
 
 #### Ensign Corporate
+
 Modern corporate, dynamic, and professional design. Features a strong navy and vivid blue foundation with energetic yellow/orange accents and distinctive corner 'ribbon' layers for a high-impact business presentation.
 
 ![Ensign Corporate Preview](public/preview/ensign_corporate/ensign_corporate_1.png)
@@ -818,11 +836,13 @@ slide_layout_templates:
 ---
 
 ## 🚀 How to Use
+
 1. Copy the YAML code block for your desired theme.
 2. Paste it into your NotebookLM prompt or configuration when generating slides.
 3. Enjoy your beautifully styled presentation!
 
 ## 🛠️ Contribution
+
 Feel free to add more styles by following our [Contribution Guide](CONTRIBUTING.md).
 
 ---
@@ -832,8 +852,18 @@ Feel free to add more styles by following our [Contribution Guide](CONTRIBUTING.
 Preview images in this repository and on the showcase website are generated using **NotebookLM's Slide Decks** feature.
 
 This project is made possible by:
+
 - **Vercel** (Hosting & Platform)
 - **Social Icons:** [thesvg.org](https://www.thesvg.org/)
 - **NotebookLM** (AI Presentation Engine)
 - **Gemini** (AI Foundation)
 - **Antigravity** (AI Engineering Assistant)
+
+---
+
+## ⚖️ Disclaimer
+
+**NotebookLM Prompt Styles** is an independent, community-driven project and is **not affiliated with, endorsed by, or associated with Google LLC or the official NotebookLM team.** "NotebookLM" and its logo are trademarks of Google LLC.
+
+While these prompts are optimized for NotebookLM's Slide Decks feature, the YAML styles and aesthetic configurations are highly versatile and can be effectively used with **other similar AI image and presentation generation tools** (like Midjourney, DALL-E, Canva Magic Design, etc.) that accept structured style inputs.
+

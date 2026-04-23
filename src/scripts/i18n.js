@@ -32,7 +32,7 @@ export const translations = {
     footerCredits: "Credits",
     footerAbout: "About the Project",
     footerReport: "Report Issue",
-    footerCopy: "Images are generated using NotebookLM's Slide Decks feature.",
+    footerCopy: "These YAML styles are optimized for NotebookLM but work great with other AI image and presentation generation tools.",
     footerText: "Made for the NotebookLM community.",
     howToTitle: "How to Use Styles",
     howToSub: "A simple guide to transform your NotebookLM slides.",
@@ -68,7 +68,7 @@ export const translations = {
     getSkillStep3: "Upload an image and ask: 'Create a NotebookLM style based on this'.",
     copyPrompt: "Copy Prompt",
     promptCopied: "Prompt copied!",
-    footerDisclaimer: "This project is an independent community initiative and is not affiliated with, endorsed by, or associated with Google or the official NotebookLM project.",
+    footerDisclaimer: "This project is an independent community initiative and is not affiliated with, endorsed by, or associated with Google LLC or the official NotebookLM project. \"NotebookLM\" is a trademark of Google LLC.",
     skillContributionNote: "Important: All contributions must follow our standardized YAML structure to ensure compatibility with the gallery and NotebookLM Custom Instructions.",
     skillViewRepo: "View in Repository"
   },
@@ -101,7 +101,7 @@ export const translations = {
     footerCredits: "Créditos",
     footerAbout: "Acerca del Proyecto",
     footerReport: "Reportar Problema",
-    footerCopy: "Las imágenes son generadas usando la función Slide Decks de NotebookLM.",
+    footerCopy: "Estas plantillas YAML están optimizadas para NotebookLM pero funcionan genial con otras herramientas de IA de imágenes y presentaciones.",
     footerText: "Creado para la comunidad de NotebookLM.",
     howToTitle: "Cómo Usar los Estilos",
     howToSub: "Una guía sencilla para transformar tus diapositivas en NotebookLM.",
@@ -137,7 +137,7 @@ export const translations = {
     getSkillStep3: "Sube una imagen y di: 'Crea un estilo de NotebookLM basado en esto'.",
     copyPrompt: "Copiar Prompt",
     promptCopied: "¡Prompt copiado!",
-    footerDisclaimer: "Este proyecto es una iniciativa comunitaria independiente y no está vinculado, respaldado ni asociado con Google ni con el proyecto oficial de NotebookLM.",
+    footerDisclaimer: "Este proyecto es una iniciativa comunitaria independiente y no está afiliado, respaldado ni asociado con Google LLC o el proyecto oficial NotebookLM. \"NotebookLM\" es una marca comercial de Google LLC.",
     skillContributionNote: "Importante: Todas las contribuciones deben seguir nuestra estructura YAML estandarizada para asegurar la compatibilidad con la galería y las Instrucciones Personalizadas de NotebookLM.",
     skillViewRepo: "Ver en el Repositorio"
   },
@@ -170,7 +170,7 @@ export const translations = {
     footerCredits: "Créditos",
     footerAbout: "Sobre o Projeto",
     footerReport: "Reportar Problema",
-    footerCopy: "As imagens são geradas usando o recurso Slide Decks do NotebookLM.",
+    footerCopy: "Esses estilos YAML são otimizados para o NotebookLM, mas funcionam muito bem com outras ferramentas de IA para imagens e apresentações.",
     footerText: "Criado para a comunidade do NotebookLM.",
     howToTitle: "Como Usar os Estilos",
     howToSub: "Um guia simples para transformar seus slides no NotebookLM.",
@@ -206,7 +206,7 @@ export const translations = {
     getSkillStep3: "Suba uma imagem e diga: 'Crie um estilo do NotebookLM baseado nisso'.",
     copyPrompt: "Copiar Prompt",
     promptCopied: "Prompt copiado!",
-    footerDisclaimer: "Este projeto é uma iniciativa comunitária independente e não está vinculado, endossado ou associado ao Google ou ao projeto oficial NotebookLM.",
+    footerDisclaimer: "Este projeto é uma iniciativa comunitária independente e não está afiliado, endossado ou associado ao Google LLC ou ao projeto oficial NotebookLM. \"NotebookLM\" é uma marca comercial do Google LLC.",
     skillContributionNote: "Importante: Todas as contribuições devem seguir nossa estrutura YAML padronizada para garantir a compatibilidade com a galeria e as Instruções Personalizadas do NotebookLM.",
     skillViewRepo: "Ver no Repositório"
   }
