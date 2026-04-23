@@ -823,7 +823,7 @@ slide_layout_templates:
 3. Enjoy your beautifully styled presentation!
 
 ## 🛠️ Contribution
-Feel free to add more styles by creating a YAML file in the `styles/` folder and updating this README under the appropriate category.
+Feel free to add more styles by following our [Contribution Guide](CONTRIBUTING.md).
 
 ---
 
