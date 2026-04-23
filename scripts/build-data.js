@@ -17,7 +17,7 @@ const ROOT = path.resolve(import.meta.dirname, '..');
 const STYLES_DIR = path.join(ROOT, 'styles');
 const PREVIEW_DIR = path.join(ROOT, 'preview');
 const README_PATH = path.join(ROOT, 'README.md');
-const OUTPUT_PATH = path.join(ROOT, 'web', 'data', 'styles.json');
+const OUTPUT_PATH = path.join(ROOT, 'web', 'public', 'data', 'styles.json');
 
 // ─── Exports for testing ────────────────────────────────────────────
 
@@ -230,8 +230,8 @@ function main() {
   const outputDir = path.dirname(OUTPUT_PATH);
   fs.mkdirSync(outputDir, { recursive: true });
 
-  // Clear and copy used preview folders to web/preview
-  const webPreviewDir = path.join(ROOT, 'web', 'preview');
+  // Clear and copy used preview folders to web/public/preview
+  const webPreviewDir = path.join(ROOT, 'web', 'public', 'preview');
   if (fs.existsSync(webPreviewDir)) {
     fs.rmSync(webPreviewDir, { recursive: true, force: true });
   }

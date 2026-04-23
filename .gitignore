@@ -9,8 +9,8 @@ build/
 coverage/
 
 # Generated Site Data (built from source)
-web/data/styles.json
-web/preview/
+web/public/data/styles.json
+web/public/preview/
 
 # Environment
 .env
