@@ -6,7 +6,7 @@
   "scripts": {
     "build:data": "node scripts/build-data.js",
     "dev": "npm run build:data && astro dev",
-    "build": "npm run build:data && astro build",
+    "build": "npm run build:data && astro build && node scripts/flat-sitemap.js",
     "preview": "astro preview",
     "test": "vitest run",
     "test:watch": "vitest"
