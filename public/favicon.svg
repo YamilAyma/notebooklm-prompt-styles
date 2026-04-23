@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="white" />
+  <g stroke="black" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M 280 350 C 395 225, 545 235, 575 275" />
+    <path d="M 290 350 C 405 255, 565 265, 605 305" />
+    <path d="M 300 350 C 415 285, 585 295, 635 335" />
+
+    <path d="M 485 685 L 635 685 Q 645 685 645 675 L 645 615" />
+    <path d="M 485 630 L 560 670 L 695 580 L 675 565" />
+    <path d="M 485 595 L 560 630 L 705 535 L 680 515" />
+    <path d="M 485 560 L 560 595 L 705 495 L 660 465" />
+
+    <path d="M 265 315 L 265 685 L 485 775 L 485 425 Z" fill="white" />
+
+    <path d="M 295 350 L 295 670" />
+    <path d="M 325 370 L 325 645" />
+
+    <path d="M 500 375 L 530 375" />
+    
+    <path d="M 540 405 L 570 405" />
+    <path d="M 585 405 L 610 405" />
+    
+    <path d="M 565 435 L 595 435" />
+    <path d="M 610 435 L 640 435" />
+    
+    <path d="M 535 465 L 560 465" />
+    <path d="M 575 465 L 605 465" />
+
+    <path d="M 720 280 Q 720 340 780 340 Q 720 340 720 400 Q 720 340 660 340 Q 720 340 720 280 Z" fill="white" />
+    <path d="M 650 300 Q 650 310 660 310 Q 650 310 650 320 Q 650 310 640 310 Q 650 310 650 300 Z" fill="white" stroke-width="10" />
+
+  </g>
+</svg>

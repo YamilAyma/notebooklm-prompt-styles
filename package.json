@@ -12,6 +12,8 @@
     "test:watch": "vitest"
   },
   "devDependencies": {
+    "@iconify-json/carbon": "^1.2.20",
+    "unplugin-icons": "^23.0.1",
     "vite": "^6.3.1",
     "vitest": "^3.1.1"
   },

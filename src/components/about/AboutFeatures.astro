@@ -1,24 +1,29 @@
 ---
+import IconPalette from '~icons/carbon/color-palette';
+import IconView from '~icons/carbon/view';
+import IconFlash from '~icons/carbon/flash';
+import IconCollaboration from '~icons/carbon/collaborate';
+
 const features = [
   {
     title: "Curated Catalog",
     description: "Hand-picked themes ranging from corporate minimal to vibrant creative styles.",
-    icon: "🎨"
+    icon: IconPalette
   },
   {
     title: "Visual Previews",
     description: "Real examples of what NotebookLM generates with each prompt. No guesswork.",
-    icon: "👁️"
+    icon: IconView
   },
   {
     title: "One-Click Copy",
     description: "Copy YAML code instantly. Seamless integration with your workflow.",
-    icon: "⚡"
+    icon: IconFlash
   },
   {
     title: "Community Driven",
     description: "An open-source project designed to grow with user contributions.",
-    icon: "🤝"
+    icon: IconCollaboration
   }
 ];
 ---
@@ -27,7 +32,7 @@ const features = [
     <div class="features-grid">
       {features.map(feature => (
         <div class="feature-card">
-          <span class="feature-icon">{feature.icon}</span>
+          <span class="feature-icon"><feature.icon /></span>
           <h3 class="feature-title">{feature.title}</h3>
           <p class="feature-desc">{feature.description}</p>
         </div>
