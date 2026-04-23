@@ -14,4 +14,22 @@ const { category } = Astro.params;
 const { name } = Astro.props;
 ---
 
-<Layout category={category} title={`${name} — NotebookLM Styles`} />
+<Layout category={category} title={`${name} — NotebookLM Styles`}>
+  <main id="app" data-category={category}>
+    <header class="hero">
+      <div class="hero__container">
+        <h1 class="hero__title">{name}</h1>
+        <p class="hero__subtitle">
+          <span id="style-count">0</span> curated YAML prompts in this category
+        </p>
+      </div>
+    </header>
+
+    <section class="grid-section">
+      <div id="styles-grid" class="bento-grid"></div>
+      <p id="empty-state" class="empty-state" hidden>
+        No styles in this category yet. Check back soon.
+      </p>
+    </section>
+  </main>
+</Layout>

@@ -2,4 +2,22 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout category="all" />
+<Layout category="all">
+  <main id="app" data-category="all">
+    <header class="hero">
+      <div class="hero__container">
+        <h1 class="hero__title">Styles for slides</h1>
+        <p class="hero__subtitle">
+          <span id="style-count">0</span> curated YAML prompts for NotebookLM
+        </p>
+      </div>
+    </header>
+
+    <section class="grid-section">
+      <div id="styles-grid" class="bento-grid"></div>
+      <p id="empty-state" class="empty-state" hidden>
+        No styles with preview images available yet. Check back soon.
+      </p>
+    </section>
+  </main>
+</Layout>
