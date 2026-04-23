@@ -159,6 +159,16 @@ body::before {
   to { transform: scaleX(1); width: 100px; }
 }
 
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate-gradient {
+  to { --angle: 360deg; }
+}
+
 /* ─── Hero ───────────────────────────────────────────────────────── */
 
 .hero {
@@ -210,6 +220,44 @@ body::before {
   padding: var(--space-4xl) var(--space-lg);
   color: var(--color-text-muted);
   font-size: 1.125rem;
+}
+
+/* ─── Pagination ─────────────────────────────────────────────────── */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-2xl);
+}
+
+.load-more-btn {
+  padding: var(--space-md) var(--space-3xl);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-out);
+  box-shadow: var(--shadow-card);
+}
+
+.load-more-btn:hover {
+  background: var(--color-text);
+  color: var(--color-surface);
+  border-color: var(--color-text);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.load-more-btn:active {
+  transform: translateY(0);
+}
+
+.load-more-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* ─── Style Card ─────────────────────────────────────────────────── */
@@ -352,6 +400,21 @@ body::before {
   overflow: hidden;
 }
 
+/* Rainbow border effect for tooltip */
+.yaml-tooltip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(from var(--angle), #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  animation: rotate-gradient 3s linear infinite;
+}
+
 .yaml-tooltip[data-visible="true"] {
   opacity: 1;
   transform: translateY(0);
@@ -373,6 +436,7 @@ body::before {
   position: absolute;
   bottom: var(--space-sm);
   right: var(--space-sm);
+  z-index: 2;
 }
 
 /* ─── Bottom Sheet (Mobile) ──────────────────────────────────────── */
@@ -467,6 +531,23 @@ body::before {
   background: var(--color-accent-soft);
   border-radius: var(--radius-sm);
   color: var(--color-text);
+  position: relative;
+}
+
+/* Rainbow border effect for bottom sheet code */
+.bottom-sheet__code::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 3px;
+  background: conic-gradient(from var(--angle), #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  animation: rotate-gradient 3s linear infinite;
+  pointer-events: none;
 }
 
 .bottom-sheet .copy-btn {

@@ -27,6 +27,11 @@ const { name } = Astro.props;
 
     <section class="grid-section">
       <div id="styles-grid" class="bento-grid"></div>
+
+      <div id="pagination" class="pagination" hidden>
+        <button id="load-more" class="load-more-btn">Explore More Styles</button>
+      </div>
+
       <p id="empty-state" class="empty-state" hidden>
         No styles in this category yet. Check back soon.
       </p>

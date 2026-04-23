@@ -12,6 +12,9 @@ import { initNavigation } from './navigation.js';
 // ─── State ──────────────────────────────────────────────────────────
 
 let stylesData = null;
+let currentStyles = [];
+let itemsToShow = 12;
+let displayedCount = 0;
 let imageRotationTimers = new Map();
 let showOnlyFavorites = false;
 
@@ -57,19 +60,24 @@ async function init() {
     : stylesData.categories.filter(c => c.id === category);
 
   // Flatten all visible styles
-  const visibleStyles = visibleCategories.flatMap(c => c.styles);
+  currentStyles = visibleCategories.flatMap(c => c.styles);
 
-  if (visibleStyles.length === 0) {
+  if (currentStyles.length === 0) {
     showEmptyState();
     return;
   }
 
   // Update style count
   const countEl = document.getElementById('style-count');
-  if (countEl) countEl.textContent = visibleStyles.length;
+  if (countEl) countEl.textContent = currentStyles.length;
 
-  // Render grid
-  renderGrid(visibleStyles);
+  // Reset pagination
+  displayedCount = 0;
+  const grid = document.getElementById('styles-grid');
+  if (grid) grid.innerHTML = '';
+
+  // Render first batch
+  renderNextBatch();
 
   // Initialize modules
   initTooltip();
@@ -78,19 +86,37 @@ async function init() {
   initFavFilter();
   updateFavBadge();
   initShare();
+  initPagination();
+}
+
+function initPagination() {
+  const loadMoreBtn = document.getElementById('load-more');
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', () => {
+      renderNextBatch();
+    });
+  }
 }
 
 // ─── Render Grid ────────────────────────────────────────────────────
 
-function renderGrid(styles) {
+function renderNextBatch() {
   const grid = document.getElementById('styles-grid');
+  const pagination = document.getElementById('pagination');
   if (!grid) return;
 
-  grid.innerHTML = '';
-
-  for (const style of styles) {
+  const nextBatch = currentStyles.slice(displayedCount, displayedCount + itemsToShow);
+  
+  for (const style of nextBatch) {
     const card = createCard(style);
     grid.appendChild(card);
+  }
+
+  displayedCount += nextBatch.length;
+
+  // Show/hide pagination
+  if (pagination) {
+    pagination.hidden = displayedCount >= currentStyles.length;
   }
 }
 
@@ -285,25 +311,30 @@ function filterStyles() {
     ? stylesData.categories
     : stylesData.categories.filter(c => c.id === category);
 
-  let filteredStyles = visibleCategories.flatMap(c => c.styles);
+  let filtered = visibleCategories.flatMap(c => c.styles);
 
   if (showOnlyFavorites) {
-    filteredStyles = filteredStyles.filter(s => isFavorite(s.id));
+    filtered = filtered.filter(s => isFavorite(s.id));
   }
 
-  if (filteredStyles.length === 0) {
+  // Update count
+  const countEl = document.getElementById('style-count');
+  if (countEl) countEl.textContent = filtered.length;
+
+  // Update state and re-render grid
+  currentStyles = filtered;
+  displayedCount = 0;
+  const grid = document.getElementById('styles-grid');
+  if (grid) grid.innerHTML = '';
+
+  if (currentStyles.length === 0) {
     showEmptyState();
   } else {
-    const grid = document.getElementById('styles-grid');
     const empty = document.getElementById('empty-state');
     if (grid) grid.hidden = false;
     if (empty) empty.hidden = true;
-    renderGrid(filteredStyles);
+    renderNextBatch();
   }
-
-  // Update style count
-  const countEl = document.getElementById('style-count');
-  if (countEl) countEl.textContent = filteredStyles.length;
 }
 
 function updateFavBadge() {
@@ -311,8 +342,6 @@ function updateFavBadge() {
   const trigger = document.getElementById('fav-trigger');
   if (!badge || !trigger) return;
 
-  // We need getFavorites from favorites.js, but it's not exported. 
-  // I'll calculate it using the styles data if needed, or just import it after editing favorites.js
   const count = stylesData.categories.flatMap(c => c.styles).filter(s => isFavorite(s.id)).length;
   
   badge.textContent = count;
