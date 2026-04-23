@@ -2,27 +2,93 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout category="all">
-  <main id="app" data-category="all">
-    <header class="hero">
-      <div class="hero__container">
-        <h1 class="hero__title" data-i18n="heroTitle">Styles for slides</h1>
-        <p class="hero__subtitle">
-          <span id="style-count">0</span> <span data-i18n="heroSub">curated YAML prompts for NotebookLM</span>
-        </p>
+<Layout category="landing">
+  <main id="landing">
+    <!-- Hero Section -->
+    <section class="landing-hero">
+      <div class="landing-hero__container">
+        <h1 class="landing-hero__title" data-i18n="landingHeroTitle">Elevate Your NotebookLM Slides</h1>
+        <p class="landing-hero__subtitle" data-i18n="landingHeroSub">The ultimate collection of professional YAML styles for high-impact presentations.</p>
+        <div class="landing-hero__actions">
+          <a href="/styles" class="btn btn--primary" data-i18n="landingCtaBtn">Explore Gallery</a>
+          <a href="#how-it-works" class="btn btn--secondary" data-i18n="landingHowItWorks">How it Works</a>
+        </div>
       </div>
-    </header>
+      <div class="landing-hero__blob landing-hero__blob--1"></div>
+      <div class="landing-hero__blob landing-hero__blob--2"></div>
+    </section>
 
-    <section class="grid-section">
-      <div id="styles-grid" class="bento-grid"></div>
-      
-      <div id="pagination" class="pagination" hidden>
-        <button id="load-more" class="load-more-btn" data-i18n="loadMore">Explore More Styles</button>
+    <!-- Examples Section -->
+    <section class="landing-section">
+      <div class="landing-section__container">
+        <h2 class="landing-section__title" data-i18n="landingExamplesTitle">Curated Examples</h2>
+        <div id="featured-grid" class="bento-grid">
+          <!-- Featured cards will be injected by app.js -->
+        </div>
+        <div class="landing-section__footer">
+          <a href="/styles" class="btn btn--outline" data-i18n="loadMore">View All Styles</a>
+        </div>
       </div>
+    </section>
 
-      <p id="empty-state" class="empty-state" hidden data-i18n="emptyState">
-        No styles with preview images available yet. Check back soon.
-      </p>
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="landing-section landing-section--alt">
+      <div class="landing-section__container">
+        <h2 class="landing-section__title" data-i18n="landingHowItWorks">How it Works</h2>
+        <div class="how-it-works-grid">
+          <div class="how-card">
+            <div class="how-card__number">01</div>
+            <h3 class="how-card__title" data-i18n="step1Title">Choose a Style</h3>
+            <p class="how-card__desc" data-i18n="step1Desc">Explore our collection and copy the YAML code of your favorite style.</p>
+          </div>
+          <div class="how-card">
+            <div class="how-card__number">02</div>
+            <h3 class="how-card__title" data-i18n="step4Title">Paste Prompt</h3>
+            <p class="how-card__desc" data-i18n="step4Desc">Paste the YAML code you copied into the custom instructions box in NotebookLM Studio.</p>
+          </div>
+          <div class="how-card">
+            <div class="how-card__number">03</div>
+            <h3 class="how-card__title" data-i18n="step5Title">Generate</h3>
+            <p class="how-card__desc" data-i18n="step5Desc">Click 'Generate' and watch NotebookLM transform your sources into a stunning presentation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="landing-section">
+      <div class="landing-section__container landing-section__container--narrow">
+        <h2 class="landing-section__title" data-i18n="landingFaqTitle">Questions? We have answers</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-item__question" data-i18n="faqQ1">What are these YAML prompts?</summary>
+            <div class="faq-item__answer" data-i18n="faqA1">They are configuration blocks that tell NotebookLM exactly how to style your slides, from colors to typography.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__question" data-i18n="faqQ2">Do I need to pay for this?</summary>
+            <div class="faq-item__answer" data-i18n="faqA2">No, this is a community-driven open-source project. All prompts are free to use.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__question" data-i18n="faqQ3">Can I contribute my own styles?</summary>
+            <div class="faq-item__answer" data-i18n="faqA3">Yes! Check our Contribution Guide on GitHub to learn how to add your own designs.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video CTA Section -->
+    <section class="cta-video-section">
+      <div class="video-bg">
+        <video autoplay muted loop playsinline class="video-bg__content">
+          <source src="https://player.vimeo.com/external/403403164.sd.mp4?s=3465134764d93416a9a0841961623116813a362a&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-overlay"></div>
+      <div class="cta-video-section__content">
+        <h2 class="cta-video-section__title" data-i18n="landingVideoCtaTitle">Ready to Transform Your Workflow?</h2>
+        <p class="cta-video-section__subtitle" data-i18n="landingVideoCtaSub">Supercharge your slide deck generation with our expert prompts.</p>
+        <a href="/styles" class="btn btn--primary btn--large" data-i18n="landingVideoCtaBtn">Get Started Now</a>
+      </div>
     </section>
   </main>
 </Layout>

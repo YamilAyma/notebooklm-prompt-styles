@@ -33,16 +33,29 @@ export function initNavigation(categories, currentCategory) {
 function buildNavList(categories, currentCategory) {
   let html = '';
 
-  // "All Styles" link
-  const allActive = currentCategory === 'all' ? ' nav-modal__link--active' : '';
+  // "Home" link
+  const isHome = window.location.pathname === '/';
+  const homeActive = isHome ? ' nav-modal__link--active' : '';
   html += `
     <li class="nav-modal__item">
-      <a href="/" class="nav-modal__link${allActive}">
+      <a href="/" class="nav-modal__link${homeActive}">
+        <span class="nav-modal__emoji">🏠</span>
+        Home
+      </a>
+    </li>
+    <li class="nav-modal__divider"></li>
+  `;
+
+  // "All Styles" link
+  const isStyles = window.location.pathname === '/styles';
+  const allActive = isStyles ? ' nav-modal__link--active' : '';
+  html += `
+    <li class="nav-modal__item">
+      <a href="/styles" class="nav-modal__link${allActive}">
         <span class="nav-modal__emoji">✦</span>
         ${t('navAll')}
       </a>
     </li>
-    <li class="nav-modal__divider"></li>
   `;
 
   for (const cat of categories) {
@@ -50,7 +63,7 @@ function buildNavList(categories, currentCategory) {
     const label = t('nav-' + cat.id) || cat.name;
     html += `
       <li class="nav-modal__item">
-        <a href="/${cat.id}" class="nav-modal__link${active}">
+        <a href="/styles/${cat.id}" class="nav-modal__link${active}">
           <span class="nav-modal__emoji">${cat.emoji}</span>
           ${label}
         </a>

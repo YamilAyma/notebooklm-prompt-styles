@@ -1,7 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
 // We import the generated JSON to know which pages to generate
-import stylesData from '../../public/data/styles.json';
+import stylesData from '../../../public/data/styles.json';
 
 export function getStaticPaths() {
   return stylesData.categories.map(cat => ({

@@ -36,22 +36,40 @@ async function init() {
   }
 
   const app = document.getElementById('app');
-  const categoryId = app?.getAttribute('data-category') || 'all';
-
-  // Initial Filter
-  applyFilters(categoryId);
+  const landing = document.getElementById('landing');
+  
+  if (app) {
+    const categoryId = app?.getAttribute('data-category') || 'all';
+    applyFilters(categoryId);
+    initFavFilter();
+    initPagination();
+    updateFavBadge();
+  } else if (landing) {
+    renderFeaturedStyles();
+  }
 
   // Initialize modules
   initTooltip();
-  initNavigation(stylesData.categories, categoryId);
+  initNavigation(stylesData.categories, app?.getAttribute('data-category') || 'all');
   initBottomSheet();
   initShare();
   initTheme();
   initI18n();
-  
-  initFavFilter();
-  initPagination();
-  updateFavBadge();
+}
+
+function renderFeaturedStyles() {
+  const grid = document.getElementById('featured-grid');
+  if (!grid || !stylesData) return;
+
+  const allStyles = stylesData.categories.flatMap(c => c.styles);
+  // Get 4 unique styles for the landing
+  const featured = allStyles.slice(0, 4);
+
+  grid.innerHTML = '';
+  featured.forEach(style => {
+    const card = createCard(style);
+    grid.appendChild(card);
+  });
 }
 
 function initI18n() {

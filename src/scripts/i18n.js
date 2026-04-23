@@ -43,7 +43,22 @@ export const translations = {
     step4Title: "4. Paste Prompt",
     step4Desc: "Paste the YAML code you copied into the custom instructions box.",
     step5Title: "5. Generate",
-    step5Desc: "Click 'Generate' and watch NotebookLM transform your sources into a stunning presentation."
+    step5Desc: "Click 'Generate' and watch NotebookLM transform your sources into a stunning presentation.",
+    landingHeroTitle: "Elevate Your NotebookLM Slides",
+    landingHeroSub: "The ultimate collection of professional YAML styles for high-impact presentations.",
+    landingCtaBtn: "Explore Gallery",
+    landingHowItWorks: "How it Works",
+    landingExamplesTitle: "Curated Examples",
+    landingFaqTitle: "Questions? We have answers",
+    landingVideoCtaTitle: "Ready to Transform Your Workflow?",
+    landingVideoCtaSub: "Supercharge your slide deck generation with our expert prompts.",
+    landingVideoCtaBtn: "Get Started Now",
+    faqQ1: "What are these YAML prompts?",
+    faqA1: "They are configuration blocks that tell NotebookLM exactly how to style your slides, from colors to typography.",
+    faqQ2: "Do I need to pay for this?",
+    faqA2: "No, this is a community-driven open-source project. All prompts are free to use.",
+    faqQ3: "Can I contribute my own styles?",
+    faqA3: "Yes! Check our Contribution Guide on GitHub to learn how to add your own designs."
   },
   es: {
     heroTitle: "Estilos Premium para NotebookLM",
@@ -85,7 +100,22 @@ export const translations = {
     step4Title: "4. Pega el Prompt",
     step4Desc: "Pega el código YAML que copiaste en el cuadro de instrucciones personalizadas.",
     step5Title: "5. Generar",
-    step5Desc: "Haz clic en 'Generar' y observa cómo NotebookLM transforma tus fuentes en una presentación increíble."
+    step5Desc: "Haz clic en 'Generar' y observa cómo NotebookLM transforma tus fuentes en una presentación increíble.",
+    landingHeroTitle: "Eleva tus Diapositivas de NotebookLM",
+    landingHeroSub: "La colección definitiva de estilos YAML profesionales para presentaciones de alto impacto.",
+    landingCtaBtn: "Explorar Galería",
+    landingHowItWorks: "Cómo Funciona",
+    landingExamplesTitle: "Ejemplos Curados",
+    landingFaqTitle: "¿Preguntas? Tenemos respuestas",
+    landingVideoCtaTitle: "¿Listo para Transformar tu Flujo?",
+    landingVideoCtaSub: "Potencia tu generación de diapositivas con nuestros prompts expertos.",
+    landingVideoCtaBtn: "Empezar Ahora",
+    faqQ1: "¿Qué son estos prompts YAML?",
+    faqA1: "Son bloques de configuración que le dicen a NotebookLM exactamente cómo estilizar tus diapositivas, desde colores hasta tipografía.",
+    faqQ2: "¿Tengo que pagar por esto?",
+    faqA2: "No, este es un proyecto de código abierto impulsado por la comunidad. Todos los prompts son gratuitos.",
+    faqQ3: "¿Puedo contribuir con mis propios estilos?",
+    faqA3: "¡Sí! Consulta nuestra Guía de Contribución en GitHub para aprender a añadir tus propios diseños."
   },
   pt: {
     heroTitle: "Estilos Premium para NotebookLM",
@@ -127,7 +157,22 @@ export const translations = {
     step4Title: "4. Cole o Prompt",
     step4Desc: "Cole o código YAML que você copiou na caixa de instruções personalizadas.",
     step5Title: "5. Gerar",
-    step5Desc: "Clique em 'Gerar' e veja o NotebookLM transformar suas fontes em uma apresentação incrível."
+    step5Desc: "Clique em 'Gerar' e veja o NotebookLM transformar suas fontes em uma apresentação incrível.",
+    landingHeroTitle: "Eleve seus Slides do NotebookLM",
+    landingHeroSub: "A coleção definitiva de estilos YAML profissionais para apresentações de alto impacto.",
+    landingCtaBtn: "Explorar Galeria",
+    landingHowItWorks: "Como Funciona",
+    landingExamplesTitle: "Exemplos Selecionados",
+    landingFaqTitle: "Dúvidas? Temos respostas",
+    landingVideoCtaTitle: "Pronto para Transformar seu Fluxo?",
+    landingVideoCtaSub: "Turbine sua geração de slides com nossos prompts especializados.",
+    landingVideoCtaBtn: "Começar Agora",
+    faqQ1: "O que são esses prompts YAML?",
+    faqA1: "São blocos de configuração que dizem ao NotebookLM exatamente como estilizar seus slides, das cores à tipografia.",
+    faqQ2: "Preciso pagar por isso?",
+    faqA2: "Não, este é um projeto de código aberto voltado para a comunidade. Todos os prompts são gratuitos.",
+    faqQ3: "Posso contribuir com meus próprios estilos?",
+    faqA3: "Sim! Confira nosso Guia de Contribuição no GitHub para aprender a adicionar seus próprios designs."
   }
 };
 
