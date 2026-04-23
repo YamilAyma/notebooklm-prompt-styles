@@ -54,6 +54,18 @@ function buildNavList(categories, currentCategory) {
       </li>
     `;
   }
+  
+  // "About" link
+  const aboutActive = window.location.pathname === '/about' ? ' nav-modal__link--active' : '';
+  html += `
+    <li class="nav-modal__divider"></li>
+    <li class="nav-modal__item">
+      <a href="/about" class="nav-modal__link${aboutActive}">
+        <span class="nav-modal__emoji">ℹ️</span>
+        About
+      </a>
+    </li>
+  `;
 
   navList.innerHTML = html;
 }

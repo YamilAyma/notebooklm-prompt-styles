@@ -1,0 +1,72 @@
+---
+---
+<section class="about-cta">
+  <div class="container">
+    <div class="cta-card">
+      <h2 class="cta-title">Ready to transform your slides?</h2>
+      <p class="cta-desc">Explore our full collection of styles and start creating beautiful presentations today.</p>
+      <a href="/" class="cta-button">
+        Explore the Styles
+        <span class="cta-icon">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-cta {
+    padding: var(--space-4xl) var(--space-lg);
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .cta-card {
+    background: var(--color-text);
+    color: var(--color-surface);
+    padding: var(--space-4xl) var(--space-2xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-fab);
+  }
+  .cta-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    margin-bottom: var(--space-lg);
+    letter-spacing: -0.03em;
+  }
+  .cta-desc {
+    font-size: 1.125rem;
+    opacity: 0.8;
+    margin-bottom: var(--space-2xl);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-md);
+    background: var(--color-surface);
+    color: var(--color-text);
+    padding: var(--space-lg) var(--space-3xl);
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform var(--duration-fast) var(--ease-spring);
+  }
+  .cta-button:hover {
+    transform: scale(1.05);
+  }
+  .cta-icon {
+    font-size: 1.25rem;
+  }
+
+  @media (max-width: 480px) {
+    .cta-button {
+      padding: var(--space-md) var(--space-2xl);
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

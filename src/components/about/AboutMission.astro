@@ -1,0 +1,105 @@
+---
+---
+<section class="about-mission">
+  <div class="container">
+    <div class="mission-grid">
+      <div class="mission-content">
+        <h2 class="section-title">The Mission</h2>
+        <p>
+          We believe that artificial intelligence is a powerful ally for creativity, but it often needs a 
+          "design compass" to reach its full potential. <strong>NotebookLM Slide Styles</strong> serves as that bridge.
+        </p>
+        <p>
+          Our goal is to provide a curated set of instructions (YAML prompts) that allow anyone—from students 
+          to executives—to generate professional-grade slides without needing to be a designer.
+        </p>
+      </div>
+      <div class="mission-image">
+        <div class="glass-box">
+          <span class="mono-label">DESIGN SYSTEM</span>
+          <div class="box-line"></div>
+          <div class="box-line short"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-mission {
+    padding: var(--space-4xl) var(--space-lg);
+  }
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  .mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    align-items: center;
+  }
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--space-xl);
+  }
+  .mission-content p {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+  }
+  .mission-content strong {
+    color: var(--color-text);
+  }
+  .mission-image {
+    display: flex;
+    justify-content: center;
+  }
+  .glass-box {
+    width: 300px;
+    height: 300px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-card-hover);
+    position: relative;
+  }
+  .mono-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    position: absolute;
+    top: var(--space-xl);
+    left: var(--space-xl);
+  }
+  .box-line {
+    height: 2px;
+    background: var(--color-text);
+    width: 100%;
+    margin-bottom: var(--space-md);
+  }
+  .box-line.short {
+    width: 60%;
+  }
+
+  @media (max-width: 768px) {
+    .mission-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .mission-image {
+      order: -1;
+      margin-bottom: var(--space-2xl);
+    }
+    .glass-box {
+      width: 200px;
+      height: 200px;
+    }
+  }
+</style>

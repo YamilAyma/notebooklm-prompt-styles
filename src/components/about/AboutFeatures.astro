@@ -1,0 +1,78 @@
+---
+const features = [
+  {
+    title: "Curated Catalog",
+    description: "Hand-picked themes ranging from corporate minimal to vibrant creative styles.",
+    icon: "🎨"
+  },
+  {
+    title: "Visual Previews",
+    description: "Real examples of what NotebookLM generates with each prompt. No guesswork.",
+    icon: "👁️"
+  },
+  {
+    title: "One-Click Copy",
+    description: "Copy YAML code instantly. Seamless integration with your workflow.",
+    icon: "⚡"
+  },
+  {
+    title: "Community Driven",
+    description: "An open-source project designed to grow with user contributions.",
+    icon: "🤝"
+  }
+];
+---
+<section class="about-features">
+  <div class="container">
+    <div class="features-grid">
+      {features.map(feature => (
+        <div class="feature-card">
+          <span class="feature-icon">{feature.icon}</span>
+          <h3 class="feature-title">{feature.title}</h3>
+          <p class="feature-desc">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-features {
+    padding: var(--space-4xl) var(--space-lg);
+    background: var(--color-accent-soft);
+  }
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-xl);
+  }
+  .feature-card {
+    background: var(--color-surface);
+    padding: var(--space-2xl);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    transition: transform var(--duration-normal) var(--ease-out);
+  }
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+  .feature-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: var(--space-lg);
+  }
+  .feature-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+  }
+  .feature-desc {
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+</style>

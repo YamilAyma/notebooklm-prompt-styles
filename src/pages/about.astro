@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AboutHero from '../components/about/AboutHero.astro';
+import AboutMission from '../components/about/AboutMission.astro';
+import AboutFeatures from '../components/about/AboutFeatures.astro';
+import AboutCTA from '../components/about/AboutCTA.astro';
+
+const title = "About — NotebookLM Slide Styles";
+---
+
+<Layout title={title}>
+  <main>
+    <AboutHero />
+    <AboutMission />
+    <AboutFeatures />
+    <AboutCTA />
+  </main>
+</Layout>
+
+<style>
+  main {
+    min-height: 100vh;
+  }
+</style>
