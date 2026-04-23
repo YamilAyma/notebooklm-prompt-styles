@@ -32,7 +32,7 @@ async function init() {
   }
 
   try {
-    const res = await fetch('data/styles.json');
+    const res = await fetch('/data/styles.json');
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     stylesData = await res.json();
   } catch (err) {

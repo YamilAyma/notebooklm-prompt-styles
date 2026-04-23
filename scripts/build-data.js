@@ -17,7 +17,7 @@ const ROOT = path.resolve(import.meta.dirname, '..');
 const STYLES_DIR = path.join(ROOT, 'styles');
 const PREVIEW_DIR = path.join(ROOT, 'preview');
 const README_PATH = path.join(ROOT, 'README.md');
-const OUTPUT_PATH = path.join(ROOT, 'web', 'public', 'data', 'styles.json');
+const OUTPUT_PATH = path.join(ROOT, 'public', 'data', 'styles.json');
 
 // ─── Exports for testing ────────────────────────────────────────────
 
@@ -120,7 +120,7 @@ export function scanPreviews(previewDir) {
     const normalizedName = dir.name.replace(/-/g, '_');
     const files = fs.readdirSync(path.join(previewDir, dir.name))
       .filter(f => /\.(png|jpg|jpeg|webp)$/i.test(f))
-      .map(f => `preview/${dir.name}/${f}`); // Path relative to web root
+      .map(f => `/preview/${dir.name}/${f}`); // Path relative to root
 
     if (files.length > 0) {
       previews[normalizedName] = {
@@ -230,8 +230,8 @@ function main() {
   const outputDir = path.dirname(OUTPUT_PATH);
   fs.mkdirSync(outputDir, { recursive: true });
 
-  // Clear and copy used preview folders to web/public/preview
-  const webPreviewDir = path.join(ROOT, 'web', 'public', 'preview');
+  // Clear and copy used preview folders to public/preview
+  const webPreviewDir = path.join(ROOT, 'public', 'preview');
   if (fs.existsSync(webPreviewDir)) {
     fs.rmSync(webPreviewDir, { recursive: true, force: true });
   }

@@ -9,9 +9,10 @@ Explore the collection interactively through our high-performance showcase site.
 - **Local Development:**
   ```bash
   npm install
+  npm run build:data
   npm run dev
   ```
-- **Live Version:** [View the Showcase](https://yamilayma.github.io/notebooklm-styles-prompt/) *(Placeholder)*
+- **Live Version:** [View the Showcase](https://notebooklm-prompt-styles.vercel.app/)
 
 ---
 

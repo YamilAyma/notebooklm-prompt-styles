@@ -9,8 +9,11 @@ build/
 coverage/
 
 # Generated Site Data (built from source)
-web/public/data/styles.json
-web/public/preview/
+public/data/styles.json
+public/preview/
+
+# Astro
+.astro/
 
 # Environment
 .env

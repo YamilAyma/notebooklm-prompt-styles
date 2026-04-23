@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+// We import the generated JSON to know which pages to generate
+import stylesData from '../../public/data/styles.json';
+
+export function getStaticPaths() {
+  return stylesData.categories.map(cat => ({
+    params: { category: cat.id },
+    props: { name: cat.name }
+  }));
+}
+
+const { category } = Astro.params;
+const { name } = Astro.props;
+---
+
+<Layout category={category} title={`${name} — NotebookLM Styles`} />

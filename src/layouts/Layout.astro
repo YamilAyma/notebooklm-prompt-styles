@@ -1,15 +1,24 @@
+---
+interface Props {
+  title?: string;
+  category?: string;
+}
+
+const { title = "NotebookLM Slide Styles", category = "all" } = Astro.props;
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NotebookLM Slide Styles</title>
+  <title>{title}</title>
   <meta name="description" content="A curated collection of visual design styles for NotebookLM slide generation. Browse, preview, and copy YAML prompts.">
   <meta name="google-site-verification" content="2UF3L_fQMu61h2rfdzqpw1tDhVwaZpAArh1o_1N4e3c" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <slot name="head" />
 </head>
 <body>
   <div id="preloader" class="preloader">
@@ -19,7 +28,7 @@
     </div>
   </div>
 
-  <main id="app" data-category="all">
+  <main id="app" data-category={category}>
     <header class="hero">
       <div class="hero__container">
         <h1 class="hero__title">Styles for slides</h1>
@@ -83,19 +92,19 @@
   <!-- Top Right Actions -->
   <div class="top-actions">
     <a href="https://github.com/YamilAyma/notebooklm-prompt-styles" target="_blank" rel="noopener" class="action-btn" aria-label="GitHub Repository">
-      <img src="icons/github.svg" alt="" class="action-btn__icon">
+      <img src="/icons/github.svg" alt="" class="action-btn__icon">
     </a>
     <a id="share-linkedin" href="#" target="_blank" rel="noopener" class="action-btn" aria-label="Share on LinkedIn">
-      <img src="icons/linkedin.svg" alt="" class="action-btn__icon">
+      <img src="/icons/linkedin.svg" alt="" class="action-btn__icon">
     </a>
     <a id="share-reddit" href="#" target="_blank" rel="noopener" class="action-btn" aria-label="Share on Reddit">
-      <img src="icons/reddit.svg" alt="" class="action-btn__icon">
+      <img src="/icons/reddit.svg" alt="" class="action-btn__icon">
     </a>
     <a id="share-x" href="#" target="_blank" rel="noopener" class="action-btn" aria-label="Share on X">
-      <img src="icons/x.svg" alt="" class="action-btn__icon">
+      <img src="/icons/x.svg" alt="" class="action-btn__icon">
     </a>
     <button id="share-trigger" class="action-btn" aria-label="Copy link">
-      <img src="icons/share.svg" alt="" class="action-btn__icon">
+      <img src="/icons/share.svg" alt="" class="action-btn__icon">
     </button>
     <button id="fav-trigger" class="fab-fav" aria-label="Show favorites">
       <span class="fab-fav__icon">♡</span>
@@ -125,6 +134,12 @@
   <!-- Toast -->
   <div id="toast" class="toast" hidden>Copied to clipboard</div>
 
-  <script type="module" src="js/app.js"></script>
+  <style is:global>
+    @import "../styles/styles.css";
+  </style>
+
+  <script>
+    import "../scripts/app.js";
+  </script>
 </body>
 </html>

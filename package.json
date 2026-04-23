@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "build:data": "node scripts/build-data.js",
-    "dev": "npm run build:data && vite serve web",
-    "build": "npm run build:data && vite build",
-    "preview": "vite preview",
+    "dev": "npm run build:data && astro dev",
+    "build": "npm run build:data && astro build",
+    "preview": "astro preview",
     "test": "vitest run",
     "test:watch": "vitest"
   },
@@ -16,6 +16,7 @@
     "vitest": "^3.1.1"
   },
   "dependencies": {
+    "astro": "^6.1.9",
     "js-yaml": "^4.1.0"
   }
 }

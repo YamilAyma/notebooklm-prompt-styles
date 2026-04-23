@@ -9,8 +9,11 @@ The project is a **Data-Driven Static Site**. Instead of hardcoding content into
 - `/styles/*.yaml`: The source of truth for the design prompts.
 - `/preview/[style_id]/*.png`: Preview images for each style.
 - `/scripts/`: Node.js and Python utilities for data processing.
-- `/web/`: The frontend application (Vanilla JS + Vite).
-- `/web/data/styles.json`: The generated "database" used by the frontend.
+- `/styles/*.yaml`: The source of truth for the design prompts.
+- `/preview/[style_id]/*.png`: Preview images for each style.
+- `/scripts/`: Node.js and Python utilities for data processing.
+- `/src/`: The Astro source code (Layouts, Pages, Components).
+- `/public/data/styles.json`: The generated "database" used by the frontend.
 
 ## ⚙️ Data Pipeline
 
@@ -20,8 +23,9 @@ This is the core build script. It performs the following:
 - Reads every `.yaml` file in `/styles`.
 - Scans `/preview` for matching folders.
 - **Filters Styles**: Only styles that have at least one preview image are included in the final site.
-- **Asset Management**: Copies the image folders from the root `/preview` to `/web/preview` so they are accessible by the web server.
-- **Generates JSON**: Creates `web/data/styles.json`.
+- **Asset Management**: Copies the image folders from the root `/preview` to `/public/preview` so they are accessible during the build.
+- **Generates JSON**: Creates `public/data/styles.json`.
+- **Dynamic Routing**: Astro uses this JSON to generate category pages (`/creative`, `/minimalist`, etc.) during build time.
 
 **Run manually:** `npm run build:data`
 
@@ -42,7 +46,7 @@ A Python utility to ensure consistent naming of preview images.
    ```bash
    npm run dev
    ```
-   *Note: `npm run dev` automatically runs the data build script before starting Vite.*
+   *Note: `npm run dev` automatically runs the data build script before starting the Astro dev server.*
 
 3. **Running Tests**:
    We use Vitest to ensure the build script correctly parses YAML and README content.
@@ -69,9 +73,9 @@ To add a new style to the showcase:
 
 ## 🎨 Design System
 
-The frontend is built with **Vanilla CSS** located in `web/css/styles.css`.
+The frontend is built with **Astro** and uses **Vanilla CSS** located in `src/styles/styles.css`.
 - **Theme**: Swiss-minimalist with Inter and JetBrains Mono.
-- **Interactivity**: Handled in `web/js/app.js` using native DOM APIs and a modular approach (tooltips, favorites, navigation).
+- **Interactivity**: Handled in `src/scripts/app.js` using native DOM APIs. Astro bundles and optimizes these scripts.
 - **Responsive**: Uses a CSS grid (Bento style) and a mobile-specific "Bottom Sheet" for YAML viewing.
 
 ## 📜 Git Guidelines
@@ -101,10 +105,10 @@ This ensures a clean, understandable, and strictly English history for all publi
 
 ## 🚀 Deployment
 
-The site is configured to be deployed as a static site (e.g., Vercel, GitHub Pages).
+The site is built using Astro and deployed as a static site (SSG).
 - Run `npm run build`.
 - The output will be in the `dist/` directory.
 - **Vercel Settings**:
-  - **Framework Preset**: Vite
+  - **Framework Preset**: Astro
   - **Build Command**: `npm run build`
   - **Output Directory**: `dist`

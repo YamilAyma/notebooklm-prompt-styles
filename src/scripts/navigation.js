@@ -35,7 +35,7 @@ function buildNavList(categories, currentCategory) {
   const allActive = currentCategory === 'all' ? ' nav-modal__link--active' : '';
   html += `
     <li class="nav-modal__item">
-      <a href="index.html" class="nav-modal__link${allActive}">
+      <a href="/" class="nav-modal__link${allActive}">
         <span class="nav-modal__emoji">✦</span>
         All Styles
       </a>
@@ -47,7 +47,7 @@ function buildNavList(categories, currentCategory) {
     const active = currentCategory === cat.id ? ' nav-modal__link--active' : '';
     html += `
       <li class="nav-modal__item">
-        <a href="${cat.id}.html" class="nav-modal__link${active}">
+        <a href="/${cat.id}" class="nav-modal__link${active}">
           <span class="nav-modal__emoji">${cat.emoji}</span>
           ${cat.name}
         </a>
