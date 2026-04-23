@@ -46,8 +46,8 @@
 
   /* Layout */
   --max-width: 1400px;
-  --grid-min: 300px;
-  --grid-gap: 16px;
+  --grid-min: 320px;
+  --grid-gap: 32px;
 
   /* Radius */
   --radius-sm: 6px;
@@ -303,7 +303,7 @@ body::before {
 
 .style-card {
   position: relative;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -313,19 +313,25 @@ body::before {
     transform var(--duration-normal) var(--ease-out),
     box-shadow var(--duration-normal) var(--ease-out),
     border-color var(--duration-normal) var(--ease-out);
-  aspect-ratio: 4 / 3;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
 }
 
 .style-card:hover {
-  transform: scale(1.02);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-card-hover);
-  border-color: transparent;
+  border-color: var(--color-text);
 }
 
 .style-card__image-container {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent-soft);
 }
 
 .style-card__image {
@@ -342,15 +348,10 @@ body::before {
 
 /* Bottom info bar */
 .style-card__info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: var(--space-md) var(--space-md);
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 60%, transparent 100%);
   display: flex;
   align-items: center;
   gap: var(--space-sm);
+  padding: 0;
 }
 
 .style-card__color-dot {
@@ -358,15 +359,14 @@ body::before {
   height: 10px;
   border-radius: 50%;
   flex-shrink: 0;
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--color-border);
 }
 
 .style-card__name {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  color: #FFFFFF;
+  color: var(--color-text);
   letter-spacing: -0.01em;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -375,22 +375,25 @@ body::before {
 /* Favorite button */
 .style-card__fav {
   position: absolute;
-  top: var(--space-sm);
-  right: var(--space-sm);
+  top: var(--space-lg);
+  right: var(--space-lg);
   width: 32px;
   height: 32px;
   border: none;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
+  color: var(--color-text);
   transition:
     transform var(--duration-fast) var(--ease-spring),
-    background var(--duration-fast);
+    background var(--duration-fast),
+    opacity var(--duration-fast);
   opacity: 0;
   transform: scale(0.8);
   z-index: 2;
@@ -403,8 +406,9 @@ body::before {
 }
 
 .style-card__fav:hover {
-  background: rgba(255, 255, 255, 1);
+  background: var(--color-surface);
   transform: scale(1.15) !important;
+  border-color: var(--color-text);
 }
 
 .style-card__fav--active {
