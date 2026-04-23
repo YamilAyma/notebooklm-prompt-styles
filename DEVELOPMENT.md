@@ -8,11 +8,18 @@ The project is a **Data-Driven Static Site**. Instead of hardcoding content into
 
 - `/styles/*.yaml`: The source of truth for the design prompts.
 - `/preview/[style_id]/*.png`: Preview images for each style.
-- `/scripts/`: Node.js and Python utilities for data processing.
-- `/styles/*.yaml`: The source of truth for the design prompts.
-- `/preview/[style_id]/*.png`: Preview images for each style.
-- `/scripts/`: Node.js and Python utilities for data processing.
 - `/src/`: The Astro source code (Layouts, Pages, Components).
+- `/src/scripts/`: Modular frontend logic.
+  - `app.js`: Core orchestration, data fetching, and filtering logic.
+  - `i18n.js`: Internationalization manager (EN, ES, PT).
+  - `theme.js`: Light/Dark mode management.
+  - `navigation.js`: Floating menu and category navigation.
+  - `ui/`: UI components logic.
+    - `card.js`: Style card creation and hover/click interactions.
+    - `share.js`: Social sharing modal and clipboard logic.
+    - `bottomSheet.js`: Detail view and YAML code interaction.
+    - `tooltip.js`: Custom preview tooltips for desktop.
+  - `utils.js`: Shared helper functions (Toast, path normalization).
 - `/public/data/styles.json`: The generated "database" used by the frontend.
 
 ## ⚙️ Data Pipeline
@@ -23,92 +30,70 @@ This is the core build script. It performs the following:
 - Reads every `.yaml` file in `/styles`.
 - Scans `/preview` for matching folders.
 - **Filters Styles**: Only styles that have at least one preview image are included in the final site.
-- **Asset Management**: Copies the image folders from the root `/preview` to `/public/preview` so they are accessible during the build.
+- **Asset Management**: Copies the image folders from the root `/preview` to `/public/preview`.
 - **Generates JSON**: Creates `public/data/styles.json`.
-- **Dynamic Routing**: Astro uses this JSON to generate category pages (`/creative`, `/minimalist`, etc.) during build time.
 
 **Run manually:** `npm run build:data`
 
 ### 2. Image Organization (`scripts/rename-previews.py`)
 A Python utility to ensure consistent naming of preview images.
 - Renames images inside each preview subfolder to `{folder_name}_{index}.{ext}`.
-- This ensures clean URLs and predictable behavior in the frontend image rotation.
 
 **Run manually:** `python scripts/rename-previews.py`
 
 ## 🛠️ Local Development
 
-1. **Install Dependencies**:
-   ```bash
-   npm install
-   ```
-2. **Start Dev Server**:
-   ```bash
-   npm run dev
-   ```
-   *Note: `npm run dev` automatically runs the data build script before starting the Astro dev server.*
+1. **Install Dependencies**: `npm install`
+2. **Start Dev Server**: `npm run dev`
+3. **Running Tests**: `npm test`
 
-3. **Running Tests**:
-   We use Vitest to ensure the build script correctly parses YAML and README content.
-   ```bash
-   npm test
-   ```
+## 🌐 Internationalization (i18n)
 
-## ➕ Adding a New Style (Step-by-Step)
+The site supports multiple languages (English, Spanish, Portuguese) using a custom lightweight system:
+- **`src/scripts/i18n.js`**: Contains the dictionary and logic.
+- **DOM Integration**: Elements with `data-i18n="key"` are translated automatically.
+- **ARIA Support**: Elements with `data-i18n-aria="key"` update their `aria-label`.
+- **Persistence**: Language preference is saved in `localStorage`.
 
-To add a new style to the showcase:
+To add a new language:
+1. Add the language code and translations to the `translations` object in `i18n.js`.
+2. Update the Language Selector in `Layout.astro`.
 
-1. **Create YAML**: Add your style file in `/styles/my_new_style.yaml`.
-2. **Add Previews**: Create a folder `/preview/my_new_style/` and add 2-3 PNG/JPG screenshots.
-3. **Organize Images (Optional)**:
-   ```bash
-   python scripts/rename-previews.py
-   ```
-4. **Update README**: Add the style under the appropriate category in the root `README.md` (the build script uses this for categorization).
-5. **Rebuild Data**:
-   ```bash
-   npm run build:data
-   ```
-6. **Preview**: Run `npm run dev` and check the site.
+## 🌓 Theme Support
+
+Managed via `src/scripts/theme.js`:
+- Uses CSS Variables for colors and tokens.
+- Respects system preferences and persists user choice in `localStorage`.
+- Toggle button triggers a smooth transition and icon swap.
 
 ## 🎨 Design System
 
-The frontend is built with **Astro** and uses **Vanilla CSS** located in `src/styles/styles.css`.
+The frontend is built with **Astro** and uses **Vanilla CSS** in `src/styles/styles.css`.
 - **Theme**: Swiss-minimalist with Inter and JetBrains Mono.
-- **Interactivity**: Handled in `src/scripts/app.js` using native DOM APIs. Astro bundles and optimizes these scripts.
-- **Responsive**: Uses a CSS grid (Bento style) and a mobile-specific "Bottom Sheet" for YAML viewing.
+- **Interactivity**: Modular scripts in `src/scripts/`.
+- **Responsive**: Bento-style grid and mobile-specific modals (Social Modal, Bottom Sheet).
 
 ## 📜 Git Guidelines
 
-To maintain a professional and accessible project for the international community, all commit messages and documentation must be in **English**.
+Commit messages must follow the project standard to keep history readable.
 
 ### Commit Message Format
-We follow a simplified semantic commit convention:
-- `type (Scope) - Imperative description`
-- Examples: 
-  - `feat (Web/UX) - Add social sharing buttons`
-  - `fix (Preview) - Normalize folder names`
-  - `docs - Update README acknowledgements`
+`type (Scope) - Imperative description`
+**Language:** Spanish (Imperative).
 
-### History Maintenance
-If you accidentally commit in another language or need to clean up local history before pushing, you can follow the "Cherry-pick & Reword" strategy used to sanitize the initial repository history:
-
-1. **Create a backup branch**: `git branch temp-save`
-2. **Reset to the last valid commit**: `git reset --hard [last_english_commit_hash]`
-3. **Re-apply and reword**: 
-   - `git cherry-pick [spanish_commit_hash]`
-   - `git commit --amend -m "New English Message"`
-4. **Repeat** for each commit until the history is clean.
-5. **Delete backup**: `git branch -D temp-save`
-
-This ensures a clean, understandable, and strictly English history for all public contributors.
+**Examples:**
+- `feat (i18n/UI) - Implementar selector de idiomas`
+- `fix (UI/Card) - Corregir borde animado en móviles`
+- `brand (Styles) - Actualizar colores corporativos`
+- `docs (Dev) - Actualizar documentación de arquitectura`
 
 ## 🚀 Deployment
 
 The site is built using Astro and deployed as a static site (SSG).
 - Run `npm run build`.
-- The output will be in the `dist/` directory.
+- Output: `dist/` directory.
 - **Vercel Settings**:
-  - **Framework Preset**: Astro
-  - **Build Command**: `npm run build`
-  - **Output Directory**: `dist`
+  - Framework Preset: Astro
+  - Build Command: `npm run build`
+  - Output Directory: `dist`
+
