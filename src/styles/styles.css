@@ -1002,6 +1002,112 @@ body::before {
   border-color: var(--color-text);
 }
 
+/* Social Hub & Modal */
+.social-hub {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.social-trigger {
+  display: none;
+}
+
+.social-desktop {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.social-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.social-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.social-modal[data-visible="true"] .social-modal__backdrop {
+  opacity: 1;
+}
+
+.social-modal__panel {
+  position: absolute;
+  top: 80px;
+  right: var(--space-lg);
+  width: 260px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-tooltip);
+  padding: var(--space-lg);
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.3s var(--ease-spring);
+  border: 1px solid var(--color-border);
+}
+
+.social-modal[data-visible="true"] .social-modal__panel {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.social-modal__title {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.social-modal__grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.social-modal__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.social-modal__item:hover {
+  background: var(--color-accent-soft);
+  transform: translateX(4px);
+}
+
+.social-modal__item .action-btn__icon {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 992px) {
+  .social-desktop {
+    display: none;
+  }
+  .social-trigger {
+    display: flex;
+  }
+}
+
 .action-btn__icon {
   width: 20px;
   height: 20px;

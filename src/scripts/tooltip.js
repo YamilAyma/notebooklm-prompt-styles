@@ -2,6 +2,8 @@
  * tooltip.js — Dynamic YAML tooltip with viewport-aware positioning
  */
 
+import { copyToClipboard } from './utils.js';
+
 let tooltipEl, tooltipYaml, tooltipCopy;
 let currentStyleData = null;
 let hideTimeout = null;
@@ -16,7 +18,19 @@ export function initTooltip() {
   tooltipCopy.addEventListener('click', (e) => {
     e.stopPropagation();
     if (currentStyleData) {
-      copyToClipboard(currentStyleData.yamlContent);
+      const textEl = tooltipCopy.querySelector('.copy-btn__text');
+      const original = textEl.textContent;
+      
+      copyToClipboard(currentStyleData.yamlContent, 'YAML Copied!').then(success => {
+        if (success) {
+          textEl.textContent = 'Copied!';
+          tooltipCopy.classList.add('copy-btn--copied');
+          setTimeout(() => {
+            textEl.textContent = original;
+            tooltipCopy.classList.remove('copy-btn--copied');
+          }, 1500);
+        }
+      });
     }
   });
 
@@ -83,32 +97,4 @@ function hide() {
       tooltipEl.hidden = true;
     }
   }, 300);
-}
-
-function copyToClipboard(text) {
-  navigator.clipboard.writeText(text).then(() => {
-    // Update button text temporarily
-    const textEl = tooltipCopy.querySelector('.copy-btn__text');
-    const original = textEl.textContent;
-    textEl.textContent = 'Copied!';
-    tooltipCopy.classList.add('copy-btn--copied');
-    setTimeout(() => {
-      textEl.textContent = original;
-      tooltipCopy.classList.remove('copy-btn--copied');
-    }, 1500);
-
-    // Show toast
-    showToast();
-  });
-}
-
-function showToast() {
-  const toast = document.getElementById('toast');
-  if (!toast) return;
-  toast.hidden = false;
-  toast.setAttribute('data-visible', 'true');
-  setTimeout(() => {
-    toast.setAttribute('data-visible', 'false');
-    setTimeout(() => { toast.hidden = true; }, 300);
-  }, 1800);
 }

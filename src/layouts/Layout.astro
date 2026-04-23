@@ -118,25 +118,66 @@ const { title = "NotebookLM Slide Styles", category = "all" } = Astro.props;
         <MoonIcon class="theme-toggle__moon" />
       </div>
     </button>
-    <a href="https://github.com/YamilAyma/notebooklm-prompt-styles" target="_blank" rel="noopener" class="action-btn" aria-label="GitHub Repository">
-      <img src="/icons/github.svg" alt="" class="action-btn__icon">
-    </a>
-    <a id="share-linkedin" href="#" target="_blank" rel="noopener" class="action-btn" aria-label="Share on LinkedIn">
-      <img src="/icons/linkedin.svg" alt="" class="action-btn__icon">
-    </a>
-    <a id="share-reddit" href="#" target="_blank" rel="noopener" class="action-btn" aria-label="Share on Reddit">
-      <img src="/icons/reddit.svg" alt="" class="action-btn__icon">
-    </a>
-    <a id="share-x" href="#" target="_blank" rel="noopener" class="action-btn" aria-label="Share on X">
-      <img src="/icons/x.svg" alt="" class="action-btn__icon">
-    </a>
-    <button id="share-trigger" class="action-btn" aria-label="Copy link">
-      <img src="/icons/share.svg" alt="" class="action-btn__icon">
-    </button>
+
+    <!-- Social Hub -->
+    <div class="social-hub">
+      <button id="social-trigger" class="action-btn social-trigger" aria-label="Share and Social">
+        <img src="/icons/share.svg" alt="" class="action-btn__icon">
+      </button>
+
+      <div class="social-desktop">
+        <a href="https://github.com/YamilAyma/notebooklm-prompt-styles" target="_blank" rel="noopener" class="action-btn" aria-label="GitHub Repository">
+          <img src="/icons/github.svg" alt="" class="action-btn__icon">
+        </a>
+        <a id="share-linkedin" href="#" target="_blank" rel="noopener" class="action-btn" aria-label="Share on LinkedIn">
+          <img src="/icons/linkedin.svg" alt="" class="action-btn__icon">
+        </a>
+        <a id="share-reddit" href="#" target="_blank" rel="noopener" class="action-btn" aria-label="Share on Reddit">
+          <img src="/icons/reddit.svg" alt="" class="action-btn__icon">
+        </a>
+        <a id="share-x" href="#" target="_blank" rel="noopener" class="action-btn" aria-label="Share on X">
+          <img src="/icons/x.svg" alt="" class="action-btn__icon">
+        </a>
+        <button id="copy-trigger" class="action-btn" aria-label="Copy link">
+          <img src="/icons/share.svg" alt="" class="action-btn__icon">
+        </button>
+      </div>
+    </div>
+
     <button id="fav-trigger" class="fab-fav" aria-label="Show favorites">
       <span class="fab-fav__icon">♡</span>
       <span id="fav-badge" class="fab-fav__badge">0</span>
     </button>
+  </div>
+
+  <!-- Social Modal (Mobile) -->
+  <div id="social-modal" class="social-modal" hidden>
+    <div class="social-modal__backdrop"></div>
+    <div class="social-modal__panel">
+      <h3 class="social-modal__title">Connect & Share</h3>
+      <div class="social-modal__grid">
+        <a href="https://github.com/YamilAyma/notebooklm-prompt-styles" target="_blank" rel="noopener" class="social-modal__item">
+          <img src="/icons/github.svg" alt="" class="action-btn__icon">
+          <span>GitHub</span>
+        </a>
+        <a id="modal-linkedin" href="#" target="_blank" rel="noopener" class="social-modal__item">
+          <img src="/icons/linkedin.svg" alt="" class="action-btn__icon">
+          <span>LinkedIn</span>
+        </a>
+        <a id="modal-reddit" href="#" target="_blank" rel="noopener" class="social-modal__item">
+          <img src="/icons/reddit.svg" alt="" class="action-btn__icon">
+          <span>Reddit</span>
+        </a>
+        <a id="modal-x" href="#" target="_blank" rel="noopener" class="social-modal__item">
+          <img src="/icons/x.svg" alt="" class="action-btn__icon">
+          <span>X / Twitter</span>
+        </a>
+        <button id="modal-copy" class="social-modal__item">
+          <img src="/icons/share.svg" alt="" class="action-btn__icon">
+          <span>Copy Link</span>
+        </button>
+      </div>
+    </div>
   </div>
 
   <!-- Footer -->
