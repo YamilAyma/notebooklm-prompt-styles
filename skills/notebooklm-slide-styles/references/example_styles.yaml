@@ -1,0 +1,163 @@
+# Example 1: Minimalist & Corporate
+- design_system:
+    global_style:
+      theme: "Minimalist, elegant, corporate yet lifestyle-oriented, airy, Scandinavian"
+      typography: 
+        primary_heading: "Elegant serif or clean thin sans-serif (e.g., Playfair Display, Lato, 游明朝)"
+        secondary_heading: "Clean sans-serif, uppercase, wide letter-spacing"
+        body_text: "Clean sans-serif, light weight, highly legible with generous line height"
+      color_palette:
+        primary_color: "Muted earth tones (e.g., Beige, Taupe, Soft Gray)"
+        background: "Off-white or very light warm gray (abundant whitespace is crucial)"
+        text_main: "Dark charcoal or soft black (#333333)"
+      key_visual_elements: 
+        - "High-quality lifestyle and minimalist photography (plants, coffee, clean desk setups)"
+        - "Generous margins and asymmetrical text-image balance (e.g., 50/50 or 40/60 split)"
+        - "No heavy decorations; reliance on whitespace and typography for structure"
+        - "Full-bleed (edge-to-edge) imagery alternating with text-heavy white slides"
+
+    image_generation_prompts:
+      style_guidelines: "Minimalist, aesthetic, soft natural lighting, Kinfolk style, desaturated tones, highly curated, professional photography"
+      themes:
+        - target: "Abstract / Conceptual (Cover or Background)"
+          prompt_elements: "Minimalist still life, a blank notebook on a clean wooden desk, a cup of coffee, soft morning sunlight, neutral colors, shallow depth of field"
+        - target: "Objects / Decor (Accent images)"
+          prompt_elements: "Monstera plant in a white ceramic pot, minimalist vase with dry pampas grass, clear blue sky seen through a modern window, architectural shadows"
+        - target: "Team Profiles"
+          prompt_elements: "Professional yet relaxed portrait, natural lighting, aesthetic clothing, soft blurred background"
+
+  slide_layout_templates:
+    - type: "Cover_Minimal"
+      usage: "Title slide, presentation start"
+      components:
+        - "Large, elegant Main Title (centered or left-aligned)"
+        - "Small subtitle or Website URL (e.g., reallygreatsite.com) with wide letter-spacing"
+        - "Optional: Clean solid background or extremely subtle aesthetic image"
+
+    - type: "Image_Text_Split"
+      usage: "About Us, Our Mission, Executive Summary"
+      components:
+        - "Layout: 50/50 or 40/60 split"
+        - "Visual Side: High-quality aesthetic image (e.g., desk setup, interior, plants)"
+        - "Text Side: Small category label (e.g., 'Business Plan') + Elegant Section Heading + Light-weight Body paragraph"
+
+    - type: "Process_List_Clean"
+      usage: "Solution List, Steps, Core Values"
+      components:
+        - "Header: Section Heading (e.g., 'Solution List')"
+        - "List Items: Vertical list with simple numbers or subtle thin lines"
+        - "Text: Short descriptive text under each item, clean spacing, no heavy icons"
+
+    - type: "Timeline_Minimal"
+      usage: "Proposed Timeline, Project Roadmap"
+      components:
+        - "Layout: Grid or clean horizontal flow"
+        - "Markers: Minimal text markers (e.g., 'Phase 1', 'Step One')"
+        - "Text: Brief paragraph for each phase, utilizing negative space"
+
+    - type: "Profile_Editorial"
+      usage: "Team introduction, Founders"
+      components:
+        - "Image: Large portrait image (occupying half the slide or a large clean square)"
+        - "Header: Name in elegant typography + Role (e.g., 'CO-Founder')"
+        - "Text: Short biography paragraph below or next to the name"
+
+    - type: "Showcase_Portfolio"
+      usage: "Our Portfolio, Marketing Mockup, Statistics"
+      components:
+        - "Header: Elegant Section Heading"
+        - "Visual: Large placeholder for a product mockup or multiple aesthetic images arranged in a clean grid"
+        - "Text: Minimalist explanatory paragraph"
+
+    - type: "Atmospheric_Closing"
+      usage: "Final slide, Thank You"
+      components:
+        - "Visual: Full-bleed atmospheric image (e.g., calm water, minimalist landscape, wide sky)"
+        - "Text: Simple, elegant 'Thank You' overlaid in the whitespace"
+
+# Example 2: Pop & Casual
+- design_system:
+    global_style:
+      theme: "Pop, casual, friendly, energetic, 'kawaii' (cute), personal introduction"
+      typography: 
+        primary_heading: "Rounded sans-serif or thick marker font, playful, dynamic sizing (e.g., 丸ゴシック)"
+        secondary_heading: "Bold rounded sans-serif"
+        body_text: "Friendly, highly legible, medium weight"
+      color_palette:
+        primary_color: "Bright pastel or energetic pop color (e.g., Coral Pink, Sunshine Yellow, Mint Green)"
+        accent_color: "Contrasting pop colors for highlights and icons"
+        background: "White or subtle fun patterns (e.g., faint dots, grid, or pastel blobs)"
+        text_main: "Dark brown or soft black (less harsh than pure black for a friendly vibe)"
+      key_visual_elements: 
+        - "Cut-out personal photos or expressive avatars with white borders (sticker style)"
+        - "Playful icons (e.g., cats, cameras, coffee cups)"
+        - "Hand-drawn style speech bubbles or accent lines"
+        - "Informal, fun data visualization (e.g., 'What's in my brain' pie chart)"
+
+    image_generation_prompts:
+      style_guidelines: "Bright, cheerful, casual, flat vector art, sticker-like elements, Japanese kawaii aesthetic"
+      themes:
+        - target: "Hobby Icons"
+          prompt_elements: "Cute vector illustration of a coffee cup, minimalist camera icon, fluffy cat, flat design, pastel colors, thick outlines"
+        - target: "Avatar / Portrait"
+          prompt_elements: "Friendly smiling person, casual clothes, colorful background, bright lighting, approachable, sticker style"
+
+  slide_layout_templates:
+    - type: "Cover_Pop"
+      usage: "Title slide, presentation start"
+      components:
+        - "Main Title: Playful typography (e.g., '[Name]'s Self Introduction')"
+        - "Sub-element: Enthusiastic catchphrase (e.g., 'Starts now!' or 'Here we go!')"
+
+    - type: "Greeting_Hero"
+      usage: "First impression, welcoming slide"
+      components:
+        - "Visual: Expressive portrait or avatar (can be multiple photos)"
+        - "Large greeting text (e.g., 'Hello!')"
+        - "Name in giant, bold letters"
+
+    - type: "Section_Divider"
+      usage: "Transition between topics (e.g., 'About Me', 'My Activities')"
+      components:
+        - "Giant playful typography centered on the slide"
+        - "Optional: Small cute icons floating around the text"
+
+    - type: "Profile_Specs"
+      usage: "Basic information, bio"
+      components:
+        - "Header: Playful title (e.g., 'My Profile')"
+        - "Layout: 2-column key-value list structure"
+        - "Items: Name, Nickname, Birthday, Hometown, Personality type (e.g., MBTI)"
+
+    - type: "Favorites_Grid"
+      usage: "Hobbies, likes, favorites"
+      components:
+        - "Header: Large text (e.g., 'Things I Love')"
+        - "Grid: 3 or 4 item layout with cute icons/photos + short labels (e.g., Cafe, Camera, Cat)"
+
+    - type: "Strengths_List"
+      usage: "Skills, what I'm good at, special talents"
+      components:
+        - "Header: 'My Strengths' or 'What I can do'"
+        - "List: Bullet points with energetic icons (e.g., stars or checkmarks)"
+        - "Footer note: Small friendly call-to-action (e.g., 'Feel free to ask me for photos!')"
+
+    - type: "Brain_Map_Chart"
+      usage: "Personality breakdown, mind share (Humorous)"
+      components:
+        - "Header: 'Inside my head'"
+        - "Visual: Casual, colorful pie chart"
+        - "Labels: Playful categories with percentages (e.g., Sleepy 20%, Cats 30%, Photos 50%)"
+
+    - type: "Motivation_Statement"
+      usage: "Reason for joining, core message"
+      components:
+        - "Header: Question format (e.g., 'Why am I here?')"
+        - "Text: Large, centered, impactful statement in varying font sizes to show emotion"
+
+    - type: "Goal_Declaration"
+      usage: "Future goals, challenges, closing"
+      components:
+        - "Header: 'What I want to challenge'"
+        - "Text: Energetic declaration"
+        - "Layout: Dynamic text arrangement (e.g., mix of horizontal and vertical text for emphasis)"

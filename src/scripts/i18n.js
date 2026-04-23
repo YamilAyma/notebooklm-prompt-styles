@@ -66,7 +66,10 @@ export const translations = {
     getSkillStep2: "Paste it into your AI assistant's Custom Instructions or System Prompt.",
     getSkillStep3: "Upload an image and ask: 'Create a NotebookLM style based on this'.",
     copyPrompt: "Copy Prompt",
-    promptCopied: "Prompt copied!"
+    promptCopied: "Prompt copied!",
+    footerDisclaimer: "This project is an independent community initiative and is not affiliated with, endorsed by, or associated with Google or the official NotebookLM project.",
+    skillContributionNote: "Important: All contributions must follow our standardized YAML structure to ensure compatibility with the gallery and NotebookLM Custom Instructions.",
+    skillViewRepo: "View in Repository"
   },
   es: {
     heroTitle: "Estilos Premium para NotebookLM",
@@ -131,7 +134,10 @@ export const translations = {
     getSkillStep2: "Pégalo en las Instrucciones Personalizadas o System Prompt de tu IA.",
     getSkillStep3: "Sube una imagen y di: 'Crea un estilo de NotebookLM basado en esto'.",
     copyPrompt: "Copiar Prompt",
-    promptCopied: "¡Prompt copiado!"
+    promptCopied: "¡Prompt copiado!",
+    footerDisclaimer: "Este proyecto es una iniciativa comunitaria independiente y no está vinculado, respaldado ni asociado con Google ni con el proyecto oficial de NotebookLM.",
+    skillContributionNote: "Importante: Todas las contribuciones deben seguir nuestra estructura YAML estandarizada para asegurar la compatibilidad con la galería y las Instrucciones Personalizadas de NotebookLM.",
+    skillViewRepo: "Ver en el Repositorio"
   },
   pt: {
     heroTitle: "Estilos Premium para NotebookLM",
@@ -196,7 +202,10 @@ export const translations = {
     getSkillStep2: "Cole-o nas Instruções Personalizadas ou System Prompt da sua IA.",
     getSkillStep3: "Suba uma imagem e diga: 'Crie um estilo do NotebookLM baseado nisso'.",
     copyPrompt: "Copiar Prompt",
-    promptCopied: "Prompt copiado!"
+    promptCopied: "Prompt copiado!",
+    footerDisclaimer: "Este projeto é uma iniciativa comunitária independente e não está vinculado, endossado ou associado ao Google ou ao projeto oficial NotebookLM.",
+    skillContributionNote: "Importante: Todas as contribuições devem seguir nossa estrutura YAML padronizada para garantir a compatibilidade com a galeria e as Instruções Personalizadas do NotebookLM.",
+    skillViewRepo: "Ver no Repositório"
   }
 };
 

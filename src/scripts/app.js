@@ -62,8 +62,8 @@ function renderFeaturedStyles() {
   if (!grid || !stylesData) return;
 
   const allStyles = stylesData.categories.flatMap(c => c.styles);
-  // Get 4 unique styles for the landing
-  const featured = allStyles.slice(0, 4);
+  // Get 6 unique styles for the landing
+  const featured = allStyles.slice(0, 6);
 
   grid.innerHTML = '';
   featured.forEach(style => {

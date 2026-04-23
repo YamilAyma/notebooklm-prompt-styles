@@ -4,7 +4,15 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Get NotebookLM Designer Skill">
   <main id="skill-page" class="skill-page">
+    <!-- Skill Hero with Video Background -->
     <header class="skill-hero">
+      <div class="video-bg">
+        <video autoplay muted loop playsinline class="video-bg__content">
+          <source src="/videos/presentation-notebooklm-prompt-styles.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-overlay video-overlay--skill"></div>
+      
       <div class="skill-hero__container">
         <h1 class="skill-hero__title" data-i18n="getSkillTitle">Get the NotebookLM Designer Skill</h1>
         <p class="skill-hero__subtitle" data-i18n="getSkillIntro">
@@ -30,38 +38,83 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
+        <!-- Contribution Note -->
+        <div class="skill-alert">
+          <p data-i18n="skillContributionNote">Important: All contributions must follow our standardized YAML structure to ensure compatibility with the gallery and NotebookLM Custom Instructions.</p>
+        </div>
+
         <div class="prompt-box">
           <div class="prompt-box__header">
             <span>System Prompt / Skill</span>
-            <button id="copy-skill-btn" class="btn btn--primary btn--small">
-              <span data-i18n="copyPrompt">Copy Prompt</span>
-            </button>
+            <div class="prompt-box__actions">
+              <a href="https://github.com/YamilAyma/notebooklm-prompt-styles/tree/main/skills/notebooklm-slide-styles" target="_blank" rel="noopener" class="btn btn--secondary btn--small" data-i18n="skillViewRepo">View in Repository</a>
+              <button id="copy-skill-btn" class="btn btn--primary btn--small">
+                <span data-i18n="copyPrompt">Copy Prompt</span>
+              </button>
+            </div>
           </div>
           <pre class="prompt-box__content"><code id="skill-code"># NotebookLM Slide Styles Skill
 
-Act as a professional UI/UX designer specializing in NotebookLM. Your goal is to translate visual inputs (images, PDFs, descriptions) into a valid YAML style configuration.
+This skill enables an AI assistant to translate visual identity and design documents into a standardized YAML format optimized for NotebookLM slide generation.
+
+## When to Trigger
+- The user provides an image or a set of images and asks for the "style" or "design system".
+- The user uploads a PDF or PPT and wants to replicate its layout/aesthetic for new slides.
+- The user describes a theme (e.g., "Cyberpunk", "Eco-minimalism") and needs a design definition.
+- The user explicitly mentions "NotebookLM slide YAML" or "Slide deck styles".
 
 ## Workflow
-1. Analyze typography, colors, and key visual elements from the input.
-2. Map these to slide templates (Cover, Split, Lists, Timelines).
-3. Generate image generation prompts for AI tools.
-4. Output ONLY a valid YAML following this structure:
+
+### 1. Analyze Style Inputs
+When visual or document inputs are provided, analyze:
+- Typography: Identify primary/secondary fonts, weights, and letter spacing.
+- Color Palette: Identify primary, secondary, and accent colors (HEX preferred).
+- Key Visual Elements: Patterns, photography styles, and layout characteristics.
+
+### 2. Map to Slide Templates
+Standardize the design across common slide types:
+- Cover: Main title, subtitle, background.
+- Split Layouts: 50/50 or 40/60 image-text distributions.
+- Lists & Processes: Visual organization of headers and items.
+- Timeline/Roadmap: Horizontal or grid-based flows.
+- Profiles: Team/Founder introductions.
+- Closings: Final visual impact.
+
+### 3. Generate Image Prompts
+Create a dedicated section for image generation AI:
+- Style Guidelines: Keywords for lighting, texture, and vibe.
+- Themes: Specific prompts for backgrounds, accent objects, and portraits.
+
+### 4. Output Format
+ALWAYS produce a valid YAML following this exact structure:
 
 ```yaml
 design_system:
   global_style:
-    theme: "[Description]"
+    theme: "[Detailed description]"
     typography: 
       primary_heading: "[Font]"
+      secondary_heading: "[Font]"
       body_text: "[Font]"
     color_palette:
       primary_color: "[HEX]"
       background: "[HEX]"
       text_main: "[HEX]"
-    key_visual_elements: ["Element 1", "Element 2"]
+    key_visual_elements: 
+      - "[Element 1]"
+      - "[Element 2]"
+
+  image_generation_prompts:
+    style_guidelines: "[AI guidance]"
+    themes:
+      - target: "[Target]"
+        prompt_elements: "[Keywords]"
+
 slide_layout_templates:
-  - type: "[Name]"
+  - type: "[TemplateName]"
     usage: "[Usage]"
+    components:
+      - "[Component 1]"
 ```</code></pre>
         </div>
       </div>
@@ -73,11 +126,22 @@ slide_layout_templates:
       padding-bottom: var(--space-4xl);
     }
     .skill-hero {
+      position: relative;
       padding: var(--space-4xl) var(--space-lg);
-      background: var(--color-accent-soft);
+      min-height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      color: #FFFFFF;
+      overflow: hidden;
+    }
+    .video-overlay--skill {
+      background: rgba(0, 0, 0, 0.7);
     }
     .skill-hero__container {
+      position: relative;
+      z-index: 3;
       max-width: 800px;
       margin: 0 auto;
     }
@@ -85,10 +149,11 @@ slide_layout_templates:
       font-size: clamp(2rem, 5vw, 3.5rem);
       font-weight: 800;
       margin-bottom: var(--space-lg);
+      letter-spacing: -0.03em;
     }
     .skill-hero__subtitle {
       font-size: 1.25rem;
-      color: var(--color-text-secondary);
+      opacity: 0.9;
     }
     .skill-content {
       padding: var(--space-4xl) var(--space-lg);
@@ -101,7 +166,7 @@ slide_layout_templates:
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: var(--space-xl);
-      margin-bottom: var(--space-4xl);
+      margin-bottom: var(--space-3xl);
     }
     .step-card {
       display: flex;
@@ -124,6 +189,17 @@ slide_layout_templates:
       font-weight: 800;
       flex-shrink: 0;
     }
+
+    .skill-alert {
+      background: var(--color-accent-soft);
+      border-left: 4px solid var(--color-text);
+      padding: var(--space-lg) var(--space-xl);
+      margin-bottom: var(--space-2xl);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-weight: 500;
+      font-size: 0.9375rem;
+    }
+
     .prompt-box {
       background: var(--color-surface);
       border-radius: var(--radius-lg);
@@ -139,18 +215,35 @@ slide_layout_templates:
       align-items: center;
       font-weight: 600;
     }
+    .prompt-box__actions {
+      display: flex;
+      gap: var(--space-sm);
+    }
     .prompt-box__content {
       padding: var(--space-xl);
       margin: 0;
       font-family: var(--font-mono);
       font-size: 0.9rem;
       white-space: pre-wrap;
-      max-height: 500px;
+      max-height: 600px;
       overflow-y: auto;
+      color: var(--color-text);
     }
     .btn--small {
       padding: var(--space-xs) var(--space-lg);
       font-size: 0.875rem;
+    }
+
+    @media (max-width: 600px) {
+      .prompt-box__header {
+        flex-direction: column;
+        gap: var(--space-md);
+        align-items: flex-start;
+      }
+      .prompt-box__actions {
+        width: 100%;
+        justify-content: space-between;
+      }
     }
   </style>
 
