@@ -8,6 +8,7 @@
 import { isFavorite, toggleFavorite } from './favorites.js';
 import { initTooltip, show as showTooltip, scheduleHide as hideTooltip } from './tooltip.js';
 import { initNavigation } from './navigation.js';
+import { initTheme } from './theme.js';
 
 // ─── State ──────────────────────────────────────────────────────────
 
@@ -87,6 +88,7 @@ async function init() {
   updateFavBadge();
   initShare();
   initPagination();
+  initTheme();
 }
 
 function initPagination() {

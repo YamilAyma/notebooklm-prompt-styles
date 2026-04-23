@@ -1,6 +1,8 @@
 ---
 import Footer from '../components/Footer.astro';
 import FAQ from '../components/FAQ.astro';
+import SunIcon from '~icons/carbon/sun';
+import MoonIcon from '~icons/carbon/moon';
 
 interface Props {
   title?: string;
@@ -18,6 +20,25 @@ const { title = "NotebookLM Slide Styles", category = "all" } = Astro.props;
   <title>{title}</title>
   <meta name="description" content="A curated collection of visual design styles for NotebookLM slide generation. Browse, preview, and copy YAML prompts.">
   <meta name="google-site-verification" content="2UF3L_fQMu61h2rfdzqpw1tDhVwaZpAArh1o_1N4e3c" />
+  
+  <script is:inline>
+    const theme = (() => {
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+        return localStorage.getItem('theme');
+      }
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+      }
+      return 'light';
+    })();
+
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+    window.localStorage.setItem('theme', theme);
+  </script>
   
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -89,6 +110,12 @@ const { title = "NotebookLM Slide Styles", category = "all" } = Astro.props;
 
   <!-- Top Right Actions -->
   <div class="top-actions">
+    <button id="theme-toggle" class="action-btn" aria-label="Toggle dark mode">
+      <div class="theme-toggle__icons">
+        <SunIcon class="theme-toggle__sun" />
+        <MoonIcon class="theme-toggle__moon" />
+      </div>
+    </button>
     <a href="https://github.com/YamilAyma/notebooklm-prompt-styles" target="_blank" rel="noopener" class="action-btn" aria-label="GitHub Repository">
       <img src="/icons/github.svg" alt="" class="action-btn__icon">
     </a>
