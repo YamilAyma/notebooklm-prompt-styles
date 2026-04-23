@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import YouTubeLink from '../components/YouTubeLink.astro';
+import PortfolioIcon from '~icons/carbon/portfolio';
+import HelpIcon from '~icons/carbon/help';
 ---
 
 <Layout category="landing">
@@ -45,13 +47,19 @@ import YouTubeLink from '../components/YouTubeLink.astro';
       </div>
 
       <div class="landing-hero__container">
-        <div class="hero-content-box">
+        <div class="hero-content-box hero-entrance">
           <div class="hero-content-inner">
             <h1 class="landing-hero__title" data-i18n="landingHeroTitle">Elevate Your NotebookLM Slides</h1>
             <p class="landing-hero__subtitle" data-i18n="landingHeroSub">The ultimate collection of professional YAML styles for high-impact presentations.</p>
             <div class="landing-hero__actions">
-              <a href="/styles" class="btn btn--primary" data-i18n="landingCtaBtn">Explore Gallery</a>
-              <a href="#how-it-works" class="btn btn--secondary" data-i18n="landingHowItWorks">How it Works</a>
+              <a href="/styles" class="btn btn--primary">
+                <PortfolioIcon class="btn__icon" />
+                <span data-i18n="landingCtaBtn">Explore Gallery</span>
+              </a>
+              <a href="#how-it-works" class="btn btn--secondary">
+                <HelpIcon class="btn__icon" />
+                <span data-i18n="landingHowItWorks">How it Works</span>
+              </a>
             </div>
           </div>
         </div>
@@ -61,13 +69,12 @@ import YouTubeLink from '../components/YouTubeLink.astro';
     <style>
       .landing-hero {
         position: relative;
-        height: 100vh;
-        min-height: 400px;
+        min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        background: #fff;
+        background: var(--color-bg);
       }
 
       .hero-bg-grid {
@@ -76,6 +83,20 @@ import YouTubeLink from '../components/YouTubeLink.astro';
         z-index: 1;
         opacity: 0.9;
         transform: scale(1.02);
+        mask-image: linear-gradient(
+          to bottom,
+          transparent 0%,
+          black 15%,
+          black 85%,
+          transparent 100%
+        );
+        -webkit-mask-image: linear-gradient(
+          to bottom,
+          transparent 0%,
+          black 15%,
+          black 85%,
+          transparent 100%
+        );
       }
 
       .hero-bg-grid__track {
@@ -119,19 +140,37 @@ import YouTubeLink from '../components/YouTubeLink.astro';
         position: relative;
         z-index: 10;
         width: 100%;
-        max-width: 1000px;
+        max-width: 720px;
         padding: 0 var(--space-lg);
+      }
+
+      .hero-entrance {
+        animation: heroEntrance 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      }
+
+      @keyframes heroEntrance {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+          filter: blur(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+          filter: blur(0);
+        }
       }
 
       .hero-content-box {
         background: #fff;
-        padding: var(--space-2xl);
+        padding: var(--space-3xl) var(--space-2xl);
+        border-radius: 10px;
         position: relative;
-        /* The "Embedded Paint" effect */
         box-shadow: 
-          inset 0 0 80px rgba(0,0,0,0.05),
-          0 0 0 60px #fff; /* Thick white paint bleed */
-        border: 1px solid rgba(0,0,0,0.1);
+          inset 0 0 100px rgba(255,255,255,1),
+          inset 0 0 40px rgba(0,0,0,0.02),
+          0 0 0 20px #fff; 
+        border: 1px solid rgba(0,0,0,0.05);
       }
 
       .hero-content-inner {
@@ -140,27 +179,24 @@ import YouTubeLink from '../components/YouTubeLink.astro';
       }
 
       .landing-hero__title {
-        font-size: clamp(2.5rem, 8vw, 5rem);
+        font-size: clamp(2.25rem, 7vw, 3.75rem);
         line-height: 0.95;
         margin-bottom: var(--space-lg);
-        color: #000;
-        font-weight: 1000;
-        letter-spacing: -0.07em;
-        /* Carved effect */
-        text-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 -1px 0 rgba(255,255,255,0.5);
+        color: #2b2b2b;
+        font-weight: 900;
+        letter-spacing: -0.06em;
+        text-shadow: 0 1px 1px rgba(0,0,0,0.1);
       }
 
       .landing-hero__subtitle {
-        font-size: 1.4rem;
-        color: #555;
-        margin-bottom: var(--space-3xl);
-        max-width: 680px;
+        font-size: 1.125rem;
+        color: #666;
+        margin-bottom: var(--space-2xl);
+        max-width: 540px;
         margin-left: auto;
         margin-right: auto;
         font-weight: 500;
-        line-height: 1.3;
-        /* Subtle carved effect */
-        text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+        line-height: 1.45;
       }
 
       .landing-hero__actions {
@@ -170,8 +206,15 @@ import YouTubeLink from '../components/YouTubeLink.astro';
         align-items: center;
       }
 
+      .btn__icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+        flex-shrink: 0;
+      }
+
       .btn--primary {
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       }
 
       @media (max-width: 768px) {

@@ -29,7 +29,7 @@
 
 :root {
   /* Colors */
-  --color-bg: #FAFAFA;
+  --color-bg: #eeecec;
   --color-surface: #FFFFFF;
   --color-text: #111111;
   --color-text-secondary: #666666;
@@ -454,8 +454,8 @@ body::before {
   opacity: 0;
   transform: translateY(8px);
   transition:
-    opacity var(--duration-normal) var(--ease-out),
-    transform var(--duration-normal) var(--ease-out);
+    opacity 0.2s ease-out,
+    transform 0.2s ease-out;
   overflow: hidden;
 }
 
@@ -737,8 +737,21 @@ body::before {
   font-weight: 700;
 }
 
-.nav-modal__emoji {
+.nav-modal__emoji,
+.nav-modal__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
   font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.nav-modal__icon svg {
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
 }
 
 .nav-modal__divider {

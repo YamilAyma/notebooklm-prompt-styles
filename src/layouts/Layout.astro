@@ -122,12 +122,21 @@ const { title = "NotebookLM Slide Styles", category = "all" } = Astro.props;
     <!-- Language Selector -->
     <div class="lang-selector">
       <button id="lang-trigger" class="action-btn lang-trigger" aria-label="Change language">
-        <span id="current-lang-code" class="lang-code">EN</span>
+        <span id="current-lang-code" class="lang-code">🇺🇸</span>
       </button>
       <div id="lang-menu" class="lang-menu" hidden>
-        <button data-lang="en" class="lang-menu__item">English</button>
-        <button data-lang="es" class="lang-menu__item">Español</button>
-        <button data-lang="pt" class="lang-menu__item">Português</button>
+        <button data-lang="en" class="lang-menu__item">
+          <span class="lang-menu__flag">🇺🇸</span>
+          <span class="lang-menu__name">English</span>
+        </button>
+        <button data-lang="es" class="lang-menu__item">
+          <span class="lang-menu__flag">🇪🇸</span>
+          <span class="lang-menu__name">Español</span>
+        </button>
+        <button data-lang="pt" class="lang-menu__item">
+          <span class="lang-menu__flag">🇧🇷</span>
+          <span class="lang-menu__name">Português</span>
+        </button>
       </div>
     </div>
 

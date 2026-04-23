@@ -80,7 +80,9 @@ function initI18n() {
   if (!trigger || !menu) return;
 
   const updateTrigger = () => {
-    if (codeEl) codeEl.textContent = getLang().toUpperCase();
+    const lang = getLang();
+    const flags = { en: '🇺🇸', es: '🇪🇸', pt: '🇧🇷' };
+    if (codeEl) codeEl.textContent = flags[lang] || lang.toUpperCase();
   };
 
   updateTrigger();
