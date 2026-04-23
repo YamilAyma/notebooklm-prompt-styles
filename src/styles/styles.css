@@ -535,21 +535,9 @@ body::before {
   transform: translateY(0);
 }
 
+/* No rainbow border for bottom sheet panel */
 .bottom-sheet__panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1.5px;
-  background: conic-gradient(from var(--angle), #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  animation: rotate-gradient 3s linear infinite;
-  pointer-events: none;
-  /* Mask out the bottom part so it doesn't show behind the screen edge */
-  clip-path: inset(0 0 2px 0);
+  display: none;
 }
 
 .bottom-sheet__code-wrapper {
@@ -561,21 +549,9 @@ body::before {
   border: 1px solid var(--color-border);
 }
 
-/* Secondary subtle rainbow border inside for the code area */
+/* No rainbow border for code wrapper */
 .bottom-sheet__code-wrapper::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1.5px;
-  background: conic-gradient(from var(--angle), #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  animation: rotate-gradient 4s linear infinite reverse;
-  pointer-events: none;
-  opacity: 0.5;
+  display: none;
 }
 
 .bottom-sheet__handle {
@@ -637,20 +613,9 @@ body::before {
   position: relative;
 }
 
-/* Rainbow border effect for bottom sheet code */
+/* No rainbow border for bottom sheet code */
 .bottom-sheet__code::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 3px;
-  background: conic-gradient(from var(--angle), #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  animation: rotate-gradient 3s linear infinite;
-  pointer-events: none;
+  display: none;
 }
 
 .bottom-sheet .copy-btn {
