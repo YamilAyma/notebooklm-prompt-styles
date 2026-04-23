@@ -1,3 +1,8 @@
+---
+name: notebooklm-slide-styles
+description: Translates visual identity and design documents into standardized YAML for NotebookLM slide generation.
+---
+
 # NotebookLM Slide Styles Skill
 
 This skill enables an AI assistant to translate visual identity and design documents into a standardized YAML format optimized for NotebookLM slide generation.
