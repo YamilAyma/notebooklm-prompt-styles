@@ -1,0 +1,87 @@
+design_system:
+  global_style:
+    theme: "High-end, sophisticated, and minimalist fashion editorial aesthetic. Features a luxury palette of deep espresso, gold, and warm taupe. Combines high-contrast condensed serifs with elegant cursive accents for a premium 'magazine' feel."
+    typography: 
+      primary_heading: "High-contrast, elegant condensed serif (e.g., Didot, Perandory) for a sophisticated fashion look."
+      accent_script: "Refined, flowing cursive script (e.g., Great Vibes, Nagh Script) for artistic emphasis."
+      body_text: "Minimalist sans-serif (e.g., Montserrat, Inter) with wide tracking and generous line-spacing."
+    color_palette:
+      primary_color: "#2D2926"
+      secondary_color: "#D4AF37"
+      background: "#3C2F2F"
+      text_main: "#FFFFFF"
+      accent_taupe: "#A6917C"
+    key_visual_elements: 
+      - "Subtle gold sparkle/star vector accents."
+      - "Macro photography of luxury textures (silk, jewelry, fabric)."
+      - "Clean, thin white borders and dividers."
+      - "Asymmetric split-screen layouts (Photo vs. Typography)."
+      - "Overlaying script text on top of serif titles for depth."
+      - "High-fashion studio portraits with neutral, earthy backdrops."
+
+  image_generation_prompts:
+    style_guidelines: "High-end fashion editorial photography, macro jewelry shots, soft studio lighting, neutral earthy tones, silk and linen textures, minimalist luxury composition."
+    themes:
+      - target: "Luxury Goods"
+        prompt_elements: "Macro close-up of gold jewelry on folded beige silk fabric, soft shadows, warm luxury lighting, 8k resolution."
+      - target: "Editorial Portrait"
+        prompt_elements: "Fashion model in a neutral-toned linen suit, minimalist studio background, soft natural lighting, high-contrast editorial style."
+      - target: "Texture Detail"
+        prompt_elements: "Close-up of crumpled brown silk fabric with dramatic lighting, highlighting shadows and sheen, sophisticated aesthetic."
+
+slide_layout_templates:
+  - type: "Editorial_Cover"
+    usage: "Main title for fashion collections or brand launches"
+    components:
+      - "Large Condensed Serif Title (White)"
+      - "Overlaid Gold Script Subtitle"
+      - "Visual: Full-bleed background image of luxury fabric or jewelry"
+
+  - type: "Brand_Narrative"
+    usage: "Introducing brand philosophy or designer stories"
+    components:
+      - "Layout: 50/50 split"
+      - "Left: High-end macro photography"
+      - "Right: Large Serif Title ('ABOUT') with Gold Script accent and clean body text"
+
+  - type: "Mood_Gallery"
+    usage: "Visual inspiration or trend mapping"
+    components:
+      - "Section Heading top-left (Serif + Script)"
+      - "Layout: Large vertical portrait bleed on the right"
+      - "Detailed text block on the left with gold sparkle accents"
+
+  - type: "Product_Showcase"
+    usage: "Highlighting specific collection pieces or details"
+    components:
+      - "Section Heading top-left in all-caps Serif"
+      - "Visual: Card with three-image gallery on the bottom-right"
+      - "Clean descriptive text blocks on the left"
+
+  - type: "Visual_Lookbook"
+    usage: "Displaying multiple styling ideas or product variants"
+    components:
+      - "Section Heading top-left in Serif + Script"
+      - "Layout: 3x2 grid of vertical fashion portraits"
+      - "Clean caption text with gold subheaders"
+
+  - type: "Texture_Analysis"
+    usage: "Focusing on materials, craftsmanship, or quality"
+    components:
+      - "Section Heading top-centered"
+      - "Layout: Wide card with three horizontal detail shots"
+      - "Descriptive list with gold bullet points"
+
+  - type: "Service_Catalog"
+    usage: "Detailed info on pricing, ordering, or timelines"
+    components:
+      - "Layout: Rounded-corner dark card centered"
+      - "Gold script header inside the card"
+      - "Multi-column list with clean dividers and white text"
+
+  - type: "Closure_Elegance"
+    usage: "Final slide with contact info and parting message"
+    components:
+      - "Large Bold Serif Title centered"
+      - "Layout: Split into contact details on the left and vertical photos on the right"
+      - "Clean gold sparkle accents in the corners"

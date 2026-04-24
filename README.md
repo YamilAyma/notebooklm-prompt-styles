@@ -40,6 +40,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Vision Board](#vision-board)
   - [Classical Scrapbook](#classical-scrapbook)
   - [Vibrant Agency](#vibrant-agency)
+  - [Luxury Editorial](#luxury-editorial)
   - [Neon Pulsar](#neon-pulsar)
   - [Cobalt Editorial](#cobalt-editorial)
   - [Midnight Tactical](#midnight-tactical)
@@ -917,6 +918,43 @@ slide_layout_templates:
     usage: "Grid of large rounded cards with orange icons"
   - type: "Performance_Kpis"
     usage: "Visualizing metrics with orange donut progress charts"
+```
+
+#### Luxury Editorial
+
+A sophisticated, minimalist aesthetic inspired by high-end fashion magazines. It features a luxury palette of deep espresso and gold, combining elegant condensed serifs with flowing cursive accents. Ideal for luxury brands, fashion collections, and premium product launches.
+
+![Luxury Editorial Preview](preview/luxury_editorial/luxury_editorial_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/luxury_editorial.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "High-end fashion magazine aesthetic. Deep espresso and gold."
+    typography: 
+      primary_heading: "Elegant condensed serif (Didot-style)"
+      accent_script: "Refined flowing cursive"
+      body_text: "Minimalist sans-serif with wide tracking"
+    color_palette:
+      primary_color: "#2D2926"
+      secondary_color: "#D4AF37"
+      background: "#3C2F2F"
+      text_main: "#FFFFFF"
+    key_visual_elements: 
+      - "Subtle gold sparkle/star vector accents"
+      - "Macro photography of luxury textures (silk, jewelry)"
+      - "Asymmetric split-screen layouts"
+      - "Overlaying script text on top of serif titles"
+
+slide_layout_templates:
+  - type: "Editorial_Cover"
+    usage: "Fashion collection intro with full-bleed luxury imagery"
+  - type: "Brand_Narrative"
+    usage: "Split-screen layout for brand stories or mission"
+  - type: "Visual_Lookbook"
+    usage: "Grid-based display for styling ideas or products"
 ```
 
 
