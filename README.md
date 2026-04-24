@@ -21,6 +21,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Emerald Corporate](#emerald-corporate)
   - [The Seasons](#the-seasons)
   - [Vibrant Corporate](#vibrant-corporate)
+  - [Eco Modern](#eco-modern)
 - [🌿 Minimalist](#-minimalist)
   - [Geometric Mono](#geometric-mono)
   - [Silicon Refined](#silicon-refined)
@@ -289,6 +290,43 @@ slide_layout_templates:
     usage: "Horizontal timeline with circular navy nodes"
   - type: "Objective_Chevron"
     usage: "List with green chevron markers and architectural bleed"
+```
+
+#### Eco Modern
+
+A modern, sustainable, and high-impact aesthetic inspired by nature and environmental initiatives. It features immersive landscape photography, dark mode backgrounds, and glassmorphic (frosted glass) overlays. A signature lime-green accent dot provides a contemporary brand finish.
+
+![Eco Modern Preview](preview/eco_modern/eco_modern_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/eco_modern.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Sustainable, modern nature aesthetic. Dark mode with glassmorphism."
+    typography: 
+      primary_heading: "Extra-bold geometric sans-serif (Codec Pro)"
+      secondary_heading: "Clean bold sans-serif"
+      body_text: "Highly legible functional sans-serif"
+    color_palette:
+      primary_color: "#D4FF00"
+      secondary_color: "#5D8AA8"
+      background_dark: "#000000"
+      text_main: "#FFFFFF"
+    key_visual_elements: 
+      - "Full-bleed high-saturation nature photography"
+      - "Frosted glass containers for text overlays"
+      - "Large rounded corners on all UI elements"
+      - "Signature lime-green accent dot after titles"
+
+slide_layout_templates:
+  - type: "Immersive_Hero"
+    usage: "High-impact cover with full-bleed nature backdrop"
+  - type: "Frosted_Agenda"
+    usage: "Agenda points inside a glassmorphic container"
+  - type: "Eco_Action_Grid"
+    usage: "Practical tips with alternating rounded image/text blocks"
 ```
 
 ---

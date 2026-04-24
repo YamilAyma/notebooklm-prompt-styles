@@ -1,0 +1,81 @@
+design_system:
+  global_style:
+    theme: "Modern, sustainable, and high-impact nature-inspired aesthetic. Combines immersive full-bleed landscape photography with dark mode backgrounds and glassmorphic overlays. Features clean geometric typography with a signature vibrant lime-green accent dot."
+    typography: 
+      primary_heading: "Extra-bold geometric sans-serif (e.g., Codec Pro, Montserrat) for a modern, tech-forward nature feel."
+      secondary_heading: "Bold sans-serif with clean tracking."
+      body_text: "Functional and highly legible sans-serif (e.g., Inter, Roboto)."
+    color_palette:
+      primary_color: "#D4FF00"
+      secondary_color: "#5D8AA8"
+      background_dark: "#000000"
+      background_light: "#FFFFFF"
+      text_main: "#FFFFFF"
+      accent_slate: "#A9ACB6"
+    key_visual_elements: 
+      - "Full-bleed, high-saturation nature and landscape photography."
+      - "Frosted glass (glassmorphism) containers for text and lists."
+      - "Large rounded corners (24px+) on images and UI elements."
+      - "Signature lime-green accent dot after primary headings."
+      - "High-contrast dark mode layouts for deep immersion."
+      - "Minimalist, top-aligned navigation and footer info on covers."
+
+  image_generation_prompts:
+    style_guidelines: "Cinematic nature photography, lush mountain ranges, clear blue skies, high-saturation, crisp detail, professional landscape photography style."
+    themes:
+      - target: "Immersive Nature"
+        prompt_elements: "Wide shot of rolling green hills under a bright blue sky with wispy clouds, high contrast, cinematic lighting, 8k resolution."
+      - target: "Coastal Serenity"
+        prompt_elements: "Aerial view of a turquoise tropical coastline with lush green cliffs, crystal clear water, vibrant natural colors."
+      - target: "Mountain Majesty"
+        prompt_elements: "Close-up of a snow-capped mountain peak during sunrise, soft golden light hitting the ridges, majestic atmosphere."
+
+slide_layout_templates:
+  - type: "Immersive_Hero"
+    usage: "High-impact opening slide for nature or environmental topics"
+    components:
+      - "Large Extra-Bold White Title with a vibrant lime-green dot"
+      - "Visual: Full-bleed landscape background image"
+      - "Minimalist footer text for URLs and emails"
+
+  - type: "Welcome_Introduction"
+    usage: "Introducing the speaker, company, or core mission"
+    components:
+      - "Layout: 50/50 split on a dark background"
+      - "Left: Square rounded-corner nature portrait"
+      - "Right: Large 'Welcome' title with clean body text and secondary image at the bottom"
+
+  - type: "Frosted_Agenda"
+    usage: "Mapping presentation structure or key points"
+    components:
+      - "Large bold title on the bottom-left"
+      - "Visual: Full-bleed background image"
+      - "Layout: Centered or right-aligned frosted glass card with bullet points"
+
+  - type: "Contrast_Insight"
+    usage: "Highlighting specific environmental roles or deep dives"
+    components:
+      - "Section Heading on the top-left"
+      - "Layout: Dark background with two floating rounded-corner images"
+      - "Clean body text block aligned to the right"
+
+  - type: "Split_Landscape"
+    usage: "Comparing values or showing biodiversity snapshots"
+    components:
+      - "Layout: Split screen on dark background"
+      - "Left: Large vertical rounded-corner landscape image"
+      - "Right: Bold Title with supportive body text"
+
+  - type: "Eco_Action_Grid"
+    usage: "Providing practical tips or listing initiatives"
+    components:
+      - "Layout: Dark background with alternating image and text blocks"
+      - "Large bold titles for each action item"
+      - "Images feature large rounded corners"
+
+  - type: "Minimal_Closure"
+    usage: "Clean final slide for parting thoughts and contact"
+    components:
+      - "Extra-Bold 'Thank You' title centered on a solid black background"
+      - "Clean supportive text block below title"
+      - "Minimalist contact info in the bottom corners"
