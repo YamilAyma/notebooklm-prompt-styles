@@ -14,46 +14,51 @@ Explore the collection interactively through our high-performance showcase site.
 
 ## 📖 Table of Contents
 
-- [🏷️ Brand Inspired](#-brand-inspired)
-  - [Editorial Essence](#editorial-essence)
-  - [Visual Discovery](#visual-discovery)
+- [👔 Business & Executive](#-business-executive)
   - [Executive Report](#executive-report)
   - [Emerald Corporate](#emerald-corporate)
-  - [The Seasons](#the-seasons)
   - [Vibrant Corporate](#vibrant-corporate)
-  - [Eco Modern](#eco-modern)
-  - [Urban Ribbon](#urban-ribbon)
-- [🌿 Minimalist](#-minimalist)
-  - [Geometric Mono](#geometric-mono)
+  - [Ensign Corporate](#ensign-corporate)
   - [Silicon Refined](#silicon-refined)
+- [✨ Minimalist & Modern](#-minimalist-modern)
+  - [Geometric Mono](#geometric-mono)
   - [Lush Minimal](#lush-minimal)
   - [Structured Mint](#structured-mint)
-  - [Architectural Mono](#architectural-mono)
-  - [Architectural Cobalt](#architectural-cobalt)
-  - [Architectural Portfolio](#architectural-portfolio)
-- [🎨 Creative](#-creative)
+- [🎨 Creative & Playful](#-creative-playful)
   - [Creative Spark](#creative-spark)
   - [Artisan Rust](#artisan-rust)
   - [Vintage Charm](#vintage-charm)
-  - [Scholar's Journal](#scholars-journal)
   - [Creative Notebook](#creative-notebook)
+  - [Kawaii Playful](#kawaii-playful)
+  - [Y2K Nostalgia](#y2k-nostalgia)
+  - [Creative Workshop](#creative-workshop)
+  - [Creative Classroom](#creative-classroom)
+- [📖 Editorial & Magazine](#-editorial-magazine)
+  - [Editorial Essence](#editorial-essence)
+  - [Luxury Editorial](#luxury-editorial)
+  - [Cobalt Editorial](#cobalt-editorial)
+  - [Architectural Portfolio](#architectural-portfolio)
   - [Classical Gallery](#classical-gallery)
   - [Summer Collage](#summer-collage)
   - [Vision Board](#vision-board)
-  - [Kawaii Playful](#kawaii-playful)
+- [🚀 Tech & Innovation](#-tech-innovation)
+  - [Visual Discovery](#visual-discovery)
+  - [Urban Ribbon](#urban-ribbon)
+  - [Neon Pulsar](#neon-pulsar)
+  - [Midnight Tactical](#midnight-tactical)
+  - [Architectural Mono](#architectural-mono)
+  - [Architectural Cobalt](#architectural-cobalt)
+- [🌿 Nature & Wellness](#-nature-wellness)
+  - [Eco Modern](#eco-modern)
+  - [Botanical Journal](#botanical-journal)
+  - [The Seasons](#the-seasons)
+  - [Scholar's Journal](#scholars-journal)
   - [Classical Scrapbook](#classical-scrapbook)
   - [Vibrant Agency](#vibrant-agency)
-  - [Luxury Editorial](#luxury-editorial)
-  - [Neon Pulsar](#neon-pulsar)
-  - [Cobalt Editorial](#cobalt-editorial)
-  - [Midnight Tactical](#midnight-tactical)
-  - [Creative Classroom](#creative-classroom)
-  - [Botanical Journal](#botanical-journal)
-  - [Y2K Nostalgia](#y2k-nostalgia)
-  - [Creative Workshop](#creative-workshop)
-  - [Ensign Corporate](#ensign-corporate)
 - [🚀 How to Use](#-how-to-use)
 - [🛠️ Contribution](#-contribution)
+- [🏗️ Acknowledgements](#-acknowledgements)
+- [⚖️ Disclaimer](#-disclaimer)
 
 ---
 
@@ -64,84 +69,11 @@ Explore the collection interactively through our high-performance showcase site.
 
 ### 🏷️ Brand Inspired
 
-#### Editorial Essence
 
-Sophisticated, editorial, and human-centric design language. It uses warm cream backgrounds, bold terracotta accents, and elegant serif typography to create a "book-like" presentation feel.
+### 👔 Business & Executive
 
-![Editorial Essence Preview](preview/editorial_essence/editorial_essence_1.png)
 
-> [!TIP]
-> This is a simplified preview. [View Full YAML](styles/editorial_essence.yaml)
-
-```yaml
-design_system:
-  global_style:
-    theme: "Minimalist, sophisticated, and human-centric. High-end editorial style using warm cream backgrounds and bold terracotta accents."
-    typography: 
-      primary_heading: "Elegant serif (e.g., Lora, Playfair Display), bold"
-      secondary_heading: "Clean sans-serif (e.g., Poppins, Inter), uppercase"
-      body_text: "Refined serif (e.g., Lora), airy line-height"
-    color_palette:
-      primary_color: "#D97757"
-      background: "#FAF9F5"
-      text_main: "#141413"
-    key_visual_elements: 
-      - "Generous whitespace (Editorial layout)"
-      - "Abstract geometric line art"
-      - "Pill-shaped labels"
-
-  image_generation_prompts:
-    style_guidelines: "Editorial photography style, warm natural lighting, high-end magazine aesthetic, minimalist cream background, terracotta accents."
-    themes:
-      - target: "Abstract Connection"
-        prompt_elements: "Minimalist geometric shapes, warm earth tones, fine line art."
-
-slide_layout_templates:
-  - type: "Cover_Editorial"
-    usage: "Main title slide with high-impact serif typography"
-  - type: "Split_Insight"
-    usage: "40/60 text-image split for conceptual explanations"
-```
-
-#### Visual Discovery
-
-Focuses on visual-first layouts, card-based components with high border-radius, and vibrant red accents to drive engagement and focus. Inspired by modern discovery feeds.
-
-![Visual Discovery Preview](preview/visual_discovery_preview.png)
-
-> [!TIP]
-> This is a simplified preview. [View Full YAML](styles/visual_discovery.yaml)
-
-```yaml
-design_system:
-  global_style:
-    theme: "Modern, visual-first, and organized. Inspired by card-based discovery aesthetics. Uses card-based layouts with high border radius, soft shadows, and vibrant accents."
-    typography: 
-      primary_heading: "Clean rounded sans-serif (e.g., Roboto, Helvetica Rounded), bold"
-      secondary_heading: "Simple sans-serif, medium weight, clean"
-      body_text: "Functional sans-serif, standard weights, high contrast on white"
-    color_palette:
-      primary_color: "#E60023"
-      background: "#FFFFFF"
-      text_main: "#111111"
-      accent_color: "#EFEFEF"
-    key_visual_elements: 
-      - "Rounded corners (16px to 24px) for cards and images"
-      - "Drop shadows for depth"
-      - "Grid-based image distribution"
-      - "Circular profiles and 'save' style button call-outs"
-
-  image_generation_prompts:
-    style_guidelines: "Clean white studio background, vibrant accents, rounded corners, drop shadows, flat design elements, organized grid."
-
-slide_layout_templates:
-  - type: "Cover_Discovery"
-    usage: "Impactful intro slide"
-  - type: "Card_Grid_Insights"
-    usage: "Presenting multiple features or items"
-  - type: "Masonry_Vision"
-    usage: "Inspiration or mood board"
-```
+### 👔 Business & Executive
 
 #### Executive Report
 
@@ -220,43 +152,6 @@ slide_layout_templates:
   - type: "Glassmorphic_Data"
     usage: "Data-heavy slides with visual clarity"
 
-#### The Seasons
-
-An organic and earthy aesthetic inspired by sustainable branding, apothecary, and wellness. It features high-contrast serifs, deep olive and terracotta tones, and botanical photography with stadium-shaped masks and balanced asymmetric layouts.
-
-![The Seasons Preview](preview/the_seasons/the_seasons_1.png)
-
-> [!TIP]
-> This is a simplified preview. [View Full YAML](styles/the_seasons.yaml)
-
-```yaml
-design_system:
-  global_style:
-    theme: "Organic, earthy wellness and high-end botanical branding."
-    typography: 
-      primary_heading: "Classic, high-contrast serif (Playfair Display)"
-      secondary_heading: "Refined italic serif or modern sans-serif"
-      body_text: "Clean minimalist sans-serif"
-    color_palette:
-      primary_color: "#3D3D29"
-      secondary_color: "#8F564B"
-      background: "#F9F6F1"
-      text_main: "#2D2D2D"
-    key_visual_elements: 
-      - "Macro botanical photography (eucalyptus, tropical leaves)"
-      - "Stadium-shaped masks for images and content blocks"
-      - "Shadow overlays of plant leaves for atmosphere"
-      - "Earthy-toned data visualizations (Venn, bar charts)"
-
-slide_layout_templates:
-  - type: "Organic_Hero"
-    usage: "Large Serif Title over botanical background bleed"
-  - type: "Product_Inventory"
-    usage: "Catalog list of stadium-shaped cards with portrait bleed"
-  - type: "Data_Venn"
-    usage: "Mapping brand values with terracotta and olive tones"
-```
-
 #### Vibrant Corporate
 
 A dynamic, forward-moving corporate aesthetic featuring high-contrast navy blue and vibrant lime green. It uses sharp geometric diagonals, chevron markers, and structured grids to convey professional excellence and modern momentum.
@@ -294,119 +189,45 @@ slide_layout_templates:
     usage: "List with green chevron markers and architectural bleed"
 ```
 
-#### Eco Modern
+#### Ensign Corporate
 
-A modern, sustainable, and high-impact aesthetic inspired by nature and environmental initiatives. It features immersive landscape photography, dark mode backgrounds, and glassmorphic (frosted glass) overlays. A signature lime-green accent dot provides a contemporary brand finish.
+Modern corporate, dynamic, and professional design. Features a strong navy and vivid blue foundation with energetic yellow/orange accents and distinctive corner 'ribbon' layers for a high-impact business presentation.
 
-![Eco Modern Preview](preview/eco_modern/eco_modern_1.png)
+![Ensign Corporate Preview](preview/ensign_corporate/ensign_corporate_1.png)
 
 > [!TIP]
-> This is a simplified preview. [View Full YAML](styles/eco_modern.yaml)
+> This is a simplified preview. [View Full YAML](styles/ensign_corporate.yaml)
 
 ```yaml
 design_system:
   global_style:
-    theme: "Sustainable, modern nature aesthetic. Dark mode with glassmorphism."
+    theme: "Modern corporate, dynamic, professional. Navy/Blue with Yellow accents."
     typography: 
-      primary_heading: "Extra-bold geometric sans-serif (Codec Pro)"
-      secondary_heading: "Clean bold sans-serif"
-      body_text: "Highly legible functional sans-serif"
+      primary_heading: "Bold geometric sans-serif, uppercase"
+      secondary_heading: "Medium-bold sans-serif, accent color"
+      body_text: "Clean sans-serif, business readability"
+      info_label: "Small bold uppercase pill labels"
     color_palette:
-      primary_color: "#D4FF00"
-      secondary_color: "#5D8AA8"
-      background_dark: "#000000"
-      text_main: "#FFFFFF"
+      primary_color: "#101D42"
+      secondary_color: "#4A6CF7"
+      accent_yellow: "#FFB400"
+      background: "#F5F7FA"
     key_visual_elements: 
-      - "Full-bleed high-saturation nature photography"
-      - "Frosted glass containers for text overlays"
-      - "Large rounded corners on all UI elements"
-      - "Signature lime-green accent dot after titles"
+      - "Layered corner 'ribbons' (Navy and Blue stacking)"
+      - "Pill-shaped accent backgrounds for labels"
+      - "Bold circular iconography"
+      - "Rounded cards for content blocks"
 
 slide_layout_templates:
-  - type: "Immersive_Hero"
-    usage: "High-impact cover with full-bleed nature backdrop"
-  - type: "Frosted_Agenda"
-    usage: "Agenda points inside a glassmorphic container"
-  - type: "Eco_Action_Grid"
-    usage: "Practical tips with alternating rounded image/text blocks"
-```
-
-#### Urban Ribbon
-
-An authoritative and structured corporate aesthetic featuring distinctive 3D-folded "ribbon" elements and sharp diagonal background slices. It combines a professional charcoal and beige palette with golden-hour cityscape photography, creating a sense of metropolitan sophistication and executive power.
-
-![Urban Ribbon Preview](preview/urban_ribbon/urban_ribbon_1.png)
-
-> [!TIP]
-> This is a simplified preview. [View Full YAML](styles/urban_ribbon.yaml)
-
-```yaml
-design_system:
-  global_style:
-    theme: "Authoritative urban aesthetic. 3D-folded ribbons and diagonal slices."
-    typography: 
-      primary_heading: "Bold authoritative sans-serif (League Spartan)"
-      secondary_heading: "Professional sans-serif"
-      body_text: "Clean functional sans-serif"
-    color_palette:
-      primary_color: "#333333"
-      secondary_color: "#D9C5B2"
-      background_dark: "#5C4B41"
-      text_main: "#1A1A1A"
-    key_visual_elements: 
-      - "3D-folded 'ribbon' overlays for titles and labels"
-      - "Sharp diagonal background slices and parallelogram containers"
-      - "Golden-hour urban landscapes and skyscraper photography"
-      - "High-contrast charcoal and warm beige palette"
-
-slide_layout_templates:
-  - type: "Executive_Pitch"
-    usage: "Professional business cover with urban backdrop and ribbon accents"
-  - type: "Leadership_Grid"
-    usage: "Team profiles with parallelogram-shaped portrait cards"
-  - type: "Strategic_Comparison"
-    usage: "Comparative data with diagonal dividers and vertical image bleeds"
+  - type: "Ensign_Cover"
+    usage: "Professional business introduction"
+  - type: "Ribbon_Team"
+    usage: "Team introduction with individual roles"
+  - type: "Icon_Service_Grid"
+    usage: "Listing core services or features"
 ```
 
 ---
-
-### 🌿 Minimalist
-
-#### Geometric Mono
-
-Professional, architectural, and monochromatic design. It uses a strong grayscale palette with geometric shapes and high-contrast photography to convey precision, structure, and corporate excellence.
-
-![Geometric Mono Preview](preview/geometric_mono/geometric_mono_1.png)
-
-> [!TIP]
-> This is a simplified preview. [View Full YAML](styles/geometric_mono.yaml)
-
-```yaml
-design_system:
-  global_style:
-    theme: "Professional, architectural, and monochromatic. Precision and structure."
-    typography: 
-      primary_heading: "Bold geometric sans-serif (e.g., Montserrat), uppercase"
-      secondary_heading: "Medium weight sans-serif, clean"
-      body_text: "Functional sans-serif, high contrast"
-    color_palette:
-      primary_color: "#FFFFFF"
-      background: "#E0E0E0"
-      text_main: "#000000"
-      accent_color: "#333333"
-    key_visual_elements: 
-      - "High-contrast architectural grayscale photography"
-      - "Diagonals and geometric color blocks"
-      - "Circular icons with thin white outlines"
-
-slide_layout_templates:
-  - type: "Corporate_Summary"
-    usage: "Executive summary or project overview"
-  - type: "Geometric_Split"
-    usage: "Comparing data or value propositions"
-  - type: "Architectural_Timeline"
-    usage: "Visualizing project phases or milestones"
-```
 
 #### Silicon Refined
 
@@ -442,6 +263,50 @@ slide_layout_templates:
     usage: "Showcasing multiple features or specifications"
   - type: "Feature_Gradient"
     usage: "Highlighting a breakthrough benefit"
+```
+
+---
+
+### ✨ Minimalist & Modern
+
+---
+
+### ✨ Minimalist & Modern
+
+#### Geometric Mono
+
+Professional, architectural, and monochromatic design. It uses a strong grayscale palette with geometric shapes and high-contrast photography to convey precision, structure, and corporate excellence.
+
+![Geometric Mono Preview](preview/geometric_mono/geometric_mono_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/geometric_mono.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Professional, architectural, and monochromatic. Precision and structure."
+    typography: 
+      primary_heading: "Bold geometric sans-serif (e.g., Montserrat), uppercase"
+      secondary_heading: "Medium weight sans-serif, clean"
+      body_text: "Functional sans-serif, high contrast"
+    color_palette:
+      primary_color: "#FFFFFF"
+      background: "#E0E0E0"
+      text_main: "#000000"
+      accent_color: "#333333"
+    key_visual_elements: 
+      - "High-contrast architectural grayscale photography"
+      - "Diagonals and geometric color blocks"
+      - "Circular icons with thin white outlines"
+
+slide_layout_templates:
+  - type: "Corporate_Summary"
+    usage: "Executive summary or project overview"
+  - type: "Geometric_Split"
+    usage: "Comparing data or value propositions"
+  - type: "Architectural_Timeline"
+    usage: "Visualizing project phases or milestones"
 ```
 
 #### Lush Minimal
@@ -517,121 +382,13 @@ slide_layout_templates:
     usage: "Image and text side-by-side"
 ```
 
-#### Architectural Mono
+---
 
-Modern brutalist, monochromatic, and architectural design. Inspired by minimalist gallery aesthetics, it features high-contrast grayscale photography, large technical stamps, and sleek sans-serif typography.
+### 🎨 Creative & Playful
 
-![Architectural Mono Preview](preview/architectural_mono/architectural_mono_1.png)
+---
 
-> [!TIP]
-> This is a simplified preview. [View Full YAML](styles/architectural_mono.yaml)
-
-```yaml
-design_system:
-  global_style:
-    theme: "Modern brutalist, monochromatic, and architectural. High-contrast grayscale."
-    typography: 
-      primary_heading: "Clean modern sans-serif (e.g., Inter, Helvetica), bold"
-      secondary_heading: "Refined sans-serif, standard weight"
-      body_text: "Functional sans-serif, technical feel"
-      accent_mono: "Monospace for technical labels"
-    color_palette:
-      primary_color: "#111111"
-      background: "#E8E8E8"
-      text_main: "#111111"
-      accent_gray: "#B0B0B0"
-    key_visual_elements: 
-      - "High-contrast grayscale architectural photography"
-      - "Large year stamps (e.g., '20 | 25')"
-      - "Thin horizontal technical dividers"
-      - "Thin arrow icons (→)"
-      - "Vertical section labels"
-
-slide_layout_templates:
-  - type: "Architectural_Cover"
-    usage: "Impactful intro with full-page imagery"
-  - type: "Mission_Grid"
-    usage: "Masonry grid for multiple references"
-  - type: "Sliver_About"
-    usage: "Vertical image sliver presentation"
-```
-
-#### Architectural Cobalt
-
-Technical, dark architectural, and blueprint-inspired design. Features deep charcoal backgrounds with vibrant cobalt blue gradients and precise 'sight' crosshair visual elements for a high-end engineering feel.
-
-![Architectural Cobalt Preview](preview/architectural_cobalt/architectural_cobalt_1.png)
-
-> [!TIP]
-> This is a simplified preview. [View Full YAML](styles/architectural_cobalt.yaml)
-
-```yaml
-design_system:
-  global_style:
-    theme: "Technical, dark architectural, blueprint-inspired. Deep charcoal with cobalt blue."
-    typography: 
-      primary_heading: "Bold high-contrast sans-serif"
-      secondary_heading: "Medium sans-serif, clean"
-      body_text: "Functional sans-serif, optimized for dark mode"
-      technical_label: "Small uppercase sans-serif, spaced"
-    color_palette:
-      primary_color: "#304FFE"
-      background: "#111111"
-      text_main: "#FFFFFF"
-      accent_overlay: "rgba(48, 79, 254, 0.2)"
-    key_visual_elements: 
-      - "Circular crosshair/sight icons"
-      - "Vibrant cobalt blue gradient overlays"
-      - "Dark, high-shadow architectural photography"
-      - "Thin white structural grid lines"
-
-slide_layout_templates:
-  - type: "Cobalt_Impact_Cover"
-    usage: "Impactful intro with technical structural visuals"
-  - type: "Dark_Project_Detail"
-    usage: "Showcasing projects with technical metadata"
-  - type: "Expertise_Profile"
-    usage: "Team introduction or profile highlights"
-```
-
-#### Architectural Portfolio
-
-A modern, minimalist, and geometric design inspired by architectural blueprints and professional portfolios. It features complex pill-shaped photo masks, sage green accents, and a modular "Bento-grid" layout for a high-end, structured aesthetic.
-
-![Architectural Portfolio Preview](preview/architectural_portfolio/architectural_portfolio_1.png)
-
-> [!TIP]
-> This is a simplified preview. [View Full YAML](styles/architectural_portfolio.yaml)
-
-```yaml
-design_system:
-  global_style:
-    theme: "Modern architectural and geometric. Modular bento-grid layouts."
-    typography: 
-      primary_heading: "Bold geometric sans-serif (Montserrat/Inter)"
-      secondary_heading: "Medium sans-serif, clean"
-      body_text: "Light-weight minimalist sans-serif"
-    color_palette:
-      primary_color: "#8B9B7B"
-      background: "Off-White (#F4F4F4)"
-      text_main: "#333333"
-      accent_color: "#A0522D"
-    key_visual_elements: 
-      - "Complex pill-shaped and circular photo masks"
-      - "Modular Bento-grid content organization"
-      - "Minimalist sage green star icons in corners"
-      - "Thin horizontal separators and asymmetric clusters"
-
-slide_layout_templates:
-  - type: "Portfolio_Cover"
-    usage: "Bold intro with complex geometric photo masking"
-  - type: "Bento_Index"
-    usage: "Modular TOC or overview with circular masks"
-  - type: "Contact_Modular"
-    usage: "Final contact info with terracotta accents"
-```
-
-### 🎨 Creative
+### 🎨 Creative & Playful
 
 #### Creative Spark
 
@@ -740,41 +497,6 @@ slide_layout_templates:
     usage: "Listing steps, characteristics, or points"
 ```
 
-#### Scholar's Journal
-
-Academic, vintage, and scientific design. Inspired by 19th-century botanical engravings and researcher journals. It features heavy coarse paper textures and deep indigo line art illustrations for a scholarly feel.
-
-![Scholar's Journal Preview](preview/scholars_journal/scholars_journal_1.png)
-
-> [!TIP]
-> This is a simplified preview. [View Full YAML](styles/scholars_journal.yaml)
-
-```yaml
-design_system:
-  global_style:
-    theme: "Academic, vintage, and scientific. Botanical engravings focus."
-    typography: 
-      primary_heading: "Traditional serif or slab serif (e.g., Trocchi)"
-      secondary_heading: "Classic serif, clean"
-      body_text: "Functional traditional serif"
-    color_palette:
-      primary_color: "#3E4E63"
-      background: "#D1D1D1"
-      text_main: "#2D3436"
-    key_visual_elements: 
-      - "Etched/Engraved line art illustrations"
-      - "Heavy coarse paper texture grain"
-      - "Indigo on Parchment monochromatic scheme"
-
-slide_layout_templates:
-  - type: "Scholar_Intro"
-    usage: "Title slides or section starts"
-  - type: "Illustration_Focus"
-    usage: "Presenting concepts with a visual anchor"
-  - type: "Balanced_Journal"
-    usage: "Summary or Q&A slides"
-```
-
 #### Creative Notebook
 
 A clean, academic yet playful design inspired by creative journals and student notebooks. It features a graph paper grid background, organic pastel blobs in peach and blue, and numbered list elements for a highly organized yet aesthetic presentation feel.
@@ -811,6 +533,308 @@ slide_layout_templates:
   - type: "Sticker_Note_Split"
     usage: "Idea origin or highlighted conceptual points"
 ```
+
+#### Kawaii Playful
+
+
+Playful, friendly, and ultra-cute 'Kawaii' aesthetic. Combines soft pastel colors with chubby cat character illustrations, hand-drawn stars, and notebook-style grid backgrounds.
+
+![Kawaii Playful Preview](preview/kawaii_playful/kawaii_playful_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/kawaii_playful.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Playful, friendly, and ultra-cute 'Kawaii' aesthetic."
+    typography: 
+      primary_heading: "Super-bold rounded bubble font (e.g., DynaPuff)"
+      secondary_heading: "Clean, rounded sans-serif"
+      body_text: "Friendly rounded sans-serif"
+    color_palette:
+      primary_color: "#4B6B4C"
+      background: "#F7F8E0"
+      accent_rose: "#F48FB1"
+    key_visual_elements: 
+      - "Chibi/Kawaii cat character illustrations"
+      - "Subtle green notebook-style grid patterns"
+      - "Pill-shaped containers for labels"
+      - "Hand-drawn doodles (stars, sparkles)"
+
+slide_layout_templates:
+  - type: "Creative_Brainstorm"
+    usage: "Opening slide for workshops"
+  - type: "Strategic_Play"
+    usage: "Outlining goals or objectives"
+```
+
+#### Y2K Nostalgia
+
+Bubblegum pop, iridescent textures, and early digital nostalgia. Features CD-ROM reflections, fluffy clouds, and 3D 'plastic' icons (gummy bears, hearts, cupids) on pastel gradients.
+
+![Y2K Nostalgia Preview](preview/y2k_nostalgia/y2k_nostalgia_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/y2k_nostalgia.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Retro Digital. Bubblegum & Holographic."
+    typography: 
+      primary_heading: "Bold quirky block letters"
+      secondary_heading: "Pixellated or typewriter monospace"
+      body_text: "Clean legible monospace (e.g., Courier New)"
+    color_palette:
+      primary_color: "#FF85A1"
+      background: "#FDEFF4"
+      accent_purple: "#B19CD9"
+    key_visual_elements: 
+      - "CD-ROM rainbow reflections"
+      - "Holographic/Iridescent textures"
+      - "3D plastic gummy bears and icons"
+      - "Polaroid photo frames"
+
+slide_layout_templates:
+  - type: "Pop_Culture_Hero"
+    usage: "Dynamic titles or mood setters"
+  - type: "Digital_Dairy"
+    usage: "Storytelling or personal anecdotes"
+  - type: "Memory_Gallery"
+    usage: "Photos or event highlights"
+```
+
+#### Creative Workshop
+
+Artistic, youthful, and workshop-oriented design. Features notebook grid backgrounds, pastel pink wavy accents, and friendly 2D art supply doodles (pencils, rainbows, stars).
+
+![Creative Workshop Preview](preview/creative_workshop/creative_workshop_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/creative_workshop.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Art Studio. Creative & Playful."
+    typography: 
+      primary_heading: "Bold blocky sans-serif (Multi-color)"
+      secondary_heading: "Rounded friendly sans-serif"
+      body_text: "Clean legible sans-serif"
+    color_palette:
+      primary_color: "#F48FB1"
+      background: "#FFFFFF"
+      grid_lines: "#E1F5FE"
+    key_visual_elements: 
+      - "Ruled background textures"
+      - "Organic wavy pink blobs"
+      - "Smiling art supply illustrations"
+      - "Pill-shaped category tags"
+
+slide_layout_templates:
+  - type: "Workshop_Hero"
+    usage: "Project titles or starters"
+  - type: "Activity_Grid"
+    usage: "Listing activities or topics"
+  - type: "Showcase_Gallery"
+    usage: "Highlighting events or work"
+```
+
+#### Creative Classroom
+
+Playful, warm, and educational design. Inspired by primary school classrooms and hand-drawn doodle aesthetics. Features soft cream backgrounds, chalkboard content frames, and flat 2D illustrations of classroom objects.
+
+![Creative Classroom Preview](preview/creative_classroom/creative_classroom_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/creative_classroom.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Playful educational. Classroom & Doodles."
+    typography: 
+      primary_heading: "Hand-drawn bold sans-serif (e.g., Fredoka One)"
+      secondary_heading: "Rounded friendly sans-serif"
+      body_text: "Clean legible sans-serif"
+    color_palette:
+      primary_color: "#557A68"
+      background: "#FFF9E6"
+      accent_wood: "#C4A484"
+    key_visual_elements: 
+      - "Chalkboard-themed content frames"
+      - "Flat, 2D vector illustrations (globes, books)"
+      - "ABC alphabet blocks"
+      - "Irregular hand-drawn edges"
+
+slide_layout_templates:
+  - type: "Classroom_Hero"
+    usage: "Main title or module introductions"
+  - type: "Informational_Board"
+    usage: "Core lesson content or discussion"
+  - type: "Object_Focus_Detail"
+    usage: "Summaries or conceptual focuses"
+```
+
+---
+
+### 📖 Editorial & Magazine
+
+---
+
+### 📖 Editorial & Magazine
+
+#### Editorial Essence
+
+Sophisticated, editorial, and human-centric design language. It uses warm cream backgrounds, bold terracotta accents, and elegant serif typography to create a "book-like" presentation feel.
+
+![Editorial Essence Preview](preview/editorial_essence/editorial_essence_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/editorial_essence.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Minimalist, sophisticated, and human-centric. High-end editorial style using warm cream backgrounds and bold terracotta accents."
+    typography: 
+      primary_heading: "Elegant serif (e.g., Lora, Playfair Display), bold"
+      secondary_heading: "Clean sans-serif (e.g., Poppins, Inter), uppercase"
+      body_text: "Refined serif (e.g., Lora), airy line-height"
+    color_palette:
+      primary_color: "#D97757"
+      background: "#FAF9F5"
+      text_main: "#141413"
+    key_visual_elements: 
+      - "Generous whitespace (Editorial layout)"
+      - "Abstract geometric line art"
+      - "Pill-shaped labels"
+
+  image_generation_prompts:
+    style_guidelines: "Editorial photography style, warm natural lighting, high-end magazine aesthetic, minimalist cream background, terracotta accents."
+    themes:
+      - target: "Abstract Connection"
+        prompt_elements: "Minimalist geometric shapes, warm earth tones, fine line art."
+
+slide_layout_templates:
+  - type: "Cover_Editorial"
+    usage: "Main title slide with high-impact serif typography"
+  - type: "Split_Insight"
+    usage: "40/60 text-image split for conceptual explanations"
+```
+
+#### Luxury Editorial
+
+A sophisticated, minimalist aesthetic inspired by high-end fashion magazines. It features a luxury palette of deep espresso and gold, combining elegant condensed serifs with flowing cursive accents. Ideal for luxury brands, fashion collections, and premium product launches.
+
+![Luxury Editorial Preview](preview/luxury_editorial/luxury_editorial_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/luxury_editorial.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "High-end fashion magazine aesthetic. Deep espresso and gold."
+    typography: 
+      primary_heading: "Elegant condensed serif (Didot-style)"
+      accent_script: "Refined flowing cursive"
+      body_text: "Minimalist sans-serif with wide tracking"
+    color_palette:
+      primary_color: "#2D2926"
+      secondary_color: "#D4AF37"
+      background: "#3C2F2F"
+      text_main: "#FFFFFF"
+    key_visual_elements: 
+      - "Subtle gold sparkle/star vector accents"
+      - "Macro photography of luxury textures (silk, jewelry)"
+      - "Asymmetric split-screen layouts"
+      - "Overlaying script text on top of serif titles"
+
+slide_layout_templates:
+  - type: "Editorial_Cover"
+    usage: "Fashion collection intro with full-bleed luxury imagery"
+  - type: "Brand_Narrative"
+    usage: "Split-screen layout for brand stories or mission"
+  - type: "Visual_Lookbook"
+    usage: "Grid-based display for styling ideas or products"
+```
+
+#### Cobalt Editorial
+
+Bold editorial and Swiss-inspired design. High contrast between Electric Blue and Cream, featuring large brutalist typography, liquid organic textures, and iconic symbols like asterisks and plus signs.
+
+![Cobalt Editorial Preview](preview/cobalt_editorial/cobalt_editorial_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/cobalt_editorial.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Bold editorial, Swiss-inspired. Electric Blue & Cream."
+    typography: 
+      primary_heading: "Extra-bold brutalist sans-serif (e.g., Inter)"
+      secondary_heading: "Bold sans-serif, vertical layouts"
+      body_text: "Clean sans-serif, high legibility"
+    color_palette:
+      primary_color: "#2B59FF"
+      background: "#FDF5E6"
+      text_main: "#000000"
+    key_visual_elements: 
+      - "Electric Blue asterisks (*) and plus signs (+)"
+      - "Liquid, rippled, or smoky textures"
+      - "Split-screen layouts"
+      - "Pill-shaped buttons with blue outlines"
+
+slide_layout_templates:
+  - type: "Editorial_Split"
+    usage: "Core sections or chapter starts"
+  - type: "Vertical_Type_List"
+    usage: "Detailed overviews or content lists"
+  - type: "Modular_Brand_Focus"
+    usage: "Presenting mission statements or pillars"
+```
+
+#### Architectural Portfolio
+
+A modern, minimalist, and geometric design inspired by architectural blueprints and professional portfolios. It features complex pill-shaped photo masks, sage green accents, and a modular "Bento-grid" layout for a high-end, structured aesthetic.
+
+![Architectural Portfolio Preview](preview/architectural_portfolio/architectural_portfolio_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/architectural_portfolio.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Modern architectural and geometric. Modular bento-grid layouts."
+    typography: 
+      primary_heading: "Bold geometric sans-serif (Montserrat/Inter)"
+      secondary_heading: "Medium sans-serif, clean"
+      body_text: "Light-weight minimalist sans-serif"
+    color_palette:
+      primary_color: "#8B9B7B"
+      background: "Off-White (#F4F4F4)"
+      text_main: "#333333"
+      accent_color: "#A0522D"
+    key_visual_elements: 
+      - "Complex pill-shaped and circular photo masks"
+      - "Modular Bento-grid content organization"
+      - "Minimalist sage green star icons in corners"
+      - "Thin horizontal separators and asymmetric clusters"
+
+slide_layout_templates:
+  - type: "Portfolio_Cover"
+    usage: "Bold intro with complex geometric photo masking"
+  - type: "Bento_Index"
+    usage: "Modular TOC or overview with circular masks"
+  - type: "Contact_Modular"
+    usage: "Final contact info with terracotta accents"
+```
+
+### 🎨 Creative
 
 #### Classical Gallery
 
@@ -923,6 +947,400 @@ slide_layout_templates:
     usage: "Key takeaways or quotes on centered paper scraps"
 ```
 
+---
+
+### 🚀 Tech & Innovation
+
+---
+
+### 🚀 Tech & Innovation
+
+#### Visual Discovery
+
+Focuses on visual-first layouts, card-based components with high border-radius, and vibrant red accents to drive engagement and focus. Inspired by modern discovery feeds.
+
+![Visual Discovery Preview](preview/visual_discovery_preview.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/visual_discovery.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Modern, visual-first, and organized. Inspired by card-based discovery aesthetics. Uses card-based layouts with high border radius, soft shadows, and vibrant accents."
+    typography: 
+      primary_heading: "Clean rounded sans-serif (e.g., Roboto, Helvetica Rounded), bold"
+      secondary_heading: "Simple sans-serif, medium weight, clean"
+      body_text: "Functional sans-serif, standard weights, high contrast on white"
+    color_palette:
+      primary_color: "#E60023"
+      background: "#FFFFFF"
+      text_main: "#111111"
+      accent_color: "#EFEFEF"
+    key_visual_elements: 
+      - "Rounded corners (16px to 24px) for cards and images"
+      - "Drop shadows for depth"
+      - "Grid-based image distribution"
+      - "Circular profiles and 'save' style button call-outs"
+
+  image_generation_prompts:
+    style_guidelines: "Clean white studio background, vibrant accents, rounded corners, drop shadows, flat design elements, organized grid."
+
+slide_layout_templates:
+  - type: "Cover_Discovery"
+    usage: "Impactful intro slide"
+  - type: "Card_Grid_Insights"
+    usage: "Presenting multiple features or items"
+  - type: "Masonry_Vision"
+    usage: "Inspiration or mood board"
+```
+
+#### Urban Ribbon
+
+An authoritative and structured corporate aesthetic featuring distinctive 3D-folded "ribbon" elements and sharp diagonal background slices. It combines a professional charcoal and beige palette with golden-hour cityscape photography, creating a sense of metropolitan sophistication and executive power.
+
+![Urban Ribbon Preview](preview/urban_ribbon/urban_ribbon_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/urban_ribbon.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Authoritative urban aesthetic. 3D-folded ribbons and diagonal slices."
+    typography: 
+      primary_heading: "Bold authoritative sans-serif (League Spartan)"
+      secondary_heading: "Professional sans-serif"
+      body_text: "Clean functional sans-serif"
+    color_palette:
+      primary_color: "#333333"
+      secondary_color: "#D9C5B2"
+      background_dark: "#5C4B41"
+      text_main: "#1A1A1A"
+    key_visual_elements: 
+      - "3D-folded 'ribbon' overlays for titles and labels"
+      - "Sharp diagonal background slices and parallelogram containers"
+      - "Golden-hour urban landscapes and skyscraper photography"
+      - "High-contrast charcoal and warm beige palette"
+
+slide_layout_templates:
+  - type: "Executive_Pitch"
+    usage: "Professional business cover with urban backdrop and ribbon accents"
+  - type: "Leadership_Grid"
+    usage: "Team profiles with parallelogram-shaped portrait cards"
+  - type: "Strategic_Comparison"
+    usage: "Comparative data with diagonal dividers and vertical image bleeds"
+```
+
+---
+
+### 🌿 Minimalist
+
+#### Neon Pulsar
+
+Futuristic, high-energy, and tech-focused design. This dark mode aesthetic uses vibrant neon gradients (Cyan, Magenta, Purple) and glassmorphic elements to create a cutting-edge startup atmosphere.
+
+![Neon Pulsar Preview](preview/neon_pulsar/neon_pulsar_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/neon_pulsar.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Futuristic, high-energy, tech-focused. Dark mode neon."
+    typography: 
+      primary_heading: "Extra-bold modern sans-serif (e.g., Inter)"
+      secondary_heading: "Medium sans-serif, high contrast"
+      body_text: "Clean sans-serif for dark mode"
+    color_palette:
+      primary_color: "#FFFFFF"
+      background: "#000000"
+      accent_cyan: "#00F2FF"
+      accent_purple: "#7000FF"
+      accent_magenta: "#FF00E5"
+    key_visual_elements: 
+      - "Blurred neon gradient spheres"
+      - "Concentric rings and digital orbits"
+      - "Pill-shaped containers"
+      - "Glassmorphic cards with neon borders"
+
+slide_layout_templates:
+  - type: "Tech_Startup_Hero"
+    usage: "Main title or key announcement"
+  - type: "Service_Orbits"
+    usage: "Showing features around a core concept"
+  - type: "Neon_Bento_Grid"
+    usage: "Showcasing tech specs or team members"
+```
+
+#### Midnight Tactical
+
+Modern, tech-utilitarian design with a high-contrast matte black base and vibrant lime green accents. Features industrial aesthetic elements like tilted boxes, double chevrons, and monospace metadata.
+
+![Midnight Tactical Preview](preview/midnight_tactical/midnight_tactical_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/midnight_tactical.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Modern tech-utilitarian. Matte Black & Lime Green."
+    typography: 
+      primary_heading: "Bold geometric sans-serif (e.g., Space Grotesk)"
+      secondary_heading: "Medium sans-serif, high contrast white"
+      body_text: "Clean sans-serif for dark backgrounds"
+      accent_mono: "Monospace for technical labels"
+    color_palette:
+      primary_color: "#C6FF00"
+      background: "#000000"
+      text_main: "#FFFFFF"
+    key_visual_elements: 
+      - "Tilted lime green highlight boxes (fractional labels)"
+      - "Pill-shaped labels in dark green"
+      - "Double chevron accents (<<)"
+      - "Rounded-corner modular grid containers"
+
+slide_layout_templates:
+  - type: "Tactical_Hero"
+    usage: "Section headers or main announcements"
+  - type: "Utility_Agenda"
+    usage: "Agenda or multi-point summaries"
+  - type: "Textured_Gallery"
+    usage: "Showcasing visual references or products"
+```
+
+#### Architectural Mono
+
+Modern brutalist, monochromatic, and architectural design. Inspired by minimalist gallery aesthetics, it features high-contrast grayscale photography, large technical stamps, and sleek sans-serif typography.
+
+![Architectural Mono Preview](preview/architectural_mono/architectural_mono_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/architectural_mono.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Modern brutalist, monochromatic, and architectural. High-contrast grayscale."
+    typography: 
+      primary_heading: "Clean modern sans-serif (e.g., Inter, Helvetica), bold"
+      secondary_heading: "Refined sans-serif, standard weight"
+      body_text: "Functional sans-serif, technical feel"
+      accent_mono: "Monospace for technical labels"
+    color_palette:
+      primary_color: "#111111"
+      background: "#E8E8E8"
+      text_main: "#111111"
+      accent_gray: "#B0B0B0"
+    key_visual_elements: 
+      - "High-contrast grayscale architectural photography"
+      - "Large year stamps (e.g., '20 | 25')"
+      - "Thin horizontal technical dividers"
+      - "Thin arrow icons (→)"
+      - "Vertical section labels"
+
+slide_layout_templates:
+  - type: "Architectural_Cover"
+    usage: "Impactful intro with full-page imagery"
+  - type: "Mission_Grid"
+    usage: "Masonry grid for multiple references"
+  - type: "Sliver_About"
+    usage: "Vertical image sliver presentation"
+```
+
+#### Architectural Cobalt
+
+Technical, dark architectural, and blueprint-inspired design. Features deep charcoal backgrounds with vibrant cobalt blue gradients and precise 'sight' crosshair visual elements for a high-end engineering feel.
+
+![Architectural Cobalt Preview](preview/architectural_cobalt/architectural_cobalt_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/architectural_cobalt.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Technical, dark architectural, blueprint-inspired. Deep charcoal with cobalt blue."
+    typography: 
+      primary_heading: "Bold high-contrast sans-serif"
+      secondary_heading: "Medium sans-serif, clean"
+      body_text: "Functional sans-serif, optimized for dark mode"
+      technical_label: "Small uppercase sans-serif, spaced"
+    color_palette:
+      primary_color: "#304FFE"
+      background: "#111111"
+      text_main: "#FFFFFF"
+      accent_overlay: "rgba(48, 79, 254, 0.2)"
+    key_visual_elements: 
+      - "Circular crosshair/sight icons"
+      - "Vibrant cobalt blue gradient overlays"
+      - "Dark, high-shadow architectural photography"
+      - "Thin white structural grid lines"
+
+slide_layout_templates:
+  - type: "Cobalt_Impact_Cover"
+    usage: "Impactful intro with technical structural visuals"
+  - type: "Dark_Project_Detail"
+    usage: "Showcasing projects with technical metadata"
+  - type: "Expertise_Profile"
+    usage: "Team introduction or profile highlights"
+```
+
+---
+
+### 🌿 Nature & Wellness
+
+---
+
+### 🌿 Nature & Wellness
+
+#### Eco Modern
+
+A modern, sustainable, and high-impact aesthetic inspired by nature and environmental initiatives. It features immersive landscape photography, dark mode backgrounds, and glassmorphic (frosted glass) overlays. A signature lime-green accent dot provides a contemporary brand finish.
+
+![Eco Modern Preview](preview/eco_modern/eco_modern_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/eco_modern.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Sustainable, modern nature aesthetic. Dark mode with glassmorphism."
+    typography: 
+      primary_heading: "Extra-bold geometric sans-serif (Codec Pro)"
+      secondary_heading: "Clean bold sans-serif"
+      body_text: "Highly legible functional sans-serif"
+    color_palette:
+      primary_color: "#D4FF00"
+      secondary_color: "#5D8AA8"
+      background_dark: "#000000"
+      text_main: "#FFFFFF"
+    key_visual_elements: 
+      - "Full-bleed high-saturation nature photography"
+      - "Frosted glass containers for text overlays"
+      - "Large rounded corners on all UI elements"
+      - "Signature lime-green accent dot after titles"
+
+slide_layout_templates:
+  - type: "Immersive_Hero"
+    usage: "High-impact cover with full-bleed nature backdrop"
+  - type: "Frosted_Agenda"
+    usage: "Agenda points inside a glassmorphic container"
+  - type: "Eco_Action_Grid"
+    usage: "Practical tips with alternating rounded image/text blocks"
+```
+
+#### Botanical Journal
+
+Eco-friendly, natural, and scrapbook-inspired design. Features hand-drawn botanical doodles (leaves, vines, flowers), washi tape accents, and torn notebook paper textures on a warm cream background.
+
+![Botanical Journal Preview](preview/botanical_journal/botanical_journal_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/botanical_journal.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Eco Scrapbook. Natural & Botanical."
+    typography: 
+      primary_heading: "Bubbly hand-drawn sans-serif (e.g., Fredoka One)"
+      secondary_heading: "Friendly rounded sans-serif"
+      body_text: "Clean legible sans-serif"
+    color_palette:
+      primary_color: "#7CB342"
+      background: "#F9F7F1"
+      accent_lime: "#D4E157"
+    key_visual_elements: 
+      - "Torn binder paper textures"
+      - "Decorative washi tape strips"
+      - "Hand-drawn botanical doodles"
+      - "Circular or oval photo frames"
+
+slide_layout_templates:
+  - type: "Botanical_Hero"
+    usage: "Main title or environmental intros"
+  - type: "Notebook_Scrapbook"
+    usage: "Detailed points or objectives"
+  - type: "Eco_Profile"
+    usage: "Nature focus or overviews"
+```
+
+#### The Seasons
+
+An organic and earthy aesthetic inspired by sustainable branding, apothecary, and wellness. It features high-contrast serifs, deep olive and terracotta tones, and botanical photography with stadium-shaped masks and balanced asymmetric layouts.
+
+![The Seasons Preview](preview/the_seasons/the_seasons_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/the_seasons.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Organic, earthy wellness and high-end botanical branding."
+    typography: 
+      primary_heading: "Classic, high-contrast serif (Playfair Display)"
+      secondary_heading: "Refined italic serif or modern sans-serif"
+      body_text: "Clean minimalist sans-serif"
+    color_palette:
+      primary_color: "#3D3D29"
+      secondary_color: "#8F564B"
+      background: "#F9F6F1"
+      text_main: "#2D2D2D"
+    key_visual_elements: 
+      - "Macro botanical photography (eucalyptus, tropical leaves)"
+      - "Stadium-shaped masks for images and content blocks"
+      - "Shadow overlays of plant leaves for atmosphere"
+      - "Earthy-toned data visualizations (Venn, bar charts)"
+
+slide_layout_templates:
+  - type: "Organic_Hero"
+    usage: "Large Serif Title over botanical background bleed"
+  - type: "Product_Inventory"
+    usage: "Catalog list of stadium-shaped cards with portrait bleed"
+  - type: "Data_Venn"
+    usage: "Mapping brand values with terracotta and olive tones"
+```
+
+#### Scholar's Journal
+
+Academic, vintage, and scientific design. Inspired by 19th-century botanical engravings and researcher journals. It features heavy coarse paper textures and deep indigo line art illustrations for a scholarly feel.
+
+![Scholar's Journal Preview](preview/scholars_journal/scholars_journal_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/scholars_journal.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Academic, vintage, and scientific. Botanical engravings focus."
+    typography: 
+      primary_heading: "Traditional serif or slab serif (e.g., Trocchi)"
+      secondary_heading: "Classic serif, clean"
+      body_text: "Functional traditional serif"
+    color_palette:
+      primary_color: "#3E4E63"
+      background: "#D1D1D1"
+      text_main: "#2D3436"
+    key_visual_elements: 
+      - "Etched/Engraved line art illustrations"
+      - "Heavy coarse paper texture grain"
+      - "Indigo on Parchment monochromatic scheme"
+
+slide_layout_templates:
+  - type: "Scholar_Intro"
+    usage: "Title slides or section starts"
+  - type: "Illustration_Focus"
+    usage: "Presenting concepts with a visual anchor"
+  - type: "Balanced_Journal"
+    usage: "Summary or Q&A slides"
+```
+
 #### Classical Scrapbook
 
 A tactile, layered design that blends classical art history with a handcrafted scrapbook aesthetic. It features overlapping kraft paper and parchment textures, torn edges, washi tape accents, and elegant flowing script combined with classic serif typography.
@@ -997,337 +1415,7 @@ slide_layout_templates:
     usage: "Visualizing metrics with orange donut progress charts"
 ```
 
-#### Luxury Editorial
-
-A sophisticated, minimalist aesthetic inspired by high-end fashion magazines. It features a luxury palette of deep espresso and gold, combining elegant condensed serifs with flowing cursive accents. Ideal for luxury brands, fashion collections, and premium product launches.
-
-![Luxury Editorial Preview](preview/luxury_editorial/luxury_editorial_1.png)
-
-> [!TIP]
-> This is a simplified preview. [View Full YAML](styles/luxury_editorial.yaml)
-
-```yaml
-design_system:
-  global_style:
-    theme: "High-end fashion magazine aesthetic. Deep espresso and gold."
-    typography: 
-      primary_heading: "Elegant condensed serif (Didot-style)"
-      accent_script: "Refined flowing cursive"
-      body_text: "Minimalist sans-serif with wide tracking"
-    color_palette:
-      primary_color: "#2D2926"
-      secondary_color: "#D4AF37"
-      background: "#3C2F2F"
-      text_main: "#FFFFFF"
-    key_visual_elements: 
-      - "Subtle gold sparkle/star vector accents"
-      - "Macro photography of luxury textures (silk, jewelry)"
-      - "Asymmetric split-screen layouts"
-      - "Overlaying script text on top of serif titles"
-
-slide_layout_templates:
-  - type: "Editorial_Cover"
-    usage: "Fashion collection intro with full-bleed luxury imagery"
-  - type: "Brand_Narrative"
-    usage: "Split-screen layout for brand stories or mission"
-  - type: "Visual_Lookbook"
-    usage: "Grid-based display for styling ideas or products"
-```
-
-
-
-#### Neon Pulsar
-
-Futuristic, high-energy, and tech-focused design. This dark mode aesthetic uses vibrant neon gradients (Cyan, Magenta, Purple) and glassmorphic elements to create a cutting-edge startup atmosphere.
-
-![Neon Pulsar Preview](preview/neon_pulsar/neon_pulsar_1.png)
-
-> [!TIP]
-> This is a simplified preview. [View Full YAML](styles/neon_pulsar.yaml)
-
-```yaml
-design_system:
-  global_style:
-    theme: "Futuristic, high-energy, tech-focused. Dark mode neon."
-    typography: 
-      primary_heading: "Extra-bold modern sans-serif (e.g., Inter)"
-      secondary_heading: "Medium sans-serif, high contrast"
-      body_text: "Clean sans-serif for dark mode"
-    color_palette:
-      primary_color: "#FFFFFF"
-      background: "#000000"
-      accent_cyan: "#00F2FF"
-      accent_purple: "#7000FF"
-      accent_magenta: "#FF00E5"
-    key_visual_elements: 
-      - "Blurred neon gradient spheres"
-      - "Concentric rings and digital orbits"
-      - "Pill-shaped containers"
-      - "Glassmorphic cards with neon borders"
-
-slide_layout_templates:
-  - type: "Tech_Startup_Hero"
-    usage: "Main title or key announcement"
-  - type: "Service_Orbits"
-    usage: "Showing features around a core concept"
-  - type: "Neon_Bento_Grid"
-    usage: "Showcasing tech specs or team members"
-```
-
-#### Cobalt Editorial
-
-Bold editorial and Swiss-inspired design. High contrast between Electric Blue and Cream, featuring large brutalist typography, liquid organic textures, and iconic symbols like asterisks and plus signs.
-
-![Cobalt Editorial Preview](preview/cobalt_editorial/cobalt_editorial_1.png)
-
-> [!TIP]
-> This is a simplified preview. [View Full YAML](styles/cobalt_editorial.yaml)
-
-```yaml
-design_system:
-  global_style:
-    theme: "Bold editorial, Swiss-inspired. Electric Blue & Cream."
-    typography: 
-      primary_heading: "Extra-bold brutalist sans-serif (e.g., Inter)"
-      secondary_heading: "Bold sans-serif, vertical layouts"
-      body_text: "Clean sans-serif, high legibility"
-    color_palette:
-      primary_color: "#2B59FF"
-      background: "#FDF5E6"
-      text_main: "#000000"
-    key_visual_elements: 
-      - "Electric Blue asterisks (*) and plus signs (+)"
-      - "Liquid, rippled, or smoky textures"
-      - "Split-screen layouts"
-      - "Pill-shaped buttons with blue outlines"
-
-slide_layout_templates:
-  - type: "Editorial_Split"
-    usage: "Core sections or chapter starts"
-  - type: "Vertical_Type_List"
-    usage: "Detailed overviews or content lists"
-  - type: "Modular_Brand_Focus"
-    usage: "Presenting mission statements or pillars"
-```
-
-#### Midnight Tactical
-
-Modern, tech-utilitarian design with a high-contrast matte black base and vibrant lime green accents. Features industrial aesthetic elements like tilted boxes, double chevrons, and monospace metadata.
-
-![Midnight Tactical Preview](preview/midnight_tactical/midnight_tactical_1.png)
-
-> [!TIP]
-> This is a simplified preview. [View Full YAML](styles/midnight_tactical.yaml)
-
-```yaml
-design_system:
-  global_style:
-    theme: "Modern tech-utilitarian. Matte Black & Lime Green."
-    typography: 
-      primary_heading: "Bold geometric sans-serif (e.g., Space Grotesk)"
-      secondary_heading: "Medium sans-serif, high contrast white"
-      body_text: "Clean sans-serif for dark backgrounds"
-      accent_mono: "Monospace for technical labels"
-    color_palette:
-      primary_color: "#C6FF00"
-      background: "#000000"
-      text_main: "#FFFFFF"
-    key_visual_elements: 
-      - "Tilted lime green highlight boxes (fractional labels)"
-      - "Pill-shaped labels in dark green"
-      - "Double chevron accents (<<)"
-      - "Rounded-corner modular grid containers"
-
-slide_layout_templates:
-  - type: "Tactical_Hero"
-    usage: "Section headers or main announcements"
-  - type: "Utility_Agenda"
-    usage: "Agenda or multi-point summaries"
-  - type: "Textured_Gallery"
-    usage: "Showcasing visual references or products"
-```
-
-#### Creative Classroom
-
-Playful, warm, and educational design. Inspired by primary school classrooms and hand-drawn doodle aesthetics. Features soft cream backgrounds, chalkboard content frames, and flat 2D illustrations of classroom objects.
-
-![Creative Classroom Preview](preview/creative_classroom/creative_classroom_1.png)
-
-> [!TIP]
-> This is a simplified preview. [View Full YAML](styles/creative_classroom.yaml)
-
-```yaml
-design_system:
-  global_style:
-    theme: "Playful educational. Classroom & Doodles."
-    typography: 
-      primary_heading: "Hand-drawn bold sans-serif (e.g., Fredoka One)"
-      secondary_heading: "Rounded friendly sans-serif"
-      body_text: "Clean legible sans-serif"
-    color_palette:
-      primary_color: "#557A68"
-      background: "#FFF9E6"
-      accent_wood: "#C4A484"
-    key_visual_elements: 
-      - "Chalkboard-themed content frames"
-      - "Flat, 2D vector illustrations (globes, books)"
-      - "ABC alphabet blocks"
-      - "Irregular hand-drawn edges"
-
-slide_layout_templates:
-  - type: "Classroom_Hero"
-    usage: "Main title or module introductions"
-  - type: "Informational_Board"
-    usage: "Core lesson content or discussion"
-  - type: "Object_Focus_Detail"
-    usage: "Summaries or conceptual focuses"
-```
-
-#### Botanical Journal
-
-Eco-friendly, natural, and scrapbook-inspired design. Features hand-drawn botanical doodles (leaves, vines, flowers), washi tape accents, and torn notebook paper textures on a warm cream background.
-
-![Botanical Journal Preview](preview/botanical_journal/botanical_journal_1.png)
-
-> [!TIP]
-> This is a simplified preview. [View Full YAML](styles/botanical_journal.yaml)
-
-```yaml
-design_system:
-  global_style:
-    theme: "Eco Scrapbook. Natural & Botanical."
-    typography: 
-      primary_heading: "Bubbly hand-drawn sans-serif (e.g., Fredoka One)"
-      secondary_heading: "Friendly rounded sans-serif"
-      body_text: "Clean legible sans-serif"
-    color_palette:
-      primary_color: "#7CB342"
-      background: "#F9F7F1"
-      accent_lime: "#D4E157"
-    key_visual_elements: 
-      - "Torn binder paper textures"
-      - "Decorative washi tape strips"
-      - "Hand-drawn botanical doodles"
-      - "Circular or oval photo frames"
-
-slide_layout_templates:
-  - type: "Botanical_Hero"
-    usage: "Main title or environmental intros"
-  - type: "Notebook_Scrapbook"
-    usage: "Detailed points or objectives"
-  - type: "Eco_Profile"
-    usage: "Nature focus or overviews"
-```
-
-#### Y2K Nostalgia
-
-Bubblegum pop, iridescent textures, and early digital nostalgia. Features CD-ROM reflections, fluffy clouds, and 3D 'plastic' icons (gummy bears, hearts, cupids) on pastel gradients.
-
-![Y2K Nostalgia Preview](preview/y2k_nostalgia/y2k_nostalgia_1.png)
-
-> [!TIP]
-> This is a simplified preview. [View Full YAML](styles/y2k_nostalgia.yaml)
-
-```yaml
-design_system:
-  global_style:
-    theme: "Retro Digital. Bubblegum & Holographic."
-    typography: 
-      primary_heading: "Bold quirky block letters"
-      secondary_heading: "Pixellated or typewriter monospace"
-      body_text: "Clean legible monospace (e.g., Courier New)"
-    color_palette:
-      primary_color: "#FF85A1"
-      background: "#FDEFF4"
-      accent_purple: "#B19CD9"
-    key_visual_elements: 
-      - "CD-ROM rainbow reflections"
-      - "Holographic/Iridescent textures"
-      - "3D plastic gummy bears and icons"
-      - "Polaroid photo frames"
-
-slide_layout_templates:
-  - type: "Pop_Culture_Hero"
-    usage: "Dynamic titles or mood setters"
-  - type: "Digital_Dairy"
-    usage: "Storytelling or personal anecdotes"
-  - type: "Memory_Gallery"
-    usage: "Photos or event highlights"
-```
-
-#### Creative Workshop
-
-Artistic, youthful, and workshop-oriented design. Features notebook grid backgrounds, pastel pink wavy accents, and friendly 2D art supply doodles (pencils, rainbows, stars).
-
-![Creative Workshop Preview](preview/creative_workshop/creative_workshop_1.png)
-
-> [!TIP]
-> This is a simplified preview. [View Full YAML](styles/creative_workshop.yaml)
-
-```yaml
-design_system:
-  global_style:
-    theme: "Art Studio. Creative & Playful."
-    typography: 
-      primary_heading: "Bold blocky sans-serif (Multi-color)"
-      secondary_heading: "Rounded friendly sans-serif"
-      body_text: "Clean legible sans-serif"
-    color_palette:
-      primary_color: "#F48FB1"
-      background: "#FFFFFF"
-      grid_lines: "#E1F5FE"
-    key_visual_elements: 
-      - "Ruled background textures"
-      - "Organic wavy pink blobs"
-      - "Smiling art supply illustrations"
-      - "Pill-shaped category tags"
-
-slide_layout_templates:
-  - type: "Workshop_Hero"
-    usage: "Project titles or starters"
-  - type: "Activity_Grid"
-    usage: "Listing activities or topics"
-  - type: "Showcase_Gallery"
-    usage: "Highlighting events or work"
-```
-
-#### Ensign Corporate
-
-Modern corporate, dynamic, and professional design. Features a strong navy and vivid blue foundation with energetic yellow/orange accents and distinctive corner 'ribbon' layers for a high-impact business presentation.
-
-![Ensign Corporate Preview](preview/ensign_corporate/ensign_corporate_1.png)
-
-> [!TIP]
-> This is a simplified preview. [View Full YAML](styles/ensign_corporate.yaml)
-
-```yaml
-design_system:
-  global_style:
-    theme: "Modern corporate, dynamic, professional. Navy/Blue with Yellow accents."
-    typography: 
-      primary_heading: "Bold geometric sans-serif, uppercase"
-      secondary_heading: "Medium-bold sans-serif, accent color"
-      body_text: "Clean sans-serif, business readability"
-      info_label: "Small bold uppercase pill labels"
-    color_palette:
-      primary_color: "#101D42"
-      secondary_color: "#4A6CF7"
-      accent_yellow: "#FFB400"
-      background: "#F5F7FA"
-    key_visual_elements: 
-      - "Layered corner 'ribbons' (Navy and Blue stacking)"
-      - "Pill-shaped accent backgrounds for labels"
-      - "Bold circular iconography"
-      - "Rounded cards for content blocks"
-
-slide_layout_templates:
-  - type: "Ensign_Cover"
-    usage: "Professional business introduction"
-  - type: "Ribbon_Team"
-    usage: "Team introduction with individual roles"
-  - type: "Icon_Service_Grid"
-    usage: "Listing core services or features"
-```
+---
 
 ---
 
