@@ -104,7 +104,7 @@ We follow a strict commit message format in **English**.
 
 ```bash
 git add .
-git commit -m "feat (Styles) - Added Modern Dark style"
+git commit -m "feat (Styles) - Add Modern Dark style"
 ```
 
 Push your changes and create a Pull Request!
