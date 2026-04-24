@@ -20,6 +20,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Executive Report](#executive-report)
   - [Emerald Corporate](#emerald-corporate)
   - [The Seasons](#the-seasons)
+  - [Vibrant Corporate](#vibrant-corporate)
 - [🌿 Minimalist](#-minimalist)
   - [Geometric Mono](#geometric-mono)
   - [Silicon Refined](#silicon-refined)
@@ -250,6 +251,42 @@ slide_layout_templates:
   - type: "Data_Venn"
     usage: "Mapping brand values with terracotta and olive tones"
 ```
+
+#### Vibrant Corporate
+
+A dynamic, forward-moving corporate aesthetic featuring high-contrast navy blue and vibrant lime green. It uses sharp geometric diagonals, chevron markers, and structured grids to convey professional excellence and modern momentum.
+
+![Vibrant Corporate Preview](preview/vibrant_corporate/vibrant_corporate_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/vibrant_corporate.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Modern, dynamic, and professional corporate aesthetic."
+    typography: 
+      primary_heading: "Bold geometric sans-serif (Montserrat)"
+      secondary_heading: "Medium weight sans-serif"
+      body_text: "Clean functional sans-serif"
+    color_palette:
+      primary_color: "#051C2C"
+      secondary_color: "#4CAF50"
+      background: "#FFFFFF"
+      text_main: "#111111"
+    key_visual_elements: 
+      - "Dynamic diagonal color blocks and chevron overlays"
+      - "Circular icons with navy backgrounds"
+      - "Chevron-shaped pointers for list items"
+      - "Modern architectural and cityscape photography"
+
+slide_layout_templates:
+  - type: "Corporate_Cover"
+    usage: "Bold navy and green diagonals for business plans"
+  - type: "Timeline_History"
+    usage: "Horizontal timeline with circular navy nodes"
+  - type: "Objective_Chevron"
+    usage: "List with green chevron markers and architectural bleed"
 ```
 
 ---
