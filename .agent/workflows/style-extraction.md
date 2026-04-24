@@ -43,12 +43,10 @@ npm run build:data
 
 ## 5. Git Workflow
 Follow these rules for persisting changes:
-- **Language**: English (mandatory for this repository).
-- **Format**: `feat (Styles) - Added [name style] style`.
-- **Final Audit**: **DO NOT** commit changes automatically. Wait for the user to explicitly say "comitea" or similar.
-- **Batching**: If multiple styles are extracted in one session, they can be committed together or separately as per user preference.
-
-## 6. Final Audit & Sync
-- Run `npm run build:data` to synchronize all styles.
-- **Commit Message Format**: When the user requests a commit, use exactly this format: `feat (Styles) - Added [name style] style`.
-- **No Auto-Commit**: DO NOT run `git commit` automatically unless the user explicitly reviews and approves the changes in the same turn.
+- **Language**: Analyze history with `git log -n 5 --oneline` to determine the dominant language (e.g., **English** for this repository).
+- **Format**: Use the `type (Scope) - Imperative description` pattern.
+  - Example: `feat (Styles) - Add Scholars Journal design style`
+- **Tool**: Always use the `commits` skill to generate6. **Final Audit & Sync**:
+    - Run `npm run build:data` to synchronize all styles.
+    - **Commit Message Format**: When the user requests a commit, use exactly this format: `feat (Styles) - Add [name style] style`.
+    - **No Auto-Commit**: DO NOT run `git commit` automatically unless the user explicitly reviews and approves the changes in the same turn.
