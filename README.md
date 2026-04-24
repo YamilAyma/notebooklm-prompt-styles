@@ -39,6 +39,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Summer Collage](#summer-collage)
   - [Vision Board](#vision-board)
   - [Classical Scrapbook](#classical-scrapbook)
+  - [Vibrant Agency](#vibrant-agency)
   - [Neon Pulsar](#neon-pulsar)
   - [Cobalt Editorial](#cobalt-editorial)
   - [Midnight Tactical](#midnight-tactical)
@@ -879,6 +880,43 @@ slide_layout_templates:
     usage: "Chronological events with statue cutouts"
   - type: "Ending_Statement"
     usage: "Final slide with landscape bleed and torn edges"
+```
+
+#### Vibrant Agency
+
+A high-energy, playful aesthetic inspired by modern marketing and creative agencies. It features vibrant orange "bubble" elements, wavy dividers, and friendly bold typography. Perfect for pitches that need to convey enthusiasm and creative momentum.
+
+![Vibrant Agency Preview](preview/vibrant_agency/vibrant_agency_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/vibrant_agency.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "High-energy, playful marketing and creative agency aesthetic."
+    typography: 
+      primary_heading: "Bold friendly sans-serif (Montserrat)"
+      secondary_heading: "Approachable modern sans-serif"
+      body_text: "Clean legible sans-serif"
+    color_palette:
+      primary_color: "#FF7A21"
+      secondary_color: "#FFB392"
+      background: "#FFFFFF"
+      text_main: "#1A1A1A"
+    key_visual_elements: 
+      - "Large rounded 'bubble' background elements"
+      - "Wavy and curved dividers for section transitions"
+      - "Studio-style photography with vibrant monochromatic backgrounds"
+      - "Circular progress indicators and playful donut charts"
+
+slide_layout_templates:
+  - type: "Campaign_Cover"
+    usage: "Impactful title for marketing pitches with bubble accents"
+  - type: "Strategy_Cards"
+    usage: "Grid of large rounded cards with orange icons"
+  - type: "Performance_Kpis"
+    usage: "Visualizing metrics with orange donut progress charts"
 ```
 
 

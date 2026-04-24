@@ -1,0 +1,87 @@
+design_system:
+  global_style:
+    theme: "High-energy, playful, and impactful agency aesthetic. Features vibrant orange bubbles, wavy dividers, and friendly bold typography. Perfect for marketing, advertising, and creative pitches."
+    typography: 
+      primary_heading: "Bold, friendly sans-serif (e.g., Montserrat, Poppins) with tight letter spacing for high-impact titles."
+      secondary_heading: "Medium weight sans-serif with a modern, approachable feel."
+      body_text: "Clean, legible sans-serif (e.g., Inter, Open Sans) with generous line-height."
+    color_palette:
+      primary_color: "#FF7A21"
+      secondary_color: "#FFB392"
+      background: "#FFFFFF"
+      text_main: "#1A1A1A"
+      accent_soft: "#FFF2EC"
+    key_visual_elements: 
+      - "Large rounded 'bubble' and 'blob' background elements in orange tones."
+      - "Wavy and curved dividers for section transitions."
+      - "Large rounded-corner cards (32px+) for content grouping."
+      - "Circular progress indicators and clean donut charts."
+      - "Studio-style photography with vibrant monochromatic backgrounds (Yellow/Orange)."
+      - "Playful iconography with thick strokes and orange accents."
+
+  image_generation_prompts:
+    style_guidelines: "Vibrant studio photography, high-energy portraits, bright monochromatic backgrounds, minimalist composition, soft professional lighting, modern creative agency aesthetic."
+    themes:
+      - target: "Creative Professional"
+        prompt_elements: "A person in a stylish green blazer holding a pink bag against a bright yellow background, fashion photography style, high energy."
+      - target: "Team Workspace"
+        prompt_elements: "Diverse creative team collaborating in a bright modern studio, colorful outfits, high-end photography, optimistic atmosphere."
+      - target: "Abstract Energy"
+        prompt_elements: "Minimalist orange and white geometric bubbles, 3D soft lighting, playful composition."
+
+slide_layout_templates:
+  - type: "Campaign_Cover"
+    usage: "Main title for marketing plans and creative pitches"
+    components:
+      - "Large Bold Title in dark navy/black with orange accents"
+      - "Large orange bubble shape in the bottom-right corner"
+      - "Floating circular accents in the corners"
+
+  - type: "Strategy_Cards"
+    usage: "Highlighting key objectives or strategic pillars"
+    components:
+      - "Section Heading top-centered"
+      - "Layout: Grid of large rounded cards with orange outline icons"
+      - "Visual: Large portrait bleed on the far left"
+
+  - type: "Timeline_Process"
+    usage: "Marketing calendars or project roadmaps"
+    components:
+      - "Section Heading top-centered"
+      - "Layout: Grid of outline boxes with orange headers"
+      - "Visual: Studio-style portrait on the left edge"
+
+  - type: "Budget_Donut"
+    usage: "Financial breakdowns and resource allocation"
+    components:
+      - "Section Heading inside a large orange block on the left"
+      - "Layout: Large multi-tone orange donut chart on the right"
+      - "Clean numbered list for data legend"
+
+  - type: "Performance_Kpis"
+    usage: "Visualizing results and success metrics"
+    components:
+      - "Section Heading top-centered"
+      - "Layout: Three large circular progress indicators (donut style) with percentage labels"
+      - "Visual: Circular portrait bleed on the top-right"
+
+  - type: "Channel_Highlights"
+    usage: "Distributing content across different platforms"
+    components:
+      - "Section Heading top-centered"
+      - "Layout: Three vertical cards with image headers and orange outline borders"
+      - "Playful sunburst icon in the top-right"
+
+  - type: "Operational_Grid"
+    usage: "Detailed planning and task distribution"
+    components:
+      - "Section Heading top-centered"
+      - "Layout: Clean table with orange headers and wavy top/bottom dividers"
+      - "High contrast and legible data rows"
+
+  - type: "Closing_Pulse"
+    usage: "Final slide with contact and closing remarks"
+    components:
+      - "Large Bold Closing Title in all-caps"
+      - "Layout: Grid of contact icons and text on the left"
+      - "Visual: Large orange bubble bleed on the right"
