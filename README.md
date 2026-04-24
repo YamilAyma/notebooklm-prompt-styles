@@ -33,6 +33,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Scholar's Journal](#scholars-journal)
   - [Creative Notebook](#creative-notebook)
   - [Classical Gallery](#classical-gallery)
+  - [Summer Collage](#summer-collage)
   - [Neon Pulsar](#neon-pulsar)
   - [Cobalt Editorial](#cobalt-editorial)
   - [Midnight Tactical](#midnight-tactical)
@@ -653,6 +654,44 @@ slide_layout_templates:
   - type: "Percentage_Highlight"
     usage: "Key metrics or summaries with historical framing"
 ```
+
+#### Summer Collage
+
+A bright, energetic, and sun-drenched design featuring asymmetric photo grids, breezy handwritten accents, and "Polaroid" style overlays. It creates a vibrant lifestyle atmosphere perfect for travel, leisure, and summer-themed presentations.
+
+![Summer Collage Preview](preview/summer_collage/summer_collage_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/summer_collage.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Bright, energetic, and sun-drenched vacation vibe. Photo collages and handwritten accents."
+    typography: 
+      primary_heading: "Extra-tall, bold, condensed sans-serif"
+      secondary_heading: "Elegant flowing script / handwritten font"
+      body_text: "Clean minimalist sans-serif"
+    color_palette:
+      primary_color: "#00A8CC"
+      background: "Pure White (#FFFFFF)"
+      text_main: "#1A1A1A"
+      accent_color: "#F4D03F"
+    key_visual_elements: 
+      - "Asymmetric photo grids and mosaics"
+      - "Rotated 'Polaroid' style photo overlays"
+      - "Hand-drawn doodle icons (hearts, arrows)"
+      - "High-saturation lifestyle imagery"
+
+slide_layout_templates:
+  - type: "Vacation_Cover"
+    usage: "High-impact mosaic intro with condensed typography"
+  - type: "Polaroid_Memories"
+    usage: "Reflective content with rotated photo frames"
+  - type: "Condensed_Keyword"
+    usage: "Bold section breaks or summary slides"
+```
+
 
 #### Neon Pulsar
 

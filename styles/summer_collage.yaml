@@ -1,0 +1,76 @@
+design_system:
+  global_style:
+    theme: "Bright, energetic, and sun-drenched. Inspired by summer travel, lifestyle blogs, and high-end vacation photography. Features dynamic photo collages and breezy handwritten accents."
+    typography: 
+      primary_heading: "Extra-tall, bold, condensed sans-serif (all caps) for high-impact keywords."
+      secondary_heading: "Elegant, flowing script or handwritten font for decorative titles."
+      body_text: "Clean, minimalist sans-serif for descriptions and details."
+    color_palette:
+      primary_color: "Ocean Blue (#00A8CC)"
+      accent_color: "Sun Yellow (#F4D03F) and Citrus Orange (#FF8C00)"
+      background: "Pure White (#FFFFFF) with high-key lighting effects."
+      text_main: "Deep Black (#1A1A1A) for sharp contrast on white/bright backgrounds."
+    key_visual_elements: 
+      - "Asymmetric photo grids and mosaics with thin minimalist borders."
+      - "Slightly rotated 'Polaroid' style photo overlays to create depth and movement."
+      - "Hand-drawn doodle icons (sketched hearts, arrows, handwritten 'love' notes)."
+      - "Large typography-led white spaces that breathe."
+      - "Vibrant, high-saturation imagery of beaches, turquoise waters, and summer lifestyle."
+
+  image_generation_prompts:
+    style_guidelines: "Sun-drenched summer aesthetic, high-key lighting, vibrant turquoise and yellow tones, vacation lifestyle, crisp details, Mediterranean or tropical vibe, minimalist framing."
+    themes:
+      - target: "Abstract Background"
+        prompt_elements: "Minimalist pure white background with subtle sun flares and hand-drawn heart doodles in the corners."
+      - target: "Lifestyle"
+        prompt_elements: "Close-up of a person with a straw hat at the beach, turquoise ocean waves in the background, warm golden hour lighting, cinematic quality."
+      - target: "Collage Elements"
+        prompt_elements: "Overhead view of summer essentials (sunglasses, citrus fruits, cold cocktail) on a white wooden table, bright and airy."
+
+slide_layout_templates:
+  - type: "Vacation_Cover"
+    usage: "High-impact intro for travel, leisure, or summer campaigns"
+    components:
+      - "Large condensed keyword (e.g., 'VERANO') on the right"
+      - "Handwritten subtitle overlay (e.g., 'Collage del')"
+      - "2x2 mosaic of vibrant summer photos on the left"
+      - "Minimalist year or date tag"
+
+  - type: "Mosaic_Storytelling"
+    usage: "Presenting multiple aspects of a single theme or location"
+    components:
+      - "Complex grid of 5-6 photos of varying sizes"
+      - "One central 'hero' photo larger than the others"
+      - "Small hand-drawn doodles tucked in between grid gaps"
+      - "Short text labels on top of white blocks"
+
+  - type: "Polaroid_Memories"
+    usage: "Reflective content, personal testimonials, or highlighted moments"
+    components:
+      - "2-3 slightly rotated photos with white borders and drop shadows"
+      - "Text column on the right with a handwritten title"
+      - "Decorative sketched heart icon"
+      - "Body text in a clean, small font"
+
+  - type: "Condensed_Keyword"
+    usage: "Section breaks or high-impact summary slides"
+    components:
+      - "Half-page photo bleed"
+      - "Half-page white space with a massive condensed keyword"
+      - "Small script sub-text above the keyword"
+      - "Sketched underline or doodle accent"
+
+  - type: "Lifestyle_Split"
+    usage: "Combining high-quality imagery with descriptive details"
+    components:
+      - "Full-height vertical photo sidebar"
+      - "Clean white content area for structured text"
+      - "Numbered points or bulleted lists with minimalist icons"
+
+  - type: "Sun_Drenched_Closing"
+    usage: "Final slide, Thank You"
+    components:
+      - "Massive 'THANKS!' in condensed bold font"
+      - "Hand-drawn heart doodles at the bottom"
+      - "Hero photo on the left or as a background overlay"
+      - "Social media handles or website link in small type"
