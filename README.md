@@ -40,6 +40,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Classical Gallery](#classical-gallery)
   - [Summer Collage](#summer-collage)
   - [Vision Board](#vision-board)
+  - [Kawaii Playful](#kawaii-playful)
   - [Classical Scrapbook](#classical-scrapbook)
   - [Vibrant Agency](#vibrant-agency)
   - [Luxury Editorial](#luxury-editorial)
