@@ -22,6 +22,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [The Seasons](#the-seasons)
   - [Vibrant Corporate](#vibrant-corporate)
   - [Eco Modern](#eco-modern)
+  - [Urban Ribbon](#urban-ribbon)
 - [🌿 Minimalist](#-minimalist)
   - [Geometric Mono](#geometric-mono)
   - [Silicon Refined](#silicon-refined)
@@ -327,6 +328,43 @@ slide_layout_templates:
     usage: "Agenda points inside a glassmorphic container"
   - type: "Eco_Action_Grid"
     usage: "Practical tips with alternating rounded image/text blocks"
+```
+
+#### Urban Ribbon
+
+An authoritative and structured corporate aesthetic featuring distinctive 3D-folded "ribbon" elements and sharp diagonal background slices. It combines a professional charcoal and beige palette with golden-hour cityscape photography, creating a sense of metropolitan sophistication and executive power.
+
+![Urban Ribbon Preview](preview/urban_ribbon/urban_ribbon_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/urban_ribbon.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Authoritative urban aesthetic. 3D-folded ribbons and diagonal slices."
+    typography: 
+      primary_heading: "Bold authoritative sans-serif (League Spartan)"
+      secondary_heading: "Professional sans-serif"
+      body_text: "Clean functional sans-serif"
+    color_palette:
+      primary_color: "#333333"
+      secondary_color: "#D9C5B2"
+      background_dark: "#5C4B41"
+      text_main: "#1A1A1A"
+    key_visual_elements: 
+      - "3D-folded 'ribbon' overlays for titles and labels"
+      - "Sharp diagonal background slices and parallelogram containers"
+      - "Golden-hour urban landscapes and skyscraper photography"
+      - "High-contrast charcoal and warm beige palette"
+
+slide_layout_templates:
+  - type: "Executive_Pitch"
+    usage: "Professional business cover with urban backdrop and ribbon accents"
+  - type: "Leadership_Grid"
+    usage: "Team profiles with parallelogram-shaped portrait cards"
+  - type: "Strategic_Comparison"
+    usage: "Comparative data with diagonal dividers and vertical image bleeds"
 ```
 
 ---

@@ -1,0 +1,87 @@
+design_system:
+  global_style:
+    theme: "Authoritative, structured, and modern urban aesthetic. Features distinctive 3D-folded 'ribbon' elements and sharp diagonal background slices. Combines high-contrast charcoal and warm beige with golden-hour cityscape photography for a premium corporate feel."
+    typography: 
+      primary_heading: "Bold authoritative geometric sans-serif (e.g., League Spartan, Montserrat) for high-impact titles."
+      secondary_heading: "Clean, professional sans-serif with generous tracking."
+      body_text: "Functional and readable sans-serif (e.g., Inter, Glacial Indifference)."
+    color_palette:
+      primary_color: "#333333"
+      secondary_color: "#D9C5B2"
+      background_dark: "#5C4B41"
+      background_light: "#FFFFFF"
+      text_main: "#1A1A1A"
+      accent_beige: "#F2E8DF"
+    key_visual_elements: 
+      - "3D-folded 'ribbon' or 'origami' style overlays for labels and titles."
+      - "Sharp diagonal background slices and parallelogram-shaped containers."
+      - "Golden-hour urban landscapes and architectural skyscraper photography."
+      - "High-contrast transitions between dark blocks and beige accents."
+      - "Minimalist vector lines and precise alignment."
+
+  image_generation_prompts:
+    style_guidelines: "High-contrast urban photography, skyscraper cityscapes during golden hour, sunset lighting over modern buildings, architectural precision, cinematic city atmosphere."
+    themes:
+      - target: "Urban Skyline"
+        prompt_elements: "Wide shot of a modern city skyline at sunset, golden light reflecting on glass skyscrapers, high contrast, cinematic atmosphere, 8k resolution."
+      - target: "Architectural Detail"
+        prompt_elements: "Close-up of a modern building facade with sharp geometric angles, dramatic lighting, urban architectural photography."
+      - target: "Corporate Workspace"
+        prompt_elements: "Modern professional office interior with glass walls, city view in the background, sophisticated atmosphere, golden hour light."
+
+slide_layout_templates:
+  - type: "Executive_Pitch"
+    usage: "Main title for business proposals and corporate presentations"
+    components:
+      - "Large Bold Title centered over a dark charcoal block"
+      - "Visual: Full-bleed cityscape background with a diagonal beige slice"
+      - "Folded ribbon accents for 'Presented By' labels"
+
+  - type: "Proposal_Abstract"
+    usage: "Executive summary or high-level project overviews"
+    components:
+      - "Layout: Split screen with diagonal dividers"
+      - "Left: Dark charcoal background with white typography"
+      - "Right: Golden-hour cityscape image with a folded beige ribbon overlay"
+
+  - type: "Strategic_Comparison"
+    usage: "Mapping competitive landscapes or market positioning"
+    components:
+      - "Section Heading top-centered"
+      - "Layout: Large vertical parallelogram-shaped image on the left"
+      - "Two-column text block on the right with dark ribbon headers"
+
+  - type: "Operational_Framework"
+    usage: "Explaining business models or core strategies"
+    components:
+      - "Large bold title on the right over a beige slice"
+      - "Layout: Grid of text blocks on a dark background"
+      - "Visual: Slanted image crop on the far left"
+
+  - type: "Leadership_Grid"
+    usage: "Introducing team members or executive leadership"
+    components:
+      - "Section Heading top-centered in all-caps"
+      - "Layout: Row of vertical parallelogram-shaped portrait cards"
+      - "Folded ribbon labels at the base of each card for names and roles"
+
+  - type: "Workflow_Structure"
+    usage: "Detailed operations plans or technical roadmaps"
+    components:
+      - "Layout: Multi-paneled design with diagonal slices"
+      - "Dark charcoal blocks for primary content"
+      - "Beige accents for numbering or step highlights"
+
+  - type: "Growth_Forecast"
+    usage: "Financial projections and data-driven insights"
+    components:
+      - "Section Heading top-right"
+      - "Layout: Clean data grids over a beige background slice"
+      - "Diagonal dividers separating text from visual cityscapes"
+
+  - type: "Final_Call_Action"
+    usage: "Closing slide with contact info and next steps"
+    components:
+      - "Large 'THANK YOU' title centered on a dark block"
+      - "Visual: Wide golden-hour cityscape bleed across the top"
+      - "Clean contact info in a white footer block with beige ribbon accents"
