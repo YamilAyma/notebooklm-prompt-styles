@@ -8,7 +8,7 @@ This protocol defines the standard procedure for extracting visual design system
 
 ## 0. Initial Research & Context
 Before acting, the agent **MUST** read the `README.md` and explore existing files in `styles/`.
-- Identify the current categories (Minimalist, Creative, Brand Inspired).
+- Identify the 6 core categories: Business & Executive, Minimalist & Modern, Creative & Playful, Editorial & Magazine, Tech & Innovation, and Nature & Wellness.
 - Maintain consistency in tone and formatting.
 - **Language**: All style names, descriptions, and YAML content **MUST be in English** to maintain consistency for a global audience.
 
