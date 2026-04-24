@@ -10,11 +10,13 @@ This protocol defines the standard procedure for extracting visual design system
 Before acting, the agent **MUST** read the `README.md` and explore existing files in `styles/`.
 - Identify the current categories (Minimalist, Creative, Brand Inspired).
 - Maintain consistency in tone and formatting.
+- **Language**: All style names, descriptions, and YAML content **MUST be in English** to maintain consistency for a global audience.
 
 ## 1. Visual Style Extraction
 Use the `notebooklm-slide-styles` skill as the primary engine.
 - **Input**: Provide images, descriptions, or URLs to the skill.
 - **Output Audit**: Review the generated YAML to ensure it captures subtle details (textures, border styles, complex palettes).
+- **Images**: **DO NOT** generate or create preview images. The user will provide these or handle them manually. Focus only on the YAML and documentation.
 
 ## 2. File Implementation
 Create a new `.yaml` file in the `styles/` folder.
@@ -45,3 +47,4 @@ Follow these rules for persisting changes:
 - **Format**: Use the `type (Scope) - Imperative description` pattern.
   - Example: `feat (Styles) - Add Scholars Journal design style`
 - **Tool**: Always use the `commits` skill to generate messages, which will analyze the history to determine the language.
+- **Final Review**: **DO NOT** commit changes automatically at the end of the extraction process. Present the files to the user for a final audit and wait for explicit confirmation to commit or let the user handle it.

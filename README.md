@@ -30,6 +30,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Artisan Rust](#artisan-rust)
   - [Vintage Charm](#vintage-charm)
   - [Scholar's Journal](#scholars-journal)
+  - [Creative Notebook](#creative-notebook)
   - [Neon Pulsar](#neon-pulsar)
   - [Cobalt Editorial](#cobalt-editorial)
   - [Midnight Tactical](#midnight-tactical)
@@ -538,6 +539,43 @@ slide_layout_templates:
     usage: "Presenting concepts with a visual anchor"
   - type: "Balanced_Journal"
     usage: "Summary or Q&A slides"
+```
+
+#### Creative Notebook
+
+A clean, academic yet playful design inspired by creative journals and student notebooks. It features a graph paper grid background, organic pastel blobs in peach and blue, and numbered list elements for a highly organized yet aesthetic presentation feel.
+
+![Creative Notebook Preview](preview/creative_notebook/creative_notebook_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/creative_notebook.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Creative, academic-journalistic, and organized. Scrapbook aesthetic with grid textures and organic pastel shapes."
+    typography: 
+      primary_heading: "Bold, clean sans-serif, primarily sentence case"
+      secondary_heading: "Medium weight sans-serif"
+      body_text: "Clean, highly legible sans-serif, airy spacing"
+    color_palette:
+      primary_color: "#FAD9C5"
+      background: "White with light gray grid and organic pastel blobs"
+      text_main: "#333333"
+      accent_color: "#D1E3E9"
+    key_visual_elements: 
+      - "Graph paper/grid background pattern"
+      - "Organic pastel blobs (Peach, Blue, Pink)"
+      - "Numbered list items in colored circles"
+      - "Post-it note elements with paperclips"
+
+slide_layout_templates:
+  - type: "Cover_Journal"
+    usage: "Impactful intro with grid and organic framing"
+  - type: "Horizontal_Cards"
+    usage: "Presenting mission, vision, or core objectives"
+  - type: "Sticker_Note_Split"
+    usage: "Idea origin or highlighted conceptual points"
 ```
 
 #### Neon Pulsar
