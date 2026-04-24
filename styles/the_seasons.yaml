@@ -1,0 +1,78 @@
+design_system:
+  global_style:
+    theme: "Organic, earthy, and high-end botanical aesthetic. Inspired by sustainable brands and natural apothecary. Features deep olive greens, terracotta accents, and airy off-white spaces."
+    typography: 
+      primary_heading: "Classic, high-contrast serif (e.g., Playfair Display) for an elegant and grounded presence."
+      secondary_heading: "Refined italic serif or clean modern sans-serif for subtitles."
+      body_text: "Minimalist sans-serif (e.g., Inter, Poppins) with clean legibility."
+    color_palette:
+      primary_color: "#3D3D29"
+      secondary_color: "#8F564B"
+      background: "#F9F6F1"
+      text_main: "#2D2D2D"
+      accent_green: "#5A5A42"
+    key_visual_elements: 
+      - "Macro photography of botanical elements (eucalyptus, leaves) with soft depth of field."
+      - "Large rounded-corner rectangles (pill/stadium shapes) for content blocks."
+      - "Earth-toned bar charts and Venn diagrams with high-contrast labels."
+      - "Clean vertical and horizontal dividers for structured product lists."
+      - "Shadow overlays of plant leaves for a natural atmosphere."
+      - "Stadium-shaped masks for portrait and product photography."
+
+  image_generation_prompts:
+    style_guidelines: "Organic photography, botanical theme, earthy color palette, soft natural lighting, high-end sustainable branding, macro shots of plants, artisanal products, calm and minimalist atmosphere."
+    themes:
+      - target: "Hero Background"
+        prompt_elements: "Eucalyptus branches with green leaves, soft depth of field, earthy olive background, natural sunlight shadows."
+      - target: "Product Focus"
+        prompt_elements: "Artisanal honey jar or soap bar being held by hands, organic textures, soft daylight, minimalist composition."
+      - target: "Nature Lifestyle"
+        prompt_elements: "Portrait of a person in a white linen dress surrounded by lush tropical greenery, soft sunlight, high-end editorial quality."
+
+slide_layout_templates:
+  - type: "Organic_Hero"
+    usage: "Main title for environmental, wellness, or artisanal brands"
+    components:
+      - "Large Serif Title centered over a botanical background bleed"
+      - "Subtitle in clean sans-serif below the main title"
+      - "Soft leaf shadow overlays"
+
+  - type: "Product_Inventory"
+    usage: "Catalog or price list with visual references"
+    components:
+      - "Section Heading top-centered"
+      - "Layout: Vertical list of stadium-shaped cards with product images and prices"
+      - "Visual: Large portrait bleed on the right edge"
+
+  - type: "Data_Venn"
+    usage: "Mapping overlapping concepts or brand values"
+    components:
+      - "Section Heading top-left"
+      - "Layout: Centered Venn diagram using earthy terracotta and olive tones"
+      - "Supporting description paragraph on the left"
+
+  - type: "Comparison_Grid"
+    usage: "Comparing product features or statistics"
+    components:
+      - "Section Heading top-centered"
+      - "Layout: Multi-column grid with earthy-colored headers and clear data rows"
+      - "Visual: Narrow portrait strip on the far left"
+
+  - type: "Ingredient_Bar_Chart"
+    usage: "Displaying composition, results, or data metrics"
+    components:
+      - "Section Heading top-centered"
+      - "Layout: Large horizontal bar chart in varying shades of terracotta and brown"
+      - "Clean background with subtle paper texture"
+
+  - type: "Feature_Stadium"
+    usage: "Highlighting specific items or team members"
+    components:
+      - "Three side-by-side stadium-shaped image masks with descriptive text blocks below"
+      - "Background: Pure cream or off-white"
+
+  - type: "Ending_Summary"
+    usage: "Final contact or summary slide"
+    components:
+      - "Centered white card with a thin border over a botanical landscape bleed"
+      - "Includes contact details and a small botanical doodle or icon"

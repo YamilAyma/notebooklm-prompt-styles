@@ -19,6 +19,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Visual Discovery](#visual-discovery)
   - [Executive Report](#executive-report)
   - [Emerald Corporate](#emerald-corporate)
+  - [The Seasons](#the-seasons)
 - [🌿 Minimalist](#-minimalist)
   - [Geometric Mono](#geometric-mono)
   - [Silicon Refined](#silicon-refined)
@@ -212,6 +213,43 @@ slide_layout_templates:
     usage: "Structured presentation of steps or research"
   - type: "Glassmorphic_Data"
     usage: "Data-heavy slides with visual clarity"
+
+#### The Seasons
+
+An organic and earthy aesthetic inspired by sustainable branding, apothecary, and wellness. It features high-contrast serifs, deep olive and terracotta tones, and botanical photography with stadium-shaped masks and balanced asymmetric layouts.
+
+![The Seasons Preview](preview/the_seasons/the_seasons_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/the_seasons.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Organic, earthy wellness and high-end botanical branding."
+    typography: 
+      primary_heading: "Classic, high-contrast serif (Playfair Display)"
+      secondary_heading: "Refined italic serif or modern sans-serif"
+      body_text: "Clean minimalist sans-serif"
+    color_palette:
+      primary_color: "#3D3D29"
+      secondary_color: "#8F564B"
+      background: "#F9F6F1"
+      text_main: "#2D2D2D"
+    key_visual_elements: 
+      - "Macro botanical photography (eucalyptus, tropical leaves)"
+      - "Stadium-shaped masks for images and content blocks"
+      - "Shadow overlays of plant leaves for atmosphere"
+      - "Earthy-toned data visualizations (Venn, bar charts)"
+
+slide_layout_templates:
+  - type: "Organic_Hero"
+    usage: "Large Serif Title over botanical background bleed"
+  - type: "Product_Inventory"
+    usage: "Catalog list of stadium-shaped cards with portrait bleed"
+  - type: "Data_Venn"
+    usage: "Mapping brand values with terracotta and olive tones"
+```
 ```
 
 ---
