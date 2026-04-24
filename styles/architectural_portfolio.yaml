@@ -1,0 +1,75 @@
+design_system:
+  global_style:
+    theme: "Modern architectural, minimalist, and geometric. Inspired by high-end design portfolios and architectural blueprints. Features modular layouts and complex pill-shaped photo masking."
+    typography: 
+      primary_heading: "Bold, geometric sans-serif (e.g., Montserrat, Inter) for a structured, professional presence."
+      secondary_heading: "Medium weight sans-serif, clean and balanced."
+      body_text: "Light-weight, minimalist sans-serif with airy character spacing."
+    color_palette:
+      primary_color: "Sage Green (#8B9B7B)"
+      accent_color: "Terracotta (#A0522D) and Soft Teal (#7EA89B)"
+      background: "Off-White / Light Gray (#F4F4F4)"
+      text_main: "Deep Charcoal (#333333) for high-contrast legibility."
+    key_visual_elements: 
+      - "Complex photo masks using rounded pill/stadium shapes and interconnected circles."
+      - "Modular 'Bento-grid' arrangement of content blocks."
+      - "Minimalist corner icons (four-pointed stars or compass symbols) in sage green."
+      - "Thin, subtle horizontal lines separating names and titles (e.g., Bruno Lago | Architect)."
+      - "Asymmetric photo clusters that create a dynamic yet balanced flow."
+
+  image_generation_prompts:
+    style_guidelines: "Modern architecture, minimalist design, clean lines, sage green and terracotta accents, soft daylight, high-end materials (concrete, glass, wood), geometric compositions, professional photography."
+    themes:
+      - target: "Abstract Background"
+        prompt_elements: "Minimalist off-white architectural space with soft shadows and a sage green geometric star icon in the top corner."
+      - target: "Architecture"
+        prompt_elements: "Exterior of a modern minimalist house with clean white walls and large glass windows, sage green garden accents, blue sky, architectural quality."
+      - target: "Portfolio Hero"
+        prompt_elements: "Professional portrait of a designer in a bright minimalist office, concrete textures, sage green plants, soft natural lighting."
+
+slide_layout_templates:
+  - type: "Portfolio_Cover"
+    usage: "Main title for professional portfolios or architectural proposals"
+    components:
+      - "Massive bold Title (e.g., 'PORTFOLIO') on the left"
+      - "Visual: Complex pill-shaped photo cluster on the right"
+      - "Bottom bar with Name and Profession separated by a thin line"
+      - "Corner star icon accent"
+
+  - type: "Bento_Index"
+    usage: "Table of contents or project overview"
+    components:
+      - "Section Heading centered or left-aligned"
+      - "List of items with minimalist bullets"
+      - "Visual: Interconnected circular photo masks forming a pattern"
+      - "Soft teal geometric accents"
+
+  - type: "Biography_Mask"
+    usage: "About Me or Team introduction"
+    components:
+      - "Section Heading top-left"
+      - "Large description paragraph"
+      - "Visual: Portrait masked into a complex 'stadium' shape"
+      - "Corner star icon for branding"
+
+  - type: "Curriculum_Grid"
+    usage: "Resume, project history, or awards"
+    components:
+      - "Two-column list layout (e.g., 'Experience' and 'Awards')"
+      - "Visual: Half-circle or pill-shaped photo bleed at the bottom"
+      - "Small metadata text at the top-right"
+
+  - type: "Project_Showcase"
+    usage: "Detailed look at specific works"
+    components:
+      - "Section Heading with thin horizontal underline"
+      - "Layout: Large central geometric photo mask showing architectural details"
+      - "Support text on the right or bottom"
+
+  - type: "Contact_Modular"
+    usage: "Final contact information"
+    components:
+      - "Left: Modular pill-shaped photo mask"
+      - "Right: List of contact details with minimalist icons (globe, email, map, phone)"
+      - "Bottom-right: Decorative terracotta circular pattern"
+      - "Name branding in the top-right corner"

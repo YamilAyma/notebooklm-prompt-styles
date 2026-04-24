@@ -26,6 +26,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Structured Mint](#structured-mint)
   - [Architectural Mono](#architectural-mono)
   - [Architectural Cobalt](#architectural-cobalt)
+  - [Architectural Portfolio](#architectural-portfolio)
 - [🎨 Creative](#-creative)
   - [Creative Spark](#creative-spark)
   - [Artisan Rust](#artisan-rust)
@@ -436,6 +437,43 @@ slide_layout_templates:
     usage: "Showcasing projects with technical metadata"
   - type: "Expertise_Profile"
     usage: "Team introduction or profile highlights"
+```
+
+#### Architectural Portfolio
+
+A modern, minimalist, and geometric design inspired by architectural blueprints and professional portfolios. It features complex pill-shaped photo masks, sage green accents, and a modular "Bento-grid" layout for a high-end, structured aesthetic.
+
+![Architectural Portfolio Preview](preview/architectural_portfolio/architectural_portfolio_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/architectural_portfolio.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Modern architectural and geometric. Modular bento-grid layouts."
+    typography: 
+      primary_heading: "Bold geometric sans-serif (Montserrat/Inter)"
+      secondary_heading: "Medium sans-serif, clean"
+      body_text: "Light-weight minimalist sans-serif"
+    color_palette:
+      primary_color: "#8B9B7B"
+      background: "Off-White (#F4F4F4)"
+      text_main: "#333333"
+      accent_color: "#A0522D"
+    key_visual_elements: 
+      - "Complex pill-shaped and circular photo masks"
+      - "Modular Bento-grid content organization"
+      - "Minimalist sage green star icons in corners"
+      - "Thin horizontal separators and asymmetric clusters"
+
+slide_layout_templates:
+  - type: "Portfolio_Cover"
+    usage: "Bold intro with complex geometric photo masking"
+  - type: "Bento_Index"
+    usage: "Modular TOC or overview with circular masks"
+  - type: "Contact_Modular"
+    usage: "Final contact info with terracotta accents"
 ```
 
 ### 🎨 Creative
