@@ -34,6 +34,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Creative Notebook](#creative-notebook)
   - [Classical Gallery](#classical-gallery)
   - [Summer Collage](#summer-collage)
+  - [Vision Board](#vision-board)
   - [Neon Pulsar](#neon-pulsar)
   - [Cobalt Editorial](#cobalt-editorial)
   - [Midnight Tactical](#midnight-tactical)
@@ -691,6 +692,44 @@ slide_layout_templates:
   - type: "Condensed_Keyword"
     usage: "Bold section breaks or summary slides"
 ```
+
+#### Vision Board
+
+A tactile, handmade, and inspirational design featuring realistic paper textures, torn edges, and washi tape accents. It captures the essence of a physical scrapbook or mood board, perfect for creative workshops, personal planning, and visionary presentations.
+
+![Vision Board Preview](preview/vision_board/vision_board_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/vision_board.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Tactile, handmade scrapbooking aesthetic. Torn edges, tape accents, and paper textures."
+    typography: 
+      primary_heading: "Extra-bold thick sans-serif (all caps)"
+      secondary_heading: "Marker-style / handwritten font"
+      body_text: "Clean professional sans-serif"
+    color_palette:
+      primary_color: "#F9F7F2"
+      background: "Crumpled paper texture"
+      text_main: "#2D2D2D"
+      accent_color: "#E0E0E0"
+    key_visual_elements: 
+      - "Realistic torn paper edge overlays"
+      - "Washi tape and masking tape strips"
+      - "Hand-drawn marker ovals and arrows"
+      - "Multi-layered paper scrap aesthetic"
+
+slide_layout_templates:
+  - type: "Manifesto_Cover"
+    usage: "Bold inspirational intro with layered photos"
+  - type: "Concept_Tornado"
+    usage: "Mapping areas with marker arrows and taped notes"
+  - type: "Note_to_Self"
+    usage: "Key takeaways or quotes on centered paper scraps"
+```
+
 
 
 #### Neon Pulsar

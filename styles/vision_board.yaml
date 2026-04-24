@@ -1,0 +1,77 @@
+design_system:
+  global_style:
+    theme: "Tactile, handmade, and inspirational. Inspired by physical vision boards, scrapbooks, and creative journaling. Features realistic paper textures, torn edges, and washi tape accents."
+    typography: 
+      primary_heading: "Extra-bold, thick sans-serif (all caps) for a grounded, structural feel."
+      secondary_heading: "Authentic marker-style or handwritten font for personal notes and accents."
+      body_text: "Clean, professional sans-serif with a focus on personal clarity."
+    color_palette:
+      primary_color: "Warm Cream (#F9F7F2)"
+      accent_color: "Stone Gray (#7D7D7D) and Translucent Tape (#E0E0E0)"
+      background: "Crumpled paper or aged parchment texture with subtle shadow depth."
+      text_main: "Deep Charcoal (#2D2D2D) for a 'written on paper' look."
+    key_visual_elements: 
+      - "Realistic torn paper edge overlays (white on cream background)."
+      - "Translucent masking tape or washi tape strips 'holding' photos and notes."
+      - "Hand-drawn marker doodles: sketchy ovals, arrows, and underlines."
+      - "Multi-layered paper scrap aesthetic with varying depths and subtle drop shadows."
+      - "Crumpled or folded paper textures applied to the entire background."
+
+  image_generation_prompts:
+    style_guidelines: "Vision board aesthetic, scrapbooking style, tactile paper textures, torn edges, washi tape accents, soft natural lighting, layered composition, warm neutral tones, inspirational vibe."
+    themes:
+      - target: "Abstract Background"
+        prompt_elements: "Close-up of a crumpled white paper texture with torn edges and a subtle shadow on a warm cream background."
+      - target: "Inspirational Imagery"
+        prompt_elements: "Close-up of a person writing in a journal, coffee cup on a wooden table, soft morning light, cinematic and tactile."
+      - target: "Scrapbook Elements"
+        prompt_elements: "Arrangement of dried flowers, polaroid photos, and washi tape on a textured paper surface, flat lay, high-fidelity textures."
+
+slide_layout_templates:
+  - type: "Manifesto_Cover"
+    usage: "Inspirational intro for workshops, planning, or creative visions"
+    components:
+      - "Massive bold Title (e.g., 'VISION BOARD') centered"
+      - "Handwritten marker sub-text overlay (e.g., 'Next 3 months')"
+      - "Layout: Large torn paper scrap at the bottom with overlapping photos"
+      - "Realistic tape accents on corners"
+
+  - type: "Concept_Tornado"
+    usage: "Mapping out different areas of a project or life"
+    components:
+      - "Layout: Central white paper scrap with 'torn' edges"
+      - "Hand-drawn marker arrows pointing to different content cards"
+      - "Crumpled paper texture on individual cards"
+      - "Washi tape strips fixing each card to the background"
+
+  - type: "Focus_Deep_Dive"
+    usage: "In-depth look at a specific area (e.g., 'Personal', 'Work')"
+    components:
+      - "Full-bleed photo on one side with 'torn' edge transition"
+      - "Large bold heading on the other side"
+      - "Description text below the heading"
+      - "Handwritten marker quote at the bottom with tape accent"
+
+  - type: "Layered_Inspiration"
+    usage: "Mood boards, creative references"
+    components:
+      - "Overlapping grid of 3-4 photos of varying orientations"
+      - "Torn paper strips used as titles for each photo"
+      - "Sketched oval circling a key point"
+      - "Tape accents on every element"
+
+  - type: "Note_to_Self"
+    usage: "Quotes, key takeaways, or summaries"
+    components:
+      - "Single large white paper scrap centered"
+      - "Handwritten 'REMEMBER' title at the top"
+      - "Large marker-style quote in the center"
+      - "Subtle paper fold shadows"
+
+  - type: "Inspirational_Closing"
+    usage: "Final slide, Thank You"
+    components:
+      - "Large 'THANK YOU' or 'GRACIAS' in marker font"
+      - "Symmetric torn paper framing"
+      - "Hand-drawn heart or star doodle"
+      - "Website/Socials on a small 'taped' paper strip"
