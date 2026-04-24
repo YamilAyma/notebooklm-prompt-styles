@@ -1,0 +1,84 @@
+design_system:
+  global_style:
+    theme: "Professional, executive, and high-tech. Deep emerald green foundation with crystalline geometric overlays and metallic silver accents."
+    typography: 
+      primary_heading: "Bold, authoritative sans-serif (e.g., Montserrat, Inter), primarily uppercase for a corporate feel."
+      secondary_heading: "Medium weight sans-serif, clean and professional."
+      body_text: "Light-weight, highly legible sans-serif with generous line height (e.g., Roboto, Open Sans)."
+    color_palette:
+      primary_color: "Emerald Green (#0F3024)"
+      accent_color: "Metallic Silver (#C0C0C0) and Sage Green (#4B6B5D)"
+      background: "Deep forest green with glassmorphic geometric shards and a subtle grid texture."
+      text_main: "Pure White (#FFFFFF)"
+    key_visual_elements: 
+      - "Sharp, crystalline geometric overlays (shards) with gradients and metallic reflections."
+      - "Pill-shaped category labels with a subtle vertical gradient (Light Green to White)."
+      - "Rounded-corner content cards with glassmorphism effects."
+      - "Professional business-centric photography with consistent rounded corners."
+      - "High-contrast data visualizations (line/bar charts) on glassmorphic backgrounds."
+
+  image_generation_prompts:
+    style_guidelines: "Executive corporate style, deep forest green and emerald tones, crystalline geometric shapes, metallic silver reflections, glassmorphism, professional business atmosphere, clean minimalist layouts."
+    themes:
+      - target: "Abstract Background"
+        prompt_elements: "Minimalist deep forest green background with sharp crystalline geometric shards, silver metallic accents, glassmorphic textures, professional and high-tech."
+      - target: "Business Objects"
+        prompt_elements: "Flat vector illustration of a high-end corporate office, minimalist desk with a silver laptop, emerald green accents, professional lighting, clean lines."
+      - target: "Portrait / Profile"
+        prompt_elements: "Professional portrait of a business leader, neutral background with subtle emerald green light leaks, professional attire, soft lighting."
+
+slide_layout_templates:
+  - type: "Executive_Cover"
+    usage: "Main title slide for business proposals or reports"
+    components:
+      - "Large bold Main Title (left-aligned or centered)"
+      - "Secondary smaller subtitle (e.g., 'Business Proposal') in light weight"
+      - "Deep emerald background with sharp geometric shards in corners"
+      - "Small metadata label (e.g., Date, Author) at the bottom"
+
+  - type: "Profile_Card"
+    usage: "About Me, Team Introductions, Speaker Profiles"
+    components:
+      - "Large rounded-corner portrait on the left"
+      - "Impactful 'About Me' or Name heading"
+      - "Description paragraph with clean typography"
+      - "Pill-shaped label for the role or designation"
+
+  - type: "Pill_Grid_Methodology"
+    usage: "Project methodology, steps, or research areas"
+    components:
+      - "Section Heading centered at the top"
+      - "Grid of 2-4 content blocks"
+      - "Each block features a pill-shaped header with gradient"
+      - "Detailed descriptive text below each pill"
+
+  - type: "Glassmorphic_Data"
+    usage: "Data analysis, metrics, success metrics"
+    components:
+      - "Layout: 40/60 split"
+      - "Visual: Large glassmorphic card containing a line or bar chart"
+      - "Text: Section Heading + Insightful description paragraph"
+
+  - type: "Chronology_Timeline"
+    usage: "Project roadmap, history, or execution timeline"
+    components:
+      - "Section Heading centered"
+      - "Horizontal timeline with numbered circular badges"
+      - "Pill-shaped labels above the description text for each milestone"
+      - "Deep green background with subtle shard accents"
+
+  - type: "Budget_Table"
+    usage: "Budget allocation, costs, financial summaries"
+    components:
+      - "Section Heading centered"
+      - "Two-column layout for detailed financial items"
+      - "Pill-shaped labels for categories (e.g., 'Project', 'Cost')"
+      - "Clean list of line items with high contrast"
+
+  - type: "Closing_Impact"
+    usage: "Final slide, Thank You"
+    components:
+      - "Large 'THANK YOU' heading centered"
+      - "Smaller secondary text (e.g., 'For your attention')"
+      - "Organic shard overlays framing the message"
+      - "Author/Contact info in small font at the bottom"
