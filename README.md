@@ -67,12 +67,6 @@ Explore the collection interactively through our high-performance showcase site.
 > [!IMPORTANT]
 > The code snippets below are **simplified previews** focused on design tokens. To get the full configuration (including image generation prompts and detailed components), use the **[View Full YAML]** link in each section.
 
-### 🏷️ Brand Inspired
-
-
-### 👔 Business & Executive
-
-
 ### 👔 Business & Executive
 
 #### Executive Report
@@ -227,8 +221,6 @@ slide_layout_templates:
     usage: "Listing core services or features"
 ```
 
----
-
 #### Silicon Refined
 
 Ultra-minimalist, premium, and sleek. Focuses on generous whitespace, precision typography, and high-fidelity visuals. Designed for high-end technology presentations where clarity and elegance are paramount.
@@ -264,10 +256,6 @@ slide_layout_templates:
   - type: "Feature_Gradient"
     usage: "Highlighting a breakthrough benefit"
 ```
-
----
-
-### ✨ Minimalist & Modern
 
 ---
 
@@ -381,10 +369,6 @@ slide_layout_templates:
   - type: "Content_Focus_Split"
     usage: "Image and text side-by-side"
 ```
-
----
-
-### 🎨 Creative & Playful
 
 ---
 
@@ -536,7 +520,6 @@ slide_layout_templates:
 
 #### Kawaii Playful
 
-
 Playful, friendly, and ultra-cute 'Kawaii' aesthetic. Combines soft pastel colors with chubby cat character illustrations, hand-drawn stars, and notebook-style grid backgrounds.
 
 ![Kawaii Playful Preview](preview/kawaii_playful/kawaii_playful_1.png)
@@ -676,10 +659,6 @@ slide_layout_templates:
   - type: "Object_Focus_Detail"
     usage: "Summaries or conceptual focuses"
 ```
-
----
-
-### 📖 Editorial & Magazine
 
 ---
 
@@ -834,8 +813,6 @@ slide_layout_templates:
     usage: "Final contact info with terracotta accents"
 ```
 
-### 🎨 Creative
-
 #### Classical Gallery
 
 A refined, museum-inspired design featuring parchment textures, sage green accents, and elegant ornamental filigree. It balances historical aesthetics with modern sans-serif typography for a scholarly and curated presentation feel.
@@ -951,10 +928,6 @@ slide_layout_templates:
 
 ### 🚀 Tech & Innovation
 
----
-
-### 🚀 Tech & Innovation
-
 #### Visual Discovery
 
 Focuses on visual-first layouts, card-based components with high border-radius, and vibrant red accents to drive engagement and focus. Inspired by modern discovery feeds.
@@ -1031,10 +1004,6 @@ slide_layout_templates:
   - type: "Strategic_Comparison"
     usage: "Comparative data with diagonal dividers and vertical image bleeds"
 ```
-
----
-
-### 🌿 Minimalist
 
 #### Neon Pulsar
 
@@ -1187,10 +1156,6 @@ slide_layout_templates:
   - type: "Expertise_Profile"
     usage: "Team introduction or profile highlights"
 ```
-
----
-
-### 🌿 Nature & Wellness
 
 ---
 
@@ -1414,8 +1379,6 @@ slide_layout_templates:
   - type: "Performance_Kpis"
     usage: "Visualizing metrics with orange donut progress charts"
 ```
-
----
 
 ---
 
