@@ -36,6 +36,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Classical Gallery](#classical-gallery)
   - [Summer Collage](#summer-collage)
   - [Vision Board](#vision-board)
+  - [Classical Scrapbook](#classical-scrapbook)
   - [Neon Pulsar](#neon-pulsar)
   - [Cobalt Editorial](#cobalt-editorial)
   - [Midnight Tactical](#midnight-tactical)
@@ -766,6 +767,43 @@ slide_layout_templates:
     usage: "Mapping areas with marker arrows and taped notes"
   - type: "Note_to_Self"
     usage: "Key takeaways or quotes on centered paper scraps"
+```
+
+#### Classical Scrapbook
+
+A tactile, layered design that blends classical art history with a handcrafted scrapbook aesthetic. It features overlapping kraft paper and parchment textures, torn edges, washi tape accents, and elegant flowing script combined with classic serif typography.
+
+![Classical Scrapbook Preview](preview/classical_scrapbook/classical_scrapbook_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/classical_scrapbook.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Classical art history meets scrapbook collage. Layered tactile materials."
+    typography: 
+      primary_heading: "Elegant flowing cursive script"
+      secondary_heading: "Classic high-contrast serif"
+      body_text: "Clean legible serif"
+    color_palette:
+      primary_color: "#8C7156"
+      background: "#A68E74"
+      text_main: "#403024"
+      accent_color: "#D9C5B2"
+    key_visual_elements: 
+      - "Overlapping kraft and white paper with torn edges"
+      - "Classical sculpture and impressionist painting cutouts"
+      - "Washi tape, paper-clips, and sparkle accents"
+      - "Circular timeline nodes and framed artwork"
+
+slide_layout_templates:
+  - type: "Cover_Collage"
+    usage: "Tactile intro with cursive title and classical artifacts"
+  - type: "Timeline_Historical"
+    usage: "Chronological events with statue cutouts"
+  - type: "Ending_Statement"
+    usage: "Final slide with landscape bleed and torn edges"
 ```
 
 

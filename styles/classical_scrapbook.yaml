@@ -1,0 +1,78 @@
+design_system:
+  global_style:
+    theme: "Classical art history meets scrapbook collage. Features tactile paper textures, torn edges, and classical museum aesthetics with a handcrafted, layered feel."
+    typography: 
+      primary_heading: "Elegant, flowing cursive script (e.g., Pinyon Script, Great Vibes) for a romantic, historical touch."
+      secondary_heading: "Classic, high-contrast serif (e.g., Playfair Display, Cinzel) for structured labels and titles."
+      body_text: "Clean, legible serif or neutral sans-serif with comfortable line spacing."
+    color_palette:
+      primary_color: "#8C7156"
+      accent_color: "#D9C5B2"
+      background: "#A68E74"
+      text_main: "#403024"
+      paper_white: "#F2F2F2"
+    key_visual_elements: 
+      - "Overlapping layers of kraft paper and off-white parchment with torn edges."
+      - "Cutouts of classical sculptures, busts, and impressionist paintings."
+      - "Washi tape and paper-clip accents for a tactile 'DIY' appearance."
+      - "Small four-pointed white star sparkles for highlights."
+      - "Circular timeline nodes on a clean horizontal line."
+      - "Thin wooden or gold frames for featured artwork."
+
+  image_generation_prompts:
+    style_guidelines: "Scrapbook aesthetic, classical art history, torn paper textures, earthy sepia tones, museum artifacts, museum lighting, tactile materials, layered composition, professional collage art."
+    themes:
+      - target: "Abstract Texture"
+        prompt_elements: "Close-up of overlapping torn kraft paper and old parchment with subtle washi tape texture and soft shadows."
+      - target: "Classical Art"
+        prompt_elements: "A classical marble bust of a Roman emperor, cutout style on a textured paper background, museum quality."
+      - target: "Nature Collage"
+        prompt_elements: "Oil painting of a landscape in a thin wooden frame, surrounded by torn paper edges and a vintage compass icon."
+
+slide_layout_templates:
+  - type: "Cover_Collage"
+    usage: "Main title slide with high-impact script typography and layered artifacts"
+    components:
+      - "Large cursive Title centered within a stadium-shaped white outline"
+      - "Secondary Serif Title above the main script"
+      - "Background: Full-page landscape painting with torn paper overlays"
+      - "Visual: Cutout of a classical bust on the bottom-left"
+      - "Sparkle icon accents"
+
+  - type: "Index_Nodes"
+    usage: "Numbered list or table of contents"
+    components:
+      - "Section Heading in cursive"
+      - "Layout: Two-column grid of numbered circles with labels"
+      - "Background: Kraft paper texture with white paper bleed on the side"
+      - "Washi tape accent in the corner"
+
+  - type: "Timeline_Historical"
+    usage: "Chronological events or process steps"
+    components:
+      - "Section Heading top-left"
+      - "Layout: Horizontal line with circular nodes and date labels"
+      - "Visual: Classical statue cutout on the right edge"
+      - "Parchment overlay background"
+
+  - type: "Gallery_Frames"
+    usage: "Showcasing multiple artworks or images"
+    components:
+      - "Section Heading top-left"
+      - "Layout: Three framed images side-by-side with metadata labels (Title, Artist, Year) below"
+      - "Background: Kraft paper with white torn edge at the bottom"
+
+  - type: "Comparison_Artifacts"
+    usage: "Comparing two styles or periods"
+    components:
+      - "Two distinct headings in cursive script"
+      - "Visual: Overlapping photos with circular and stadium-shaped masks"
+      - "Centered classical bust icon"
+
+  - type: "Ending_Statement"
+    usage: "Final slide for closing remarks or contact"
+    components:
+      - "Large cursive Closing Title within a stadium outline"
+      - "Visual: Full-page landscape bleed with heavy torn paper edges"
+      - "Sparkle icons for a polished finish"
+      - "Neutral contact information blocks"
