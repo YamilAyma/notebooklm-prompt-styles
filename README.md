@@ -32,6 +32,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Vintage Charm](#vintage-charm)
   - [Scholar's Journal](#scholars-journal)
   - [Creative Notebook](#creative-notebook)
+  - [Classical Gallery](#classical-gallery)
   - [Neon Pulsar](#neon-pulsar)
   - [Cobalt Editorial](#cobalt-editorial)
   - [Midnight Tactical](#midnight-tactical)
@@ -614,6 +615,43 @@ slide_layout_templates:
     usage: "Presenting mission, vision, or core objectives"
   - type: "Sticker_Note_Split"
     usage: "Idea origin or highlighted conceptual points"
+```
+
+#### Classical Gallery
+
+A refined, museum-inspired design featuring parchment textures, sage green accents, and elegant ornamental filigree. It balances historical aesthetics with modern sans-serif typography for a scholarly and curated presentation feel.
+
+![Classical Gallery Preview](preview/classical_gallery/classical_gallery_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/classical_gallery.yaml)
+
+```yaml
+design_system:
+  global_style:
+    theme: "Classical museum-like, historical and refined. Parchment textures and elegant scrollwork."
+    typography: 
+      primary_heading: "Bold clean sans-serif for modern contrast"
+      secondary_heading: "Medium weight sans-serif"
+      body_text: "Highly legible sans-serif"
+    color_palette:
+      primary_color: "#8B9B7B"
+      background: "Textured parchment (#E6E1D3)"
+      text_main: "#4B5320"
+      accent_color: "#F4C2C2"
+    key_visual_elements: 
+      - "Elegant ornamental filigree and scrollwork"
+      - "Sage green color blocks for sidebars"
+      - "Marble sculptures and Renaissance-style sketches"
+      - "High-texture parchment background"
+
+slide_layout_templates:
+  - type: "Museum_Cover"
+    usage: "Classical intro with symmetric filigree framing"
+  - type: "Classical_Split"
+    usage: "Art-focused layouts with large color blocks"
+  - type: "Percentage_Highlight"
+    usage: "Key metrics or summaries with historical framing"
 ```
 
 #### Neon Pulsar
