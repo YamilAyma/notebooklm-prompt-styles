@@ -1,0 +1,38 @@
+description: "An energetic and fresh aesthetic focused on health, wellness, and vitality. It features the friendly Poppins typeface, vibrant lime green and bright blue accents, and dynamic diagonal shapes. Perfect for wellness coaching, sports nutrition, and preventive healthcare presentations."
+design_system:
+  global_style:
+    theme: "Vitality Glow. Energetic wellness style with diagonal accents and vibrant colors."
+    typography: 
+      primary_heading: "Poppins, sans-serif"
+      secondary_heading: "Poppins, medium"
+      body_text: "Poppins, light"
+    color_palette:
+      primary: "#10B981" # Vitality Green
+      secondary: "#3B82F6" # Energy Blue
+      background: "#FFFFFF" # Pure White
+      surface: "#F0FDFA" # Mint Tint Surface
+      text_main: "#1F2937"
+      text_secondary: "#6B7280"
+    key_visual_elements: 
+      - "Large diagonal parallelograms in green and blue"
+      - "Circular image masks for portraits and product shots"
+      - "Small diamond-shaped (rhombus) accents"
+      - "Clean white space with high-contrast vibrant accents"
+
+  image_generation_prompts:
+    style_guidelines: "Bright lifestyle photography, outdoor settings, high-key lighting, vibrant green and blue color grading, healthy living themes, energetic and optimistic vibe, Poppins font vibe."
+    themes:
+      - target: "Hydration & Vitality"
+        prompt_elements: "Close-up of fresh water with mint leaves, bright sunlight, vibrant green and blue tones, refreshing aesthetic."
+      - target: "Active Lifestyle"
+        prompt_elements: "People exercising in a sunlit park, blurry green background, focus on movement and energy, optimistic atmosphere."
+
+slide_layout_templates:
+  - type: "Vitality_Hero"
+    usage: "Large title with a massive diagonal green stripe in the background"
+  - type: "Health_TOC_Circles"
+    usage: "Table of contents with section numbers inside small green circles"
+  - type: "Wellness_Grid"
+    usage: "Information cards with diamond icons and subtle blue borders"
+  - type: "Organic_Comparison"
+    usage: "Side-by-side comparison using circular masks and diagonal dividers"
