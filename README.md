@@ -43,6 +43,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Classical Gallery](#classical-gallery)
   - [Summer Collage](#summer-collage)
   - [Vision Board](#vision-board)
+  - [Academic Edge](#academic-edge)
 - [🚀 Tech & Innovation](#-tech-innovation)
   - [Visual Discovery](#visual-discovery)
   - [Urban Ribbon](#urban-ribbon)
@@ -1024,7 +1025,59 @@ slide_layout_templates:
     usage: "Key takeaways or quotes on centered paper scraps"
 ```
 
+
+#### Academic Edge
+
+A sophisticated academic and editorial aesthetic inspired by thesis defenses and research portfolios. It balances high-contrast black and white photography with bold red accents and soft warm 'aura' gradients. Powered by the geometric Codec Pro typeface.
+
+![Academic Edge Preview](preview/academic_edge/academic_edge_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/academic_edge.yaml)
+
+```yaml
+description: "A sophisticated academic and editorial aesthetic inspired by thesis defenses and research portfolios. It balances high-contrast black and white photography with bold red accents and soft warm 'aura' gradients. Powered by the geometric Codec Pro typeface."
+design_system:
+  global_style:
+    theme: "Academic Edge. Editorial research style with B&W imagery and crimson accents."
+    typography: 
+      primary_heading: "Codec Pro, sans-serif"
+      secondary_heading: "Codec Pro, light"
+      body_text: "Inter, sans-serif"
+    color_palette:
+      primary: "#D00000" # Academic Red
+      background: "#FFFFFF" # Pure White
+      surface: "#F8F9FA" # Ultra Light Grey
+      accent_gradient: "Soft grainy gradient from peach to soft red"
+      text_main: "#1A1A1A"
+      text_secondary: "#4A4A4A"
+    key_visual_elements: 
+      - "High-contrast black and white photography"
+      - "Bold red arrows and list bullets"
+      - "Subtle film grain on background gradients"
+      - "Minimalist horizontal dividers"
+
+  image_generation_prompts:
+    style_guidelines: "Editorial photography style, high-contrast black and white, minimalist composition, soft warm aura light leaks, architectural and nature details, professional academic aesthetic, Codec Pro font vibe."
+    themes:
+      - target: "Research & Detail"
+        prompt_elements: "Close-up of architectural structures in high-contrast black and white, sharp lines, minimalist."
+      - target: "Atmospheric Academic"
+        prompt_elements: "Abstract soft warm aura gradient with light film grain, crimson accents, professional and clean."
+
+slide_layout_templates:
+  - type: "Thesis_Hero"
+    usage: "Large bold title on the left with a vertical aura gradient on the right"
+  - type: "Step_Process"
+    usage: "Horizontal flow using B&W images connected by bold red arrows"
+  - type: "Editorial_Results"
+    usage: "Data charts with red bars and clean B&W background image integration"
+  - type: "Recommendation_Cards"
+    usage: "Split layout with B&W photos on top and red headings below"
+```
+
 ---
+
 
 ### 🚀 Tech & Innovation
 
