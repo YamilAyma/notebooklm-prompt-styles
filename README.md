@@ -34,6 +34,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Creative Workshop](#creative-workshop)
   - [Creative Classroom](#creative-classroom)
   - [Hand-Drawn Scrapbook](#hand-drawn-scrapbook)
+  - [Whimsical Animation](#whimsical-animation)
 - [📖 Editorial & Magazine](#-editorial-magazine)
   - [Editorial Essence](#editorial-essence)
   - [Luxury Editorial](#luxury-editorial)
@@ -707,7 +708,57 @@ slide_layout_templates:
     usage: "Content organized in rounded 'bento' boxes with hand-drawn borders"
 ```
 
+
+#### Whimsical Animation
+
+A sophisticated, animation-inspired portfolio aesthetic. It features a lush palette of forest and lime greens, modern geometric typography, and painterly gouache textures. Ideal for creative professionals looking for a whimsical yet high-end presentation style.
+
+![Whimsical Animation Preview](preview/whimsical_animation/whimsical_animation_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/whimsical_animation.yaml)
+
+```yaml
+description: "A sophisticated, animation-inspired portfolio aesthetic. It features a lush palette of forest and lime greens, modern geometric typography, and painterly gouache textures. Ideal for creative professionals looking for a whimsical yet high-end presentation style."
+design_system:
+  global_style:
+    theme: "Whimsical Animation Portfolio. Organic greens, painterly textures, and modern geometric shapes."
+    typography: 
+      primary_heading: "TT Firs Neue, sans-serif"
+      secondary_heading: "Medium weight geometric sans-serif"
+      body_text: "Clean, high-legibility sans-serif"
+    color_palette:
+      primary: "#4A7C59" # Forest Green
+      secondary: "#DCE6A3" # Lime Mist
+      accent: "#FFD700" # Golden Star
+      background: "#F1F5E1" # Soft Cream
+      text_main: "#1A1A1A"
+      surface: "#FFFFFF"
+    key_visual_elements: 
+      - "Painterly gouache-style background textures"
+      - "Heavy rounded corners (pill-shaped containers)"
+      - "Minimalist celestial accents (small four-pointed stars)"
+      - "Soft irregular cloud shapes with dry-brush edges"
+
+  image_generation_prompts:
+    style_guidelines: "Gouache painting style, soft painterly textures, nature-inspired abstract backgrounds, stylized hills and clouds, soft lighting, professional creative portfolio aesthetic, TT Firs Neue font vibe."
+    themes:
+      - target: "Abstract Nature"
+        prompt_elements: "Minimalist stylized hills and soft clouds in shades of green and lime, gouache texture, artistic composition."
+      - target: "Creative Focus"
+        prompt_elements: "Abstract geometric shapes with hand-painted textures, soft sage and forest green tones, minimalist stars."
+
+slide_layout_templates:
+  - type: "Animation_Hero"
+    usage: "Main portfolio title with large pill-shaped heading container"
+  - type: "Painterly_Grid"
+    usage: "Project showcase using rounded bento-style blocks with textured backgrounds"
+  - type: "Celestial_Process"
+    usage: "Workflow steps marked with small minimalist star accents"
+```
+
 ---
+
 
 
 ### 📖 Editorial & Magazine
