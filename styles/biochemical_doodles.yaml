@@ -1,0 +1,38 @@
+description: "A creative and educational scientific aesthetic that blends modern biology with hand-drawn doodles. It features the tactile Bobby Jones typeface over a subtly textured paper background. Characterized by charming sketches of DNA helices, beakers, molecules, and organic fluid shapes in muted wine and sage tones, it brings a curious and experimental spirit to any presentation."
+design_system:
+  global_style:
+    theme: "Biochemical Doodles. Hand-drawn scientific illustration style with muted organic tones."
+    typography: 
+      primary_heading: "Bobby Jones, sans-serif"
+      secondary_heading: "Bobby Jones, regular"
+      body_text: "Sniglet, regular" # Complemented with Sniglet for a friendly rounded body feel
+    color_palette:
+      primary: "#6D435A" # Deep Wine Maroon
+      secondary: "#92B4B1" # Sage Teal
+      background: "#F9F7F2" # Textured Paper White
+      surface: "#E8E4D9" # Dusty Stone Surface
+      text_main: "#4A2D3C"
+      text_secondary: "#6D435A"
+    key_visual_elements: 
+      - "Hand-drawn scientific sketches (beakers, DNA, cells, molecules)"
+      - "Fluid, organic background blobs in muted colors"
+      - "Subtle paper grain or fiber texture throughout the slides"
+      - "Rustic, hand-drawn dividers and icons"
+
+  image_generation_prompts:
+    style_guidelines: "Hand-drawn scientific illustration, muted wine and sage color palette, textured paper background, organic fluid shapes, pencil and ink sketches, experimental and curious atmosphere, Bobby Jones font vibe."
+    themes:
+      - target: "Chemical Analysis"
+        prompt_elements: "Sketches of molecules and beakers, organic fluid blobs in the background, muted colors, textured paper look."
+      - target: "Biological Research"
+        prompt_elements: "A hand-drawn DNA helix and microscopic cells, earthy tones, curious and scholarly aesthetic."
+
+slide_layout_templates:
+  - type: "Science_Project_Cover"
+    usage: "Bold Bobby Jones title on textured paper with beakers and fluid shapes in the corners"
+  - type: "Lab_Rules"
+    usage: "Numbered list with hand-drawn beaker icons for each rule on a clean stone surface"
+  - type: "Molecular_Diagram"
+    usage: "A central molecule sketch with descriptive text boxes floating around it"
+  - type: "Experimental_Timeline"
+    usage: "A vertical line representing an experiment progress with hand-drawn icons at each stage"
