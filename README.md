@@ -932,7 +932,7 @@ slide_layout_templates:
 
 Focuses on visual-first layouts, card-based components with high border-radius, and vibrant red accents to drive engagement and focus. Inspired by modern discovery feeds.
 
-![Visual Discovery Preview](preview/visual_discovery_preview.png)
+![Visual Discovery Preview](preview/visual_discovery/visual_discovery_1.png)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/visual_discovery.yaml)
