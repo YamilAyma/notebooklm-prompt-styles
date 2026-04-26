@@ -1,0 +1,38 @@
+description: "A bold, futuristic startup aesthetic that blends deep indigo backgrounds with vibrant neon lavender accents. It features iridescent 3D geometric shapes, glassmorphism UI elements, and dynamic vertical typography. Perfect for high-tech ventures, AI startups, and forward-thinking pitches."
+design_system:
+  global_style:
+    theme: "Neon Venture. Cyber-corporate style with holographic 3D elements and neon accents."
+    typography: 
+      primary_heading: "Open Sauce, sans-serif"
+      secondary_heading: "Open Sauce, medium"
+      body_text: "Open Sauce, light"
+    color_palette:
+      primary: "#9D72FF" # Vibrant Neon Lavender
+      background: "#0B071E" # Deep Space Indigo
+      surface: "#1A1438" # Dark Purple Surface
+      accent_gradient: "Iridescent holographic shimmer with purple and teal reflections"
+      text_main: "#FFFFFF"
+      text_secondary: "#B0A9D1"
+    key_visual_elements: 
+      - "Holographic 3D geometric primitives (cubes, spheres, pyramids)"
+      - "Vertical sidebar titles for section headers"
+      - "Glassmorphism cards with subtle neon glow shadows"
+      - "Thin pill-shaped badge containers for categories"
+
+  image_generation_prompts:
+    style_guidelines: "Futuristic corporate tech style, 3D iridescent geometric objects, deep indigo lighting, neon purple accents, glassmorphism surfaces, sharp focus, professional innovative aesthetic, Open Sauce font vibe."
+    themes:
+      - target: "Data Visualization"
+        prompt_elements: "Futuristic 3D bar chart with neon lavender glow, holographic textures, floating over deep indigo background."
+      - target: "Abstract Growth"
+        prompt_elements: "A stack of iridescent 3D cubes with metallic reflections, neon purple light leaks, high-tech minimalist composition."
+
+slide_layout_templates:
+  - type: "Neon_Hero"
+    usage: "Massive title overlapping an iridescent 3D shape with neon badges above"
+  - type: "Glass_Market_Analysis"
+    usage: "Vertical section title on the left with data cards using glassmorphism effects"
+  - type: "Corporate_Overview"
+    usage: "Split layout with a long horizontal image banner and clean tech-text below"
+  - type: "Holographic_Team"
+    usage: "Team profiles in glass containers with neon hover-style accents"
