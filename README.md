@@ -45,6 +45,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Kawaii Storybook](#kawaii-storybook)
   - [Biochemical Doodles](#biochemical-doodles)
   - [Science Sketch](#science-sketch)
+  - [Athletic Energy](#athletic-energy)
 - [📖 Editorial & Magazine](#-editorial-magazine)
   - [Editorial Essence](#editorial-essence)
   - [Luxury Editorial](#luxury-editorial)
@@ -1285,7 +1286,59 @@ slide_layout_templates:
     usage: "Summary list where each item is marked by a small yellow filled indigo circle"
 ```
 
+
+#### Athletic Energy
+
+A vibrant and motivational aesthetic that celebrates sports and physical activity through a grainy, textured illustration style. It features the massive and blocky Gulfs Display typeface for high-impact headlines. Characterized by energetic salmon and mint green tones, and illustrations of athletes in motion over stippled backgrounds, it brings vitality and a youthful spirit to health and wellness presentations.
+
+![Athletic Energy Preview](preview/athletic_energy/athletic_energy_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/athletic_energy.yaml)
+
+```yaml
+description: "A vibrant and motivational aesthetic that celebrates sports and physical activity through a grainy, textured illustration style. It features the massive and blocky Gulfs Display typeface for high-impact headlines. Characterized by energetic salmon and mint green tones, and illustrations of athletes in motion over stippled backgrounds, it brings vitality and a youthful spirit to health and wellness presentations."
+design_system:
+  global_style:
+    theme: "Athletic Energy. Dynamic sports illustration style with grainy textures and bold blocky typography."
+    typography: 
+      primary_heading: "Gulfs Display, sans-serif"
+      secondary_heading: "Gulfs Display, regular"
+      body_text: "Inter, regular" # Complemented with Inter for modern readability
+    color_palette:
+      primary: "#FF7051" # Salmon Orange
+      secondary: "#A5D6A7" # Mint Green
+      background: "#F1F8E9" # Pale Lime Green
+      surface: "#FFCDD2" # Soft Red Surface
+      text_main: "#1B5E20" # Deep Forest Green for contrast
+      text_secondary: "#FF7051"
+    key_visual_elements: 
+      - "Dynamic character illustrations in sports action poses (running, jumping)"
+      - "Subtle stippling/noise texture on all colors and shapes"
+      - "Red running track curves as a recurring background motif"
+      - "Rounded white containers for body text to maintain legibility"
+
+  image_generation_prompts:
+    style_guidelines: "Dynamic sports illustration, grainy stippled texture, Gulfs Display font vibe, salmon and mint green color scheme, energetic and youthful atmosphere, soft airbrush shading."
+    themes:
+      - target: "Teamwork"
+        prompt_elements: "Athletes high-fiving on a running track, grainy texture, vibrant colors, motivational sports aesthetic."
+      - target: "Individual Achievement"
+        prompt_elements: "A runner crossing a finish line, stippled effect, salmon and green palette, powerful and dynamic movement."
+
+slide_layout_templates:
+  - type: "Sports_Headline"
+    usage: "Full-page Gulfs Display title in salmon over a textured sports scene"
+  - type: "Action_Feature"
+    usage: "Large action illustration on one side with a rounded text bubble on the other"
+  - type: "Dynamic_Step"
+    usage: "A sequence of athletes representing progress or steps in a process"
+  - type: "Victory_Slide"
+    usage: "Central trophy illustration with festive confetti doodles and a large 'Thank You' in Gulfs Display"
+```
+
 ---
+
 
 
 
