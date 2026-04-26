@@ -37,6 +37,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Creative Classroom](#creative-classroom)
   - [Hand-Drawn Scrapbook](#hand-drawn-scrapbook)
   - [Whimsical Animation](#whimsical-animation)
+  - [Clinical Doodles](#clinical-doodles)
 - [📖 Editorial & Magazine](#-editorial-magazine)
   - [Editorial Essence](#editorial-essence)
   - [Luxury Editorial](#luxury-editorial)
@@ -867,7 +868,59 @@ slide_layout_templates:
     usage: "Workflow steps marked with small minimalist star accents"
 ```
 
+
+#### Clinical Doodles
+
+An approachable and empathetic medical aesthetic inspired by hand-drawn nursing journals. It features the playful Schoolbell handwriting font, a soft pastel blue palette, and a subtle grid paper texture. Characterized by charming doodle illustrations and organic cloud-like shapes, it humanizes clinical topics.
+
+![Clinical Doodles Preview](preview/clinical_doodles/clinical_doodles_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/clinical_doodles.yaml)
+
+```yaml
+description: "An approachable and empathetic medical aesthetic inspired by hand-drawn nursing journals. It features the playful Schoolbell handwriting font, a soft pastel blue palette, and a subtle grid paper texture. Characterized by charming doodle illustrations and organic cloud-like shapes, it humanizes clinical topics."
+design_system:
+  global_style:
+    theme: "Clinical Doodles. Warm, hand-drawn medical aesthetic with a scrapbook feel."
+    typography: 
+      primary_heading: "Schoolbell, cursive"
+      secondary_heading: "Schoolbell, regular"
+      body_text: "Schoolbell, regular"
+    color_palette:
+      primary: "#1E3A8A" # Navy Outline
+      secondary: "#F87171" # Warm Coral Accent
+      background: "#E0F2FE" # Soft Sky Blue
+      surface: "#FFFFFF" # Paper Surface
+      text_main: "#1E293B"
+      text_secondary: "#475569"
+    key_visual_elements: 
+      - "Subtle grid paper background pattern"
+      - "Hand-drawn 'doodle' illustrations of medical staff"
+      - "Organic blob and cloud-like containers"
+      - "Decorative swirls and hand-drawn arrows"
+
+  image_generation_prompts:
+    style_guidelines: "Hand-drawn illustration style, colored pencil texture, soft clinical themes, friendly characters, pastel blue and navy color palette, scrapbook aesthetic, Schoolbell font vibe."
+    themes:
+      - target: "Nursing Care"
+        prompt_elements: "A friendly hand-drawn illustration of a nurse helping an elderly patient, soft colors, clinical but warm atmosphere, doodle style."
+      - target: "Medical Agenda"
+        prompt_elements: "A hand-drawn desk with medical tools and an agenda, doodle style, soft blue and white colors, grid paper background."
+
+slide_layout_templates:
+  - type: "Doodle_Cover"
+    usage: "Title in hand-drawn clouds with medical staff illustrations surrounding it"
+  - type: "Grid_Content"
+    usage: "Bullet points on a grid paper background with decorative swirls"
+  - type: "Scrapbook_Image"
+    usage: "Image contained in an organic hand-drawn frame with a small coral accent"
+  - type: "Medical_Timeline_Doodle"
+    usage: "A wavy line timeline with hand-drawn icons and nursing characters"
+```
+
 ---
+
 
 
 
