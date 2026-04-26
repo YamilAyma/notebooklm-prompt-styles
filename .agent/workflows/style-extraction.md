@@ -24,15 +24,11 @@ Create a new `.yaml` file in the `styles/` folder.
 - **Completeness**: Include `image_generation_prompts` and detailed `slide_layout_templates`.
 
 ## 3. Documentation (README.md)
-Update the `README.md` following these steps:
-1. **Table of Contents (TOC)**: Add the style name under the correct category. **Avoid HTML entities like `&#39;`**.
-2. **Section**: Create a new `#### Style Name` section.
-3. **Description**: A concise, premium-sounding summary of the aesthetic.
-4. **Image Reference**: Point to `preview/style_name/style_name_1.png`.
-5. **Preview Code**: Add a **simplified** version of the YAML (tokens only).
-6. **Link to YAML**: Add the standard disclaimer and relative link to the full file.
-   > [!TIP]
-   > This is a simplified preview. [View Full YAML](styles/filename.yaml)
+Update the `README.md` using the automated script (MANDATORY):
+- **Tool**: Use `scripts/add-style.js`.
+- **Command**: `node scripts/add-style.js --name "Style Name" --cat "Category" --yaml "styles/filename.yaml"`
+- **Benefits**: This script automatically handles TOC updates, ID generation, and section placement without risking the integrity of existing styles.
+- **Manual Override**: Only edit manually if the script fails or for non-style related changes.
 
 ## 4. Data Synchronization
 **It is mandatory** to regenerate the data file so the website reflects the changes:
