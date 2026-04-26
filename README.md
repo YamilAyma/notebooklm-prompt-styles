@@ -21,6 +21,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Ensign Corporate](#ensign-corporate)
   - [Silicon Refined](#silicon-refined)
   - [Liquid Executive](#liquid-executive)
+  - [Clinical Precision](#clinical-precision)
 - [✨ Minimalist & Modern](#-minimalist-modern)
   - [Geometric Mono](#geometric-mono)
   - [Lush Minimal](#lush-minimal)
@@ -314,7 +315,59 @@ slide_layout_templates:
     usage: "Clean contact info inside a rounded dark blue container with minimalist icons"
 ```
 
+
+#### Clinical Precision
+
+A modern, high-tech medical aesthetic designed for clinical and healthcare presentations. It utilizes the objective Helvetica World typeface, deep black backgrounds, and vibrant blue light glows. Characterized by large typography and sharp minimalist icons, it conveys trust and scientific precision.
+
+![Clinical Precision Preview](preview/clinical_precision/clinical_precision_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/clinical_precision.yaml)
+
+```yaml
+description: "A modern, high-tech medical aesthetic designed for clinical and healthcare presentations. It utilizes the objective Helvetica World typeface, deep black backgrounds, and vibrant blue light glows. Characterized by large typography and sharp minimalist icons, it conveys trust and scientific precision."
+design_system:
+  global_style:
+    theme: "Clinical Precision. High-tech medical style with dark contrast and blue glows."
+    typography: 
+      primary_heading: "Helvetica World, sans-serif"
+      secondary_heading: "Helvetica World, light"
+      body_text: "Helvetica, Arial, sans-serif"
+    color_palette:
+      primary: "#2563EB" # Clinical Royal Blue
+      background: "#000000" # Pure Black
+      surface: "#111111" # Clinical Grey-Black
+      accent_gradient: "Soft royal blue glow leaking from the edges"
+      text_main: "#FFFFFF"
+      text_secondary: "#A1A1AA"
+    key_visual_elements: 
+      - "Large minimalist arrow icons for calls to action"
+      - "Subtle blue light leaks and glowing nodes on dark backgrounds"
+      - "Thin 1px white horizontal dividers"
+      - "Photography with clinical/modern medical subjects"
+
+  image_generation_prompts:
+    style_guidelines: "Modern medical photography, high-tech clinic environment, soft blue lighting glows, deep black backgrounds, clean professional medical aesthetic, sharp focus, Helvetica font vibe."
+    themes:
+      - target: "Medical Technology"
+        prompt_elements: "Close-up of modern medical equipment with soft blue glow, clinical lighting, high-tech aesthetic, sharp focus."
+      - target: "Care & Professionalism"
+        prompt_elements: "A professional medical consultation in a modern clinic, soft blue ambient light, clean and trustworthy atmosphere."
+
+slide_layout_templates:
+  - type: "Medical_Title"
+    usage: "Large title on a dark background with a massive arrow icon in the bottom right"
+  - type: "Clinical_TOC"
+    usage: "Table of contents with numbered list and soft blue background glow"
+  - type: "Hospital_Timeline"
+    usage: "Horizontal timeline with glowing nodes and blue spotlight effects"
+  - type: "Data_Precision"
+    usage: "Statistical highlights with large percentage numbers and subtle grid patterns"
+```
+
 ---
+
 
 
 ### ✨ Minimalist & Modern
