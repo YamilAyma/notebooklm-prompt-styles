@@ -1,0 +1,35 @@
+description: "A whimsical, Kawaii-inspired aesthetic characterized by soft pastel palettes, hand-drawn stickers, and a playful gingham grid. Perfect for educational projects, creative journals, or friendly presentations."
+design_system:
+  global_style:
+    theme: "Whimsical, Kawaii-inspired aesthetic. Soft pastel palettes, hand-drawn stickers, and a playful gingham grid."
+    typography: 
+      primary_heading: "Baloo Thambi 2, display"
+      secondary_heading: "Rounded friendly sans-serif"
+      body_text: "Inter, sans-serif"
+    color_palette:
+      primary: "#A2B276" # Sage Green
+      secondary: "#F9A8A8" # Soft Pink
+      accent: "#F9D97D" # Sunlit Yellow
+      background: "#FDFCF0" # Cream White
+      text: "#4A4A4A" # Soft Charcoal
+      surface: "#FFFFFF"
+      border: "#2D2D2D" # Doodle Outline
+    key_visual_elements: 
+      - "Subtle gingham grid in pastel hues"
+      - "Doodle flowers, Soft hearts, Friendly worm"
+      - "Washi tape ribbon banners"
+      - "Hand-drawn, slightly irregular strokes"
+
+  image_generation_prompts:
+    style_guidelines: "Whimsical hand-drawn illustrations, flat vector art, sticker aesthetic, Kawaii style, pastel colors, 2D illustration."
+    themes:
+      - target: "Creative Student"
+        prompt_elements: "A person writing in a colorful journal with stickers and doodles, flat vector art."
+
+slide_layout_templates:
+  - type: "Sticker_Hero"
+    usage: "Title slide with floating decorative elements and center title"
+  - type: "Washi_Team"
+    usage: "Team members showcased with ribbon-style name tags"
+  - type: "Doodle_Grid"
+    usage: "Content organized in rounded 'bento' boxes with hand-drawn borders"

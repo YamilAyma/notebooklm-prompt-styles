@@ -33,6 +33,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Y2K Nostalgia](#y2k-nostalgia)
   - [Creative Workshop](#creative-workshop)
   - [Creative Classroom](#creative-classroom)
+  - [Hand-Drawn Scrapbook](#hand-drawn-scrapbook)
 - [📖 Editorial & Magazine](#-editorial-magazine)
   - [Editorial Essence](#editorial-essence)
   - [Luxury Editorial](#luxury-editorial)
@@ -660,7 +661,54 @@ slide_layout_templates:
     usage: "Summaries or conceptual focuses"
 ```
 
+
+#### Hand-Drawn Scrapbook
+
+A whimsical, Kawaii-inspired aesthetic characterized by soft pastel palettes, hand-drawn stickers, and a playful gingham grid. Perfect for educational projects, creative journals, or friendly presentations.
+
+![Hand-Drawn Scrapbook Preview](preview/hand_drawn_scrapbook/hand_drawn_scrapbook_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/hand_drawn_scrapbook.yaml)
+
+```yaml
+description: "A whimsical, Kawaii-inspired aesthetic characterized by soft pastel palettes, hand-drawn stickers, and a playful gingham grid. Perfect for educational projects, creative journals, or friendly presentations."
+design_system:
+  global_style:
+    theme: "Whimsical, Kawaii-inspired aesthetic. Soft pastel palettes, hand-drawn stickers, and a playful gingham grid."
+    typography: 
+      primary_heading: "Baloo Thambi 2, display"
+      secondary_heading: "Rounded friendly sans-serif"
+      body_text: "Inter, sans-serif"
+    color_palette:
+      primary_color: "#A2B276"
+      background: "#FDFCF0"
+      accent_pink: "#F9A8A8"
+      accent_yellow: "#F9D97D"
+      text_main: "#4A4A4A"
+    key_visual_elements: 
+      - "Subtle gingham grid in pastel hues"
+      - "Doodle flowers, Soft hearts, Friendly worm"
+      - "Washi tape ribbon banners"
+      - "Hand-drawn, slightly irregular strokes"
+
+  image_generation_prompts:
+    style_guidelines: "Whimsical hand-drawn illustrations, flat vector art, sticker aesthetic, Kawaii style, pastel colors, 2D illustration."
+    themes:
+      - target: "Creative Student"
+        prompt_elements: "A person writing in a colorful journal with stickers and doodles, flat vector art."
+
+slide_layout_templates:
+  - type: "Sticker_Hero"
+    usage: "Title slide with floating decorative elements and center title"
+  - type: "Washi_Team"
+    usage: "Team members showcased with ribbon-style name tags"
+  - type: "Doodle_Grid"
+    usage: "Content organized in rounded 'bento' boxes with hand-drawn borders"
+```
+
 ---
+
 
 ### 📖 Editorial & Magazine
 
