@@ -27,6 +27,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Strategic Blue](#strategic-blue)
   - [Travel Pulse](#travel-pulse)
   - [Earthy Luxury](#earthy-luxury)
+  - [Prestige Gold](#prestige-gold)
 - [✨ Minimalist & Modern](#-minimalist-modern)
   - [Geometric Mono](#geometric-mono)
   - [Lush Minimal](#lush-minimal)
@@ -666,7 +667,59 @@ slide_layout_templates:
     usage: "Contact information centered at the bottom with wide letter spacing and a subtle olive logo"
 ```
 
+
+#### Prestige Gold
+
+A prestigious and high-end aesthetic designed for luxury real estate, premium listings, and executive portfolios. It features the elegant Boston Angel serif typeface for headlines, providing a sense of heritage and exclusivity. Characterized by a deep midnight blue background, old gold accents, and warm cream highlights, it utilizes subtle golden light waves, circular prestige icons, and clean architectural lines to create a sophisticated dark-mode experience.
+
+![Prestige Gold Preview](preview/prestige_gold/prestige_gold_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/prestige_gold.yaml)
+
+```yaml
+description: "A prestigious and high-end aesthetic designed for luxury real estate, premium listings, and executive portfolios. It features the elegant Boston Angel serif typeface for headlines, providing a sense of heritage and exclusivity. Characterized by a deep midnight blue background, old gold accents, and warm cream highlights, it utilizes subtle golden light waves, circular prestige icons, and clean architectural lines to create a sophisticated dark-mode experience."
+design_system:
+  global_style:
+    theme: "Prestige Gold. Luxury real estate design with a sophisticated gold-on-navy palette."
+    typography: 
+      primary_heading: "Boston Angel, serif"
+      secondary_heading: "Boston Angel, italic"
+      body_text: "Nunito, sans-serif"
+    color_palette:
+      primary: "#E2B670" # Old Gold
+      secondary: "#0F172A" # Midnight Blue Background
+      background: "#020617" # Deep Navy
+      surface: "#1E293B" # Slate Surface
+      text_main: "#F8FAFC" # Off-White Text
+      text_secondary: "#94A3B8" # Muted Blue-Grey
+    key_visual_elements: 
+      - "Golden ethereal light curves and waves in the background"
+      - "Gold circular badges with minimalist house or key icons"
+      - "Thin gold borders around featured property images"
+      - "High-contrast architectural photography with warm sunset tones"
+
+  image_generation_prompts:
+    style_guidelines: "Luxury modern architecture, high-end interior design, warm golden hour lighting, midnight blue and gold palette, sophisticated and sharp, Boston Angel font aesthetic."
+    themes:
+      - target: "Property Exterior"
+        prompt_elements: "A modern glass mansion at dusk, warm interior lights, golden hour glow, deep blue sky, luxury real estate photography, sharp and prestigious."
+      - target: "Interior Elegance"
+        prompt_elements: "A high-end living room with marble floors and gold accents, soft ambient lighting, midnight blue walls, ultra-premium and serene."
+
+slide_layout_templates:
+  - type: "Prestige_Cover_Gold"
+    usage: "Full-bleed architectural photo with a large Boston Angel title in gold and midnight blue overlays"
+  - type: "Luxury_Feature_List"
+    usage: "Golden circular icons for each feature with Nunito descriptions on a deep navy background"
+  - type: "Gold_Accent_Quote"
+    usage: "Large Boston Angel quote centered with thin gold horizontal lines above and below"
+  - type: "Property_Stats_Pill"
+    usage: "Key data points (sqft, beds) arranged in gold-bordered containers with crisp white text"
+```
+
 ---
+
 
 
 
