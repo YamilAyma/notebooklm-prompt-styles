@@ -98,6 +98,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Project Launch](#project-launch)
   - [Tech Pitch](#tech-pitch)
   - [Prismatic Tech](#prismatic-tech)
+  - [Cyber AI](#cyber-ai)
 - [🌿 Nature & Wellness](#-nature-wellness)
   - [Eco Modern](#eco-modern)
   - [Botanical Journal](#botanical-journal)
@@ -3824,7 +3825,61 @@ slide_layout_templates:
     usage: "Centered text on a white background with two prismatic crystals flanking the 'Thank You' message"
 ```
 
+
+#### Cyber AI
+
+A high-impact and nocturnal aesthetic designed for AI research, cybersecurity, and cyberpunk-themed tech presentations. It features the blocky and futuristic Pattanans typeface for titles to convey a digital frontier feel, paired with the modern Montserrat for readability. Characterized by a deep midnight blue background with vibrant neon purple and cyan accents, it utilizes 3D glowing robot illustrations, isometric UI modules, and floating star effects to create an immersive digital future experience.
+
+![Cyber AI Preview](preview/cyber_ai/cyber_ai_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/cyber_ai.yaml)
+
+```yaml
+description: "A high-impact and nocturnal aesthetic designed for AI research, cybersecurity, and cyberpunk-themed tech presentations. It features the blocky and futuristic Pattanans typeface for titles to convey a digital frontier feel, paired with the modern Montserrat for readability. Characterized by a deep midnight blue background with vibrant neon purple and cyan accents, it utilizes 3D glowing robot illustrations, isometric UI modules, and floating star effects to create an immersive digital future experience."
+design_system:
+  global_style:
+    theme: "Cyber AI. Nocturnal cyberpunk design with neon purple/cyan accents and glowing robots."
+    typography: 
+      primary_heading: "Pattanans, bold"
+      secondary_heading: "Montserrat, bold"
+      body_text: "Montserrat, regular"
+    color_palette:
+      primary: "#0D1117" # Deep Midnight Blue
+      secondary: "#7C4DFF" # Neon Purple
+      background: "#02040A" # Pitch Black
+      surface: "#161B22" # Dark Slate Surface
+      accent: "#00E5FF" # Electric Cyan
+      text_main: "#FFFFFF" # Pure White
+      text_secondary: "#8B949E" # Muted Gray
+    key_visual_elements: 
+      - "3D glowing robot and cyborg illustrations in neon blue and purple"
+      - "Isometric futuristic UI modules and data visualization blocks"
+      - "Floating star/nebula particles and glowing grid backgrounds"
+      - "High-contrast neon highlights on dark surfaces"
+      - "Blocky, digitized typography for section headers and titles"
+
+  image_generation_prompts:
+    style_guidelines: "A glowing blue robot reading a book in deep space, vibrant neon purple accents, floating stars, futuristic isometric UI elements, cyberpunk atmosphere, Pattanans font vibe."
+    themes:
+      - target: "Artificial Intelligence"
+        prompt_elements: "A robotic hand reaching out towards a glowing brain interface, neon cyan and purple lighting, dark digital background, high-tech and immersive."
+      - target: "Future Digital City"
+        prompt_elements: "Isometric view of a futuristic city with neon lights and floating data streams, deep midnight blue and electric cyan, cinematic quality."
+
+slide_layout_templates:
+  - type: "Cyber_Hero_Future"
+    usage: "Large glowing robot illustration on the left with a massive white Pattanans title over a dark space background"
+  - type: "AI_Categories_Isometric"
+    usage: "Three dark slate cards with neon glowing borders and isometric icons for different AI types"
+  - type: "Nocturnal_Deep_Learning"
+    usage: "Split layout with a glowing robotic arm visual and bullet points in electric cyan"
+  - type: "Cyber_Thank_You"
+    usage: "A small glowing robot reading a book centered on a dark background with neon star effects and a purple footer"
+```
+
 ---
+
 
 
 
