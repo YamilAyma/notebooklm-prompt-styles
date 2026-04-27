@@ -30,6 +30,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Prestige Gold](#prestige-gold)
   - [Fresh Catering](#fresh-catering)
   - [Commercial Asset](#commercial-asset)
+  - [Strategic Insight](#strategic-insight)
 - [✨ Minimalist & Modern](#-minimalist-modern)
   - [Geometric Mono](#geometric-mono)
   - [Lush Minimal](#lush-minimal)
@@ -825,7 +826,60 @@ slide_layout_templates:
     usage: "Contact details in a chocolate brown footer with sienna accents and clear Poppins typography"
 ```
 
+
+#### Strategic Insight
+
+A high-precision and strategic aesthetic designed for luxury market analysis, business consulting, and data-driven strategy presentations. It features the modern and geometric TT Firs Neue typeface to convey technical sophistication and clarity. Characterized by a palette of deep navy blue, crisp white, and cyan accents, it utilizes concentric wave patterns, dot grids, and a signature triple-dot motif in the corners to create a structured and insightful visual experience.
+
+![Strategic Insight Preview](preview/strategic_insight/strategic_insight_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/strategic_insight.yaml)
+
+```yaml
+description: "A high-precision and strategic aesthetic designed for luxury market analysis, business consulting, and data-driven strategy presentations. It features the modern and geometric TT Firs Neue typeface to convey technical sophistication and clarity. Characterized by a palette of deep navy blue, crisp white, and cyan accents, it utilizes concentric wave patterns, dot grids, and a signature triple-dot motif in the corners to create a structured and insightful visual experience."
+design_system:
+  global_style:
+    theme: "Strategic Insight. Deep navy analysis design with white and cyan tech accents."
+    typography: 
+      primary_heading: "TT Firs Neue, bold"
+      secondary_heading: "TT Firs Neue, medium"
+      body_text: "TT Firs Neue, regular"
+    color_palette:
+      primary: "#000080" # Deep Navy Blue
+      secondary: "#FFFFFF" # Pure White
+      background: "#000033" # Very Dark Navy
+      surface: "#E3F2FD" # Light Blue Surface
+      text_main: "#FFFFFF" # White Text on dark backgrounds
+      text_secondary: "#B0BEC5" # Muted Blue Grey
+    key_visual_elements: 
+      - "White concentric wave patterns in corners and as section dividers"
+      - "Signature triple-dot motif in the top-right corner for navigation vibe"
+      - "Subtle dot grid patterns and technical markers for data visualization"
+      - "Split-screen layouts with professional business and market data photography"
+      - "Cyan highlight bars for emphasized strategic points"
+
+  image_generation_prompts:
+    style_guidelines: "Professional business strategy sessions, market data screens, deep navy backgrounds, concentric wave patterns, minimalist tech aesthetic, TT Firs Neue font vibe."
+    themes:
+      - target: "Market Analysis"
+        prompt_elements: "A professional analyzing printed market charts on a clean table, deep navy color grading, cyan highlights, sharp focus, strategic consulting vibe."
+      - target: "Strategic Planning"
+        prompt_elements: "A team in a modern office looking at a data dashboard, concentric blue wave overlays, professional and technical atmosphere, high precision."
+
+slide_layout_templates:
+  - type: "Strategic_Hero_Insight"
+    usage: "Large photo on the right with a deep navy panel and bold white TT Firs Neue title on the left"
+  - type: "Market_Landscape_Grid"
+    usage: "Technical grid with market data photography and white text boxes with cyan headers"
+  - type: "Strategic_Direction_Bullets"
+    usage: "Split layout with a business photo on one side and clean white bullet points on a navy background"
+  - type: "Technical_Thank_You"
+    usage: "Centered white text on a navy background with concentric wave patterns in the corners"
+```
+
 ---
+
 
 
 
