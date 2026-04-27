@@ -1,15 +1,28 @@
 # Contributing to NotebookLM Styles Showcase
 
-Thank you for your interest in contributing! This guide will walk you through the process of adding a new style to the collection.
+Thank you for your interest in contributing! This guide will walk you through the process of adding a new style to the collection. We use automation to keep the repository optimized and consistent.
 
 ## Workflow Summary
 
 1. **Create** the YAML configuration.
 2. **Generate** previews using NotebookLM.
-3. **Organize** files in the repository.
-4. **Sync** the data.
-5. **Document** in the README.
-6. **Submit** your changes.
+3. **Match** your code to a style file.
+4. **Optimize** and convert images.
+5. **Sync** the data.
+6. **Document** in the README.
+7. **Submit** your changes.
+
+---
+
+## Scripts & Automation Tools
+
+We have automated parts of the contribution process to keep the repository clean and optimized.
+
+| Script | Purpose | When to use it |
+| :--- | :--- | :--- |
+| `scripts/match_style_preview.py` | Matches a pasted YAML code from `input.yaml` with an existing style and creates the appropriate `/preview` folder. | After you have your YAML code and want to start adding images. |
+| `scripts/optimize_and_rename.py` | Converts images to `.webp`, renames them to `{style}_{n}.webp`, updates code references, and deletes original PNGs/JPGs. | After adding new images to a preview folder. |
+| `npm run build:data` | Rebuilds the `styles.json` file used by the website gallery. | Before committing your changes. |
 
 ---
 
@@ -19,7 +32,7 @@ All styles are stored in the `/styles` directory.
 
 1. Choose a descriptive name for your style (e.g., `modern_dark`). Use **snake_case**.
 2. Create a new file: `styles/modern_dark.yaml`.
-3. Define your style using the required structure (refer to existing styles for inspiration).
+3. Define your style using the required structure:
 
 ```yaml
 design_system:
@@ -52,20 +65,24 @@ To showcase your style, you need to generate a real slide deck in NotebookLM.
 5. Take at least **3 high-quality screenshots** of the resulting slides (Cover, Content, and a special layout).
 6. **Privacy Tip:** Ensure your screenshots do not contain personal information or sensitive metadata.
 
-## Step 3: Organize Files
+## Step 3: Organize & Optimize Images (Automated)
 
-1. Create a folder for your previews: `preview/modern_dark/`.
-2. Place your screenshots inside this folder.
-3. Run the renaming script to ensure consistent naming:
+1. Paste the YAML code of your style into the `input.yaml` file at the root of the project.
+2. Run the matcher script to automatically identify the style and create the folder:
    ```bash
-   python scripts/rename-previews.py
+   python scripts/match_style_preview.py
    ```
-
-   *This will rename your images to `modern_dark_1.png`, `modern_dark_2.png`, etc.*
+   *This will create the folder `preview/your_style_name/` for you.*
+3. Place your screenshots (`.png` or `.jpg`) inside that new folder.
+4. Run the optimization script:
+   ```bash
+   python scripts/optimize_and_rename.py
+   ```
+   *This will convert everything to `.webp`, rename files correctly, and update the repository code.*
 
 ## Step 4: Update the Showcase Data
 
-The website uses a generated JSON file to display the gallery. You need to rebuild it to include your new style:
+The website uses a generated JSON file to display the gallery. Rebuild it to include your new style:
 
 ```bash
 npm run build:data
@@ -76,7 +93,7 @@ npm run build:data
 
 ## Step 5: Update the README
 
-Add your new style to the root `README.md` so users can find it easily.
+Add your new style to the root `README.md` using the `.webp` extension for the preview image.
 
 1. Add a link in the **Table of Contents**.
 2. Add a section under the appropriate category.
@@ -88,7 +105,7 @@ Add your new style to the root `README.md` so users can find it easily.
 #### Modern Dark
 A sleek, high-contrast theme for late-night presentations.
 
-![Modern Dark Preview](preview/modern_dark/modern_dark_1.png)
+![Modern Dark Preview](preview/modern_dark/modern_dark_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/modern_dark.yaml)
@@ -96,12 +113,9 @@ A sleek, high-contrast theme for late-night presentations.
 
 ## Step 6: Commit and Push
 
-We follow a strict commit message format in **English**.
+We follow a strict commit message format in **English**: `type (Scope) - Imperative description`
 
-**Format:** `type (Scope) - Imperative description`
-
-**Example:**
-
+Example:
 ```bash
 git add .
 git commit -m "feat (Styles) - Add Modern Dark style"
@@ -114,7 +128,7 @@ Push your changes and create a Pull Request!
 ## Technical Checklist
 
 - [ ] YAML file added to `/styles/` (snake_case).
-- [ ] Preview folder created in `/preview/` with `.png` files.
+- [ ] Folder created in `/preview/` and images optimized to `.webp` using our scripts.
 - [ ] `npm run build:data` executed successfully.
-- [ ] Style added to `README.md` (TOC and Section).
+- [ ] Style added to `README.md` (TOC and Section) using `.webp` references.
 - [ ] Commit message is in English and follows the convention.
