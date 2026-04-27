@@ -33,6 +33,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Strategic Insight](#strategic-insight)
   - [Eco Estate](#eco-estate)
   - [Artisanal Brew](#artisanal-brew)
+  - [Smart Commerce](#smart-commerce)
 - [✨ Minimalist & Modern](#-minimalist-modern)
   - [Geometric Mono](#geometric-mono)
   - [Lush Minimal](#lush-minimal)
@@ -984,7 +985,61 @@ slide_layout_templates:
     usage: "Contact details in a pill-shaped dark green box on a background with leaf illustrations"
 ```
 
+
+#### Smart Commerce
+
+A smart and innovative aesthetic designed for e-commerce strategies, digital growth agencies, and tech-forward business presentations. It features the powerful Heading Now typeface for titles to convey modern authority, paired with the technical precision of TT Firs Neue. Characterized by a palette of slate grey, soft peach, and mustard yellow, it utilizes abstract geometric shapes, modular grid layouts, and dot patterns to create a structured and innovative visual experience.
+
+![Smart Commerce Preview](preview/smart_commerce/smart_commerce_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/smart_commerce.yaml)
+
+```yaml
+description: "A smart and innovative aesthetic designed for e-commerce strategies, digital growth agencies, and tech-forward business presentations. It features the powerful Heading Now typeface for titles to convey modern authority, paired with the technical precision of TT Firs Neue. Characterized by a palette of slate grey, soft peach, and mustard yellow, it utilizes abstract geometric shapes, modular grid layouts, and dot patterns to create a structured and innovative visual experience."
+design_system:
+  global_style:
+    theme: "Smart Commerce. Innovative tech design with slate, peach, and mustard geometric accents."
+    typography: 
+      primary_heading: "Heading Now, bold"
+      secondary_heading: "TT Firs Neue, bold"
+      body_text: "TT Firs Neue, regular"
+    color_palette:
+      primary: "#455A64" # Slate Grey
+      secondary: "#FFAB91" # Soft Peach
+      background: "#FFFFFF" # Pure White
+      surface: "#F5F5F5" # Light Grey Surface
+      accent: "#FFCC80" # Soft Mustard
+      text_main: "#263238" # Dark Charcoal
+      text_secondary: "#546E7A" # Muted Slate
+    key_visual_elements: 
+      - "Abstract geometric shapes (triangles and semi-circles) in peach and mustard"
+      - "Modular card layouts with deep slate grey headers"
+      - "Subtle dot grid patterns as background textures"
+      - "Clean business photography integrated into geometric containers"
+      - "Pill-shaped call-to-action boxes with arrow icons"
+
+  image_generation_prompts:
+    style_guidelines: "Modern office environments, high-tech workspaces, digital marketing dashboards, slate and peach color palette, abstract geometric overlays, sharp and innovative, Heading Now font vibe."
+    themes:
+      - target: "E-Commerce Growth"
+        prompt_elements: "Close up of a professional working on a laptop with a digital shop interface, abstract geometric shapes in the background, slate and peach tones, clean and sharp."
+      - target: "Smart Innovation"
+        prompt_elements: "A team brainstorming in a bright modern office with glass walls, geometric mustard and grey overlays, professional and tech-forward."
+
+slide_layout_templates:
+  - type: "Smart_Hero_Business"
+    usage: "Large photo on the right with a slate grey floating card and bold white Heading Now title"
+  - type: "ECommerce_Landscape_Grid"
+    usage: "Technical overview with photos in geometric frames and mustard yellow bullet points"
+  - type: "Competitive_Strengths_Cards"
+    usage: "Grid of white cards with slate grey icons and peach accent borders"
+  - type: "Approach_Methodology_Flow"
+    usage: "Process flow using peach and mustard circles connected by thin slate lines"
+```
+
 ---
+
 
 
 
