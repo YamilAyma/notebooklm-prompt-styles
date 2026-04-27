@@ -3,6 +3,23 @@ import Layout from '../layouts/Layout.astro';
 import YouTubeLink from '../components/YouTubeLink.astro';
 import PortfolioIcon from '~icons/carbon/portfolio';
 import HelpIcon from '~icons/carbon/help';
+import stylesData from '../../public/data/styles.json';
+
+// Get all preview images from all styles
+const allPreviews = stylesData.categories.flatMap(cat => 
+  cat.styles.flatMap(style => style.previews)
+);
+
+// Select 20 images for the hero grid (shuffled for variety)
+const heroImages = [...allPreviews].sort(() => 0.5 - Math.random()).slice(0, 20);
+
+// Split into 4 columns of 5 images
+const columns = [
+  heroImages.slice(0, 5),
+  heroImages.slice(5, 10),
+  heroImages.slice(10, 15),
+  heroImages.slice(15, 20),
+];
 ---
 
 <Layout category="landing">
@@ -11,38 +28,13 @@ import HelpIcon from '~icons/carbon/help';
     <section class="landing-hero">
       <div class="hero-bg-grid">
         <div class="hero-bg-grid__track">
-          <!-- Column 1 -->
-          <div class="hero-bg-grid__col">
-            <img src="/preview/editorial_essence/editorial_essence_1.webp" alt="" />
-            <img src="/preview/geometric_mono/geometric_mono_1.webp" alt="" />
-            <img src="/preview/architectural_cobalt/architectural_cobalt_1.webp" alt="" />
-            <img src="/preview/artisan_rust/artisan_rust_1.webp" alt="" />
-            <img src="/preview/creative_classroom/creative_classroom_1.webp" alt="" />
-          </div>
-          <!-- Column 2 -->
-          <div class="hero-bg-grid__col hero-bg-grid__col--reverse">
-            <img src="/preview/executive_report/executive_report_1.webp" alt="" />
-            <img src="/preview/architectural_mono/architectural_mono_1.webp" alt="" />
-            <img src="/preview/creative_spark/creative_spark_1.webp" alt="" />
-            <img src="/preview/cobalt_editorial/cobalt_editorial_1.webp" alt="" />
-            <img src="/preview/botanical_journal/botanical_journal_1.webp" alt="" />
-          </div>
-          <!-- Column 3 -->
-          <div class="hero-bg-grid__col">
-            <img src="/preview/creative_workshop/creative_workshop_1.webp" alt="" />
-            <img src="/preview/ensign_corporate/ensign_corporate_1.webp" alt="" />
-            <img src="/preview/editorial_essence/editorial_essence_2.webp" alt="" />
-            <img src="/preview/geometric_mono/geometric_mono_2.webp" alt="" />
-            <img src="/preview/architectural_cobalt/architectural_cobalt_2.webp" alt="" />
-          </div>
-          <!-- Column 4 -->
-          <div class="hero-bg-grid__col hero-bg-grid__col--reverse">
-            <img src="/preview/artisan_rust/artisan_rust_2.webp" alt="" />
-            <img src="/preview/creative_spark/creative_spark_2.webp" alt="" />
-            <img src="/preview/cobalt_editorial/cobalt_editorial_2.webp" alt="" />
-            <img src="/preview/creative_classroom/creative_classroom_2.webp" alt="" />
-            <img src="/preview/ensign_corporate/ensign_corporate_2.webp" alt="" />
-          </div>
+          {columns.map((col, idx) => (
+            <div class={`hero-bg-grid__col ${idx % 2 !== 0 ? 'hero-bg-grid__col--reverse' : ''}`}>
+              {col.map(img => (
+                <img src={img} alt="" loading="lazy" />
+              ))}
+            </div>
+          ))}
         </div>
       </div>
 
