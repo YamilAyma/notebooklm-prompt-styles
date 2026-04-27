@@ -50,6 +50,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Groovy 70s](#groovy-70s)
   - [Kawaii Pop](#kawaii-pop)
   - [Fandom Noir](#fandom-noir)
+  - [Sweet Fandom](#sweet-fandom)
 - [📖 Editorial & Magazine](#-editorial-magazine)
   - [Editorial Essence](#editorial-essence)
   - [Luxury Editorial](#luxury-editorial)
@@ -1551,7 +1552,59 @@ slide_layout_templates:
     usage: "Icons and elements in white and lavender on a dark gray grid"
 ```
 
+
+#### Sweet Fandom
+
+A charming and cozy aesthetic that transforms social games into a kawaii bakery or tea party experience. It features the friendly KG Primary Penmanship font for a handwritten, approachable feel. Characterized by a palette of pastel pink, mint green, and cream, it uses adorable illustrations of desserts, strawberries, and lemonade jars to create a sweet and playful community atmosphere.
+
+![Sweet Fandom Preview](preview/sweet_fandom/sweet_fandom_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/sweet_fandom.yaml)
+
+```yaml
+description: "A charming and cozy aesthetic that transforms social games into a kawaii bakery or tea party experience. It features the friendly KG Primary Penmanship font for a handwritten, approachable feel. Characterized by a palette of pastel pink, mint green, and cream, it uses adorable illustrations of desserts, strawberries, and lemonade jars to create a sweet and playful community atmosphere."
+design_system:
+  global_style:
+    theme: "Sweet Fandom. Charming and dessert-inspired design for cozy games and playful fan events."
+    typography: 
+      primary_heading: "KG Primary Penmanship, sans-serif"
+      secondary_heading: "KG Primary Penmanship, medium"
+      body_text: "Inter, regular" # Using Inter for body text to ensure long questions are readable
+    color_palette:
+      primary: "#F48FB1" # Pastel Pink
+      secondary: "#A5D6A7" # Mint Green
+      background: "#FFF9C4" # Soft Cream / Yellow
+      surface: "#F8BBD0" # Lighter Pink Surface
+      text_main: "#795548" # Soil Brown for a soft contrast
+      text_secondary: "#F48FB1"
+    key_visual_elements: 
+      - "Adorable hand-drawn illustrations of cakes, donuts, and cupcakes"
+      - "Cozy lifestyle elements like lemonade jars and strawberries"
+      - "Bubbly cloud shapes for rule boxes and featured questions"
+      - "Checkered or soft pattern backgrounds for a picnic/bakery feel"
+
+  image_generation_prompts:
+    style_guidelines: "Kawaii bakery aesthetic, pastel pink and mint green palette, dessert illustrations, hand-drawn stickers, KG Primary Penmanship font vibe, cozy and playful atmosphere."
+    themes:
+      - target: "Game Start"
+        prompt_elements: "A delicious strawberry shortcake on a pastel pink plate, mint green background, cute hand-drawn hearts, sweet and cozy vibe."
+      - target: "Winner Celebration"
+        prompt_elements: "A variety of colorful donuts with sprinkles, soft cream background, joyful and sugary aesthetic."
+
+slide_layout_templates:
+  - type: "Sweet_Bakery_Cover"
+    usage: "Large brown KG Primary title on a pink checkered background with dessert stickers in the corners"
+  - type: "Dessert_Rule_Box"
+    usage: "A slide with a large white cloud shape containing text, decorated with a small cake icon"
+  - type: "Picnic_Grid"
+    usage: "A grid of photos framed in mint green with strawberry icons as separators"
+  - type: "Sweet_Thank_You"
+    usage: "Centered 'Thanks for playing' in pink script font surrounded by cute treat illustrations"
+```
+
 ---
+
 
 
 
