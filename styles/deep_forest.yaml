@@ -1,38 +1,36 @@
-description: "A majestic and immersive aesthetic designed for environmental conservation, ecology, and deep nature topics. It features the geometric Garet typeface. Characterized by a palette of deep forest greens, charcoal, and moss, it uses high-contrast white text over foggy forest photography to create a professional, scientific, and atmospheric editorial look."
+description: "A rugged and authentic aesthetic that honors the raw beauty of deep forests and mountain landscapes. It features the wide and impactful Agrandir Wide typeface for headlines that stand out against vast nature photography. Characterized by a palette of deep forest green and charcoal, it uses high-contrast layouts and minimal leaf icons to create a sense of conservation and wilderness adventure."
 design_system:
   global_style:
-    theme: "Deep Forest. Atmospheric and majestic design with foggy forest imagery and deep greens."
+    theme: "Deep Forest. Rugged and minimalist nature design for environmental and hiking presentations."
     typography: 
-      primary_heading: "Garet, sans-serif"
-      secondary_heading: "Garet, bold"
-      body_text: "Garet, regular"
+      primary_heading: "Agrandir Wide, sans-serif"
+      secondary_heading: "Agrandir, regular"
+      body_text: "Poppins, regular"
     color_palette:
-      primary: "#004D40" # Deep Forest Green
-      secondary: "#9E9D24" # Moss Green
-      background: "#37474F" # Charcoal/Dark Slate
-      surface: "#00241F" # Darkest Green Surface
-      text_main: "#FFFFFF" # High Contrast White
-      text_secondary: "#B2DFDB" # Light Teal
+      primary: "#1B5E20" # Deep Forest Green
+      secondary: "#212121" # Charcoal Black
+      background: "#FAFAFA" # Off-White
+      surface: "#E8F5E9" # Pale Leaf Green
+      text_main: "#1B5E20"
+      text_secondary: "#424242"
     key_visual_elements: 
-      - "Full-bleed background imagery of misty pine forests and foggy landscapes"
-      - "High-contrast white typography that stands out against dark green overlays"
-      - "Clean, scientific-editorial layouts with precise line spacing"
-      - "Subtle teal dividers and small moss-green accent bullets"
+      - "Full-bleed photography of forests and mountains"
+      - "Minimalist leaf icons used as bullet points or accents"
+      - "High-contrast layouts (large dark headlines on light backgrounds)"
+      - "Rounded image corners to soften the rugged imagery"
 
   image_generation_prompts:
-    style_guidelines: "Immersive nature photography, foggy pine forest, deep green and charcoal palette, high contrast, Garet font vibe, professional ecological editorial look."
+    style_guidelines: "High-contrast nature photography, deep forest green and charcoal accents, wide cinematic shots, rugged wilderness atmosphere, Agrandir Wide font vibe."
     themes:
-      - target: "Biodiversity Conservation"
-        prompt_elements: "Close-up of a pine branch in a misty forest, deep greens, cinematic lighting, high-end environmental magazine style."
-      - target: "The Future of Forests"
-        prompt_elements: "A vast landscape of foggy mountains covered in trees, charcoal sky, mysterious and majestic atmosphere."
+      - target: "Sustainability"
+        prompt_elements: "Close-up of pine needles with morning dew, deep green tones, minimalist charcoal text box, authentic and environmental."
+      - target: "Hiking Adventure"
+        prompt_elements: "A person walking on a mountain trail, vast forest background, high contrast, rugged and adventurous aesthetic."
 
 slide_layout_templates:
-  - type: "Forest_Intro"
-    usage: "Large Garet title centered over a full-bleed foggy forest image with a dark green gradient overlay"
-  - type: "Scientific_Editorial"
-    usage: "Text arranged in three clean columns over a dark charcoal background with a small forest inset photo"
-  - type: "Conservation_Strategy"
-    usage: "Key points listed with moss-green accent bullets on a deep forest green surface"
-  - type: "Impact_Slide"
-    usage: "A single large number or word in Garet bold centered on a misty background to emphasize scale"
+  - type: "Wilderness_Headline"
+    usage: "Large Agrandir Wide headline overlapping a cinematic forest photo"
+  - type: "Leaf_Info"
+    usage: "Bullet points marked by small green leaf icons on a clean charcoal surface"
+  - type: "Contrast_Visual"
+    usage: "A split slide with a dark green side for text and a full-height photo on the other"
