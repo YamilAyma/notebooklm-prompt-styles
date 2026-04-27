@@ -35,6 +35,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Artisanal Brew](#artisanal-brew)
   - [Smart Commerce](#smart-commerce)
   - [Authentic Pasta](#authentic-pasta)
+  - [Marine Harvest](#marine-harvest)
 - [✨ Minimalist & Modern](#-minimalist-modern)
   - [Geometric Mono](#geometric-mono)
   - [Lush Minimal](#lush-minimal)
@@ -1093,7 +1094,60 @@ slide_layout_templates:
     usage: "Contact details centered on a cream background with ravioli illustrations and olive green footer"
 ```
 
+
+#### Marine Harvest
+
+A professional and marine-inspired aesthetic designed for sustainable seafood brands, ocean conservation projects, and premium seafood industry presentations. It features the wide and modern Agrandir typeface for titles to convey strength and scale, paired with the versatile Poppins for body text. Characterized by a palette of deep ocean blue, bright coral orange, and sandy beige, it utilizes water textures, hand-drawn seafood sketches (lobsters, shrimp, fish), and wavy shapes to create a fresh and trustworthy marine experience.
+
+![Marine Harvest Preview](preview/marine_harvest/marine_harvest_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/marine_harvest.yaml)
+
+```yaml
+description: "A professional and marine-inspired aesthetic designed for sustainable seafood brands, ocean conservation projects, and premium seafood industry presentations. It features the wide and modern Agrandir typeface for titles to convey strength and scale, paired with the versatile Poppins for body text. Characterized by a palette of deep ocean blue, bright coral orange, and sandy beige, it utilizes water textures, hand-drawn seafood sketches (lobsters, shrimp, fish), and wavy shapes to create a fresh and trustworthy marine experience."
+design_system:
+  global_style:
+    theme: "Marine Harvest. Sustainable seafood design with ocean textures and coral orange accents."
+    typography: 
+      primary_heading: "Agrandir, bold"
+      secondary_heading: "Poppins, bold"
+      body_text: "Poppins, regular"
+    color_palette:
+      primary: "#01345B" # Deep Ocean Blue
+      secondary: "#FF5700" # Bright Coral Orange
+      background: "#FFFFFF" # Pure White
+      surface: "#EDE0D4" # Sandy Beige Surface
+      text_main: "#01345B" # Deep Blue Text
+      text_secondary: "#546E7A" # Muted Slate
+    key_visual_elements: 
+      - "Deep blue ocean wave textures as background for cover slides"
+      - "Minimalist hand-drawn sketches of lobsters, shrimp, and fish in white and light blue"
+      - "Bright coral orange highlight boxes for important calls to action"
+      - "Sandy beige surface panels for text-heavy content"
+      - "Fluid, wavy shapes for photo containers and section transitions"
+
+  image_generation_prompts:
+    style_guidelines: "Fresh seafood paella in a rustic pan, ocean water textures, bright coral orange accents, sandy beige backgrounds, hand-drawn seafood sketches, soft natural light, Agrandir font vibe."
+    themes:
+      - target: "Premium Seafood"
+        prompt_elements: "A variety of fresh seafood on ice, bright natural light, ocean blue and coral accents, high-end food industry photography, fresh and crisp."
+      - target: "Sustainable Fishing"
+        prompt_elements: "A professional fisherman at sea with a net, blue ocean waves, bright daylight, sustainable and high quality atmosphere."
+
+slide_layout_templates:
+  - type: "Seafood_Hero_Wave"
+    usage: "Full-bleed ocean wave background with a deep blue floating card and bold white Agrandir title"
+  - type: "About_Sustainable_Marine"
+    usage: "Split layout with a sandy beige panel and a large seafood photo with a wavy border"
+  - type: "Marine_Opportunity_Cards"
+    usage: "Grid of orange cards with white seafood icons and deep blue text descriptions"
+  - type: "Thank_You_Ocean"
+    usage: "Contact details centered on a sandy beige background with large lobster sketches and orange footer"
+```
+
 ---
+
 
 
 
