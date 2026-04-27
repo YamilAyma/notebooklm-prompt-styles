@@ -90,6 +90,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Modern Farm](#modern-farm)
   - [Sustainable Agri](#sustainable-agri)
   - [Modern Harvest](#modern-harvest)
+  - [Mindful Aura](#mindful-aura)
 - [🚀 How to Use](#-how-to-use)
 - [🛠️ Contribution](#-contribution)
 - [🏗️ Acknowledgements](#-acknowledgements)
@@ -3213,7 +3214,59 @@ slide_layout_templates:
     usage: "A grid of images where each one is enclosed in a pill-shaped container"
 ```
 
+
+#### Mindful Aura
+
+A calm and ethereal aesthetic designed for wellness, mindfulness, and mental health presentations. It features the elegant and clear Raleway typeface. Characterized by a palette of soft lavender and deep purples on pure white backgrounds, it uses radiant light beams, aura-like gradients, and floral geometric patterns to create a serene, therapeutic, and professional atmosphere.
+
+![Mindful Aura Preview](preview/mindful_aura/mindful_aura_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/mindful_aura.yaml)
+
+```yaml
+description: "A calm and ethereal aesthetic designed for wellness, mindfulness, and mental health presentations. It features the elegant and clear Raleway typeface. Characterized by a palette of soft lavender and deep purples on pure white backgrounds, it uses radiant light beams, aura-like gradients, and floral geometric patterns to create a serene, therapeutic, and professional atmosphere."
+design_system:
+  global_style:
+    theme: "Mindful Aura. Ethereal and serene design with light gradients for wellness and mindfulness."
+    typography: 
+      primary_heading: "Raleway, sans-serif"
+      secondary_heading: "Raleway, bold"
+      body_text: "Raleway, regular"
+    color_palette:
+      primary: "#7E57C2" # Deep Purple
+      secondary: "#B39DDB" # Soft Lavender
+      background: "#FFFFFF" # Pure White
+      surface: "#F3E5F5" # Very Light Purple Surface
+      text_main: "#4527A0" # Deepest Purple for text
+      text_secondary: "#7E57C2"
+    key_visual_elements: 
+      - "Radiant radial gradients and light beams that mimic auras or enlightenment"
+      - "Floral geometric symbols resembling minimalist lotus flowers or mandalas"
+      - "Bubbly, soft-edged containers with wavy outlines for text blocks"
+      - "Clean, spacious layouts with a focus on negative space and light"
+
+  image_generation_prompts:
+    style_guidelines: "Ethereal wellness aesthetic, soft lavender aura gradients, radiant light beams, minimalist floral geometry, Raleway font vibe, serene and therapeutic atmosphere."
+    themes:
+      - target: "Breathing Exercise"
+        prompt_elements: "A soft lavender radial glow expanding from the center, white background, minimalist floral symbol, ethereal and calm."
+      - target: "Emotional Balance"
+        prompt_elements: "Abstract light beams in purple and lavender, soft wavy shapes, zen atmosphere, high-end wellness look."
+
+slide_layout_templates:
+  - type: "Aura_Intro"
+    usage: "Large Raleway title centered over a soft purple aura glow on a white background"
+  - type: "Wavy_Message_Slide"
+    usage: "A single powerful quote inside a large wavy-edged cloud container in light lavender"
+  - type: "Zen_Grid"
+    usage: "A grid of icons or points, each paired with a minimalist floral geometric symbol"
+  - type: "Light_Summary"
+    usage: "A summary slide where text is highlighted by subtle vertical light beams in the background"
+```
+
 ---
+
 
 
 
