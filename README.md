@@ -31,6 +31,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Frosted Luxury](#frosted-luxury)
   - [Learning Time](#learning-time)
   - [Slow Living](#slow-living)
+  - [Luxe Marble](#luxe-marble)
 - [🎨 Creative & Playful](#-creative-playful)
   - [Creative Spark](#creative-spark)
   - [Artisan Rust](#artisan-rust)
@@ -772,7 +773,59 @@ slide_layout_templates:
     usage: "A large quote in Open Sauce bold that takes up 70% of the slide, with a tiny reference at the bottom"
 ```
 
+
+#### Luxe Marble
+
+An ultra-premium and ethereal aesthetic inspired by the purity of white marble and the softness of fine silk. It features the elegant Tenor Sans typeface, which brings a timeless, high-fashion clarity to every slide. Characterized by a palette of bone white, platinum silver, and soft mineral greys, it uses airy layouts and subtle light reflections to create an atmosphere of absolute luxury, exclusivity, and diamond-cut precision.
+
+![Luxe Marble Preview](preview/luxe_marble/luxe_marble_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/luxe_marble.yaml)
+
+```yaml
+description: "An ultra-premium and ethereal aesthetic inspired by the purity of white marble and the softness of fine silk. It features the elegant Tenor Sans typeface, which brings a timeless, high-fashion clarity to every slide. Characterized by a palette of bone white, platinum silver, and soft mineral greys, it uses airy layouts and subtle light reflections to create an atmosphere of absolute luxury, exclusivity, and diamond-cut precision."
+design_system:
+  global_style:
+    theme: "Luxe Marble. High-end minimalist design with marble textures and silk-smooth layouts."
+    typography: 
+      primary_heading: "Tenor Sans, sans-serif"
+      secondary_heading: "Tenor Sans, regular"
+      body_text: "Tenor Sans, light"
+    color_palette:
+      primary: "#1A1A1A" # Obsidian Black (Accents)
+      secondary: "#A1A1AA" # Platinum Silver
+      background: "#F9F9F7" # Bone White
+      surface: "#FFFFFF" # Pure Silk White
+      text_main: "#1A1A1A"
+      text_secondary: "#71717A"
+    key_visual_elements: 
+      - "Subtle white marble vein patterns in background layers"
+      - "Silk-like cloth textures with soft shadows and highlights"
+      - "Diamond-cut geometric framing (thin 0.5px lines)"
+      - "Ample negative space to convey a sense of 'expensive' minimalism"
+
+  image_generation_prompts:
+    style_guidelines: "Luxury editorial photography, soft ethereal lighting, white marble and silk textures, diamond-cut precision, bone white and platinum palette, Tenor Sans font vibe."
+    themes:
+      - target: "The Essence of Luxury"
+        prompt_elements: "Close-up of white silk fabric rippling over a marble surface, soft natural light, ethereal and high-end."
+      - target: "Architectural Precision"
+        prompt_elements: "A minimalist luxury interior with white stone walls and silver accents, clean lines, serene and exclusive atmosphere."
+
+slide_layout_templates:
+  - type: "Marble_Title"
+    usage: "Elegant Tenor Sans title centered on a white silk texture background with a thin silver border"
+  - type: "Silk_TOC"
+    usage: "A clean, airy list with wide line spacing and a subtle marble vein running diagonally"
+  - type: "Diamond_Grid"
+    usage: "A 2x2 grid where each quadrant is separated by 0.5px silver lines, featuring minimalist product shots"
+  - type: "Ethereal_Quote"
+    usage: "Large quote in Tenor Sans light over a blurred white mineral background to emphasize vision"
+```
+
 ---
+
 
 
 
