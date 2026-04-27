@@ -1,0 +1,38 @@
+description: "A sharp and sophisticated monochromatic aesthetic inspired by modern high-end barbershops. It features the geometric Glacial Indifference for bold, clean headlines and the expressive Bricolage Grotesque for body text. Characterized by a 'Barber Pole Noir' palette of black, white, and steel grey, it uses high-contrast layouts and minimalist razor or comb iconography to create a sense of precision, urban style, and professional grooming excellence."
+design_system:
+  global_style:
+    theme: "Urban Barber. Sharp monochromatic design for professional grooming, fashion, and urban lifestyle topics."
+    typography: 
+      primary_heading: "Glacial Indifference, sans-serif"
+      secondary_heading: "Glacial Indifference, bold"
+      body_text: "Bricolage Grotesque, regular"
+    color_palette:
+      primary: "#000000" # Deep Black
+      secondary: "#333333" # Steel Grey
+      background: "#FFFFFF" # Crisp White
+      surface: "#F2F2F2" # Light Concrete Surface
+      text_main: "#000000"
+      text_secondary: "#666666"
+    key_visual_elements: 
+      - "Bold monochromatic split-screen layouts"
+      - "Minimalist vector icons of straight razors, combs, or shears"
+      - "Diagonal stripe patterns (Barber Pole motif) in subtle grey tones"
+      - "Sharp 0px corner radius for a 'straight-edge' precision feel"
+
+  image_generation_prompts:
+    style_guidelines: "Sharp monochromatic photography, high-contrast black and white, modern barbershop interior, industrial textures, professional grooming aesthetic, Glacial Indifference font vibe."
+    themes:
+      - target: "The Art of Precision"
+        prompt_elements: "Close-up of a straight razor on a marble surface, black and white photography, sharp focus, industrial and elegant."
+      - target: "Urban Lifestyle"
+        prompt_elements: "A modern barbershop interior with leather chairs and white brick walls, high contrast, clean and professional atmosphere."
+
+slide_layout_templates:
+  - type: "Sharp_Headline"
+    usage: "Large Glacial Indifference headline on a white background with a vertical black stripe on the left"
+  - type: "Barber_Grid"
+    usage: "A 3-column layout for grooming services or products with sharp black borders"
+  - type: "Noir_Testimonial"
+    usage: "Text centered over a subtle diagonal stripe background with high-contrast black icons"
+  - type: "Straight_Edge_Visual"
+    usage: "Full-bleed black and white photo with a transparent black overlay for white text"
