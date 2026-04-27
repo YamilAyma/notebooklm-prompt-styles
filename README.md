@@ -91,6 +91,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Sustainable Agri](#sustainable-agri)
   - [Modern Harvest](#modern-harvest)
   - [Mindful Aura](#mindful-aura)
+  - [Botanical Harmony](#botanical-harmony)
 - [🚀 How to Use](#-how-to-use)
 - [🛠️ Contribution](#-contribution)
 - [🏗️ Acknowledgements](#-acknowledgements)
@@ -3265,7 +3266,59 @@ slide_layout_templates:
     usage: "A summary slide where text is highlighted by subtle vertical light beams in the background"
 ```
 
+
+#### Botanical Harmony
+
+A warm and organic aesthetic inspired by folk art and botanical illustrations. It features the calligraphic 29LT Riwaya typeface. Characterized by an earthy palette of cream, sand, and taupe, it uses fine line-art of mountains, butterflies, and sun motifs to create a human, artisanal, and deeply serene atmosphere for wellness and nature topics.
+
+![Botanical Harmony Preview](preview/botanical_harmony/botanical_harmony_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/botanical_harmony.yaml)
+
+```yaml
+description: "A warm and organic aesthetic inspired by folk art and botanical illustrations. It features the calligraphic 29LT Riwaya typeface. Characterized by an earthy palette of cream, sand, and taupe, it uses fine line-art of mountains, butterflies, and sun motifs to create a human, artisanal, and deeply serene atmosphere for wellness and nature topics."
+design_system:
+  global_style:
+    theme: "Botanical Harmony. Human and organic design with line-art illustrations and earthy tones."
+    typography: 
+      primary_heading: "29LT Riwaya, serif"
+      secondary_heading: "29LT Riwaya, italic"
+      body_text: "29LT Riwaya, regular"
+    color_palette:
+      primary: "#D7CCC8" # Tan
+      secondary: "#FFF59D" # Cream Yellow
+      background: "#FAF9F6" # Off-White/Sand
+      surface: "#EFEBE9" # Light Earthy Surface
+      text_main: "#4E342E" # Deep Coffee Brown
+      text_secondary: "#8D6E63"
+    key_visual_elements: 
+      - "Fine line-art illustrations of nature (mountains, butterflies, wildflowers)"
+      - "Hand-drawn sun motif with a human face (folk-art style)"
+      - "Wavy-edged organic containers for text and headings"
+      - "Soft, parchment-like background textures with subtle botanical overlays"
+
+  image_generation_prompts:
+    style_guidelines: "Organic botanical aesthetic, fine line-art illustrations, 29LT Riwaya font vibe, earthy cream and taupe palette, folk-art sun, serene and artisanal atmosphere."
+    themes:
+      - target: "Natural Movement"
+        prompt_elements: "Minimalist line-art of a butterfly and wildflowers, cream background, soft taupe accents, organic and peaceful."
+      - target: "Inner Peace"
+        prompt_elements: "A hand-drawn sun with a gentle face, simple mountain outlines, earthy tones, folk-art illustration style."
+
+slide_layout_templates:
+  - type: "Botanical_Title"
+    usage: "Title in 29LT Riwaya placed inside a wavy organic container with botanical line-art in the corners"
+  - type: "Illustrated_List"
+    usage: "Numbered lists where each item is accompanied by a small hand-drawn nature icon (leaf, star, flower)"
+  - type: "Mountain_Summary"
+    usage: "A summary slide with a mountain range line-art at the bottom and key points in the center"
+  - type: "Gratitude_Page"
+    usage: "Text centered over a large, faint line-art of the sun with a face, on a warm cream background"
+```
+
 ---
+
 
 
 
