@@ -24,6 +24,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Clinical Precision](#clinical-precision)
   - [Compassion Flat](#compassion-flat)
   - [Urban Barber](#urban-barber)
+  - [Strategic Blue](#strategic-blue)
 - [✨ Minimalist & Modern](#-minimalist-modern)
   - [Geometric Mono](#geometric-mono)
   - [Lush Minimal](#lush-minimal)
@@ -506,7 +507,59 @@ slide_layout_templates:
     usage: "Full-bleed black and white photo with a transparent black overlay for white text"
 ```
 
+
+#### Strategic Blue
+
+A professional and structured corporate aesthetic designed for business proposals, strategic plans, and executive presentations. It features the versatile Montserrat typeface across all hierarchies to ensure maximum clarity and modern authority. Characterized by a palette of deep slate blue, ice blue, and professional grey, it uses subtle hexagonal background patterns, rounded image containers, and pill-shaped call-to-action buttons to create a clean, tech-forward, and trustworthy business presence.
+
+![Strategic Blue Preview](preview/strategic_blue/strategic_blue_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/strategic_blue.yaml)
+
+```yaml
+description: "A professional and structured corporate aesthetic designed for business proposals, strategic plans, and executive presentations. It features the versatile Montserrat typeface across all hierarchies to ensure maximum clarity and modern authority. Characterized by a palette of deep slate blue, ice blue, and professional grey, it uses subtle hexagonal background patterns, rounded image containers, and pill-shaped call-to-action buttons to create a clean, tech-forward, and trustworthy business presence."
+design_system:
+  global_style:
+    theme: "Strategic Blue. Clean and professional corporate design with a tech-focused hexagonal motif."
+    typography: 
+      primary_heading: "Montserrat, sans-serif"
+      secondary_heading: "Montserrat, bold"
+      body_text: "Montserrat, regular"
+    color_palette:
+      primary: "#264653" # Slate Blue/Teal
+      secondary: "#E9F5F8" # Ice Blue Background
+      background: "#F8FAFC" # Light Grey-Blue
+      surface: "#FFFFFF" # Pure White
+      text_main: "#1E293B" # Dark Slate Text
+      text_secondary: "#64748B" # Muted Blue-Grey
+    key_visual_elements: 
+      - "Light grey hexagonal geometric patterns in the background"
+      - "Rounded corners (12px) for all image containers and cards"
+      - "Pill-shaped buttons and label backgrounds"
+      - "Structured information grids with subtle borders and shadows"
+
+  image_generation_prompts:
+    style_guidelines: "Professional business photography, modern office environments, soft daylight, slate blue and white palette, hexagonal geometric overlays, Montserrat font vibe, clean corporate aesthetic."
+    themes:
+      - target: "Strategic Planning"
+        prompt_elements: "A professional business meeting in a bright modern office, clean blue and white tones, soft hexagonal pattern overlay, focused and high-end."
+      - target: "Market Growth"
+        prompt_elements: "Close-up of a professional holding a digital tablet, modern tech background, ice blue highlights, sharp and professional focus."
+
+slide_layout_templates:
+  - type: "Strategic_Proposal_Cover"
+    usage: "Large Montserrat title centered on an ice blue background with a professional team photo in a rounded container"
+  - type: "Hexa_Logic_Grid"
+    usage: "A 2x2 or 3x1 grid of info cards with small hexagonal icons for each point"
+  - type: "Solution_Roadmap"
+    usage: "Horizontal steps using pill-shaped nodes and light blue connecting lines"
+  - type: "Corporate_Contact_Pill"
+    usage: "Contact details arranged in a clean footer with pill-shaped icons and dark slate text"
+```
+
 ---
+
 
 
 
