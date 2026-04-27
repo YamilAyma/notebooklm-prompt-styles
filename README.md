@@ -29,6 +29,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Earthy Luxury](#earthy-luxury)
   - [Prestige Gold](#prestige-gold)
   - [Fresh Catering](#fresh-catering)
+  - [Commercial Asset](#commercial-asset)
 - [✨ Minimalist & Modern](#-minimalist-modern)
   - [Geometric Mono](#geometric-mono)
   - [Lush Minimal](#lush-minimal)
@@ -773,7 +774,59 @@ slide_layout_templates:
     usage: "Contact details centered on a cream background with a large peach circle in the background"
 ```
 
+
+#### Commercial Asset
+
+An established and professional aesthetic designed for commercial real estate, investment listings, and corporate property portfolios. It features the classic Times New Roman serif for headings to convey trust and authority, paired with the modern Poppins for body text. Characterized by a palette of deep chocolate brown, sienna orange, and crisp white, it utilizes circular property icons and clean grid layouts to create a sophisticated and reliable investment experience.
+
+![Commercial Asset Preview](preview/commercial_asset/commercial_asset_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/commercial_asset.yaml)
+
+```yaml
+description: "An established and professional aesthetic designed for commercial real estate, investment listings, and corporate property portfolios. It features the classic Times New Roman serif for headings to convey trust and authority, paired with the modern Poppins for body text. Characterized by a palette of deep chocolate brown, sienna orange, and crisp white, it utilizes circular property icons and clean grid layouts to create a sophisticated and reliable investment experience."
+design_system:
+  global_style:
+    theme: "Commercial Asset. Professional investment design with chocolate and sienna accents."
+    typography: 
+      primary_heading: "Times New Roman, serif"
+      secondary_heading: "Poppins, bold"
+      body_text: "Poppins, regular"
+    color_palette:
+      primary: "#A0522D" # Sienna / Burnt Orange
+      secondary: "#2B1B17" # Chocolate Brown
+      background: "#FFFFFF" # Pure White
+      surface: "#FDF5E6" # Old Lace / Cream Surface
+      text_main: "#1A1A1A" # Near Black
+      text_secondary: "#5D4037" # Muted Brown
+    key_visual_elements: 
+      - "Circular icon badges in sienna and brown for key metrics"
+      - "Clean, high-end architectural and interior photography"
+      - "Structured information blocks with thin brown dividers"
+      - "Burnt orange highlight boxes for important calls to action"
+
+  image_generation_prompts:
+    style_guidelines: "Modern commercial architecture, professional office interiors, warm natural light, chocolate brown and sienna palette, established and sharp, Times New Roman font vibe."
+    themes:
+      - target: "Investment Property"
+        prompt_elements: "A modern commercial building with glass and wood textures, warm sunlight, professional real estate photography, sienna accents, sharp and trustworthy."
+      - target: "Corporate Office"
+        prompt_elements: "A high-end boardroom with a large wooden table and modern chairs, chocolate brown wall details, warm ambient lighting, prestigious and established."
+
+slide_layout_templates:
+  - type: "Investment_Hero_Cover"
+    usage: "Large photo on the left with a chocolate brown panel and white Times New Roman title on the right"
+  - type: "Asset_Specifications"
+    usage: "Grid of technical details with sienna circular icons and brown Poppins text"
+  - type: "Amenities_Showcase"
+    usage: "Large interior photo with overlaid sienna stat boxes and white percentages"
+  - type: "Commercial_Contact_Brown"
+    usage: "Contact details in a chocolate brown footer with sienna accents and clear Poppins typography"
+```
+
 ---
+
 
 
 
