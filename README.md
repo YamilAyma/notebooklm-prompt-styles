@@ -74,6 +74,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Vibrant Agency](#vibrant-agency)
   - [Vitality Glow](#vitality-glow)
   - [Modern Wellness](#modern-wellness)
+  - [Deep Forest](#deep-forest)
 - [🚀 How to Use](#-how-to-use)
 - [🛠️ Contribution](#-contribution)
 - [🏗️ Acknowledgements](#-acknowledgements)
@@ -2376,7 +2377,57 @@ slide_layout_templates:
     usage: "One side with a large photo, the other with organized text on a clean white background"
 ```
 
+
+#### Deep Forest
+
+A rugged and authentic aesthetic that honors the raw beauty of deep forests and mountain landscapes. It features the wide and impactful Agrandir Wide typeface for headlines that stand out against vast nature photography. Characterized by a palette of deep forest green and charcoal, it uses high-contrast layouts and minimal leaf icons to create a sense of conservation and wilderness adventure.
+
+![Deep Forest Preview](preview/deep_forest/deep_forest_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/deep_forest.yaml)
+
+```yaml
+description: "A rugged and authentic aesthetic that honors the raw beauty of deep forests and mountain landscapes. It features the wide and impactful Agrandir Wide typeface for headlines that stand out against vast nature photography. Characterized by a palette of deep forest green and charcoal, it uses high-contrast layouts and minimal leaf icons to create a sense of conservation and wilderness adventure."
+design_system:
+  global_style:
+    theme: "Deep Forest. Rugged and minimalist nature design for environmental and hiking presentations."
+    typography: 
+      primary_heading: "Agrandir Wide, sans-serif"
+      secondary_heading: "Agrandir, regular"
+      body_text: "Poppins, regular"
+    color_palette:
+      primary: "#1B5E20" # Deep Forest Green
+      secondary: "#212121" # Charcoal Black
+      background: "#FAFAFA" # Off-White
+      surface: "#E8F5E9" # Pale Leaf Green
+      text_main: "#1B5E20"
+      text_secondary: "#424242"
+    key_visual_elements: 
+      - "Full-bleed photography of forests and mountains"
+      - "Minimalist leaf icons used as bullet points or accents"
+      - "High-contrast layouts (large dark headlines on light backgrounds)"
+      - "Rounded image corners to soften the rugged imagery"
+
+  image_generation_prompts:
+    style_guidelines: "High-contrast nature photography, deep forest green and charcoal accents, wide cinematic shots, rugged wilderness atmosphere, Agrandir Wide font vibe."
+    themes:
+      - target: "Sustainability"
+        prompt_elements: "Close-up of pine needles with morning dew, deep green tones, minimalist charcoal text box, authentic and environmental."
+      - target: "Hiking Adventure"
+        prompt_elements: "A person walking on a mountain trail, vast forest background, high contrast, rugged and adventurous aesthetic."
+
+slide_layout_templates:
+  - type: "Wilderness_Headline"
+    usage: "Large Agrandir Wide headline overlapping a cinematic forest photo"
+  - type: "Leaf_Info"
+    usage: "Bullet points marked by small green leaf icons on a clean charcoal surface"
+  - type: "Contrast_Visual"
+    usage: "A split slide with a dark green side for text and a full-height photo on the other"
+```
+
 ---
+
 
 
 
