@@ -1,0 +1,40 @@
+description: "A rustic and artisanal aesthetic designed for gourmet pasta brands, traditional culinary markets, and premium food industry presentations. It features the bold Heading Now typeface for titles to convey a modern yet traditional feel, paired with the clean TT Firs Neue for body text. Characterized by a palette of terracotta red, dark olive green, and warm cream, it utilizes dark wood textures, hand-drawn botanical illustrations of fresh ingredients (tomatoes, basil, garlic), and circular food badges to create a rich and authentic culinary experience."
+design_system:
+  global_style:
+    theme: "Authentic Pasta. Rustic culinary design with wood textures and botanical food illustrations."
+    typography: 
+      primary_heading: "Heading Now, bold"
+      secondary_heading: "TT Firs Neue, bold"
+      body_text: "TT Firs Neue, regular"
+    color_palette:
+      primary: "#B03A2E" # Tomato Red / Terracotta
+      secondary: "#3E4637" # Dark Olive Green
+      background: "#FEF9E7" # Warm Cream
+      surface: "#797D7F" # Muted Wood Tone
+      accent: "#7D6608" # Deep Moss Green
+      text_main: "#1B2418" # Dark Green Text
+      text_secondary: "#6E2C00" # Deep Earth Brown
+    key_visual_elements: 
+      - "Dark wood texture panels as background for primary headings"
+      - "Detailed botanical illustrations of tomatoes, garlic, and fresh pasta as decorative overlays"
+      - "Circular food badges and badges with pasta illustrations"
+      - "Olive green horizontal highlight bands for content separation"
+      - "Warm, textured photography of traditional pasta making"
+
+  image_generation_prompts:
+    style_guidelines: "Close up of fresh handmade pasta on a wooden table, scattered flour, fresh basil and tomatoes, dark wood textures, warm lighting, botanical illustrations, Heading Now font vibe."
+    themes:
+      - target: "Artisanal Pasta Making"
+        prompt_elements: "Hands kneading dough on a rustic wooden surface, scattered flour, egg yolk, warm atmospheric lighting, high-end food photography."
+      - target: "Italian Ingredients"
+        prompt_elements: "A flat lay of fresh tomatoes, garlic bulbs, and basil leaves on a cream textured background, botanical illustration style, organic and rich."
+
+slide_layout_templates:
+  - type: "Pasta_Hero_Wood"
+    usage: "Large dark wood panel in the center with bold white Heading Now title, surrounded by botanical illustrations"
+  - type: "Culinary_Vision_Mission"
+    usage: "Split layout with a warm food photo and cream text cards with olive green headers"
+  - type: "Product_Showcase_Circles"
+    usage: "Grid of circular food photos on a cream background with botanical overlays"
+  - type: "Thank_You_Culinary"
+    usage: "Contact details centered on a cream background with ravioli illustrations and olive green footer"
