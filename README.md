@@ -76,6 +76,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Modern Wellness](#modern-wellness)
   - [Deep Forest](#deep-forest)
   - [Urban Jungle](#urban-jungle)
+  - [Modern Farm](#modern-farm)
 - [🚀 How to Use](#-how-to-use)
 - [🛠️ Contribution](#-contribution)
 - [🏗️ Acknowledgements](#-acknowledgements)
@@ -2478,7 +2479,57 @@ slide_layout_templates:
     usage: "Final slide with a large 'Thank You' and a vibrant plant branch across the bottom"
 ```
 
+
+#### Modern Farm
+
+A robust and contemporary aesthetic that merges industrial agriculture with modern business design. It features bold Agrandir headlines and clean Poppins body text. Characterized by a striking palette of deep barn red and olive green, it uses rounded photography of farm life, daisy icons, and high-contrast color blocks to create a grounded yet professional atmosphere.
+
+![Modern Farm Preview](preview/modern_farm/modern_farm_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/modern_farm.yaml)
+
+```yaml
+description: "A robust and contemporary aesthetic that merges industrial agriculture with modern business design. It features bold Agrandir headlines and clean Poppins body text. Characterized by a striking palette of deep barn red and olive green, it uses rounded photography of farm life, daisy icons, and high-contrast color blocks to create a grounded yet professional atmosphere."
+design_system:
+  global_style:
+    theme: "Modern Farm. Bold and industrial agricultural design for business and rural presentations."
+    typography: 
+      primary_heading: "Agrandir, sans-serif"
+      secondary_heading: "Poppins, medium"
+      body_text: "Poppins, regular"
+    color_palette:
+      primary: "#B71C1C" # Barn Red
+      secondary: "#558B2F" # Olive Green
+      background: "#FFFFFF" # White
+      surface: "#212121" # Deep Charcoal
+      text_main: "#212121"
+      text_secondary: "#B71C1C"
+    key_visual_elements: 
+      - "Photography of modern barns and green meadows"
+      - "Charming daisy and real leaf icons as decorative accents"
+      - "Bold, solid red and green background sections"
+      - "Rounded containers for images and info-boxes"
+
+  image_generation_prompts:
+    style_guidelines: "Modern agricultural photography, barn red and olive green palette, high-contrast business layout, rural and professional atmosphere, daisy icons, rounded corners."
+    themes:
+      - target: "Business Model"
+        prompt_elements: "An aerial view of a modern green farm, barn red graphic overlays, professional and robust agricultural vibe."
+      - target: "Our Solution"
+        prompt_elements: "Close-up of a daisy and a green leaf on a white surface, olive green frames, clean and contemporary farm aesthetic."
+
+slide_layout_templates:
+  - type: "Modern_Farm_Cover"
+    usage: "Large headline on a white background with a large rounded farm photo and a daisy icon"
+  - type: "Barn_Red_Problem"
+    usage: "A slide with a solid deep red background and white text for high impact"
+  - type: "Leaf_Feature_Grid"
+    usage: "A 3-column grid where each item has a different leaf or flower icon at the top"
+```
+
 ---
+
 
 
 
