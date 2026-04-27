@@ -46,6 +46,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Biochemical Doodles](#biochemical-doodles)
   - [Science Sketch](#science-sketch)
   - [Athletic Energy](#athletic-energy)
+  - [Kawaii Wellness](#kawaii-wellness)
 - [📖 Editorial & Magazine](#-editorial-magazine)
   - [Editorial Essence](#editorial-essence)
   - [Luxury Editorial](#luxury-editorial)
@@ -72,6 +73,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Classical Scrapbook](#classical-scrapbook)
   - [Vibrant Agency](#vibrant-agency)
   - [Vitality Glow](#vitality-glow)
+  - [Modern Wellness](#modern-wellness)
 - [🚀 How to Use](#-how-to-use)
 - [🛠️ Contribution](#-contribution)
 - [🏗️ Acknowledgements](#-acknowledgements)
@@ -1337,7 +1339,59 @@ slide_layout_templates:
     usage: "Central trophy illustration with festive confetti doodles and a large 'Thank You' in Gulfs Display"
 ```
 
+
+#### Kawaii Wellness
+
+An ultra-cute and cheering aesthetic that makes fitness feel approachable and fun. It features the modern TT Firs Neue typeface against a whimsical pastel world. Characterized by adorable chubby characters (kawaii style) engaged in exercises, pink and yellow checkered patterns, and twinkling stars, it brings a sense of joy and sweetness to health and daily movement content.
+
+![Kawaii Wellness Preview](preview/kawaii_wellness/kawaii_wellness_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/kawaii_wellness.yaml)
+
+```yaml
+description: "An ultra-cute and cheering aesthetic that makes fitness feel approachable and fun. It features the modern TT Firs Neue typeface against a whimsical pastel world. Characterized by adorable chubby characters (kawaii style) engaged in exercises, pink and yellow checkered patterns, and twinkling stars, it brings a sense of joy and sweetness to health and daily movement content."
+design_system:
+  global_style:
+    theme: "Kawaii Wellness. Cute and whimsical pastel design for friendly fitness content."
+    typography: 
+      primary_heading: "TT Firs Neue, bold"
+      secondary_heading: "TT Firs Neue, regular"
+      body_text: "Sniglet, regular" # Friendly rounded body text
+    color_palette:
+      primary: "#F48FB1" # Pastel Pink
+      secondary: "#FFF59D" # Pastel Yellow
+      accent: "#81D4FA" # Pastel Blue
+      background: "#FFFDF0" # Creamy White
+      text_main: "#424242"
+      text_secondary: "#F48FB1"
+    key_visual_elements: 
+      - "Chubby, kawaii characters performing fitness activities"
+      - "Checkered patterns (pink/white or yellow/white)"
+      - "Twinkling stars and sparkles as background decorations"
+      - "Dashed-line containers and rounded bubble shapes"
+
+  image_generation_prompts:
+    style_guidelines: "Kawaii character design, pastel color palette, chubby white mochi-style characters, pink checkered patterns, cheerful and cute atmosphere, stars and sparkles."
+    themes:
+      - target: "Daily Workout"
+        prompt_elements: "A cute round character lifting a tiny dumbbell, pastel pink background with stars, kawaii fitness style."
+      - target: "Healthy Habits"
+        prompt_elements: "Adorable characters sleeping and eating apples, yellow checkered border, whimsical and sweet wellness aesthetic."
+
+slide_layout_templates:
+  - type: "Kawaii_Wellness_Cover"
+    usage: "Bold title surrounded by stars and a large illustration of an exercising mochi character"
+  - type: "Bubble_Card"
+    usage: "Text placed inside a soft-edged pink bubble with a cute character peeking from the side"
+  - type: "Step_by_Step_Pastel"
+    usage: "Sequential items marked by different pastel stars (pink, yellow, blue)"
+  - type: "Checkered_Slide"
+    usage: "Content area with a checkered pattern border and a large cheerful illustration"
+```
+
 ---
+
 
 
 
@@ -2273,7 +2327,57 @@ slide_layout_templates:
     usage: "Side-by-side comparison using circular masks and diagonal dividers"
 ```
 
+
+#### Modern Wellness
+
+A sleek and professional aesthetic for contemporary health and lifestyle content. It utilizes the geometric TT Firs Neue typeface to convey precision and modernity. Featuring a balanced palette of deep slate, forest green, and amber orange, it combines clean photography with minimalist vector shapes and ample white space for a premium corporate wellness feel.
+
+![Modern Wellness Preview](preview/modern_wellness/modern_wellness_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/modern_wellness.yaml)
+
+```yaml
+description: "A sleek and professional aesthetic for contemporary health and lifestyle content. It utilizes the geometric TT Firs Neue typeface to convey precision and modernity. Featuring a balanced palette of deep slate, forest green, and amber orange, it combines clean photography with minimalist vector shapes and ample white space for a premium corporate wellness feel."
+design_system:
+  global_style:
+    theme: "Modern Wellness. Professional and geometric design for contemporary lifestyle presentations."
+    typography: 
+      primary_heading: "TT Firs Neue, sans-serif"
+      secondary_heading: "TT Firs Neue, medium"
+      body_text: "Inter, regular"
+    color_palette:
+      primary: "#263238" # Deep Slate
+      secondary: "#2E7D32" # Forest Green
+      accent: "#FF8F00" # Amber Orange
+      background: "#FFFFFF" # Pure White
+      text_main: "#263238"
+      text_secondary: "#546E7A"
+    key_visual_elements: 
+      - "Clean, high-quality lifestyle photography"
+      - "Minimalist flat vector illustrations of healthy activities"
+      - "Geometric accents (rounded corners, circles, thick lines)"
+      - "Modern info-boxes with subtle colored headers"
+
+  image_generation_prompts:
+    style_guidelines: "Modern minimalist photography, flat vector accents, deep green and amber color scheme, geometric composition, clean and professional atmosphere, white space."
+    themes:
+      - target: "Healthy Habits"
+        prompt_elements: "A person practicing yoga in a bright modern room, minimalist green and orange graphic overlays, premium wellness vibe."
+      - target: "Nutrition Guide"
+        prompt_elements: "Close-up of fresh vegetables on a white table, geometric slate blue frames, clean and technical look."
+
+slide_layout_templates:
+  - type: "Modern_Wellness_Cover"
+    usage: "Large TT Firs Neue title centered with a geometric green accent and a lifestyle photo background"
+  - type: "Icon_List"
+    usage: "Bullet points accompanied by clean flat icons in amber and forest green"
+  - type: "Split_Visual"
+    usage: "One side with a large photo, the other with organized text on a clean white background"
+```
+
 ---
+
 
 
 ## 🚀 How to Use
