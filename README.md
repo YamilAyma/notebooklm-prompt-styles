@@ -1,4 +1,4 @@
-![Header of project. Generated with ChatGPT](header.png)
+![Header of project. Generated with ChatGPT](header.webp)
 
 # NotebookLM Slide Styles Collection
 
@@ -90,7 +90,7 @@ Explore the collection interactively through our high-performance showcase site.
 
 Data-dense, executive style for professional reports. Focuses on statement-driven "Action Titles", rigorous grid structures, and professional high-fidelity visuals.
 
-![Executive Report Preview](preview/executive_report/executive_report_1.png)
+![Executive Report Preview](preview/executive_report/executive_report_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/executive_report.yaml)
@@ -131,7 +131,7 @@ slide_layout_templates:
 
 A professional, executive-level design featuring a deep forest green palette with sharp crystalline geometric overlays. It uses metallic silver accents and glassmorphic cards to create a high-tech, authoritative corporate atmosphere.
 
-![Emerald Corporate Preview](preview/emerald_corporate/emerald_corporate_1.png)
+![Emerald Corporate Preview](preview/emerald_corporate/emerald_corporate_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/emerald_corporate.yaml)
@@ -167,7 +167,7 @@ slide_layout_templates:
 
 A dynamic, forward-moving corporate aesthetic featuring high-contrast navy blue and vibrant lime green. It uses sharp geometric diagonals, chevron markers, and structured grids to convey professional excellence and modern momentum.
 
-![Vibrant Corporate Preview](preview/vibrant_corporate/vibrant_corporate_1.png)
+![Vibrant Corporate Preview](preview/vibrant_corporate/vibrant_corporate_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/vibrant_corporate.yaml)
@@ -204,7 +204,7 @@ slide_layout_templates:
 
 Modern corporate, dynamic, and professional design. Features a strong navy and vivid blue foundation with energetic yellow/orange accents and distinctive corner 'ribbon' layers for a high-impact business presentation.
 
-![Ensign Corporate Preview](preview/ensign_corporate/ensign_corporate_1.png)
+![Ensign Corporate Preview](preview/ensign_corporate/ensign_corporate_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/ensign_corporate.yaml)
@@ -242,7 +242,7 @@ slide_layout_templates:
 
 Ultra-minimalist, premium, and sleek. Focuses on generous whitespace, precision typography, and high-fidelity visuals. Designed for high-end technology presentations where clarity and elegance are paramount.
 
-![Silicon Refined Preview](preview/silicon_refined/silicon_refined_1.png)
+![Silicon Refined Preview](preview/silicon_refined/silicon_refined_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/silicon_refined.yaml)
@@ -279,7 +279,7 @@ slide_layout_templates:
 
 A premium executive aesthetic characterized by flowing blue liquid and smoke textures on a solid black background. It features the elegant Garet typeface and ultra-rounded content containers. Ideal for high-stakes business presentations, corporate reports, and executive portfolios.
 
-![Liquid Executive Preview](preview/liquid_executive/liquid_executive_1.png)
+![Liquid Executive Preview](preview/liquid_executive/liquid_executive_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/liquid_executive.yaml)
@@ -330,7 +330,7 @@ slide_layout_templates:
 
 A modern, high-tech medical aesthetic designed for clinical and healthcare presentations. It utilizes the objective Helvetica World typeface, deep black backgrounds, and vibrant blue light glows. Characterized by large typography and sharp minimalist icons, it conveys trust and scientific precision.
 
-![Clinical Precision Preview](preview/clinical_precision/clinical_precision_1.png)
+![Clinical Precision Preview](preview/clinical_precision/clinical_precision_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/clinical_precision.yaml)
@@ -381,7 +381,7 @@ slide_layout_templates:
 
 A professional yet warm medical aesthetic utilizing modern flat 2D illustrations. It features the clean Poppins typeface, a serene palette of sky and navy blues, and large symbolic icons like medical crosses and hearts. Organized with rounded containers and soft shadows, it conveys institutional excellence with a human touch.
 
-![Compassion Flat Preview](preview/compassion_flat/compassion_flat_1.png)
+![Compassion Flat Preview](preview/compassion_flat/compassion_flat_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/compassion_flat.yaml)
@@ -438,7 +438,7 @@ slide_layout_templates:
 
 Professional, architectural, and monochromatic design. It uses a strong grayscale palette with geometric shapes and high-contrast photography to convey precision, structure, and corporate excellence.
 
-![Geometric Mono Preview](preview/geometric_mono/geometric_mono_1.png)
+![Geometric Mono Preview](preview/geometric_mono/geometric_mono_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/geometric_mono.yaml)
@@ -474,7 +474,7 @@ slide_layout_templates:
 
 Nature-inspired, organic, and soft design. It focuses on botanical imagery, sage greens, and large rounded corners to create a peaceful yet professional atmosphere.
 
-![Lush Minimal Preview](preview/lush_minimal/lush_minimal_1.png)
+![Lush Minimal Preview](preview/lush_minimal/lush_minimal_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/lush_minimal.yaml)
@@ -510,7 +510,7 @@ slide_layout_templates:
 
 Professional, structured, and refreshing corporate design. Features distinctive tiered corner frames in mint green and dark teal, offering a clean and organized frame for business presentations.
 
-![Structured Mint Preview](preview/structured_mint/structured_mint_1.png)
+![Structured Mint Preview](preview/structured_mint/structured_mint_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/structured_mint.yaml)
@@ -548,7 +548,7 @@ slide_layout_templates:
 
 A sophisticated and high-end minimalist aesthetic inspired by luxury fragrance advertising. It features the refined Arial Nova typeface, a warm palette of beige and charcoal, and airy layouts with ample negative space. Characterized by frosted glass effects, high-fashion photography, and elegant thin borders, it conveys exclusivity and timeless elegance.
 
-![Frosted Luxury Preview](preview/frosted_luxury/frosted_luxury_1.png)
+![Frosted Luxury Preview](preview/frosted_luxury/frosted_luxury_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/frosted_luxury.yaml)
@@ -603,7 +603,7 @@ slide_layout_templates:
 
 Vibrant, creative, and high-impact design. Uses a deep dark canvas with neon purple accents, combining elegant script typography with bold, heavy block fonts for maximum contrast.
 
-![Creative Spark Preview](preview/creative_spark/creative_spark_1.png)
+![Creative Spark Preview](preview/creative_spark/creative_spark_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/creative_spark.yaml)
@@ -638,7 +638,7 @@ slide_layout_templates:
 
 Warm, handcrafted, and organic design. Uses a textured rust-colored background with hand-drawn white doodles and tall condensed typography for an artisan feel.
 
-![Artisan Rust Preview](preview/artisan_rust/artisan_rust_1.png)
+![Artisan Rust Preview](preview/artisan_rust/artisan_rust_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/artisan_rust.yaml)
@@ -673,7 +673,7 @@ slide_layout_templates:
 
 Romantic, nostalgic, and layered design inspired by coquette and scrapbooking aesthetics. It uses pastel tones, torn paper textures, and elegant accents like bows and pearls for a high-jewelry, vintage feel.
 
-![Vintage Charm Preview](preview/vintage_charm/vintage_charm_1.png)
+![Vintage Charm Preview](preview/vintage_charm/vintage_charm_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/vintage_charm.yaml)
@@ -710,7 +710,7 @@ slide_layout_templates:
 
 A clean, academic yet playful design inspired by creative journals and student notebooks. It features a graph paper grid background, organic pastel blobs in peach and blue, and numbered list elements for a highly organized yet aesthetic presentation feel.
 
-![Creative Notebook Preview](preview/creative_notebook/creative_notebook_1.png)
+![Creative Notebook Preview](preview/creative_notebook/creative_notebook_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/creative_notebook.yaml)
@@ -747,7 +747,7 @@ slide_layout_templates:
 
 Playful, friendly, and ultra-cute 'Kawaii' aesthetic. Combines soft pastel colors with chubby cat character illustrations, hand-drawn stars, and notebook-style grid backgrounds.
 
-![Kawaii Playful Preview](preview/kawaii_playful/kawaii_playful_1.png)
+![Kawaii Playful Preview](preview/kawaii_playful/kawaii_playful_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/kawaii_playful.yaml)
@@ -781,7 +781,7 @@ slide_layout_templates:
 
 Bubblegum pop, iridescent textures, and early digital nostalgia. Features CD-ROM reflections, fluffy clouds, and 3D 'plastic' icons (gummy bears, hearts, cupids) on pastel gradients.
 
-![Y2K Nostalgia Preview](preview/y2k_nostalgia/y2k_nostalgia_1.png)
+![Y2K Nostalgia Preview](preview/y2k_nostalgia/y2k_nostalgia_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/y2k_nostalgia.yaml)
@@ -817,7 +817,7 @@ slide_layout_templates:
 
 Artistic, youthful, and workshop-oriented design. Features notebook grid backgrounds, pastel pink wavy accents, and friendly 2D art supply doodles (pencils, rainbows, stars).
 
-![Creative Workshop Preview](preview/creative_workshop/creative_workshop_1.png)
+![Creative Workshop Preview](preview/creative_workshop/creative_workshop_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/creative_workshop.yaml)
@@ -853,7 +853,7 @@ slide_layout_templates:
 
 Playful, warm, and educational design. Inspired by primary school classrooms and hand-drawn doodle aesthetics. Features soft cream backgrounds, chalkboard content frames, and flat 2D illustrations of classroom objects.
 
-![Creative Classroom Preview](preview/creative_classroom/creative_classroom_1.png)
+![Creative Classroom Preview](preview/creative_classroom/creative_classroom_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/creative_classroom.yaml)
@@ -890,7 +890,7 @@ slide_layout_templates:
 
 A whimsical, Kawaii-inspired aesthetic characterized by soft pastel palettes, hand-drawn stickers, and a playful gingham grid. Perfect for educational projects, creative journals, or friendly presentations.
 
-![Hand-Drawn Scrapbook Preview](preview/hand_drawn_scrapbook/hand_drawn_scrapbook_1.png)
+![Hand-Drawn Scrapbook Preview](preview/hand_drawn_scrapbook/hand_drawn_scrapbook_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/hand_drawn_scrapbook.yaml)
@@ -936,7 +936,7 @@ slide_layout_templates:
 
 A sophisticated, animation-inspired portfolio aesthetic. It features a lush palette of forest and lime greens, modern geometric typography, and painterly gouache textures. Ideal for creative professionals looking for a whimsical yet high-end presentation style.
 
-![Whimsical Animation Preview](preview/whimsical_animation/whimsical_animation_1.png)
+![Whimsical Animation Preview](preview/whimsical_animation/whimsical_animation_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/whimsical_animation.yaml)
@@ -985,7 +985,7 @@ slide_layout_templates:
 
 An approachable and empathetic medical aesthetic inspired by hand-drawn nursing journals. It features the playful Schoolbell handwriting font, a soft pastel blue palette, and a subtle grid paper texture. Characterized by charming doodle illustrations and organic cloud-like shapes, it humanizes clinical topics.
 
-![Clinical Doodles Preview](preview/clinical_doodles/clinical_doodles_1.png)
+![Clinical Doodles Preview](preview/clinical_doodles/clinical_doodles_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/clinical_doodles.yaml)
@@ -1036,7 +1036,7 @@ slide_layout_templates:
 
 A vibrant and high-energy medical aesthetic inspired by pop-art and modern vector illustrations. It features the bold Luktao typeface, a striking palette of deep purple, lavender, and energetic orange over a soft cream background. Characterized by playful medical icons and colorful 'plus' symbols, it brings a fresh and optimistic approach to healthcare data.
 
-![Medicine Pop Preview](preview/medicine_pop/medicine_pop_1.png)
+![Medicine Pop Preview](preview/medicine_pop/medicine_pop_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/medicine_pop.yaml)
@@ -1087,7 +1087,7 @@ slide_layout_templates:
 
 A cozy and organic hand-drawn aesthetic inspired by nature and garden sketches. It features the friendly Mali typeface and a warm palette of terracotta, sage green, and chocolate brown over a soft beige background. Characterized by charming 'doodle' illustrations like smiling suns, flowers, and wooden fences, it brings a personal and approachable touch to any presentation.
 
-![Garden Doodles Preview](preview/garden_doodles/garden_doodles_1.png)
+![Garden Doodles Preview](preview/garden_doodles/garden_doodles_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/garden_doodles.yaml)
@@ -1138,7 +1138,7 @@ slide_layout_templates:
 
 An adorable and high-contrast Kawaii aesthetic inspired by children's storybooks. It features the chunky and playful More Sugar typeface over a bright sky blue and meadow green landscape. Characterized by super-cute animal characters (chicks, rabbits, elephants) with rosy cheeks and smiling clouds, it creates a joyful and innocent atmosphere for any presentation.
 
-![Kawaii Storybook Preview](preview/kawaii_storybook/kawaii_storybook_1.png)
+![Kawaii Storybook Preview](preview/kawaii_storybook/kawaii_storybook_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/kawaii_storybook.yaml)
@@ -1189,7 +1189,7 @@ slide_layout_templates:
 
 A creative and educational scientific aesthetic that blends modern biology with hand-drawn doodles. It features the tactile Bobby Jones typeface over a subtly textured paper background. Characterized by charming sketches of DNA helices, beakers, molecules, and organic fluid shapes in muted wine and sage tones, it brings a curious and experimental spirit to any presentation.
 
-![Biochemical Doodles Preview](preview/biochemical_doodles/biochemical_doodles_1.png)
+![Biochemical Doodles Preview](preview/biochemical_doodles/biochemical_doodles_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/biochemical_doodles.yaml)
@@ -1240,7 +1240,7 @@ slide_layout_templates:
 
 A clean and vibrant academic aesthetic inspired by high school science projects and textbook sketches. It features the hand-drawn Schoolbell typeface paired with the condensed Pompiere for subtitles. Characterized by thick-lined blue vector doodles filled with bright yellow, and accents like graph paper grids and wavy lines, it conveys a sense of organized learning and active discovery.
 
-![Science Sketch Preview](preview/science_sketch/science_sketch_1.png)
+![Science Sketch Preview](preview/science_sketch/science_sketch_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/science_sketch.yaml)
@@ -1291,7 +1291,7 @@ slide_layout_templates:
 
 A vibrant and motivational aesthetic that celebrates sports and physical activity through a grainy, textured illustration style. It features the massive and blocky Gulfs Display typeface for high-impact headlines. Characterized by energetic salmon and mint green tones, and illustrations of athletes in motion over stippled backgrounds, it brings vitality and a youthful spirit to health and wellness presentations.
 
-![Athletic Energy Preview](preview/athletic_energy/athletic_energy_1.png)
+![Athletic Energy Preview](preview/athletic_energy/athletic_energy_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/athletic_energy.yaml)
@@ -1354,7 +1354,7 @@ slide_layout_templates:
 
 Sophisticated, editorial, and human-centric design language. It uses warm cream backgrounds, bold terracotta accents, and elegant serif typography to create a "book-like" presentation feel.
 
-![Editorial Essence Preview](preview/editorial_essence/editorial_essence_1.png)
+![Editorial Essence Preview](preview/editorial_essence/editorial_essence_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/editorial_essence.yaml)
@@ -1393,7 +1393,7 @@ slide_layout_templates:
 
 A sophisticated, minimalist aesthetic inspired by high-end fashion magazines. It features a luxury palette of deep espresso and gold, combining elegant condensed serifs with flowing cursive accents. Ideal for luxury brands, fashion collections, and premium product launches.
 
-![Luxury Editorial Preview](preview/luxury_editorial/luxury_editorial_1.png)
+![Luxury Editorial Preview](preview/luxury_editorial/luxury_editorial_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/luxury_editorial.yaml)
@@ -1430,7 +1430,7 @@ slide_layout_templates:
 
 Bold editorial and Swiss-inspired design. High contrast between Electric Blue and Cream, featuring large brutalist typography, liquid organic textures, and iconic symbols like asterisks and plus signs.
 
-![Cobalt Editorial Preview](preview/cobalt_editorial/cobalt_editorial_1.png)
+![Cobalt Editorial Preview](preview/cobalt_editorial/cobalt_editorial_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/cobalt_editorial.yaml)
@@ -1466,7 +1466,7 @@ slide_layout_templates:
 
 A modern, minimalist, and geometric design inspired by architectural blueprints and professional portfolios. It features complex pill-shaped photo masks, sage green accents, and a modular "Bento-grid" layout for a high-end, structured aesthetic.
 
-![Architectural Portfolio Preview](preview/architectural_portfolio/architectural_portfolio_1.png)
+![Architectural Portfolio Preview](preview/architectural_portfolio/architectural_portfolio_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/architectural_portfolio.yaml)
@@ -1503,7 +1503,7 @@ slide_layout_templates:
 
 A refined, museum-inspired design featuring parchment textures, sage green accents, and elegant ornamental filigree. It balances historical aesthetics with modern sans-serif typography for a scholarly and curated presentation feel.
 
-![Classical Gallery Preview](preview/classical_gallery/classical_gallery_1.png)
+![Classical Gallery Preview](preview/classical_gallery/classical_gallery_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/classical_gallery.yaml)
@@ -1540,7 +1540,7 @@ slide_layout_templates:
 
 A bright, energetic, and sun-drenched design featuring asymmetric photo grids, breezy handwritten accents, and "Polaroid" style overlays. It creates a vibrant lifestyle atmosphere perfect for travel, leisure, and summer-themed presentations.
 
-![Summer Collage Preview](preview/summer_collage/summer_collage_1.png)
+![Summer Collage Preview](preview/summer_collage/summer_collage_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/summer_collage.yaml)
@@ -1577,7 +1577,7 @@ slide_layout_templates:
 
 A tactile, handmade, and inspirational design featuring realistic paper textures, torn edges, and washi tape accents. It captures the essence of a physical scrapbook or mood board, perfect for creative workshops, personal planning, and visionary presentations.
 
-![Vision Board Preview](preview/vision_board/vision_board_1.png)
+![Vision Board Preview](preview/vision_board/vision_board_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/vision_board.yaml)
@@ -1615,7 +1615,7 @@ slide_layout_templates:
 
 A sophisticated academic and editorial aesthetic inspired by thesis defenses and research portfolios. It balances high-contrast black and white photography with bold red accents and soft warm 'aura' gradients. Powered by the geometric Codec Pro typeface.
 
-![Academic Edge Preview](preview/academic_edge/academic_edge_1.png)
+![Academic Edge Preview](preview/academic_edge/academic_edge_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/academic_edge.yaml)
@@ -1670,7 +1670,7 @@ slide_layout_templates:
 
 Focuses on visual-first layouts, card-based components with high border-radius, and vibrant red accents to drive engagement and focus. Inspired by modern discovery feeds.
 
-![Visual Discovery Preview](preview/visual_discovery/visual_discovery_1.png)
+![Visual Discovery Preview](preview/visual_discovery/visual_discovery_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/visual_discovery.yaml)
@@ -1710,7 +1710,7 @@ slide_layout_templates:
 
 An authoritative and structured corporate aesthetic featuring distinctive 3D-folded "ribbon" elements and sharp diagonal background slices. It combines a professional charcoal and beige palette with golden-hour cityscape photography, creating a sense of metropolitan sophistication and executive power.
 
-![Urban Ribbon Preview](preview/urban_ribbon/urban_ribbon_1.png)
+![Urban Ribbon Preview](preview/urban_ribbon/urban_ribbon_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/urban_ribbon.yaml)
@@ -1747,7 +1747,7 @@ slide_layout_templates:
 
 Futuristic, high-energy, and tech-focused design. This dark mode aesthetic uses vibrant neon gradients (Cyan, Magenta, Purple) and glassmorphic elements to create a cutting-edge startup atmosphere.
 
-![Neon Pulsar Preview](preview/neon_pulsar/neon_pulsar_1.png)
+![Neon Pulsar Preview](preview/neon_pulsar/neon_pulsar_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/neon_pulsar.yaml)
@@ -1785,7 +1785,7 @@ slide_layout_templates:
 
 Modern, tech-utilitarian design with a high-contrast matte black base and vibrant lime green accents. Features industrial aesthetic elements like tilted boxes, double chevrons, and monospace metadata.
 
-![Midnight Tactical Preview](preview/midnight_tactical/midnight_tactical_1.png)
+![Midnight Tactical Preview](preview/midnight_tactical/midnight_tactical_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/midnight_tactical.yaml)
@@ -1822,7 +1822,7 @@ slide_layout_templates:
 
 Modern brutalist, monochromatic, and architectural design. Inspired by minimalist gallery aesthetics, it features high-contrast grayscale photography, large technical stamps, and sleek sans-serif typography.
 
-![Architectural Mono Preview](preview/architectural_mono/architectural_mono_1.png)
+![Architectural Mono Preview](preview/architectural_mono/architectural_mono_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/architectural_mono.yaml)
@@ -1861,7 +1861,7 @@ slide_layout_templates:
 
 Technical, dark architectural, and blueprint-inspired design. Features deep charcoal backgrounds with vibrant cobalt blue gradients and precise 'sight' crosshair visual elements for a high-end engineering feel.
 
-![Architectural Cobalt Preview](preview/architectural_cobalt/architectural_cobalt_1.png)
+![Architectural Cobalt Preview](preview/architectural_cobalt/architectural_cobalt_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/architectural_cobalt.yaml)
@@ -1900,7 +1900,7 @@ slide_layout_templates:
 
 A high-end, tech-focused pitch deck aesthetic. It features soft 'mesh' gradients in blue tones, clean Open Sauce typography, and a professional dark-mode charcoal base. Designed for startups, product launches, and innovative business presentations.
 
-![Startup Aura Preview](preview/startup_aura/startup_aura_1.png)
+![Startup Aura Preview](preview/startup_aura/startup_aura_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/startup_aura.yaml)
@@ -1951,7 +1951,7 @@ slide_layout_templates:
 
 A bold, futuristic startup aesthetic that blends deep indigo backgrounds with vibrant neon lavender accents. It features iridescent 3D geometric shapes, glassmorphism UI elements, and dynamic vertical typography. Perfect for high-tech ventures, AI startups, and forward-thinking pitches.
 
-![Neon Venture Preview](preview/neon_venture/neon_venture_1.png)
+![Neon Venture Preview](preview/neon_venture/neon_venture_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/neon_venture.yaml)
@@ -2007,7 +2007,7 @@ slide_layout_templates:
 
 A modern, sustainable, and high-impact aesthetic inspired by nature and environmental initiatives. It features immersive landscape photography, dark mode backgrounds, and glassmorphic (frosted glass) overlays. A signature lime-green accent dot provides a contemporary brand finish.
 
-![Eco Modern Preview](preview/eco_modern/eco_modern_1.png)
+![Eco Modern Preview](preview/eco_modern/eco_modern_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/eco_modern.yaml)
@@ -2044,7 +2044,7 @@ slide_layout_templates:
 
 Eco-friendly, natural, and scrapbook-inspired design. Features hand-drawn botanical doodles (leaves, vines, flowers), washi tape accents, and torn notebook paper textures on a warm cream background.
 
-![Botanical Journal Preview](preview/botanical_journal/botanical_journal_1.png)
+![Botanical Journal Preview](preview/botanical_journal/botanical_journal_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/botanical_journal.yaml)
@@ -2080,7 +2080,7 @@ slide_layout_templates:
 
 An organic and earthy aesthetic inspired by sustainable branding, apothecary, and wellness. It features high-contrast serifs, deep olive and terracotta tones, and botanical photography with stadium-shaped masks and balanced asymmetric layouts.
 
-![The Seasons Preview](preview/the_seasons/the_seasons_1.png)
+![The Seasons Preview](preview/the_seasons/the_seasons_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/the_seasons.yaml)
@@ -2117,7 +2117,7 @@ slide_layout_templates:
 
 Academic, vintage, and scientific design. Inspired by 19th-century botanical engravings and researcher journals. It features heavy coarse paper textures and deep indigo line art illustrations for a scholarly feel.
 
-![Scholar's Journal Preview](preview/scholars_journal/scholars_journal_1.png)
+![Scholar's Journal Preview](preview/scholars_journal/scholars_journal_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/scholars_journal.yaml)
@@ -2152,7 +2152,7 @@ slide_layout_templates:
 
 A tactile, layered design that blends classical art history with a handcrafted scrapbook aesthetic. It features overlapping kraft paper and parchment textures, torn edges, washi tape accents, and elegant flowing script combined with classic serif typography.
 
-![Classical Scrapbook Preview](preview/classical_scrapbook/classical_scrapbook_1.png)
+![Classical Scrapbook Preview](preview/classical_scrapbook/classical_scrapbook_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/classical_scrapbook.yaml)
@@ -2189,7 +2189,7 @@ slide_layout_templates:
 
 A high-energy, playful aesthetic inspired by modern marketing and creative agencies. It features vibrant orange "bubble" elements, wavy dividers, and friendly bold typography. Perfect for pitches that need to convey enthusiasm and creative momentum.
 
-![Vibrant Agency Preview](preview/vibrant_agency/vibrant_agency_1.png)
+![Vibrant Agency Preview](preview/vibrant_agency/vibrant_agency_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/vibrant_agency.yaml)
@@ -2227,7 +2227,7 @@ slide_layout_templates:
 
 An energetic and fresh aesthetic focused on health, wellness, and vitality. It features the friendly Poppins typeface, vibrant lime green and bright blue accents, and dynamic diagonal shapes. Perfect for wellness coaching, sports nutrition, and preventive healthcare presentations.
 
-![Vitality Glow Preview](preview/vitality_glow/vitality_glow_1.png)
+![Vitality Glow Preview](preview/vitality_glow/vitality_glow_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/vitality_glow.yaml)
