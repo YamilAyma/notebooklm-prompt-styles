@@ -25,6 +25,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Compassion Flat](#compassion-flat)
   - [Urban Barber](#urban-barber)
   - [Strategic Blue](#strategic-blue)
+  - [Travel Pulse](#travel-pulse)
 - [✨ Minimalist & Modern](#-minimalist-modern)
   - [Geometric Mono](#geometric-mono)
   - [Lush Minimal](#lush-minimal)
@@ -559,7 +560,60 @@ slide_layout_templates:
     usage: "Contact details arranged in a clean footer with pill-shaped icons and dark slate text"
 ```
 
+
+#### Travel Pulse
+
+A dynamic and adventurous aesthetic designed for travel agencies, outdoor brands, and tourism portfolios. It utilizes the clean and technical Open Sauce typeface to convey modern reliability and bold exploration. Characterized by a high-contrast palette of charcoal grey, vibrant yellow, and crisp white, it features diagonal striped patterns, dotted airplane path motifs, and circular info badges to create an energetic and motion-focused visual experience.
+
+![Travel Pulse Preview](preview/travel_pulse/travel_pulse_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/travel_pulse.yaml)
+
+```yaml
+description: "A dynamic and adventurous aesthetic designed for travel agencies, outdoor brands, and tourism portfolios. It utilizes the clean and technical Open Sauce typeface to convey modern reliability and bold exploration. Characterized by a high-contrast palette of charcoal grey, vibrant yellow, and crisp white, it features diagonal striped patterns, dotted airplane path motifs, and circular info badges to create an energetic and motion-focused visual experience."
+design_system:
+  global_style:
+    theme: "Travel Pulse. Dynamic adventure-focused design with high-contrast yellow accents."
+    typography: 
+      primary_heading: "Open Sauce, bold"
+      secondary_heading: "Open Sauce, medium"
+      body_text: "Open Sauce, regular"
+    color_palette:
+      primary: "#FFD600" # Vibrant Yellow
+      secondary: "#333C4D" # Charcoal Grey
+      background: "#FFFFFF" # Pure White
+      surface: "#F1F5F9" # Light Grey Surface
+      text_main: "#1E293B" # Dark Slate Text
+      text_secondary: "#64748B" # Muted Slate
+    key_visual_elements: 
+      - "Diagonal striped patterns (zebra style) in charcoal and white"
+      - "Dotted lines with small airplane icons indicating movement"
+      - "Vertical striped circular motifs as background accents"
+      - "Bright yellow highlight bars behind key titles"
+      - "Circular icons with thick charcoal borders"
+
+  image_generation_prompts:
+    style_guidelines: "Action-oriented travel photography, panoramic landscapes, high contrast, vibrant yellow highlights, charcoal grey overlays, Open Sauce font vibe, energetic adventure aesthetic."
+    themes:
+      - target: "World Exploration"
+        prompt_elements: "A traveler with a backpack looking at a vast mountain range, bright sunlight, charcoal and yellow geometric overlays, dynamic and bold."
+      - target: "Luxury Travel"
+        prompt_elements: "A modern resort pool with turquoise water, high-end architecture, clean white and yellow tones, sharp focus, professional travel magazine vibe."
+
+slide_layout_templates:
+  - type: "Adventure_Hero_Cover"
+    usage: "Large Open Sauce title over a full-bleed travel photo with a charcoal diagonal stripe in the corner"
+  - type: "Itinerary_Path"
+    usage: "Vertical or horizontal steps connected by a dotted airplane path line and yellow nodes"
+  - type: "Service_Highlight_Grid"
+    usage: "4-column grid of photos with charcoal borders and yellow titles underneath"
+  - type: "Travel_Contact_Dynamic"
+    usage: "Contact info arranged in a charcoal box with yellow striped accents and airplane motifs"
+```
+
 ---
+
 
 
 
