@@ -1,0 +1,38 @@
+description: "A vibrant and nostalgic aesthetic inspired by 8-bit gaming and retro-tech culture. It features the pixelated Pixelion typeface to capture the essence of vintage computing. Characterized by a dark purple and cyan neon palette, it uses icons of floppy disks, cassettes, and pixel hearts, all enhanced with glow effects and floating bubbles to create a futuristic synthwave atmosphere."
+design_system:
+  global_style:
+    theme: "Cyber Pixel. Futuristic and nostalgic pixel-art design for tech and retro-gaming presentations."
+    typography: 
+      primary_heading: "Pixelion, sans-serif"
+      secondary_heading: "Pixelion, medium"
+      body_text: "Inter, regular" # Using a clean sans for readability against the pixelated headers
+    color_palette:
+      primary: "#00BCD4" # Neon Cyan
+      secondary: "#C2185B" # Vibrant Magenta
+      background: "#0D1B2A" # Deep Navy / Space
+      surface: "#4A148C" # Dark Purple Surface
+      text_main: "#00BCD4" # Cyan text for high visibility
+      text_secondary: "#FFFFFF"
+    key_visual_elements: 
+      - "Pixelated icons of retro hardware (old PCs, floppy disks, cassettes)"
+      - "Vibrant neon glow and scanline effects on text and boxes"
+      - "8-bit pixel hearts and floating spheres as decorative elements"
+      - "Dynamic gradients transitioning from deep purple to neon cyan"
+
+  image_generation_prompts:
+    style_guidelines: "Retro tech synthwave aesthetic, pixel art style, neon cyan and magenta palette, old computers and floppy disks, 8-bit hearts, glow effects, Pixelion font vibe."
+    themes:
+      - target: "Retro Innovation"
+        prompt_elements: "A vintage beige computer with a glowing cyan screen, pixelated magenta hearts floating around, dark purple background, retro-tech vibe."
+      - target: "Tech Roadmap"
+        prompt_elements: "A digital grid with scanlines, cyan and magenta pixel art icons, futuristic 80s atmosphere."
+
+slide_layout_templates:
+  - type: "Cyber_Pixel_Cover"
+    usage: "Large cyan Pixelion title on a deep navy background with glowing retro-tech illustrations"
+  - type: "Neon_Grid_Timeline"
+    usage: "A horizontal timeline sitting on a digital grid with neon cyan markers"
+  - type: "Pixel_Heart_Stat"
+    usage: "Large 8-bit heart icon next to a pixelated number or statistic"
+  - type: "Floppy_Resource_Page"
+    usage: "A grid where each resource is placed inside a colorful floppy disk container"
