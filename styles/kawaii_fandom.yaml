@@ -1,0 +1,38 @@
+description: "A soft and adorable scrapbook aesthetic designed for K-Pop fandoms and creative community nights. It features the bubbly and hand-drawn More Sugar typeface. Characterized by a palette of pastel blue, pink, and yellow, it uses polaroid frames, cute bear stickers, and hand-drawn doodles to create a fun, youthful, and cozy atmosphere."
+design_system:
+  global_style:
+    theme: "Kawaii Fandom. Adorable scrapbook design with pastel tones and cute community stickers."
+    typography: 
+      primary_heading: "More Sugar, sans-serif"
+      secondary_heading: "More Sugar, medium"
+      body_text: "Inter, regular"
+    color_palette:
+      primary: "#90CAF9" # Pastel Blue
+      secondary: "#F8BBD0" # Pastel Pink
+      background: "#FFF9C4" # Pastel Yellow Background
+      surface: "#FFFFFF" # White Surface for polaroids
+      text_main: "#424242" # Dark Gray for readability
+      text_secondary: "#F8BBD0"
+    key_visual_elements: 
+      - "Polaroid-style frames for photos and member profiles"
+      - "Adorable bear, heart, and sparkle stickers scattered around"
+      - "Hand-drawn doodle lines and checkered patterns"
+      - "Soft, low-contrast pastel backgrounds"
+
+  image_generation_prompts:
+    style_guidelines: "Kawaii scrapbook aesthetic, pastel blue and pink palette, polaroid frames, cute bear stickers, hand-drawn doodles, More Sugar font vibe, cozy fandom atmosphere."
+    themes:
+      - target: "Trivia Night"
+        prompt_elements: "A cute brown bear holding a trivia card, pastel pink background, yellow stars and sparkles, kawaii sticker style."
+      - target: "Member Profile"
+        prompt_elements: "A polaroid photo of a smiling k-pop fan, decorated with pastel blue hearts and hand-drawn doodles, soft and sweet vibe."
+
+slide_layout_templates:
+  - type: "Scrapbook_Cover"
+    usage: "Large More Sugar title on a yellow background with multiple polaroid photos and stickers"
+  - type: "Bear_Trivia_Card"
+    usage: "A white rounded box (the card) with a bear icon and a question in blue"
+  - type: "Fandom_Scoreboard"
+    usage: "A slide with a large pink grid for keeping score, decorated with sparkles and hearts"
+  - type: "Kamsahamnida_Outro"
+    usage: "Soft pink slide with a large 'Kamsahamnida!' in yellow script surrounded by cute doodles"
