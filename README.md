@@ -1,4 +1,4 @@
-![Header of project. Generated with ChatGPT](header.webp)
+![Header of project. Generated with ChatGPT](header.png)
 
 # NotebookLM Slide Styles Collection
 
