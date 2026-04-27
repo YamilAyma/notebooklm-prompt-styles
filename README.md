@@ -28,6 +28,7 @@ Explore the collection interactively through our high-performance showcase site.
   - [Travel Pulse](#travel-pulse)
   - [Earthy Luxury](#earthy-luxury)
   - [Prestige Gold](#prestige-gold)
+  - [Fresh Catering](#fresh-catering)
 - [✨ Minimalist & Modern](#-minimalist-modern)
   - [Geometric Mono](#geometric-mono)
   - [Lush Minimal](#lush-minimal)
@@ -720,7 +721,60 @@ slide_layout_templates:
     usage: "Key data points (sqft, beds) arranged in gold-bordered containers with crisp white text"
 ```
 
+
+#### Fresh Catering
+
+A fresh and modern catering aesthetic designed for food service brands, healthy eating startups, and culinary event portfolios. It utilizes the friendly and geometric Poppins typeface to convey cleanliness and professional reliability. Characterized by a palette of warm cream, orange terracotta, and soft peach, it features large rounded-corner cards, circular background accents, and minimalist geometric markers (+ and x) to create a structured and inviting visual experience.
+
+![Fresh Catering Preview](preview/fresh_catering/fresh_catering_1.png)
+
+> [!TIP]
+> This is a simplified preview. [View Full YAML](styles/fresh_catering.yaml)
+
+```yaml
+description: "A fresh and modern catering aesthetic designed for food service brands, healthy eating startups, and culinary event portfolios. It utilizes the friendly and geometric Poppins typeface to convey cleanliness and professional reliability. Characterized by a palette of warm cream, orange terracotta, and soft peach, it features large rounded-corner cards, circular background accents, and minimalist geometric markers (+ and x) to create a structured and inviting visual experience."
+design_system:
+  global_style:
+    theme: "Fresh Catering. Modern food service design with warm terracotta and peach accents."
+    typography: 
+      primary_heading: "Poppins, bold"
+      secondary_heading: "Poppins, medium"
+      body_text: "Poppins, regular"
+    color_palette:
+      primary: "#E67E22" # Orange Terracotta
+      secondary: "#FDF5E6" # Old Lace / Cream Background
+      background: "#FFFFFF" # Pure White
+      surface: "#FFE0B2" # Light Peach Surface
+      text_main: "#2D3436" # Dark Slate Text
+      text_secondary: "#636E72" # Muted Slate
+    key_visual_elements: 
+      - "Large rectangular text cards with high border-radius (24px) in terracotta"
+      - "Circular background motifs in soft peach and cream tones"
+      - "Small '+' and 'x' geometric markers in the corners for a structured look"
+      - "Clean, high-brightness food photography with natural textures"
+      - "Balanced white space to emphasize freshness and order"
+
+  image_generation_prompts:
+    style_guidelines: "Bright and airy food photography, natural ingredients, warm terracotta accents, cream background, sharp focus, Poppins font vibe, modern catering aesthetic."
+    themes:
+      - target: "Healthy Buffet"
+        prompt_elements: "A variety of fresh salads and bowls on a wooden table, bright natural light, cream and orange accents, top-down view, professional catering style."
+      - target: "Catering Service"
+        prompt_elements: "A professional server handing a clean white plate with artistic food arrangement, warm inviting atmosphere, peach highlights, high quality."
+
+slide_layout_templates:
+  - type: "Catering_Hero_Pill"
+    usage: "Large photo on the left with a terracotta rounded card containing the Poppins title on the right"
+  - type: "Solution_Step_Circles"
+    usage: "Process steps represented with circular photo accents and peach background blobs"
+  - type: "Target_Market_Cards"
+    usage: "Grid of terracotta cards with white text and small geometric markers in the corners"
+  - type: "Fresh_Contact_Footer"
+    usage: "Contact details centered on a cream background with a large peach circle in the background"
+```
+
 ---
+
 
 
 
