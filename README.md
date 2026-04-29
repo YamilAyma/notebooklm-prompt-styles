@@ -479,7 +479,7 @@ slide_layout_templates:
 
 A sharp and sophisticated monochromatic aesthetic inspired by modern high-end barbershops. It features the geometric Glacial Indifference for bold, clean headlines and the expressive Bricolage Grotesque for body text. Characterized by a 'Barber Pole Noir' palette of black, white, and steel grey, it uses high-contrast layouts and minimalist razor or comb iconography to create a sense of precision, urban style, and professional grooming excellence.
 
-![Urban Barber Preview](preview/urban_barber/urban_barber_1.png)
+![Urban Barber Preview](preview/urban_barber/urban_barber_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/urban_barber.yaml)
@@ -530,7 +530,7 @@ slide_layout_templates:
 
 A professional and structured corporate aesthetic designed for business proposals, strategic plans, and executive presentations. It features the versatile Montserrat typeface across all hierarchies to ensure maximum clarity and modern authority. Characterized by a palette of deep slate blue, ice blue, and professional grey, it uses subtle hexagonal background patterns, rounded image containers, and pill-shaped call-to-action buttons to create a clean, tech-forward, and trustworthy business presence.
 
-![Strategic Blue Preview](preview/strategic_blue/strategic_blue_1.png)
+![Strategic Blue Preview](preview/strategic_blue/strategic_blue_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/strategic_blue.yaml)
@@ -581,7 +581,7 @@ slide_layout_templates:
 
 A dynamic and adventurous aesthetic designed for travel agencies, outdoor brands, and tourism portfolios. It utilizes the clean and technical Open Sauce typeface to convey modern reliability and bold exploration. Characterized by a high-contrast palette of charcoal grey, vibrant yellow, and crisp white, it features diagonal striped patterns, dotted airplane path motifs, and circular info badges to create an energetic and motion-focused visual experience.
 
-![Travel Pulse Preview](preview/travel_pulse/travel_pulse_1.png)
+![Travel Pulse Preview](preview/travel_pulse/travel_pulse_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/travel_pulse.yaml)
@@ -633,7 +633,7 @@ slide_layout_templates:
 
 An earthy and organic hospitality aesthetic designed for boutique hotels, luxury resorts, and Mediterranean-inspired lifestyle brands. It features the clean and balanced Arial Unicode typeface to maintain a modern, uncluttered look that focuses on atmosphere. Characterized by a palette of muted olive green, warm terracotta, and soft cream, it utilizes asymmetrical photo grids with rounded corners, organic line icons, and split-screen layouts to create a serene and high-end experience.
 
-![Earthy Luxury Preview](preview/earthy_luxury/earthy_luxury_1.png)
+![Earthy Luxury Preview](preview/earthy_luxury/earthy_luxury_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/earthy_luxury.yaml)
@@ -685,7 +685,7 @@ slide_layout_templates:
 
 A prestigious and high-end aesthetic designed for luxury real estate, premium listings, and executive portfolios. It features the elegant Boston Angel serif typeface for headlines, providing a sense of heritage and exclusivity. Characterized by a deep midnight blue background, old gold accents, and warm cream highlights, it utilizes subtle golden light waves, circular prestige icons, and clean architectural lines to create a sophisticated dark-mode experience.
 
-![Prestige Gold Preview](preview/prestige_gold/prestige_gold_1.png)
+![Prestige Gold Preview](preview/prestige_gold/prestige_gold_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/prestige_gold.yaml)
@@ -736,7 +736,7 @@ slide_layout_templates:
 
 A fresh and modern catering aesthetic designed for food service brands, healthy eating startups, and culinary event portfolios. It utilizes the friendly and geometric Poppins typeface to convey cleanliness and professional reliability. Characterized by a palette of warm cream, orange terracotta, and soft peach, it features large rounded-corner cards, circular background accents, and minimalist geometric markers (+ and x) to create a structured and inviting visual experience.
 
-![Fresh Catering Preview](preview/fresh_catering/fresh_catering_1.png)
+![Fresh Catering Preview](preview/fresh_catering/fresh_catering_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/fresh_catering.yaml)
@@ -788,7 +788,7 @@ slide_layout_templates:
 
 An established and professional aesthetic designed for commercial real estate, investment listings, and corporate property portfolios. It features the classic Times New Roman serif for headings to convey trust and authority, paired with the modern Poppins for body text. Characterized by a palette of deep chocolate brown, sienna orange, and crisp white, it utilizes circular property icons and clean grid layouts to create a sophisticated and reliable investment experience.
 
-![Commercial Asset Preview](preview/commercial_asset/commercial_asset_1.png)
+![Commercial Asset Preview](preview/commercial_asset/commercial_asset_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/commercial_asset.yaml)
@@ -839,7 +839,7 @@ slide_layout_templates:
 
 A high-precision and strategic aesthetic designed for luxury market analysis, business consulting, and data-driven strategy presentations. It features the modern and geometric TT Firs Neue typeface to convey technical sophistication and clarity. Characterized by a palette of deep navy blue, crisp white, and cyan accents, it utilizes concentric wave patterns, dot grids, and a signature triple-dot motif in the corners to create a structured and insightful visual experience.
 
-![Strategic Insight Preview](preview/strategic_insight/strategic_insight_1.png)
+![Strategic Insight Preview](preview/strategic_insight/strategic_insight_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/strategic_insight.yaml)
@@ -891,7 +891,7 @@ slide_layout_templates:
 
 A clean and forward-thinking aesthetic designed for sustainable architecture, eco-friendly real estate, and green energy projects. It features the distinctive Prachasong typeface for a modern look, paired with the versatile Poppins. Characterized by a palette of sage green, forest green, and crisp white, it utilizes technical grid patterns, leaf-inspired lightbulb icons, and diagonal growth arrows to create a structured and environmentally conscious visual experience.
 
-![Eco Estate Preview](preview/eco_estate/eco_estate_1.png)
+![Eco Estate Preview](preview/eco_estate/eco_estate_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/eco_estate.yaml)
@@ -943,7 +943,7 @@ slide_layout_templates:
 
 A sophisticated and organic aesthetic designed for premium tea brands, artisanal food experiences, and organic product showcases. It features the powerful Heading Now typeface for titles to convey elegance, paired with the technical clarity of TT Firs Neue. Characterized by a palette of olive green, soft lime, and deep forest black, it utilizes hand-drawn leaf illustrations, organic curved photo containers, and pill-shaped UI elements to create a grounded and premium visual experience.
 
-![Artisanal Brew Preview](preview/artisanal_brew/artisanal_brew_1.png)
+![Artisanal Brew Preview](preview/artisanal_brew/artisanal_brew_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/artisanal_brew.yaml)
@@ -995,7 +995,7 @@ slide_layout_templates:
 
 A smart and innovative aesthetic designed for e-commerce strategies, digital growth agencies, and tech-forward business presentations. It features the powerful Heading Now typeface for titles to convey modern authority, paired with the technical precision of TT Firs Neue. Characterized by a palette of slate grey, soft peach, and mustard yellow, it utilizes abstract geometric shapes, modular grid layouts, and dot patterns to create a structured and innovative visual experience.
 
-![Smart Commerce Preview](preview/smart_commerce/smart_commerce_1.png)
+![Smart Commerce Preview](preview/smart_commerce/smart_commerce_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/smart_commerce.yaml)
@@ -1048,7 +1048,7 @@ slide_layout_templates:
 
 A rustic and artisanal aesthetic designed for gourmet pasta brands, traditional culinary markets, and premium food industry presentations. It features the bold Heading Now typeface for titles to convey a modern yet traditional feel, paired with the clean TT Firs Neue for body text. Characterized by a palette of terracotta red, dark olive green, and warm cream, it utilizes dark wood textures, hand-drawn botanical illustrations of fresh ingredients (tomatoes, basil, garlic), and circular food badges to create a rich and authentic culinary experience.
 
-![Authentic Pasta Preview](preview/authentic_pasta/authentic_pasta_1.png)
+![Authentic Pasta Preview](preview/authentic_pasta/authentic_pasta_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/authentic_pasta.yaml)
@@ -1101,7 +1101,7 @@ slide_layout_templates:
 
 A professional and marine-inspired aesthetic designed for sustainable seafood brands, ocean conservation projects, and premium seafood industry presentations. It features the wide and modern Agrandir typeface for titles to convey strength and scale, paired with the versatile Poppins for body text. Characterized by a palette of deep ocean blue, bright coral orange, and sandy beige, it utilizes water textures, hand-drawn seafood sketches (lobsters, shrimp, fish), and wavy shapes to create a fresh and trustworthy marine experience.
 
-![Marine Harvest Preview](preview/marine_harvest/marine_harvest_1.png)
+![Marine Harvest Preview](preview/marine_harvest/marine_harvest_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/marine_harvest.yaml)
@@ -1333,7 +1333,7 @@ slide_layout_templates:
 
 A structured and friendly educational aesthetic designed for learning environments, step-by-step guides, and data visualization. It features the soft geometric Aristotelica Pro typeface. Characterized by a palette of sky blue, emerald green, and coral orange on cream backgrounds, it uses grained textures, clock icons, and Venn-diagram-inspired lists to create a clear, professional, and engaging instructional atmosphere.
 
-![Learning Time Preview](preview/learning_time/learning_time_1.png)
+![Learning Time Preview](preview/learning_time/learning_time_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/learning_time.yaml)
@@ -1384,7 +1384,7 @@ slide_layout_templates:
 
 A premium and sophisticated aesthetic based on the 'Slow Living' movement. It uses the modern Open Sauce sans-serif to create a minimalist editorial look. Characterized by deep navy blue, pure white, and muted earthy browns, it features high-contrast split-screen layouts and macro photography focus to convey calmness, mindfulness, and a high-end lifestyle vibe.
 
-![Slow Living Preview](preview/slow_living/slow_living_1.png)
+![Slow Living Preview](preview/slow_living/slow_living_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/slow_living.yaml)
@@ -1435,7 +1435,7 @@ slide_layout_templates:
 
 An ultra-premium and ethereal aesthetic inspired by the purity of white marble and the softness of fine silk. It features the elegant Tenor Sans typeface, which brings a timeless, high-fashion clarity to every slide. Characterized by a palette of bone white, platinum silver, and soft mineral greys, it uses airy layouts and subtle light reflections to create an atmosphere of absolute luxury, exclusivity, and diamond-cut precision.
 
-![Luxe Marble Preview](preview/luxe_marble/luxe_marble_1.png)
+![Luxe Marble Preview](preview/luxe_marble/luxe_marble_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/luxe_marble.yaml)
@@ -2232,7 +2232,7 @@ slide_layout_templates:
 
 An ultra-cute and cheering aesthetic that makes fitness feel approachable and fun. It features the modern TT Firs Neue typeface against a whimsical pastel world. Characterized by adorable chubby characters (kawaii style) engaged in exercises, pink and yellow checkered patterns, and twinkling stars, it brings a sense of joy and sweetness to health and daily movement content.
 
-![Kawaii Wellness Preview](preview/kawaii_wellness/kawaii_wellness_1.png)
+![Kawaii Wellness Preview](preview/kawaii_wellness/kawaii_wellness_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/kawaii_wellness.yaml)
@@ -2283,7 +2283,7 @@ slide_layout_templates:
 
 A warm and nostalgic aesthetic inspired by the groovy 70s. It features the psychedelic and flowing TAN Nimbus serif for a highly stylized look. Characterized by a cream background with wavy rainbow stripes in burnt orange, mustard yellow, and teal, it uses retro sparkles, flower power icons, and organic heart shapes to create a soulful and stylish atmosphere.
 
-![Groovy 70s Preview](preview/groovy_70s/groovy_70s_1.png)
+![Groovy 70s Preview](preview/groovy_70s/groovy_70s_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/groovy_70s.yaml)
@@ -2334,7 +2334,7 @@ slide_layout_templates:
 
 A vibrant and joyful aesthetic that blends Japanese Kawaii culture with Y2K pop art. It features the playful Genty script for expressive headlines and Hero for clean body text. Characterized by a cream background with pastel pink and yellow accents, it uses halftone patterns, bubbly clouds, and melting shapes to create a personalized and creative atmosphere.
 
-![Kawaii Pop Preview](preview/kawaii_pop/kawaii_pop_1.png)
+![Kawaii Pop Preview](preview/kawaii_pop/kawaii_pop_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/kawaii_pop.yaml)
@@ -2385,7 +2385,7 @@ slide_layout_templates:
 
 An elegant and moody aesthetic designed for fandom nights and social games. It pairs the high-contrast Astoria serif with the technical Neue Machina sans-serif. Characterized by a deep black background with soft lavender accents, it features monochrome butterfly motifs, glowing oval portraits, and subtle wavy lines to create a sophisticated yet mysterious community atmosphere.
 
-![Fandom Noir Preview](preview/fandom_noir/fandom_noir_1.png)
+![Fandom Noir Preview](preview/fandom_noir/fandom_noir_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/fandom_noir.yaml)
@@ -2436,7 +2436,7 @@ slide_layout_templates:
 
 A charming and cozy aesthetic that transforms social games into a kawaii bakery or tea party experience. It features the friendly KG Primary Penmanship font for a handwritten, approachable feel. Characterized by a palette of pastel pink, mint green, and cream, it uses adorable illustrations of desserts, strawberries, and lemonade jars to create a sweet and playful community atmosphere.
 
-![Sweet Fandom Preview](preview/sweet_fandom/sweet_fandom_1.png)
+![Sweet Fandom Preview](preview/sweet_fandom/sweet_fandom_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/sweet_fandom.yaml)
@@ -2487,7 +2487,7 @@ slide_layout_templates:
 
 A soft and adorable scrapbook aesthetic designed for K-Pop fandoms and creative community nights. It features the bubbly and hand-drawn More Sugar typeface. Characterized by a palette of pastel blue, pink, and yellow, it uses polaroid frames, cute bear stickers, and hand-drawn doodles to create a fun, youthful, and cozy atmosphere.
 
-![Kawaii Fandom Preview](preview/kawaii_fandom/kawaii_fandom_1.png)
+![Kawaii Fandom Preview](preview/kawaii_fandom/kawaii_fandom_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/kawaii_fandom.yaml)
@@ -2538,7 +2538,7 @@ slide_layout_templates:
 
 A joyful and high-energy aesthetic designed for anniversaries, celebrations, and playful presentations. It features the clean geometric Open Sauce typeface. Characterized by a white background with vibrant, glowing color blobs, it uses expressive 3D monster characters and floral mascots to create a friendly, modern, and festive atmosphere.
 
-![Monster Party Preview](preview/monster_party/monster_party_1.png)
+![Monster Party Preview](preview/monster_party/monster_party_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/monster_party.yaml)
@@ -2589,7 +2589,7 @@ slide_layout_templates:
 
 A fun and friendly aesthetic designed for children's games, educational content, and playful group activities. It features the chunky and charismatic Mango AC display font. Characterized by a palette of sky blue, mango yellow, and watermelon pink on cream backgrounds, it uses adorable monster characters with glasses, thick-bordered speech bubbles, and colorful doodle patterns to create a joyful 'kids playroom' atmosphere.
 
-![Mango Kids Preview](preview/mango_kids/mango_kids_1.png)
+![Mango Kids Preview](preview/mango_kids/mango_kids_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/mango_kids.yaml)
@@ -2640,7 +2640,7 @@ slide_layout_templates:
 
 A high-energy and creative aesthetic inspired by urban streetwear and custom product branding. It features the distinctive Fraunces serif for headlines that bridge the gap between classic elegance and modern grit. Characterized by a vibrant palette of electric blue, bright orange, and soft cream, it uses bold brush strokes, organic 'blob' frames, and high-contrast cut-out photography to create a dynamic, youthful, and impactful brand presence.
 
-![Street Custom Preview](preview/street_custom/street_custom_1.png)
+![Street Custom Preview](preview/street_custom/street_custom_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/street_custom.yaml)
@@ -2691,7 +2691,7 @@ slide_layout_templates:
 
 A cozy and creative aesthetic designed for digital nomads, remote work culture, and lifestyle storytelling. It features the playful, hand-drawn A Day Without Sun typeface for headlines, bringing a personal and homey touch. Characterized by a palette of soft mint, warm peach, and chocolate brown, it uses charming doodle illustrations of workspace elements, plants, and coffee to create an inviting and imaginative atmosphere.
 
-![Digital Nomad Preview](preview/digital_nomad/digital_nomad_1.png)
+![Digital Nomad Preview](preview/digital_nomad/digital_nomad_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/digital_nomad.yaml)
@@ -2742,7 +2742,7 @@ slide_layout_templates:
 
 A fun and engaging aesthetic designed for language learning apps, EdTech startups, and interactive educational presentations. It features the bold Heading Now typeface for titles to convey energy, paired with the friendly clarity of TT Firs Neue. Characterized by a palette of periwinkle blue, soft mint, and coral pink, it utilizes playful speech bubble illustrations, wavy zigzag lines, and hand-drawn style tech icons to create a dynamic and welcoming learning experience.
 
-![Engaging Learner Preview](preview/engaging_learner/engaging_learner_1.png)
+![Engaging Learner Preview](preview/engaging_learner/engaging_learner_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/engaging_learner.yaml)
@@ -3130,7 +3130,7 @@ slide_layout_templates:
 
 A tactile and nostalgic aesthetic designed for storytelling, biographies, and documentary-style presentations. It pairs the clean Open Sauce sans-serif with the technical Fira Code monospace. Characterized by a charcoal black and cream palette, it features film strip borders, ripped paper textures, and hand-drawn mustard yellow highlights to create a personal, 'behind-the-scenes' scrapbook atmosphere.
 
-![Film Scrapbook Preview](preview/film_scrapbook/film_scrapbook_1.png)
+![Film Scrapbook Preview](preview/film_scrapbook/film_scrapbook_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/film_scrapbook.yaml)
@@ -3181,7 +3181,7 @@ slide_layout_templates:
 
 A sophisticated and airy editorial aesthetic designed for fashion campaigns, high-end beauty brands, and feminine storytelling. It features the elegant, high-contrast Loubag serif typeface for headlines, providing a chic and authoritative presence. Characterized by a palette of soft cream, muted lime green, and pale sky blue, it utilizes generous white space, delicate horizontal lines, and pill-shaped category labels to create a premium, magazine-like experience.
 
-![Soft Editorial Preview](preview/soft_editorial/soft_editorial_1.png)
+![Soft Editorial Preview](preview/soft_editorial/soft_editorial_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/soft_editorial.yaml)
@@ -3232,7 +3232,7 @@ slide_layout_templates:
 
 A dark and sophisticated culinary aesthetic designed for premium steakhouses, fine dining restaurants, and luxury food brands. It features a high-contrast serif for headings to convey tradition and excellence, paired with the modern DM Sans for clear information delivery. Characterized by a matte black background, deep burgundy accents, and delicate botanical illustrations, it creates a prestigious 'noir' dining experience.
 
-![Prime Noir Preview](preview/prime_noir/prime_noir_1.png)
+![Prime Noir Preview](preview/prime_noir/prime_noir_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/prime_noir.yaml)
@@ -3623,7 +3623,7 @@ slide_layout_templates:
 
 A vibrant and nostalgic aesthetic inspired by 8-bit gaming and retro-tech culture. It features the pixelated Pixelion typeface to capture the essence of vintage computing. Characterized by a dark purple and cyan neon palette, it uses icons of floppy disks, cassettes, and pixel hearts, all enhanced with glow effects and floating bubbles to create a futuristic synthwave atmosphere.
 
-![Cyber Pixel Preview](preview/cyber_pixel/cyber_pixel_1.png)
+![Cyber Pixel Preview](preview/cyber_pixel/cyber_pixel_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/cyber_pixel.yaml)
@@ -3674,7 +3674,7 @@ slide_layout_templates:
 
 An energetic and professional aesthetic designed for tech launches, project kick-offs, and collaborative workshops. It pairs the elegant The Youngest serif with the bold Heading Now sans-serif. Characterized by high-contrast blocks of blue, orange, and magenta, it features sketchy, hand-drawn style illustrations of people and workspace elements to create a dynamic 'startup' atmosphere.
 
-![Project Launch Preview](preview/project_launch/project_launch_1.png)
+![Project Launch Preview](preview/project_launch/project_launch_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/project_launch.yaml)
@@ -3725,7 +3725,7 @@ slide_layout_templates:
 
 A high-energy and futuristic pitch deck aesthetic designed for tech startups, innovation hubs, and venture capital presentations. It features the bold and technical Open Sauce typeface for maximum impact and modern clarity. Characterized by a matte black background, vibrant neon lime green accents, and grayscale photography, it utilizes sharp geometric lines, minimalist charts, and punchy typography to create a powerful and forward-thinking visual presence.
 
-![Tech Pitch Preview](preview/tech_pitch/tech_pitch_1.png)
+![Tech Pitch Preview](preview/tech_pitch/tech_pitch_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/tech_pitch.yaml)
@@ -3777,7 +3777,7 @@ slide_layout_templates:
 
 An ultra-clean and futuristic aesthetic designed for high-tech product launches, software architecture, and innovation-focused presentations. It features the wide and impactful Agrandir Extended typeface for titles, paired with the regular Agrandir for clarity. Characterized by a pure white background with prismatic and holographic accents, it utilizes 3D iridescent crystal illustrations, thin technical UI lines, and crop mark corners to create a sophisticated, high-performance visual experience.
 
-![Prismatic Tech Preview](preview/prismatic_tech/prismatic_tech_1.png)
+![Prismatic Tech Preview](preview/prismatic_tech/prismatic_tech_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/prismatic_tech.yaml)
@@ -3830,7 +3830,7 @@ slide_layout_templates:
 
 A high-impact and nocturnal aesthetic designed for AI research, cybersecurity, and cyberpunk-themed tech presentations. It features the blocky and futuristic Pattanans typeface for titles to convey a digital frontier feel, paired with the modern Montserrat for readability. Characterized by a deep midnight blue background with vibrant neon purple and cyan accents, it utilizes 3D glowing robot illustrations, isometric UI modules, and floating star effects to create an immersive digital future experience.
 
-![Cyber AI Preview](preview/cyber_ai/cyber_ai_1.png)
+![Cyber AI Preview](preview/cyber_ai/cyber_ai_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/cyber_ai.yaml)
@@ -4164,7 +4164,7 @@ slide_layout_templates:
 
 A sleek and professional aesthetic for contemporary health and lifestyle content. It utilizes the geometric TT Firs Neue typeface to convey precision and modernity. Featuring a balanced palette of deep slate, forest green, and amber orange, it combines clean photography with minimalist vector shapes and ample white space for a premium corporate wellness feel.
 
-![Modern Wellness Preview](preview/modern_wellness/modern_wellness_1.png)
+![Modern Wellness Preview](preview/modern_wellness/modern_wellness_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/modern_wellness.yaml)
@@ -4213,7 +4213,7 @@ slide_layout_templates:
 
 A rugged and authentic aesthetic that honors the raw beauty of deep forests and mountain landscapes. It features the wide and impactful Agrandir Wide typeface for headlines that stand out against vast nature photography. Characterized by a palette of deep forest green and charcoal, it uses high-contrast layouts and minimal leaf icons to create a sense of conservation and wilderness adventure.
 
-![Deep Forest Preview](preview/deep_forest/deep_forest_1.png)
+![Deep Forest Preview](preview/deep_forest/deep_forest_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/deep_forest.yaml)
@@ -4262,7 +4262,7 @@ slide_layout_templates:
 
 A fresh and organic aesthetic designed for urban gardening and botanical pitch decks. It combines the modern Agrandir and Poppins typefaces for a clean, professional look with a friendly touch. Characterized by soft beige backgrounds, vibrant moss green accents, and iconic Monstera leaf decorations, it creates a sophisticated yet growth-oriented atmosphere for plant-centric content.
 
-![Urban Jungle Preview](preview/urban_jungle/urban_jungle_1.png)
+![Urban Jungle Preview](preview/urban_jungle/urban_jungle_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/urban_jungle.yaml)
@@ -4313,7 +4313,7 @@ slide_layout_templates:
 
 A robust and contemporary aesthetic that merges industrial agriculture with modern business design. It features bold Agrandir headlines and clean Poppins body text. Characterized by a striking palette of deep barn red and olive green, it uses rounded photography of farm life, daisy icons, and high-contrast color blocks to create a grounded yet professional atmosphere.
 
-![Modern Farm Preview](preview/modern_farm/modern_farm_1.png)
+![Modern Farm Preview](preview/modern_farm/modern_farm_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/modern_farm.yaml)
@@ -4362,7 +4362,7 @@ slide_layout_templates:
 
 A clean and data-driven aesthetic for the future of farming and sustainable technology. It utilizes the neutral Canva Sans typeface to prioritize content clarity. Characterized by a monochrome palette of lush greens—from deep forest to vibrant lime—it features aerial crop photography, semi-transparent overlays, and structured roadmaps for a professional agro-tech feel.
 
-![Sustainable Agri Preview](preview/sustainable_agri/sustainable_agri_1.png)
+![Sustainable Agri Preview](preview/sustainable_agri/sustainable_agri_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/sustainable_agri.yaml)
@@ -4413,7 +4413,7 @@ slide_layout_templates:
 
 A premium and innovation-focused aesthetic for modern agriculture. It uses the friendly and geometric Garet typeface to present data-driven solutions. Characterized by a clean white background with sophisticated terracotta and deep earth tones, it features ultra-rounded image containers and high-end rural photography to create a trustworthy, high-tech farming atmosphere.
 
-![Modern Harvest Preview](preview/modern_harvest/modern_harvest_1.png)
+![Modern Harvest Preview](preview/modern_harvest/modern_harvest_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/modern_harvest.yaml)
@@ -4462,7 +4462,7 @@ slide_layout_templates:
 
 A calm and ethereal aesthetic designed for wellness, mindfulness, and mental health presentations. It features the elegant and clear Raleway typeface. Characterized by a palette of soft lavender and deep purples on pure white backgrounds, it uses radiant light beams, aura-like gradients, and floral geometric patterns to create a serene, therapeutic, and professional atmosphere.
 
-![Mindful Aura Preview](preview/mindful_aura/mindful_aura_1.png)
+![Mindful Aura Preview](preview/mindful_aura/mindful_aura_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/mindful_aura.yaml)
@@ -4513,7 +4513,7 @@ slide_layout_templates:
 
 A warm and organic aesthetic inspired by folk art and botanical illustrations. It features the calligraphic 29LT Riwaya typeface. Characterized by an earthy palette of cream, sand, and taupe, it uses fine line-art of mountains, butterflies, and sun motifs to create a human, artisanal, and deeply serene atmosphere for wellness and nature topics.
 
-![Botanical Harmony Preview](preview/botanical_harmony/botanical_harmony_1.png)
+![Botanical Harmony Preview](preview/botanical_harmony/botanical_harmony_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/botanical_harmony.yaml)
@@ -4564,7 +4564,7 @@ slide_layout_templates:
 
 A gentle and maternal aesthetic designed for prenatal yoga, mindfulness, and conscious movement. It uses the clean Open Sauce typeface paired with soft, hand-drawn 'chalky' cloud outlines. Characterized by a soothing palette of sage greens and off-whites, it features flat illustrations of yoga poses and grainy textures to create a safe, nurturing, and calm atmosphere.
 
-![Yoga Glow Preview](preview/yoga_glow/yoga_glow_1.png)
+![Yoga Glow Preview](preview/yoga_glow/yoga_glow_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/yoga_glow.yaml)
@@ -4615,7 +4615,7 @@ slide_layout_templates:
 
 A majestic and immersive aesthetic designed for environmental conservation, ecology, and deep nature topics. It features the geometric Garet typeface. Characterized by a palette of deep forest greens, charcoal, and moss, it uses high-contrast white text over foggy forest photography to create a professional, scientific, and atmospheric editorial look.
 
-![Deep Forest Preview](preview/deep_forest/deep_forest_1.png)
+![Deep Forest Preview](preview/deep_forest/deep_forest_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/deep_forest.yaml)
@@ -4666,7 +4666,7 @@ slide_layout_templates:
 
 A majestic and immersive aesthetic designed for environmental conservation, ecology, and deep nature topics. It features the geometric Garet typeface. Characterized by a palette of deep forest greens, charcoal, and moss, it uses high-contrast white text over foggy forest photography to create a professional, scientific, and atmospheric editorial look.
 
-![Misty Forest Preview](preview/misty_forest/misty_forest_1.png)
+![Misty Forest Preview](preview/misty_forest/misty_forest_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/misty_forest.yaml)
@@ -4717,7 +4717,7 @@ slide_layout_templates:
 
 A serene and sophisticated aesthetic designed for premium skincare, beauty, and wellness editorial content. It features the exquisite TAN Mon Cheri serif for headlines, bringing a touch of high-fashion elegance. Characterized by a palette of warm amber, soft cream, and muted lavender, it uses frosted glass textures, organic shadows, and macro photography of liquid textures to create a calming and professional atmosphere.
 
-![Serum Essence Preview](preview/serum_essence/serum_essence_1.png)
+![Serum Essence Preview](preview/serum_essence/serum_essence_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/serum_essence.yaml)
@@ -4768,7 +4768,7 @@ slide_layout_templates:
 
 A warm and organic aesthetic inspired by artisanal floriculture and botanical heritage. It features the flowing Bakerie script for headlines and the clean, modern TT DRUGS for body text. Characterized by a sun-drenched palette of ochre, golden yellow, and warm beige, it uses fine-line botanical illustrations, circular framing, and elegant timeline layouts to create a sense of growth, quality, and natural beauty.
 
-![Artisanal Bloom Preview](preview/artisanal_bloom/artisanal_bloom_1.png)
+![Artisanal Bloom Preview](preview/artisanal_bloom/artisanal_bloom_1.webp)
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](styles/artisanal_bloom.yaml)
