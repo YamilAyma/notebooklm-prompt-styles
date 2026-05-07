@@ -143,8 +143,8 @@ async function handlePreloader() {
       setTimeout(() => {
         preloader.style.display = 'none';
         resolve();
-      }, 2000);
-    }, 2000);
+      }, 500);
+    }, 800);
   });
 }
 

@@ -10,15 +10,14 @@ const allPreviews = stylesData.categories.flatMap(cat =>
   cat.styles.flatMap(style => style.previews)
 );
 
-// Select 20 images for the hero grid (shuffled for variety)
-const heroImages = [...allPreviews].sort(() => 0.5 - Math.random()).slice(0, 20);
+// Select 12 images for the hero grid (shuffled for variety)
+const heroImages = [...allPreviews].sort(() => 0.5 - Math.random()).slice(0, 12);
 
-// Split into 4 columns of 5 images
+// Split into 3 columns of 4 images
 const columns = [
-  heroImages.slice(0, 5),
-  heroImages.slice(5, 10),
-  heroImages.slice(10, 15),
-  heroImages.slice(15, 20),
+  heroImages.slice(0, 4),
+  heroImages.slice(4, 8),
+  heroImages.slice(8, 12),
 ];
 ---
 
@@ -93,7 +92,7 @@ const columns = [
 
       .hero-bg-grid__track {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: var(--space-xs);
         height: 100%;
       }
@@ -103,6 +102,7 @@ const columns = [
         flex-direction: column;
         gap: var(--space-xs);
         animation: scroll-up 120s linear infinite;
+        will-change: transform;
       }
 
       .hero-bg-grid__col--reverse {
