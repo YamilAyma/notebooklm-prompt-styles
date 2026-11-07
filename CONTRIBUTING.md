@@ -22,6 +22,7 @@ We have automated parts of the contribution process to keep the repository clean
 | :--- | :--- | :--- |
 | `scripts/match_style_preview.py` | Matches a pasted YAML code from `input.yaml` with an existing style and creates the appropriate `/preview` folder. | After you have your YAML code and want to start adding images. |
 | `scripts/optimize_and_rename.py` | Converts images to `.webp`, renames them to `{style}_{n}.webp`, updates code references, and deletes original PNGs/JPGs. | After adding new images to a preview folder. |
+| `npm run validate` | Validates every YAML in `/styles` (structure, previews, orphan folders). Fails on errors; color issues are warnings. | Before committing your changes. |
 | `npm run build:data` | Rebuilds the `styles.json` file used by the website gallery. | Before committing your changes. |
 
 ---
@@ -129,6 +130,7 @@ Push your changes and create a Pull Request!
 
 - [ ] YAML file added to `/styles/` (snake_case).
 - [ ] Folder created in `/preview/` and images optimized to `.webp` using our scripts.
+- [ ] `npm run validate` reports 0 errors.
 - [ ] `npm run build:data` executed successfully.
 - [ ] Style added to `README.md` (TOC and Section) using `.webp` references.
 - [ ] Commit message is in English and follows the convention.

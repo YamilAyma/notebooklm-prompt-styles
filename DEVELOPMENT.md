@@ -35,7 +35,12 @@ This is the core build script. It performs the following:
 
 **Run manually:** `npm run build:data`
 
-### 2. Image Organization (Python utilities)
+### 2. Style Validation (`scripts/validate-styles.js`)
+Checks every YAML in `/styles`: valid syntax, required structure (`theme`, `typography`, `color_palette`, `key_visual_elements`, `slide_layout_templates`), at least one preview image, and no preview folder without a YAML. Missing HEX colors only produce warnings.
+
+**Run manually:** `npm run validate`
+
+### 3. Image Organization (Python utilities)
 - `scripts/match_style_preview.py`: matches a pasted `input.yaml` with an existing style and creates its `/preview` folder.
 - `scripts/optimize_and_rename.py`: converts images to `.webp`, renames them to `{style}_{n}.webp` and deletes the originals.
 - `scripts/rename-previews.py`: renames images inside each preview subfolder to `{folder_name}_{index}.{ext}`.
@@ -43,7 +48,7 @@ This is the core build script. It performs the following:
 
 **Run manually:** `python scripts/optimize_and_rename.py`
 
-### 3. Adding a Style (`scripts/add-style.js`)
+### 4. Adding a Style (`scripts/add-style.js`)
 Adds a style to the README (TOC and body).
 
 **Run manually:** `node scripts/add-style.js --name "Style Name" --cat "Category" --yaml "styles/file.yaml"`
