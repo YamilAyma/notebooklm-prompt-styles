@@ -7,7 +7,7 @@ This document provides technical details on how the showcase website works, its 
 The project is a **Data-Driven Static Site**. Instead of hardcoding content into the HTML, the site is generated from the source YAML files and preview images located in the root of the repository.
 
 - `/styles/*.yaml`: The source of truth for the design prompts.
-- `/preview/[style_id]/*.png`: Preview images for each style.
+- `/preview/[style_id]/[style_id]_[n].webp`: Preview images for each style (WebP, generated with `scripts/optimize_and_rename.py`).
 - `/src/`: The Astro source code (Layouts, Pages, Components).
 - `/src/scripts/`: Modular frontend logic.
   - `app.js`: Core orchestration, data fetching, and filtering logic.
@@ -35,11 +35,23 @@ This is the core build script. It performs the following:
 
 **Run manually:** `npm run build:data`
 
-### 2. Image Organization (`scripts/rename-previews.py`)
-A Python utility to ensure consistent naming of preview images.
-- Renames images inside each preview subfolder to `{folder_name}_{index}.{ext}`.
+### 2. Style Validation (`scripts/validate-styles.js`)
+Checks every YAML in `/styles`: valid syntax, required structure (`theme`, `typography`, `color_palette`, `key_visual_elements`, `slide_layout_templates`), at least one preview image, and no preview folder without a YAML. Missing HEX colors only produce warnings.
 
-**Run manually:** `python scripts/rename-previews.py`
+**Run manually:** `npm run validate`
+
+### 3. Image Organization (Python utilities)
+- `scripts/match_style_preview.py`: matches a pasted `input.yaml` with an existing style and creates its `/preview` folder.
+- `scripts/optimize_and_rename.py`: converts images to `.webp`, renames them to `{style}_{n}.webp` and deletes the originals.
+- `scripts/rename-previews.py`: renames images inside each preview subfolder to `{folder_name}_{index}.{ext}`.
+- `scripts/normalize-folders.py`: normalizes preview folder names (hyphens to underscores).
+
+**Run manually:** `python scripts/optimize_and_rename.py`
+
+### 4. Adding a Style (`scripts/add-style.js`)
+Adds a style to the README (TOC and body).
+
+**Run manually:** `node scripts/add-style.js --name "Style Name" --cat "Category" --yaml "styles/file.yaml"`
 
 ## 🛠️ Local Development
 
@@ -86,6 +98,10 @@ Commit messages must follow the project standard to keep history readable.
 - `fix (UI/Card) - Correct animated border on mobile`
 - `brand (Styles) - Update corporate colors`
 - `docs (Dev) - Update architecture documentation`
+
+## 🤖 Continuous Integration
+
+`.github/workflows/ci.yml` runs on every pull request and on pushes to `main`: `npm run validate`, `npm test` and `npm run build` (Node 22).
 
 ## 🚀 Deployment
 
