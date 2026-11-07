@@ -99,6 +99,10 @@ Commit messages must follow the project standard to keep history readable.
 - `brand (Styles) - Update corporate colors`
 - `docs (Dev) - Update architecture documentation`
 
+## 🤖 Continuous Integration
+
+`.github/workflows/ci.yml` runs on every pull request and on pushes to `main`: `npm run validate`, `npm test` and `npm run build` (Node 22).
+
 ## 🚀 Deployment
 
 The site is built using Astro and deployed as a static site (SSG).
