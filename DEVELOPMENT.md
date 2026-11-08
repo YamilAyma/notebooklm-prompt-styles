@@ -146,7 +146,7 @@ Commit messages must follow the project standard to keep history readable.
 
 ## 🌍 Site URL
 
-The production URL is set once in `astro.config.mjs` (`site`); canonical links, `og:`/`twitter:` tags, JSON-LD and the sitemap are built from it. The only other place is the `Sitemap:` line of `public/robots.txt` (plus the links in `README.md`). To change domain, update those and see `vercel.json` for the redirect from the old one.
+The production URL is set once in `astro.config.mjs` (`site`); canonical links, `og:`/`twitter:` tags, JSON-LD and the sitemap are built from it. The only other place is the `Sitemap:` line of `public/robots.txt` (plus the links in `README.md`). To change domain, update those and `vercel.json` keeps a 301 redirect from the previous domain (`notebooklm-prompt-styles.vercel.app`) to the current one, which Google Search Console's change of address checks. Keep it for at least six months.
 
 ## 🚀 Deployment
 
