@@ -89,7 +89,7 @@ const { title = "NotebookLM Slide Styles | Generate Beautiful Presentations with
       <div class="bottom-sheet__handle"></div>
       <div class="bottom-sheet__header">
         <h3 id="sheet-title" class="bottom-sheet__title"></h3>
-        <button id="sheet-close" class="bottom-sheet__close" aria-label="Close">&times;</button>
+        <button id="sheet-close" class="bottom-sheet__close" aria-label="Close" data-i18n-aria="ariaClose">&times;</button>
       </div>
       <div class="bottom-sheet__code-wrapper">
         <pre class="bottom-sheet__code"><code id="sheet-yaml"></code></pre>
@@ -119,7 +119,7 @@ const { title = "NotebookLM Slide Styles | Generate Beautiful Presentations with
   </div>
 
   <!-- Floating Menu Button -->
-  <button id="nav-trigger" class="fab" aria-label="Navigation menu">
+  <button id="nav-trigger" class="fab" aria-label="Navigation menu" data-i18n-aria="ariaNav">
     <span class="fab__lines">
       <span></span>
       <span></span>
@@ -129,7 +129,7 @@ const { title = "NotebookLM Slide Styles | Generate Beautiful Presentations with
 
   <!-- Top Right Actions -->
   <div class="top-actions">
-    <button id="theme-toggle" class="action-btn" aria-label="Toggle dark mode">
+    <button id="theme-toggle" class="action-btn" aria-label="Toggle dark mode" data-i18n-aria="ariaTheme">
       <div class="theme-toggle__icons">
         <SunIcon class="theme-toggle__sun" />
         <MoonIcon class="theme-toggle__moon" />
@@ -138,7 +138,7 @@ const { title = "NotebookLM Slide Styles | Generate Beautiful Presentations with
 
     <!-- Language Selector -->
     <div class="lang-selector">
-      <button id="lang-trigger" class="action-btn lang-trigger" aria-label="Change language">
+      <button id="lang-trigger" class="action-btn lang-trigger" aria-label="Change language" data-i18n-aria="ariaLang">
         <span id="current-lang-code" class="lang-code">🇺🇸</span>
       </button>
       <div id="lang-menu" class="lang-menu" hidden>
@@ -164,25 +164,25 @@ const { title = "NotebookLM Slide Styles | Generate Beautiful Presentations with
       </button>
 
       <div class="social-desktop">
-        <a href="https://github.com/YamilAyma/notebooklm-prompt-styles" target="_blank" rel="noopener" class="action-btn" aria-label="GitHub Repository">
+        <a href="https://github.com/YamilAyma/notebooklm-prompt-styles" target="_blank" rel="noopener" class="action-btn" aria-label="GitHub Repository" data-i18n-aria="ariaGithub">
           <img src="/icons/github.svg" alt="" class="action-btn__icon">
         </a>
-        <a id="share-linkedin" href="#" target="_blank" rel="noopener" class="action-btn" aria-label="Share on LinkedIn">
+        <a id="share-linkedin" href="#" target="_blank" rel="noopener" class="action-btn" aria-label="Share on LinkedIn" data-i18n-aria="ariaLinkedin">
           <img src="/icons/linkedin.svg" alt="" class="action-btn__icon">
         </a>
-        <a id="share-reddit" href="#" target="_blank" rel="noopener" class="action-btn" aria-label="Share on Reddit">
+        <a id="share-reddit" href="#" target="_blank" rel="noopener" class="action-btn" aria-label="Share on Reddit" data-i18n-aria="ariaReddit">
           <img src="/icons/reddit.svg" alt="" class="action-btn__icon">
         </a>
-        <a id="share-x" href="#" target="_blank" rel="noopener" class="action-btn" aria-label="Share on X">
+        <a id="share-x" href="#" target="_blank" rel="noopener" class="action-btn" aria-label="Share on X" data-i18n-aria="ariaX">
           <img src="/icons/x.svg" alt="" class="action-btn__icon">
         </a>
-        <button id="copy-trigger" class="action-btn" aria-label="Copy link">
+        <button id="copy-trigger" class="action-btn" aria-label="Copy link" data-i18n-aria="ariaCopy">
           <img src="/icons/share.svg" alt="" class="action-btn__icon">
         </button>
       </div>
     </div>
 
-    <button id="fav-trigger" class="fab-fav" aria-label="Show favorites">
+    <button id="fav-trigger" class="fab-fav" aria-label="Show favorites" data-i18n-aria="ariaFavs">
       <span class="fab-fav__icon">♡</span>
       <span id="fav-badge" class="fab-fav__badge">0</span>
     </button>

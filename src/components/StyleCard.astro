@@ -1,0 +1,25 @@
+---
+/**
+ * Prerendered style card. The markup must match createCard() in
+ * src/scripts/ui/card.js so that hydrateCard() can attach behavior to it.
+ */
+const { style } = Astro.props;
+---
+
+<article class="style-card" data-style-id={style.id} data-ssr>
+  <div class="style-card__image-container">
+    <img
+      class="style-card__image"
+      src={style.previews[0]}
+      alt={`${style.name} — slide style preview`}
+      loading="lazy"
+      width="400"
+      height="300"
+    />
+  </div>
+  <button class="style-card__fav" aria-label="Add to favorites" data-i18n-aria="ariaFavAdd">♡</button>
+  <div class="style-card__info">
+    <span class="style-card__color-dot" style={`background-color: ${style.colors?.primary || '#888'}`}></span>
+    <span class="style-card__name">{style.name}</span>
+  </div>
+</article>

@@ -59,6 +59,10 @@ Adds a style to the README (TOC and body).
 2. **Start Dev Server**: `npm run dev`
 3. **Running Tests**: `npm test`
 
+## ⚡ Prerendered Cards (SSG)
+
+The first page of cards (12 per list, 6 on the landing) is rendered at build time by `src/components/StyleCard.astro`, so the HTML is useful without JavaScript. On load, `app.js` calls `hydrateCard()` (`ui/card.js`) to attach favorites, tooltip and bottom sheet to those cards instead of re-creating them. If the prerendered cards do not match the data, it falls back to a full client render. **`StyleCard.astro` and `createCard()` must keep the same markup**, and `PAGE_SIZE` in the pages must match `itemsToShow` in `app.js`.
+
 ## 🌐 Internationalization (i18n)
 
 The site supports multiple languages (English, Spanish, Portuguese) using a custom lightweight system:

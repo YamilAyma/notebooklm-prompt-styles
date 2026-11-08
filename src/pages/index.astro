@@ -1,9 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import YouTubeLink from '../components/YouTubeLink.astro';
+import StyleCard from '../components/StyleCard.astro';
 import PortfolioIcon from '~icons/carbon/portfolio';
 import HelpIcon from '~icons/carbon/help';
 import stylesData from '../../public/data/styles.json';
+
+// First 6 styles for the featured section (keep in sync with app.js)
+const featuredStyles = stylesData.categories.flatMap((cat) => cat.styles).slice(0, 6);
 
 // Get all preview images from all styles
 const allPreviews = stylesData.categories.flatMap(cat => 
@@ -267,7 +271,7 @@ const columns = [
       <div class="landing-section__container">
         <h2 class="landing-section__title" data-i18n="landingExamplesTitle">Curated Examples</h2>
         <div id="featured-grid" class="bento-grid">
-          <!-- Featured cards will be injected by app.js -->
+          {featuredStyles.map((style) => <StyleCard style={style} />)}
         </div>
         <div class="landing-section__footer">
           <a href="/styles" class="btn btn--outline" data-i18n="loadMore">View All Styles</a>
