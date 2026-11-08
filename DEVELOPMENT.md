@@ -73,6 +73,10 @@ The first page of cards (12 per list, 6 on the landing) is rendered at build tim
 
 Cards (`StyleCard.astro` and `card.js`) display the 480px `thumbs` of each style, including the hover rotation, and fall back to `previews` if a style has no thumbnails. The originals are not shown anywhere else in the UI.
 
+## 🔎 Search
+
+`SearchBar.astro` (in `/styles` and every category page) is wired up by `initSearch()` in `app.js`. It filters on the client against each style's `searchText` (built in `build-data.js`: name, category, theme, typography and key visual elements, lowercase and without accents). Every typed word must match (AND). The search is **global**: while a query is active the category is ignored. The query lives in the URL (`?q=`), `/` focuses the box and `Esc` clears it. `normalizeText` in `utils.js` must stay equal to the one in `build-data.js`.
+
 ## 🌐 Internationalization (i18n)
 
 The site supports multiple languages (English, Spanish, Portuguese) using a custom lightweight system:
