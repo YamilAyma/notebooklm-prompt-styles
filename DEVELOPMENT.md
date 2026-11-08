@@ -144,6 +144,10 @@ Commit messages must follow the project standard to keep history readable.
 
 `.github/workflows/ci.yml` runs on every pull request and on pushes to `main`: `npm run validate`, `npm test` and `npm run build` (Node 22).
 
+## 🌍 Site URL
+
+The production URL is set once in `astro.config.mjs` (`site`); canonical links, `og:`/`twitter:` tags, JSON-LD and the sitemap are built from it. The only other place is the `Sitemap:` line of `public/robots.txt` (plus the links in `README.md`). To change domain, update those and `vercel.json` keeps a 301 redirect from the previous domain (`notebooklm-prompt-styles.vercel.app`) to the current one, which Google Search Console's change of address checks. Keep it for at least six months.
+
 ## 🚀 Deployment
 
 The site is built using Astro and deployed as a static site (SSG).

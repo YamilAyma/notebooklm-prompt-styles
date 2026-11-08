@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import Icons from 'unplugin-icons/vite';
 
 export default defineConfig({
-  site: 'https://notebooklm-prompt-styles.vercel.app',
+  site: 'https://slidestyleshub.com',
   output: 'static',
   integrations: [sitemap()],
   vite: {
