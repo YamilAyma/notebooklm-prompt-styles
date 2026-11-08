@@ -159,6 +159,7 @@ export function nameToId(name) {
   return name
     .toLowerCase()
     .replace(/&#39;/g, '') // Handle common HTML entity
+    .replace(/-/g, ' ') // 'Hand-Drawn' -> hand_drawn (matches the file id)
     .replace(/[^a-z0-9\s]/g, '') // Remove everything except alphanumeric and spaces
     .trim()
     .replace(/\s+/g, '_'); // Replace spaces with underscores

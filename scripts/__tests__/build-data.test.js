@@ -110,6 +110,7 @@ describe('nameToId', () => {
     expect(nameToId('Editorial Essence')).toBe('editorial_essence');
     expect(nameToId('Neon Pulsar')).toBe('neon_pulsar');
     expect(nameToId("Scholar's Journal")).toBe('scholars_journal');
+    expect(nameToId('Hand-Drawn Scrapbook')).toBe('hand_drawn_scrapbook');
   });
 });
 
