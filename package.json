@@ -7,6 +7,8 @@
     "build:data": "node scripts/build-data.js",
     "validate": "node scripts/validate-styles.js",
     "similarity": "node scripts/check-similarity.js",
+    "readme": "node scripts/generate-readme.js",
+    "readme:check": "node scripts/generate-readme.js --check",
     "dev": "npm run build:data && astro dev",
     "build": "npm run build:data && astro build && node scripts/flat-sitemap.js",
     "preview": "astro preview",

@@ -9,7 +9,7 @@ Thank you for your interest in contributing! This guide will walk you through th
 3. **Match** your code to a style file.
 4. **Optimize** and convert images.
 5. **Sync** the data.
-6. **Document** in the README.
+6. **Register** it in the catalog (this regenerates the README).
 7. **Submit** your changes.
 
 ---
@@ -93,25 +93,17 @@ npm run build:data
 > [!IMPORTANT]
 > The build script reads categories, names and descriptions from `data/catalog.json` (`node scripts/add-style.js` adds your style to it) and only includes styles that have a corresponding folder in `/preview` with at least one image.
 
-## Step 5: Update the README
+## Step 5: Register the Style (catalog and README)
 
-Add your new style to the root `README.md` using the `.webp` extension for the preview image.
+The website and the README read their category, name and short description from `data/catalog.json`, so your YAML stays clean for users. Add your style with one command (it also regenerates the README):
 
-1. Add a link in the **Table of Contents**.
-2. Add a section under the appropriate category.
-3. Include a brief description, the preview image, and a link to the YAML file.
-
-**Example markdown:**
-
-```markdown
-#### Modern Dark
-A sleek, high-contrast theme for late-night presentations.
-
-![Modern Dark Preview](preview/modern_dark/modern_dark_1.webp)
-
-> [!TIP]
-> This is a simplified preview. [View Full YAML](styles/modern_dark.yaml)
+```bash
+node scripts/add-style.js --name "Modern Dark" --cat "Minimalist" --yaml "styles/modern_dark.yaml"
 ```
+
+- `--cat` matches part of an existing category name.
+- The description is taken from a top-level `description:` in your YAML (if any); you can edit it in `data/catalog.json`.
+- **Do not edit the style sections of `README.md` by hand.** They are generated (`npm run readme`) and CI fails if they are out of date.
 
 ## Step 6: Commit and Push
 
@@ -134,5 +126,5 @@ Push your changes and create a Pull Request!
 - [ ] `npm run validate` reports 0 errors.
 - [ ] `npm run similarity` shows no pair with your style (or you can explain why it is a distinct variant).
 - [ ] `npm run build:data` executed successfully.
-- [ ] Style added to `README.md` (TOC and Section) using `.webp` references.
+- [ ] Style registered with `node scripts/add-style.js` (catalog and README regenerated, `npm run readme:check` passes).
 - [ ] Commit message is in English and follows the convention.
