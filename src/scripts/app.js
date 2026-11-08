@@ -8,7 +8,7 @@ import { initNavigation } from './navigation.js';
 import { initTheme } from './theme.js';
 import { initBottomSheet } from './ui/bottomSheet.js';
 import { initShare } from './ui/share.js';
-import { createCard } from './ui/card.js';
+import { createCard, hydrateCard } from './ui/card.js';
 import { showToast } from './utils.js';
 import { applyTranslations, setLang, getLang } from './i18n.js';
 
@@ -19,6 +19,7 @@ let currentStyles = [];
 let itemsToShow = 12;
 let displayedCount = 0;
 let showOnlyFavorites = false;
+let needsHydration = true; // first render adopts prerendered cards
 
 // ─── Init ───────────────────────────────────────────────────────────
 
@@ -64,6 +65,14 @@ function renderFeaturedStyles() {
   const allStyles = stylesData.categories.flatMap(c => c.styles);
   // Get 6 unique styles for the landing
   const featured = allStyles.slice(0, 6);
+
+  const prerendered = [...grid.querySelectorAll('.style-card[data-ssr]')];
+  const hydrated = prerendered.length === featured.length
+    && prerendered.every((el, i) => el.dataset.styleId === featured[i].id && hydrateCard(el, featured[i]));
+  if (hydrated) {
+    prerendered.forEach(el => el.removeAttribute('data-ssr'));
+    return;
+  }
 
   grid.innerHTML = '';
   featured.forEach(style => {
@@ -178,6 +187,11 @@ function updateUI(count) {
 
   const grid = document.getElementById('styles-grid');
   if (grid) {
+    if (needsHydration) {
+      needsHydration = false;
+      if (hydratePrerendered(grid)) return;
+    }
+
     grid.innerHTML = '';
     if (count === 0) {
       showEmptyState();
@@ -186,6 +200,45 @@ function updateUI(count) {
       renderNextBatch();
     }
   }
+}
+
+/**
+ * Adopts the cards prerendered at build time (first page of the current
+ * category) instead of re-creating them. Returns false if they do not match
+ * the data, so the caller falls back to a full client render.
+ */
+function hydratePrerendered(grid) {
+  if (showOnlyFavorites) return false;
+
+  const prerendered = [...grid.querySelectorAll('.style-card[data-ssr]')];
+  if (prerendered.length === 0 || prerendered.length > currentStyles.length) return false;
+
+  const matches = prerendered.every((el, i) => el.dataset.styleId === currentStyles[i].id);
+  if (!matches) return false;
+
+  const onFavorite = (id, isFav) => handleFavoriteUpdate(isFav);
+  const ok = prerendered.every((el, i) => hydrateCard(el, currentStyles[i], onFavorite));
+  if (!ok) return false;
+
+  prerendered.forEach(el => el.removeAttribute('data-ssr'));
+  hideEmptyState();
+  displayedCount = prerendered.length;
+  updatePagination();
+  return true;
+}
+
+function handleFavoriteUpdate(isFav) {
+  updateFavBadge();
+  // If we are in favorites view and removed one, re-apply filters
+  if (showOnlyFavorites && !isFav) {
+    const app = document.getElementById('app');
+    applyFilters(app?.getAttribute('data-category') || 'all');
+  }
+}
+
+function updatePagination() {
+  const pagination = document.getElementById('pagination');
+  if (pagination) pagination.hidden = displayedCount >= currentStyles.length;
 }
 
 function initFavFilter() {
@@ -204,28 +257,17 @@ function initFavFilter() {
 
 function renderNextBatch() {
   const grid = document.getElementById('styles-grid');
-  const pagination = document.getElementById('pagination');
   if (!grid) return;
 
   const nextBatch = currentStyles.slice(displayedCount, displayedCount + itemsToShow);
   
   for (const style of nextBatch) {
-    const card = createCard(style, (id, isFav) => {
-      updateFavBadge();
-      // If we are in favorites view and removed one, re-apply filters
-      if (showOnlyFavorites && !isFav) {
-        const app = document.getElementById('app');
-        applyFilters(app?.getAttribute('data-category') || 'all');
-      }
-    });
+    const card = createCard(style, (id, isFav) => handleFavoriteUpdate(isFav));
     grid.appendChild(card);
   }
 
   displayedCount += nextBatch.length;
-
-  if (pagination) {
-    pagination.hidden = displayedCount >= currentStyles.length;
-  }
+  updatePagination();
 }
 
 // ─── Helpers ────────────────────────────────────────────────────────

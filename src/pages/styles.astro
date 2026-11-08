@@ -1,5 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import StyleCard from '../components/StyleCard.astro';
+import stylesData from '../../public/data/styles.json';
+
+const PAGE_SIZE = 12; // keep in sync with itemsToShow in app.js
+const allStyles = stylesData.categories.flatMap((c) => c.styles);
+const initialStyles = allStyles.slice(0, PAGE_SIZE);
 ---
 
 <Layout category="all">
@@ -8,15 +14,17 @@ import Layout from '../layouts/Layout.astro';
       <div class="hero__container">
         <h1 class="hero__title" data-i18n="heroTitle">Styles for slides</h1>
         <p class="hero__subtitle">
-          <span id="style-count">0</span> <span data-i18n="heroSub">curated YAML prompts for NotebookLM</span>
+          <span id="style-count">{allStyles.length}</span> <span data-i18n="heroSub">curated YAML prompts for NotebookLM</span>
         </p>
       </div>
     </header>
 
     <section class="grid-section">
-      <div id="styles-grid" class="bento-grid"></div>
+      <div id="styles-grid" class="bento-grid">
+        {initialStyles.map((style) => <StyleCard style={style} />)}
+      </div>
       
-      <div id="pagination" class="pagination" hidden>
+      <div id="pagination" class="pagination" hidden={allStyles.length <= PAGE_SIZE}>
         <button id="load-more" class="load-more-btn" data-i18n="loadMore">Explore More Styles</button>
       </div>
 
