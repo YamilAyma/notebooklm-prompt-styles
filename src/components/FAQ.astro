@@ -23,7 +23,19 @@ const faqs = [
     answer: "You can use the 'Report Issue' link in the footer or visit our GitHub Issues page. We actively monitor feedback to improve the collection."
   }
 ];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+};
 ---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
 
 <section class="faq">
   <div class="container faq__container">

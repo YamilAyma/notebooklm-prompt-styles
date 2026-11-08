@@ -17,9 +17,31 @@ const { name, styles } = Astro.props;
 
 const PAGE_SIZE = 12; // keep in sync with itemsToShow in app.js
 const initialStyles = styles.slice(0, PAGE_SIZE);
+
+const examples = styles.slice(0, 3).map((s) => s.name).join(', ');
+const description = `${styles.length} ${name} styles for NotebookLM slides, such as ${examples}. Preview each one and copy its YAML prompt.`;
+const pageUrl = new URL(`/styles/${category}/`, Astro.site).href;
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `${name} — NotebookLM Styles`,
+    url: pageUrl,
+    numberOfItems: styles.length,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: String(Astro.site) },
+      { '@type': 'ListItem', position: 2, name: 'Styles', item: new URL('/styles', Astro.site).href },
+      { '@type': 'ListItem', position: 3, name, item: pageUrl },
+    ],
+  },
+];
 ---
 
-<Layout category={category} title={`${name} — NotebookLM Styles`}>
+<Layout category={category} title={`${name} — NotebookLM Styles`} description={description} jsonLd={jsonLd}>
   <main id="app" data-category={category}>
     <header class="hero">
       <div class="hero__container">

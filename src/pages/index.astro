@@ -25,7 +25,17 @@ const columns = [
 ];
 ---
 
-<Layout category="landing">
+<Layout
+  category="landing"
+  jsonLd={{
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'NotebookLM Prompt Styles',
+    url: 'https://notebooklm-prompt-styles.vercel.app/',
+    description: 'A curated collection of visual design styles for NotebookLM slide generation.',
+    inLanguage: ['en', 'es', 'pt'],
+  }}
+>
   <main id="landing">
     <!-- Hero Section -->
     <section class="landing-hero">
