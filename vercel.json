@@ -1,9 +1,15 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/",
       "has": [{ "type": "host", "value": "notebooklm-prompt-styles.vercel.app" }],
-      "destination": "https://slidestyleshub.com/:path*",
+      "destination": "https://www.slidestyleshub.com/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path+",
+      "has": [{ "type": "host", "value": "notebooklm-prompt-styles.vercel.app" }],
+      "destination": "https://www.slidestyleshub.com/:path+",
       "statusCode": 301
     }
   ]
