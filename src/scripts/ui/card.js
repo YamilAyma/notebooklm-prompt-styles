@@ -6,6 +6,7 @@ import { isFavorite, toggleFavorite } from '../favorites.js';
 import { show as showTooltip, scheduleHide as hideTooltip } from '../tooltip.js';
 import { openBottomSheet } from './bottomSheet.js';
 import { isMobile } from '../utils.js';
+import { t } from '../i18n.js';
 
 const imageRotationTimers = new Map();
 
@@ -59,7 +60,7 @@ function createFavoriteButton(style, onFavoriteUpdate) {
     const isFav = isFavorite(style.id);
     favBtn.classList.toggle('style-card__fav--active', isFav);
     favBtn.innerHTML = isFav ? '♥' : '♡';
-    favBtn.setAttribute('aria-label', `${isFav ? 'Remove from' : 'Add to'} favorites`);
+    favBtn.setAttribute('aria-label', t(isFav ? 'ariaFavRemove' : 'ariaFavAdd'));
   };
 
   updateState();
