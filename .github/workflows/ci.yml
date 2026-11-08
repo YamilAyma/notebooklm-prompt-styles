@@ -20,6 +20,8 @@ jobs:
       - run: npm ci
       - name: Lint
         run: npm run lint
+      - name: Check formatting
+        run: npm run format:check
       - name: Validate styles
         run: npm run validate
       - name: Check README is up to date

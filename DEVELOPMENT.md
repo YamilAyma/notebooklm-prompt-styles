@@ -71,6 +71,7 @@ Registers a style in `data/catalog.json` and regenerates the README.
 2. **Start Dev Server**: `npm run dev`
 3. **Running Tests**: `npm test`
 4. **Linting**: `npm run lint` (ESLint with `eslint.config.js`: recommended rules for JavaScript and Astro; warnings fail the check). It runs in CI.
+5. **Formatting**: `npm run format` (Prettier: single quotes, 100 columns) and `npm run format:check`, also in CI. It formats JavaScript, CSS and JSON; `.astro` files, Markdown and YAML are left out on purpose (the Astro plugin adds whitespace to the generated HTML, and the YAML styles are copied by users as they are).
 
 ## ⚡ Prerendered Cards (SSG)
 
