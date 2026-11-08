@@ -9,6 +9,7 @@ import { initTheme } from './theme.js';
 import { initBottomSheet } from './ui/bottomSheet.js';
 import { initShare } from './ui/share.js';
 import { createCard, hydrateCard } from './ui/card.js';
+import { initStylePage } from './ui/stylePage.js';
 import { showToast, normalizeText } from './utils.js';
 import { applyTranslations, setLang, getLang, t } from './i18n.js';
 
@@ -55,6 +56,7 @@ async function init() {
   initTooltip();
   initNavigation(stylesData.categories, app?.getAttribute('data-category') || 'all');
   initBottomSheet();
+  initStylePage();
   initShare();
   initTheme();
   initI18n();

@@ -7,6 +7,7 @@ import { show as showTooltip, scheduleHide as hideTooltip } from '../tooltip.js'
 import { openBottomSheet } from './bottomSheet.js';
 import { isMobile } from '../utils.js';
 import { t } from '../i18n.js';
+import { stylePath } from '../../lib/stylePage.js';
 
 const imageRotationTimers = new Map();
 
@@ -63,6 +64,7 @@ export function hydrateCard(card, style, onFavoriteUpdate) {
 
   bindFavoriteButton(favBtn, style, onFavoriteUpdate);
   setupCardInteractions(card, img, style);
+  card.querySelector('.style-card__name')?.addEventListener('click', (e) => e.stopPropagation());
   bindOpen(card, style);
   return true;
 }
@@ -123,9 +125,11 @@ function createInfoBar(style) {
   colorDot.className = 'style-card__color-dot';
   colorDot.style.backgroundColor = style.colors?.primary || '#888';
   
-  const name = document.createElement('span');
+  const name = document.createElement('a');
   name.className = 'style-card__name';
+  name.href = stylePath(style.id);
   name.textContent = style.name;
+  name.addEventListener('click', (e) => e.stopPropagation()); // go to the page, do not open the sheet
 
   info.appendChild(colorDot);
   info.appendChild(name);

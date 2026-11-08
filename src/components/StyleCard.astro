@@ -3,6 +3,8 @@
  * Prerendered style card. The markup must match createCard() in
  * src/scripts/ui/card.js so that hydrateCard() can attach behavior to it.
  */
+import { stylePath } from '../lib/stylePage.js';
+
 const { style } = Astro.props;
 ---
 
@@ -20,6 +22,6 @@ const { style } = Astro.props;
   <button class="style-card__fav" aria-label="Add to favorites" data-i18n-aria="ariaFavAdd">♡</button>
   <div class="style-card__info">
     <span class="style-card__color-dot" style={`background-color: ${style.colors?.primary || '#888'}`}></span>
-    <span class="style-card__name">{style.name}</span>
+    <a class="style-card__name" href={stylePath(style.id)}>{style.name}</a>
   </div>
 </article>
