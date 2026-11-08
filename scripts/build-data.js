@@ -12,6 +12,7 @@
 import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
+import sharp from 'sharp';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const STYLES_DIR = path.join(ROOT, 'styles');
@@ -19,7 +20,32 @@ const PREVIEW_DIR = path.join(ROOT, 'preview');
 const README_PATH = path.join(ROOT, 'README.md');
 const OUTPUT_PATH = path.join(ROOT, 'public', 'data', 'styles.json');
 
+export const THUMB_WIDTH = 480;
+
 // ─── Exports for testing ────────────────────────────────────────────
+
+/** '/preview/x/x_1.webp' -> '/preview/x/thumbs/x_1.webp' */
+export function toThumbPath(previewPath) {
+  const { dir, name } = path.posix.parse(previewPath);
+  return `${dir}/thumbs/${name}.webp`;
+}
+
+/**
+ * Generates a WebP thumbnail for every preview path ('/preview/<folder>/<file>')
+ * under destRoot, keeping the same structure plus a 'thumbs' subfolder.
+ * Originals are read from srcRoot and never modified.
+ */
+export async function generateThumbnails(previewPaths, srcRoot, destRoot, width = THUMB_WIDTH) {
+  await Promise.all(previewPaths.map(async (previewPath) => {
+    const relative = previewPath.replace(/^\/preview\//, '');
+    const dest = path.join(destRoot, toThumbPath(previewPath).replace(/^\/preview\//, ''));
+    fs.mkdirSync(path.dirname(dest), { recursive: true });
+    await sharp(path.join(srcRoot, relative))
+      .resize({ width, withoutEnlargement: true })
+      .webp({ quality: 75 })
+      .toFile(dest);
+  }));
+}
 
 export function parseYamlFile(filePath) {
   const raw = fs.readFileSync(filePath, 'utf-8');
@@ -177,6 +203,7 @@ export function buildStylesData(stylesDir, previewDir, readmePath) {
         id,
         yamlContent: raw,
         previews,
+        thumbs: previews.map(toThumbPath),
         ...tokens,
       };
     } catch (err) {
@@ -223,7 +250,7 @@ export function buildStylesData(stylesDir, previewDir, readmePath) {
 
 // ─── CLI execution ──────────────────────────────────────────────────
 
-function main() {
+async function main() {
   console.log('🔨 Building styles data...');
   console.log(`   Styles dir: ${STYLES_DIR}`);
   console.log(`   Preview dir: ${PREVIEW_DIR}`);
@@ -249,6 +276,11 @@ function main() {
     // console.log(`   Copied preview: ${folder}`);
   }
 
+  // Generate thumbnails for the grid (originals stay untouched)
+  const allPreviews = data.categories.flatMap(c => c.styles.flatMap(s => s.previews));
+  await generateThumbnails(allPreviews, PREVIEW_DIR, webPreviewDir);
+  console.log(`   ${allPreviews.length} thumbnails generated (${THUMB_WIDTH}px)`);
+
   // Remove helper from final JSON
   delete data.usedPreviewFolders;
 
@@ -264,5 +296,8 @@ function main() {
 
 // Run when executed directly
 if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(import.meta.filename)) {
-  main();
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
 }
