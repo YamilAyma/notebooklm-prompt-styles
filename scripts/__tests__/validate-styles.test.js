@@ -4,7 +4,7 @@ import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import yaml from 'js-yaml';
-import { validateStyle, validateAll } from '../validate-styles.js';
+import { validateStyle, validateAll, validateReadme } from '../validate-styles.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const MOCK_STYLES = path.join(__dirname, 'fixtures', 'mock-styles');
@@ -83,5 +83,52 @@ describe('validateAll', () => {
     const results = validateAll(MOCK_STYLES, MOCK_PREVIEW)
       .filter((r) => r.file === 'styles/style_a.yaml');
     expect(results[0].errors).toEqual([]);
+  });
+});
+
+describe('validateReadme', () => {
+  const setup = (readme, styleIds, previewIds) => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'validate-readme-'));
+    const styles = path.join(dir, 'styles');
+    const preview = path.join(dir, 'preview');
+    fs.mkdirSync(styles);
+    for (const id of styleIds) fs.writeFileSync(path.join(styles, `${id}.yaml`), 'design_system: {}');
+    for (const id of previewIds) {
+      fs.mkdirSync(path.join(preview, id), { recursive: true });
+      fs.writeFileSync(path.join(preview, id, `${id}_1.webp`), '');
+    }
+    const readmePath = path.join(dir, 'README.md');
+    fs.writeFileSync(readmePath, readme);
+    return { dir, styles, preview, readmePath };
+  };
+
+  const readme = (names) => `## Table of Contents\n- [Cat](#cat)\n${names.map((n) => `  - [${n}](#x)`).join('\n')}\n- [How to Use](#how)\n\n---\n`;
+
+  it('passes when README index and styles match', () => {
+    const { dir, styles, preview, readmePath } = setup(readme(['Neon Glow', 'Hand-Drawn Scrapbook']),
+      ['neon_glow', 'hand_drawn_scrapbook'], ['neon_glow', 'hand_drawn_scrapbook']);
+    expect(validateReadme(styles, preview, readmePath)[0].errors).toEqual([]);
+    fs.rmSync(dir, { recursive: true, force: true });
+  });
+
+  it('flags a style with previews that is missing from the README index', () => {
+    const { dir, styles, preview, readmePath } = setup(readme(['Neon Glow']), ['neon_glow', 'pop_retro'], ['neon_glow', 'pop_retro']);
+    const { errors } = validateReadme(styles, preview, readmePath)[0];
+    expect(errors).toHaveLength(1);
+    expect(errors[0]).toContain('styles/pop_retro.yaml');
+    fs.rmSync(dir, { recursive: true, force: true });
+  });
+
+  it('ignores styles without previews (they are reported by validateAll)', () => {
+    const { dir, styles, preview, readmePath } = setup(readme(['Neon Glow']), ['neon_glow', 'draft'], ['neon_glow']);
+    expect(validateReadme(styles, preview, readmePath)[0].errors).toEqual([]);
+    fs.rmSync(dir, { recursive: true, force: true });
+  });
+
+  it('flags a README entry without a YAML file', () => {
+    const { dir, styles, preview, readmePath } = setup(readme(['Neon Glow', 'Ghost Style']), ['neon_glow'], ['neon_glow']);
+    const { errors } = validateReadme(styles, preview, readmePath)[0];
+    expect(errors).toEqual(['README index lists "Ghost Style" but styles/ghost_style.yaml does not exist']);
+    fs.rmSync(dir, { recursive: true, force: true });
   });
 });

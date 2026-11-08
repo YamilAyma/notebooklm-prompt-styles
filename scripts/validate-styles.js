@@ -7,6 +7,8 @@
  *   - malformed YAML or missing required structure
  *   - style without at least one preview image
  *   - preview folder without a matching YAML
+ *   - style with previews missing from the README index (hidden on the site),
+ *     or README index entry without a matching YAML
  * Warnings (do not fail):
  *   - primary_color / background / text_main missing or without a HEX code
  *
@@ -16,6 +18,7 @@
 import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
+import { parseTocFromReadme, nameToId } from './build-data.js';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const IMAGE_REGEX = /\.(png|jpe?g|webp)$/i;
@@ -103,8 +106,40 @@ export function validateAll(stylesDir, previewDir) {
   return results;
 }
 
+/**
+ * The site takes its categories from the README index, so a style that is not
+ * listed there (or whose name does not map to its file id) silently disappears.
+ */
+export function validateReadme(stylesDir, previewDir, readmePath) {
+  const errors = [];
+  const listed = new Map(); // id -> display name
+  for (const category of parseTocFromReadme(readmePath)) {
+    for (const name of category.styleNames) listed.set(nameToId(name), name);
+  }
+
+  const ids = fs.readdirSync(stylesDir).filter((f) => /\.ya?ml$/.test(f)).map((f) => f.replace(/\.ya?ml$/, ''));
+
+  for (const id of ids) {
+    const folder = path.join(previewDir, id);
+    const hasPreview = fs.existsSync(folder) && fs.readdirSync(folder).some((f) => IMAGE_REGEX.test(f));
+    if (hasPreview && !listed.has(id)) {
+      errors.push(`styles/${id}.yaml has previews but is not in the README index (it is hidden on the site)`);
+    }
+  }
+  for (const [id, name] of listed) {
+    if (!ids.includes(id)) {
+      errors.push(`README index lists "${name}" but styles/${id}.yaml does not exist`);
+    }
+  }
+
+  return [{ file: 'README.md', errors, warnings: [] }];
+}
+
 function main() {
-  const results = validateAll(path.join(ROOT, 'styles'), path.join(ROOT, 'preview'));
+  const results = [
+    ...validateAll(path.join(ROOT, 'styles'), path.join(ROOT, 'preview')),
+    ...validateReadme(path.join(ROOT, 'styles'), path.join(ROOT, 'preview'), path.join(ROOT, 'README.md')),
+  ];
   let errorCount = 0;
   let warningCount = 0;
 
