@@ -20,6 +20,8 @@ jobs:
       - run: npm ci
       - name: Validate styles
         run: npm run validate
+      - name: Check README is up to date
+        run: npm run readme:check
       - name: Check style similarity (warning only)
         run: npm run similarity
       - name: Test

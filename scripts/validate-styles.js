@@ -7,6 +7,8 @@
  *   - malformed YAML or missing required structure
  *   - style without at least one preview image
  *   - preview folder without a matching YAML
+ *   - style with previews missing from data/catalog.json (hidden on the site),
+ *     or catalog entry without a matching YAML
  * Warnings (do not fail):
  *   - primary_color / background / text_main missing or without a HEX code
  *
@@ -16,6 +18,7 @@
 import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
+import { loadCatalog } from './build-data.js';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const IMAGE_REGEX = /\.(png|jpe?g|webp)$/i;
@@ -103,8 +106,47 @@ export function validateAll(stylesDir, previewDir) {
   return results;
 }
 
+/**
+ * The site takes its categories from data/catalog.json, so a style that is not
+ * listed there silently disappears.
+ */
+export function validateCatalog(stylesDir, previewDir, catalogPath) {
+  const errors = [];
+  let catalog;
+  try {
+    catalog = loadCatalog(catalogPath);
+  } catch (err) {
+    return [{ file: 'data/catalog.json', errors: [err.message], warnings: [] }];
+  }
+
+  const listed = new Map(); // id -> display name
+  for (const category of catalog.categories) {
+    for (const style of category.styles) listed.set(style.id, style.name);
+  }
+
+  const ids = fs.readdirSync(stylesDir).filter((f) => /\.ya?ml$/.test(f)).map((f) => f.replace(/\.ya?ml$/, ''));
+
+  for (const id of ids) {
+    const folder = path.join(previewDir, id);
+    const hasPreview = fs.existsSync(folder) && fs.readdirSync(folder).some((f) => IMAGE_REGEX.test(f));
+    if (hasPreview && !listed.has(id)) {
+      errors.push(`styles/${id}.yaml has previews but is not in data/catalog.json (it is hidden on the site)`);
+    }
+  }
+  for (const [id, name] of listed) {
+    if (!ids.includes(id)) {
+      errors.push(`catalog lists "${name}" but styles/${id}.yaml does not exist`);
+    }
+  }
+
+  return [{ file: 'data/catalog.json', errors, warnings: [] }];
+}
+
 function main() {
-  const results = validateAll(path.join(ROOT, 'styles'), path.join(ROOT, 'preview'));
+  const results = [
+    ...validateAll(path.join(ROOT, 'styles'), path.join(ROOT, 'preview')),
+    ...validateCatalog(path.join(ROOT, 'styles'), path.join(ROOT, 'preview'), path.join(ROOT, 'data', 'catalog.json')),
+  ];
   let errorCount = 0;
   let warningCount = 0;
 

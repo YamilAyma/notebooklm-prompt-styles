@@ -1,8 +1,9 @@
 /**
  * build-data.js
  * 
- * Reads YAML style files, README TOC, and preview images to produce
- * a consolidated styles.json for the showcase website.
+ * Reads YAML style files, the catalog (data/catalog.json: categories, order,
+ * display names and descriptions) and preview images to produce a consolidated
+ * styles.json for the showcase website.
  * 
  * Usage: node scripts/build-data.js
  * 
@@ -17,7 +18,7 @@ import sharp from 'sharp';
 const ROOT = path.resolve(import.meta.dirname, '..');
 const STYLES_DIR = path.join(ROOT, 'styles');
 const PREVIEW_DIR = path.join(ROOT, 'preview');
-const README_PATH = path.join(ROOT, 'README.md');
+const CATALOG_PATH = path.join(ROOT, 'data', 'catalog.json');
 const OUTPUT_PATH = path.join(ROOT, 'public', 'data', 'styles.json');
 
 export const THUMB_WIDTH = 480;
@@ -33,14 +34,15 @@ export function normalizeText(value) {
 }
 
 /**
- * Normalized text the site search runs against: name, category, theme,
- * typography and key visual elements.
+ * Normalized text the site search runs against: name, category, description,
+ * theme, typography and key visual elements.
  */
-export function buildSearchText({ name, theme, typography, keyElements }, categoryName = '') {
+export function buildSearchText({ name, description, theme, typography, keyElements }, categoryName = '') {
   const strings = (list) => list.filter((v) => typeof v === 'string');
   const parts = [
     name,
     categoryName,
+    description,
     theme,
     ...strings(Object.values(typography || {})),
     ...strings(keyElements || []),
@@ -96,72 +98,37 @@ export function extractDesignTokens(parsed) {
   };
 }
 
-export function parseTocFromReadme(readmePath) {
-  const content = fs.readFileSync(readmePath, 'utf-8');
-  return parseTocContent(content);
-}
-
-export function parseTocContent(content) {
-  const lines = content.split('\n');
-  const categories = [];
-  let currentCategory = null;
-
-  // Category headers: lines like "- [🏷️ Brand Inspired](#-brand-inspired)"
-  // Style entries: lines like "  - [Editorial Essence](#editorial-essence)"
-  const categoryRegex = /^- \[(?:[\p{Emoji}\p{Emoji_Presentation}\uFE0F\s]*)?(.+?)\]\(#[^)]+\)/u;
-  const styleRegex = /^\s+- \[(.+?)\]\(#([^)]+)\)/;
-
-  let inToc = false;
-
-  for (const line of lines) {
-    // Detect TOC start
-    if (line.includes('Table of Contents')) {
-      inToc = true;
-      continue;
-    }
-
-    // Detect TOC end (next heading or horizontal rule after styles listed)
-    if (inToc && (line.startsWith('## ') || line.startsWith('---'))) {
-      // Check if we already have categories — if so, TOC is done
-      if (categories.length > 0) break;
-      continue;
-    }
-
-    if (!inToc) continue;
-
-    // Skip non-category top-level entries like "How to Use", "Contribution"
-    const catMatch = line.match(categoryRegex);
-    if (catMatch && !line.includes('How to Use') && !line.includes('Contribution')) {
-      const name = catMatch[1].trim();
-      const id = name.toLowerCase().replace(/['']/g, '').replace(/\s+/g, '-');
-      // Extract emoji if present
-      const emojiMatch = line.match(/\[([\p{Emoji}\p{Emoji_Presentation}\uFE0F]+)\s/u);
-      currentCategory = {
-        id,
-        name,
-        emoji: emojiMatch ? emojiMatch[1] : '',
-        styleNames: [],
-      };
-      categories.push(currentCategory);
-      continue;
-    }
-
-    const styleMatch = line.match(styleRegex);
-    if (styleMatch && currentCategory) {
-      currentCategory.styleNames.push(styleMatch[1].trim());
-    }
+/**
+ * Loads and checks data/catalog.json:
+ * { categories: [{ id, name, emoji, styles: [{ id, name, description }] }] }
+ */
+export function loadCatalog(catalogPath) {
+  const catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf-8'));
+  if (!Array.isArray(catalog.categories)) {
+    throw new Error(`${catalogPath}: "categories" must be a list`);
   }
 
-  return categories;
-}
-
-export function nameToId(name) {
-  return name
-    .toLowerCase()
-    .replace(/&#39;/g, '') // Handle common HTML entity
-    .replace(/[^a-z0-9\s]/g, '') // Remove everything except alphanumeric and spaces
-    .trim()
-    .replace(/\s+/g, '_'); // Replace spaces with underscores
+  const seen = new Set();
+  for (const category of catalog.categories) {
+    for (const key of ['id', 'name']) {
+      if (typeof category[key] !== 'string' || !category[key]) {
+        throw new Error(`${catalogPath}: every category needs a "${key}"`);
+      }
+    }
+    if (!Array.isArray(category.styles)) {
+      throw new Error(`${catalogPath}: category "${category.id}" needs a "styles" list`);
+    }
+    for (const style of category.styles) {
+      if (typeof style.id !== 'string' || typeof style.name !== 'string' || !style.id || !style.name) {
+        throw new Error(`${catalogPath}: category "${category.id}" has a style without "id" or "name"`);
+      }
+      if (seen.has(style.id)) {
+        throw new Error(`${catalogPath}: style "${style.id}" is listed more than once`);
+      }
+      seen.add(style.id);
+    }
+  }
+  return catalog;
 }
 
 export function scanPreviews(previewDir) {
@@ -188,9 +155,9 @@ export function scanPreviews(previewDir) {
   return previews;
 }
 
-export function buildStylesData(stylesDir, previewDir, readmePath) {
-  // 1. Parse README TOC for category mappings
-  const tocCategories = parseTocFromReadme(readmePath);
+export function buildStylesData(stylesDir, previewDir, catalogPath) {
+  // 1. Load the catalog (categories, order, names and descriptions)
+  const catalog = loadCatalog(catalogPath);
 
   // 2. Scan previews (from source preview dir)
   const allPreviews = scanPreviews(previewDir);
@@ -237,17 +204,19 @@ export function buildStylesData(stylesDir, previewDir, readmePath) {
 
   // 4. Build categories with only visible styles
   const categories = [];
-  for (const cat of tocCategories) {
+  for (const cat of catalog.categories) {
     const styles = [];
-    for (const styleName of cat.styleNames) {
-      const id = nameToId(styleName);
-      if (styleMap[id]) {
-        styles.push({
-          ...styleMap[id],
-          name: styleName,
-          searchText: buildSearchText({ ...styleMap[id], name: styleName }, cat.name),
-        });
-      }
+    for (const entry of cat.styles) {
+      const style = styleMap[entry.id];
+      if (!style) continue;
+
+      const description = entry.description || '';
+      styles.push({
+        ...style,
+        name: entry.name,
+        description,
+        searchText: buildSearchText({ ...style, name: entry.name, description }, cat.name),
+      });
     }
 
     // Only include categories that have at least one visible style
@@ -255,7 +224,7 @@ export function buildStylesData(stylesDir, previewDir, readmePath) {
       categories.push({
         id: cat.id,
         name: cat.name,
-        emoji: cat.emoji,
+        emoji: cat.emoji || '',
         styles,
       });
     }
@@ -279,9 +248,9 @@ async function main() {
   console.log('🔨 Building styles data...');
   console.log(`   Styles dir: ${STYLES_DIR}`);
   console.log(`   Preview dir: ${PREVIEW_DIR}`);
-  console.log(`   README: ${README_PATH}`);
+  console.log(`   Catalog: ${CATALOG_PATH}`);
 
-  const data = buildStylesData(STYLES_DIR, PREVIEW_DIR, README_PATH);
+  const data = buildStylesData(STYLES_DIR, PREVIEW_DIR, CATALOG_PATH);
 
   // Ensure output directory exists
   const outputDir = path.dirname(OUTPUT_PATH);

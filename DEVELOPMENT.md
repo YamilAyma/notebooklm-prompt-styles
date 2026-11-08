@@ -7,6 +7,7 @@ This document provides technical details on how the showcase website works, its 
 The project is a **Data-Driven Static Site**. Instead of hardcoding content into the HTML, the site is generated from the source YAML files and preview images located in the root of the repository.
 
 - `/styles/*.yaml`: The source of truth for the design prompts.
+- `/data/catalog.json`: Categories, order, display names and descriptions. A style that is not listed here is not shown on the site (`npm run validate` checks it).
 - `/preview/[style_id]/[style_id]_[n].webp`: Preview images for each style (WebP, generated with `scripts/optimize_and_rename.py`).
 - `/src/`: The Astro source code (Layouts, Pages, Components).
 - `/src/scripts/`: Modular frontend logic.
@@ -26,7 +27,7 @@ The project is a **Data-Driven Static Site**. Instead of hardcoding content into
 
 ### 1. Style Synchronization (`scripts/build-data.js`)
 This is the core build script. It performs the following:
-- Parses the root `README.md` to identify style categories.
+- Loads `data/catalog.json`: categories, order, display names and descriptions of every style (kept out of the YAML files so users copy them clean).
 - Reads every `.yaml` file in `/styles`.
 - Scans `/preview` for matching folders.
 - **Filters Styles**: Only styles that have at least one preview image are included in the final site.
@@ -37,7 +38,7 @@ This is the core build script. It performs the following:
 **Run manually:** `npm run build:data`
 
 ### 2. Style Validation (`scripts/validate-styles.js`)
-Checks every YAML in `/styles`: valid syntax, required structure (`theme`, `typography`, `color_palette`, `key_visual_elements`, `slide_layout_templates`), at least one preview image, and no preview folder without a YAML. Missing HEX colors only produce warnings.
+Checks every YAML in `/styles`: valid syntax, required structure (`theme`, `typography`, `color_palette`, `key_visual_elements`, `slide_layout_templates`), at least one preview image, and no preview folder without a YAML. It also checks that every style with previews is listed in `data/catalog.json` (otherwise the site hides it) and that every catalog entry has a YAML. Missing HEX colors only produce warnings.
 
 **Run manually:** `npm run validate`
 
@@ -54,8 +55,13 @@ Compares every pair of styles with Jaccard similarity on (a) words of theme, typ
 
 **Run manually:** `python scripts/optimize_and_rename.py`
 
-### 5. Adding a Style (`scripts/add-style.js`)
-Adds a style to the README (TOC and body).
+### 5. README Generation (`scripts/generate-readme.js`)
+The style index and the per-style sections of `README.md` are generated from `data/catalog.json` and `preview/` between the `<!-- TOC:START/END -->` and `<!-- STYLES:START/END -->` markers; everything else in the README is hand-written. Each style gets its description, first preview and a link to its YAML (the YAML itself is not embedded).
+
+**Run manually:** `npm run readme` (CI runs `npm run readme:check` and fails if the README is out of date)
+
+### 6. Adding a Style (`scripts/add-style.js`)
+Registers a style in `data/catalog.json` and regenerates the README.
 
 **Run manually:** `node scripts/add-style.js --name "Style Name" --cat "Category" --yaml "styles/file.yaml"`
 
