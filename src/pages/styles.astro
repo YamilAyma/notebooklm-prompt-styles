@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import StyleCard from '../components/StyleCard.astro';
+import SearchBar from '../components/SearchBar.astro';
 import stylesData from '../../public/data/styles.json';
 
 const PAGE_SIZE = 12; // keep in sync with itemsToShow in app.js
@@ -16,6 +17,7 @@ const initialStyles = allStyles.slice(0, PAGE_SIZE);
         <p class="hero__subtitle">
           <span id="style-count">{allStyles.length}</span> <span data-i18n="heroSub">curated YAML prompts for NotebookLM</span>
         </p>
+        <SearchBar />
       </div>
     </header>
 

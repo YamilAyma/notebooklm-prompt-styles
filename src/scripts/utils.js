@@ -32,3 +32,11 @@ export function copyToClipboard(text, successMessage = 'Copied to clipboard') {
 export function isMobile() {
   return window.matchMedia('(max-width: 768px)').matches;
 }
+
+/** Lowercase and strip accents. Must match normalizeText in scripts/build-data.js. */
+export function normalizeText(value) {
+  return String(value ?? '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase();
+}

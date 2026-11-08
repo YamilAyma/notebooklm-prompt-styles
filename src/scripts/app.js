@@ -9,8 +9,8 @@ import { initTheme } from './theme.js';
 import { initBottomSheet } from './ui/bottomSheet.js';
 import { initShare } from './ui/share.js';
 import { createCard, hydrateCard } from './ui/card.js';
-import { showToast } from './utils.js';
-import { applyTranslations, setLang, getLang } from './i18n.js';
+import { showToast, normalizeText } from './utils.js';
+import { applyTranslations, setLang, getLang, t } from './i18n.js';
 
 // ─── State ──────────────────────────────────────────────────────────
 
@@ -19,6 +19,7 @@ let currentStyles = [];
 let itemsToShow = 12;
 let displayedCount = 0;
 let showOnlyFavorites = false;
+let searchTerms = []; // normalized words of the current search (empty = no search)
 let needsHydration = true; // first render adopts prerendered cards
 
 // ─── Init ───────────────────────────────────────────────────────────
@@ -41,6 +42,7 @@ async function init() {
   
   if (app) {
     const categoryId = app?.getAttribute('data-category') || 'all';
+    initSearch(categoryId);
     applyFilters(categoryId);
     initFavFilter();
     initPagination();
@@ -165,11 +167,17 @@ function initPagination() {
 // ─── Filtering & State ──────────────────────────────────────────────
 
 function applyFilters(categoryId = 'all') {
-  const visibleCategories = categoryId === 'all'
+  // Search is global: while searching, the category is ignored.
+  const searching = searchTerms.length > 0;
+  const visibleCategories = categoryId === 'all' || searching
     ? stylesData.categories
     : stylesData.categories.filter(c => c.id === categoryId);
 
   let filtered = visibleCategories.flatMap(c => c.styles);
+
+  if (searching) {
+    filtered = filtered.filter(s => searchTerms.every(term => s.searchText.includes(term)));
+  }
 
   if (showOnlyFavorites) {
     filtered = filtered.filter(s => isFavorite(s.id));
@@ -241,6 +249,60 @@ function updatePagination() {
   if (pagination) pagination.hidden = displayedCount >= currentStyles.length;
 }
 
+// ─── Search ─────────────────────────────────────────────────────────
+
+function initSearch(categoryId) {
+  const bar = document.getElementById('search-bar');
+  const input = document.getElementById('style-search');
+  if (!bar || !input) return;
+
+  bar.hidden = false;
+
+  const apply = () => {
+    searchTerms = normalizeText(input.value).split(/\s+/).filter(Boolean);
+
+    const url = new URL(window.location.href);
+    if (input.value.trim()) url.searchParams.set('q', input.value.trim());
+    else url.searchParams.delete('q');
+    history.replaceState(null, '', url);
+
+    const note = document.getElementById('category-note');
+    if (note) note.hidden = searchTerms.length > 0;
+
+    applyFilters(categoryId);
+  };
+
+  const initial = new URLSearchParams(window.location.search).get('q');
+  if (initial) {
+    input.value = initial;
+    searchTerms = normalizeText(initial).split(/\s+/).filter(Boolean);
+    const note = document.getElementById('category-note');
+    if (note) note.hidden = true;
+  }
+
+  let timer;
+  input.addEventListener('input', () => {
+    clearTimeout(timer);
+    timer = setTimeout(apply, 150);
+  });
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && input.value) {
+      input.value = '';
+      apply();
+      e.stopPropagation();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || e.target.isContentEditable;
+    if (e.key === '/' && !typing && !e.metaKey && !e.ctrlKey && !e.altKey) {
+      e.preventDefault();
+      input.focus();
+    }
+  });
+}
+
 function initFavFilter() {
   const favTrigger = document.getElementById('fav-trigger');
   favTrigger?.addEventListener('click', () => {
@@ -290,7 +352,20 @@ function showEmptyState() {
   const grid = document.getElementById('styles-grid');
   const empty = document.getElementById('empty-state');
   if (grid) grid.hidden = true;
-  if (empty) empty.hidden = false;
+  if (empty) {
+    // Remember the page's own message, and swap it only for search misses
+    empty.defaultMessage ??= { key: empty.getAttribute('data-i18n'), text: empty.textContent };
+    if (searchTerms.length > 0) {
+      empty.setAttribute('data-i18n', 'emptySearch');
+      empty.textContent = t('emptySearch');
+    } else {
+      const { key, text } = empty.defaultMessage;
+      if (key) empty.setAttribute('data-i18n', key);
+      else empty.removeAttribute('data-i18n');
+      empty.textContent = key ? t(key) : text;
+    }
+    empty.hidden = false;
+  }
 }
 
 function hideEmptyState() {
