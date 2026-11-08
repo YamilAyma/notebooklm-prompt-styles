@@ -46,10 +46,7 @@ export function createCard(style, onFavoriteUpdate) {
 
   setupCardInteractions(card, img, style);
 
-  // Bottom sheet on click
-  card.addEventListener('click', () => {
-    openBottomSheet(style);
-  });
+  bindOpen(card, style);
 
   return card;
 }
@@ -66,10 +63,23 @@ export function hydrateCard(card, style, onFavoriteUpdate) {
 
   bindFavoriteButton(favBtn, style, onFavoriteUpdate);
   setupCardInteractions(card, img, style);
-  card.addEventListener('click', () => {
-    openBottomSheet(style);
-  });
+  bindOpen(card, style);
   return true;
+}
+
+/** Opens the YAML sheet on click, and on Enter / Space for keyboard users. */
+function bindOpen(card, style) {
+  card.tabIndex = 0;
+  card.setAttribute('aria-haspopup', 'dialog');
+
+  card.addEventListener('click', () => openBottomSheet(style));
+  card.addEventListener('keydown', (e) => {
+    if (e.target !== card) return; // let the favorite button handle its own keys
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openBottomSheet(style);
+    }
+  });
 }
 
 function createFavoriteButton(style, onFavoriteUpdate) {
