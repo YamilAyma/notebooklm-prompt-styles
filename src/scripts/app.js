@@ -10,7 +10,7 @@ import { initBottomSheet } from './ui/bottomSheet.js';
 import { initShare } from './ui/share.js';
 import { createCard, hydrateCard } from './ui/card.js';
 import { initStylePage } from './ui/stylePage.js';
-import { showToast, normalizeText } from './utils.js';
+import { normalizeText } from './utils.js';
 import { applyTranslations, setLang, getLang, t } from './i18n.js';
 
 // ─── State ──────────────────────────────────────────────────────────
