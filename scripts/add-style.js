@@ -105,12 +105,18 @@ function updateBody(content, name, category, yamlFile) {
   const descriptionMatch = yamlBody.match(/description:\s*"(.+?)"/);
   const description = descriptionMatch ? descriptionMatch[1] : "Description not available.";
 
+  // Use the first real preview (previews are .webp since the optimization step)
+  const previewDir = path.join(ROOT, 'preview', id);
+  const previewFile = fs.existsSync(previewDir)
+    ? (fs.readdirSync(previewDir).filter((f) => /\.(webp|png|jpe?g)$/i.test(f)).sort()[0] ?? `${id}_1.webp`)
+    : `${id}_1.webp`;
+
   const newStyleBlock = `
 #### ${name}
 
 ${description}
 
-![${name} Preview](preview/${id}/${id}_1.png)
+![${name} Preview](preview/${id}/${previewFile})
 
 > [!TIP]
 > This is a simplified preview. [View Full YAML](${yamlFile})
