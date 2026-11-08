@@ -23,16 +23,19 @@ export const DEFAULT_TEXT_THRESHOLD = 0.45;
 export const DEFAULT_COLOR_THRESHOLD = 0.6;
 
 const STOPWORDS = new Set(
-  'the a an and of with in for to on by or is as at from that this its it be are into over under high low style design'.split(' ')
+  'the a an and of with in for to on by or is as at from that this its it be are into over under high low style design'.split(
+    ' ',
+  ),
 );
 
 export function extractFeatures(raw) {
   const parsed = yaml.load(raw);
   const gs = parsed?.design_system?.global_style ?? {};
-  const text = [gs.theme, JSON.stringify(gs.typography ?? {}), ...(gs.key_visual_elements ?? [])]
-    .join(' ')
-    .toLowerCase()
-    .match(/[a-z]{4,}/g) ?? [];
+  const text =
+    [gs.theme, JSON.stringify(gs.typography ?? {}), ...(gs.key_visual_elements ?? [])]
+      .join(' ')
+      .toLowerCase()
+      .match(/[a-z]{4,}/g) ?? [];
 
   return {
     words: new Set(text.filter((w) => !STOPWORDS.has(w))),
@@ -49,9 +52,14 @@ export function jaccard(a, b) {
 
 export function computePairs(stylesDir) {
   const features = {};
-  for (const file of fs.readdirSync(stylesDir).filter((f) => /\.ya?ml$/.test(f)).sort()) {
+  for (const file of fs
+    .readdirSync(stylesDir)
+    .filter((f) => /\.ya?ml$/.test(f))
+    .sort()) {
     try {
-      features[file.replace(/\.ya?ml$/, '')] = extractFeatures(fs.readFileSync(path.join(stylesDir, file), 'utf-8'));
+      features[file.replace(/\.ya?ml$/, '')] = extractFeatures(
+        fs.readFileSync(path.join(stylesDir, file), 'utf-8'),
+      );
     } catch {
       // Malformed YAML is reported by `npm run validate`
     }
@@ -72,7 +80,10 @@ export function computePairs(stylesDir) {
   return pairs;
 }
 
-export function findSimilar(pairs, { text = DEFAULT_TEXT_THRESHOLD, colors = DEFAULT_COLOR_THRESHOLD } = {}) {
+export function findSimilar(
+  pairs,
+  { text = DEFAULT_TEXT_THRESHOLD, colors = DEFAULT_COLOR_THRESHOLD } = {},
+) {
   return pairs
     .filter((p) => p.text >= text || p.colors >= colors)
     .sort((x, y) => Math.max(y.text, y.colors) - Math.max(x.text, x.colors));
@@ -81,7 +92,7 @@ export function findSimilar(pairs, { text = DEFAULT_TEXT_THRESHOLD, colors = DEF
 export function closestTo(pairs, id, limit = 5) {
   return pairs
     .filter((p) => p.a === id || p.b === id)
-    .sort((x, y) => (y.text + y.colors) - (x.text + x.colors))
+    .sort((x, y) => y.text + y.colors - (x.text + x.colors))
     .slice(0, limit)
     .map((p) => ({ ...p, other: p.a === id ? p.b : p.a }));
 }
@@ -105,7 +116,9 @@ function main() {
       process.exit(1);
     }
     console.log(`Closest styles to ${styleId}:`);
-    closest.forEach((p) => console.log(`  ${p.other}: text ${pct(p.text)}, colors ${pct(p.colors)}`));
+    closest.forEach((p) =>
+      console.log(`  ${p.other}: text ${pct(p.text)}, colors ${pct(p.colors)}`),
+    );
     return;
   }
 
@@ -116,11 +129,17 @@ function main() {
   const similar = findSimilar(pairs, thresholds);
 
   if (similar.length === 0) {
-    console.log(`✔ No similar styles (text ≥ ${pct(thresholds.text)} or colors ≥ ${pct(thresholds.colors)}).`);
+    console.log(
+      `✔ No similar styles (text ≥ ${pct(thresholds.text)} or colors ≥ ${pct(thresholds.colors)}).`,
+    );
     return;
   }
-  console.warn(`⚠ ${similar.length} pair(s) similar (text ≥ ${pct(thresholds.text)} or colors ≥ ${pct(thresholds.colors)}):`);
-  similar.forEach((p) => console.warn(`  ${p.a} ↔ ${p.b}: text ${pct(p.text)}, colors ${pct(p.colors)}`));
+  console.warn(
+    `⚠ ${similar.length} pair(s) similar (text ≥ ${pct(thresholds.text)} or colors ≥ ${pct(thresholds.colors)}):`,
+  );
+  similar.forEach((p) =>
+    console.warn(`  ${p.a} ↔ ${p.b}: text ${pct(p.text)}, colors ${pct(p.colors)}`),
+  );
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(import.meta.filename)) {

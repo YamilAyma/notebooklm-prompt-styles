@@ -2,7 +2,8 @@
  * focusTrap.js — Keeps keyboard focus inside a modal while it is open.
  */
 
-const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select, textarea, [tabindex]:not([tabindex="-1"])';
+const FOCUSABLE =
+  'a[href], button:not([disabled]), input:not([disabled]), select, textarea, [tabindex]:not([tabindex="-1"])';
 
 const isVisible = (el) => el.getClientRects().length > 0;
 

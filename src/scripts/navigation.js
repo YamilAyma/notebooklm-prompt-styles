@@ -91,7 +91,7 @@ function buildNavList(categories, currentCategory) {
       </li>
     `;
   }
-  
+
   // "How To" link
   const howToActive = window.location.pathname === '/how-to' ? ' nav-modal__link--active' : '';
   html += `

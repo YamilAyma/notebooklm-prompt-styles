@@ -2,7 +2,13 @@ import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
-import { extractFeatures, jaccard, computePairs, findSimilar, closestTo } from '../check-similarity.js';
+import {
+  extractFeatures,
+  jaccard,
+  computePairs,
+  findSimilar,
+  closestTo,
+} from '../check-similarity.js';
 
 const style = (theme, color, elements = ['Grid lines']) => `
 design_system:
@@ -41,7 +47,10 @@ describe('computePairs / findSimilar / closestTo', () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'similarity-'));
   fs.writeFileSync(path.join(dir, 'a.yaml'), style('Neon cyber glow city', '#FF00AA'));
   fs.writeFileSync(path.join(dir, 'b.yaml'), style('Neon cyber glow city', '#FF00AA'));
-  fs.writeFileSync(path.join(dir, 'c.yaml'), style('Quiet pastel meadow', '#AABBCC', ['Soft clouds']));
+  fs.writeFileSync(
+    path.join(dir, 'c.yaml'),
+    style('Quiet pastel meadow', '#AABBCC', ['Soft clouds']),
+  );
   fs.writeFileSync(path.join(dir, 'broken.yaml'), 'a: [unclosed');
   const pairs = computePairs(dir);
 

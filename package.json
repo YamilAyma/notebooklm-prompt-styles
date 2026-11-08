@@ -6,6 +6,9 @@
   "scripts": {
     "build:data": "node scripts/build-data.js",
     "validate": "node scripts/validate-styles.js",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "similarity": "node scripts/check-similarity.js",
     "readme": "node scripts/generate-readme.js",
     "readme:check": "node scripts/generate-readme.js --check",
@@ -16,8 +19,15 @@
     "test:watch": "vitest"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@iconify-json/carbon": "^1.2.20",
+    "@typescript-eslint/parser": "^8.72.1",
+    "eslint": "^10.14.0",
+    "eslint-plugin-astro": "^3.2.1",
+    "globals": "^17.14.0",
+    "prettier": "^3.9.10",
     "sharp": "^0.34.5",
+    "typescript": "^5.9.3",
     "unplugin-icons": "^23.0.1",
     "vite": "^6.3.1",
     "vitest": "^3.1.1"
