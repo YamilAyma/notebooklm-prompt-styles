@@ -26,6 +26,8 @@ const {
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = image ?? new URL('/og-image.png', Astro.site).href;
+const ogLogo = new URL('/icon.png', Astro.site).href;
+const siteHost = Astro.site?.host;
 ---
 
 <!DOCTYPE html>
@@ -45,10 +47,10 @@ const ogImage = image ?? new URL('/og-image.png', Astro.site).href;
   <meta property="og:url" content={canonicalUrl}>
   <meta property="og:image" content={ogImage}>
   <meta property="og:site_name" content="NotebookLM Prompt Styles">
-  <meta property="og:logo" content="https://notebooklm-prompt-styles.vercel.app/icon.png" />
+  <meta property="og:logo" content={ogLogo} />
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content={title}>
-  <meta property="twitter:domain" content="notebooklm-prompt-styles.vercel.app">
+  <meta property="twitter:domain" content={siteHost}>
   <meta name="twitter:description" content={description}>
   <meta name="twitter:image" content={ogImage}>
   <meta property="twitter:url" content={canonicalUrl}>
