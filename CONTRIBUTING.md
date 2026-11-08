@@ -91,7 +91,7 @@ npm run build:data
 ```
 
 > [!IMPORTANT]
-> The build script identifies categories from the `README.md` and only includes styles that have a corresponding folder in `/preview` with at least one image.
+> The build script reads categories, names and descriptions from `data/catalog.json` (`node scripts/add-style.js` adds your style to it) and only includes styles that have a corresponding folder in `/preview` with at least one image.
 
 ## Step 5: Update the README
 

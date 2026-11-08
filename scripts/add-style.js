@@ -1,8 +1,8 @@
 /**
  * scripts/add-style.js
  * 
- * Automates the addition of a new style to README.md.
- * Updates both the Table of Contents (TOC) and the document body.
+ * Automates the addition of a new style: registers it in data/catalog.json
+ * (what the website reads) and in README.md (TOC and document body).
  * 
  * Usage: node scripts/add-style.js --name "Style Name" --cat "Category" --yaml "path/to/file.yaml"
  */
@@ -14,6 +14,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const README_PATH = path.join(ROOT, 'README.md');
+const CATALOG_PATH = path.join(ROOT, 'data', 'catalog.json');
 
 // 1. Get Arguments
 const args = process.argv.slice(2);
@@ -137,10 +138,33 @@ ${yamlBody.trim()}
   return sections.join('\n### ');
 }
 
+// --- CATALOG UPDATE LOGIC ---
+function updateCatalog(name, category, yamlFile) {
+  const catalog = JSON.parse(fs.readFileSync(CATALOG_PATH, 'utf-8'));
+  const target = catalog.categories.find((c) => c.name.toLowerCase().includes(category.toLowerCase()));
+  if (!target) {
+    console.warn(`⚠️ Category "${category}" not found in data/catalog.json.`);
+    return;
+  }
+
+  const id = path.basename(yamlFile, '.yaml');
+  if (catalog.categories.some((c) => c.styles.some((s) => s.id === id))) {
+    console.log(`ℹ️ "${id}" is already in data/catalog.json.`);
+    return;
+  }
+
+  const yamlBody = fs.readFileSync(path.join(ROOT, yamlFile), 'utf-8');
+  const description = yamlBody.match(/^description:\s*"(.+?)"/m)?.[1] ?? '';
+  target.styles.push({ id, name, description });
+  fs.writeFileSync(CATALOG_PATH, JSON.stringify(catalog, null, 2) + '\n', 'utf-8');
+  console.log(`✅ data/catalog.json updated.`);
+}
+
 // 4. Apply Changes
 console.log(`🚀 Adding style "${styleName}" to category "${categoryName}"...`);
 readme = updateTOC(readme, styleName, categoryName);
 readme = updateBody(readme, styleName, categoryName, yamlPath);
+updateCatalog(styleName, categoryName, yamlPath);
 
 // 5. Save
 fs.writeFileSync(README_PATH, readme, 'utf-8');
