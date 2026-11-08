@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import StyleCard from '../../components/StyleCard.astro';
+import SearchBar from '../../components/SearchBar.astro';
 // We import the generated JSON to know which pages to generate
 import stylesData from '../../../public/data/styles.json';
 
@@ -24,8 +25,9 @@ const initialStyles = styles.slice(0, PAGE_SIZE);
       <div class="hero__container">
         <h1 class="hero__title">{name}</h1>
         <p class="hero__subtitle">
-          <span id="style-count">{styles.length}</span> curated YAML prompts in this category
+          <span id="style-count">{styles.length}</span> curated YAML prompts<span id="category-note"> in this category</span>
         </p>
+        <SearchBar />
       </div>
     </header>
 
