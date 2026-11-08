@@ -9,7 +9,19 @@ const allStyles = stylesData.categories.flatMap((c) => c.styles);
 const initialStyles = allStyles.slice(0, PAGE_SIZE);
 ---
 
-<Layout category="all">
+<Layout
+  category="all"
+  title="All Slide Styles for NotebookLM | NotebookLM Slide Styles"
+  description={`Browse ${allStyles.length} visual styles for NotebookLM slides. Preview each one, search by keyword and copy its YAML prompt.`}
+  jsonLd={{
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'All Slide Styles for NotebookLM',
+    url: new URL('/styles', Astro.site).href,
+    numberOfItems: allStyles.length,
+    isPartOf: { '@type': 'WebSite', name: 'NotebookLM Prompt Styles', url: String(Astro.site) },
+  }}
+>
   <main id="app" data-category="all">
     <header class="hero">
       <div class="hero__container">
