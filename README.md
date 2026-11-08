@@ -8,7 +8,7 @@ A curated collection of visual design styles (YAML) to customize the output of N
 
 Explore the collection interactively through our high-performance showcase site. Preview styles with rotating thumbnails, copy YAML prompts with a single click, and save your favorites.
 
-- **Live Version:** [View the Showcase](https://slidestyleshub.com/)
+- **Live Version:** [View the Showcase](https://www.slidestyleshub.com/)
 
 ---
 
@@ -132,7 +132,7 @@ Explore the collection interactively through our high-performance showcase site.
 ## 🎨 Themes
 
 > [!NOTE]
-> This list is generated from [`data/catalog.json`](data/catalog.json) and the files in [`styles/`](styles/) (do not edit it by hand; see the [Contribution Guide](CONTRIBUTING.md)). Open the **View Full YAML** link of a style to get its complete configuration (image generation prompts and detailed layouts), or copy it with one click on the [website](https://slidestyleshub.com/).
+> This list is generated from [`data/catalog.json`](data/catalog.json) and the files in [`styles/`](styles/) (do not edit it by hand; see the [Contribution Guide](CONTRIBUTING.md)). Open the **View Full YAML** link of a style to get its complete configuration (image generation prompts and detailed layouts), or copy it with one click on the [website](https://www.slidestyleshub.com/).
 
 <!-- STYLES:START -->
 ### 👔 Business & Executive
@@ -952,7 +952,7 @@ A warm and organic aesthetic inspired by artisanal floriculture and botanical he
 
 ## 🚀 How to Use
 
-1. Pick a style and copy its YAML (use the **Copy** button on the [website](https://slidestyleshub.com/) or open the *View Full YAML* link).
+1. Pick a style and copy its YAML (use the **Copy** button on the [website](https://www.slidestyleshub.com/) or open the *View Full YAML* link).
 2. Paste it into your NotebookLM prompt or configuration when generating slides.
 3. Enjoy your beautifully styled presentation!
 
