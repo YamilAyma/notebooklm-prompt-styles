@@ -1,0 +1,35 @@
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore (Deps) -"
+    groups:
+      astro:
+        patterns:
+          - "astro"
+          - "@astrojs/*"
+          - "vite"
+        update-types: [minor, patch]
+      dev-tooling:
+        patterns:
+          - "vitest"
+          - "eslint*"
+          - "@eslint/*"
+          - "globals"
+          - "prettier*"
+        update-types: [minor, patch]
+      other-minor-and-patch:
+        update-types: [minor, patch]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: "chore (CI) -"
