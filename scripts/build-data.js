@@ -1,12 +1,12 @@
 /**
  * build-data.js
- * 
+ *
  * Reads YAML style files, the catalog (data/catalog.json: categories, order,
  * display names and descriptions) and preview images to produce a consolidated
  * styles.json for the showcase website.
- * 
+ *
  * Usage: node scripts/build-data.js
- * 
+ *
  * Styles without preview images are excluded from output.
  */
 
@@ -37,7 +37,10 @@ export function normalizeText(value) {
  * Normalized text the site search runs against: name, category, description,
  * theme, typography and key visual elements.
  */
-export function buildSearchText({ name, description, theme, typography, keyElements }, categoryName = '') {
+export function buildSearchText(
+  { name, description, theme, typography, keyElements },
+  categoryName = '',
+) {
   const strings = (list) => list.filter((v) => typeof v === 'string');
   const parts = [
     name,
@@ -62,15 +65,17 @@ export function toThumbPath(previewPath) {
  * Originals are read from srcRoot and never modified.
  */
 export async function generateThumbnails(previewPaths, srcRoot, destRoot, width = THUMB_WIDTH) {
-  await Promise.all(previewPaths.map(async (previewPath) => {
-    const relative = previewPath.replace(/^\/preview\//, '');
-    const dest = path.join(destRoot, toThumbPath(previewPath).replace(/^\/preview\//, ''));
-    fs.mkdirSync(path.dirname(dest), { recursive: true });
-    await sharp(path.join(srcRoot, relative))
-      .resize({ width, withoutEnlargement: true })
-      .webp({ quality: 75 })
-      .toFile(dest);
-  }));
+  await Promise.all(
+    previewPaths.map(async (previewPath) => {
+      const relative = previewPath.replace(/^\/preview\//, '');
+      const dest = path.join(destRoot, toThumbPath(previewPath).replace(/^\/preview\//, ''));
+      fs.mkdirSync(path.dirname(dest), { recursive: true });
+      await sharp(path.join(srcRoot, relative))
+        .resize({ width, withoutEnlargement: true })
+        .webp({ quality: 75 })
+        .toFile(dest);
+    }),
+  );
 }
 
 export function parseYamlFile(filePath) {
@@ -119,8 +124,15 @@ export function loadCatalog(catalogPath) {
       throw new Error(`${catalogPath}: category "${category.id}" needs a "styles" list`);
     }
     for (const style of category.styles) {
-      if (typeof style.id !== 'string' || typeof style.name !== 'string' || !style.id || !style.name) {
-        throw new Error(`${catalogPath}: category "${category.id}" has a style without "id" or "name"`);
+      if (
+        typeof style.id !== 'string' ||
+        typeof style.name !== 'string' ||
+        !style.id ||
+        !style.name
+      ) {
+        throw new Error(
+          `${catalogPath}: category "${category.id}" has a style without "id" or "name"`,
+        );
       }
       if (seen.has(style.id)) {
         throw new Error(`${catalogPath}: style "${style.id}" is listed more than once`);
@@ -135,19 +147,19 @@ export function scanPreviews(previewDir) {
   const previews = {};
   if (!fs.existsSync(previewDir)) return previews;
 
-  const dirs = fs.readdirSync(previewDir, { withFileTypes: true })
-    .filter(d => d.isDirectory());
+  const dirs = fs.readdirSync(previewDir, { withFileTypes: true }).filter((d) => d.isDirectory());
 
   for (const dir of dirs) {
     const normalizedName = dir.name.replace(/-/g, '_');
-    const files = fs.readdirSync(path.join(previewDir, dir.name))
-      .filter(f => /\.(png|jpg|jpeg|webp)$/i.test(f))
-      .map(f => `/preview/${dir.name}/${f}`); // Path relative to root
+    const files = fs
+      .readdirSync(path.join(previewDir, dir.name))
+      .filter((f) => /\.(png|jpg|jpeg|webp)$/i.test(f))
+      .map((f) => `/preview/${dir.name}/${f}`); // Path relative to root
 
     if (files.length > 0) {
       previews[normalizedName] = {
         folder: dir.name,
-        files
+        files,
       };
     }
   }
@@ -163,8 +175,9 @@ export function buildStylesData(stylesDir, previewDir, catalogPath) {
   const allPreviews = scanPreviews(previewDir);
 
   // 3. Read and parse all YAML files
-  const yamlFiles = fs.readdirSync(stylesDir)
-    .filter(f => f.endsWith('.yaml') || f.endsWith('.yml'));
+  const yamlFiles = fs
+    .readdirSync(stylesDir)
+    .filter((f) => f.endsWith('.yaml') || f.endsWith('.yml'));
 
   const styleMap = {};
   const usedPreviewFolders = new Set();
@@ -271,7 +284,7 @@ async function main() {
   }
 
   // Generate thumbnails for the grid (originals stay untouched)
-  const allPreviews = data.categories.flatMap(c => c.styles.flatMap(s => s.previews));
+  const allPreviews = data.categories.flatMap((c) => c.styles.flatMap((s) => s.previews));
   await generateThumbnails(allPreviews, PREVIEW_DIR, webPreviewDir);
   console.log(`   ${allPreviews.length} thumbnails generated (${THUMB_WIDTH}px)`);
 

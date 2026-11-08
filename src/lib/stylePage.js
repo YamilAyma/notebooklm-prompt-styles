@@ -26,5 +26,8 @@ export function getRelatedStyles(categories, id, limit = 4) {
   const index = category.styles.findIndex((s) => s.id === id);
   const others = category.styles.length - 1;
   const count = Math.min(limit, others);
-  return Array.from({ length: count }, (_, i) => category.styles[(index + 1 + i) % category.styles.length]);
+  return Array.from(
+    { length: count },
+    (_, i) => category.styles[(index + 1 + i) % category.styles.length],
+  );
 }

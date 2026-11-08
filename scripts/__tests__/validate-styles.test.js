@@ -28,10 +28,12 @@ describe('validateStyle', () => {
     delete parsed.design_system.global_style.theme;
     delete parsed.slide_layout_templates;
     const { errors } = validateStyle(parsed);
-    expect(errors).toEqual(expect.arrayContaining([
-      'global_style.theme must be a non-empty string',
-      'slide_layout_templates must be a non-empty list',
-    ]));
+    expect(errors).toEqual(
+      expect.arrayContaining([
+        'global_style.theme must be a non-empty string',
+        'slide_layout_templates must be a non-empty list',
+      ]),
+    );
   });
 
   it('warns (not errors) when a site color token is missing', () => {
@@ -80,8 +82,9 @@ describe('validateAll', () => {
   });
 
   it('passes a style with a preview image', () => {
-    const results = validateAll(MOCK_STYLES, MOCK_PREVIEW)
-      .filter((r) => r.file === 'styles/style_a.yaml');
+    const results = validateAll(MOCK_STYLES, MOCK_PREVIEW).filter(
+      (r) => r.file === 'styles/style_a.yaml',
+    );
     expect(results[0].errors).toEqual([]);
   });
 });
@@ -92,15 +95,25 @@ describe('validateCatalog', () => {
     const styles = path.join(dir, 'styles');
     const preview = path.join(dir, 'preview');
     fs.mkdirSync(styles);
-    for (const id of styleIds) fs.writeFileSync(path.join(styles, `${id}.yaml`), 'design_system: {}');
+    for (const id of styleIds)
+      fs.writeFileSync(path.join(styles, `${id}.yaml`), 'design_system: {}');
     for (const id of previewIds) {
       fs.mkdirSync(path.join(preview, id), { recursive: true });
       fs.writeFileSync(path.join(preview, id, `${id}_1.webp`), '');
     }
     const catalogPath = path.join(dir, 'catalog.json');
-    fs.writeFileSync(catalogPath, JSON.stringify({
-      categories: [{ id: 'cat', name: 'Cat', styles: catalogStyleIds.map((id) => ({ id, name: id.toUpperCase() })) }],
-    }));
+    fs.writeFileSync(
+      catalogPath,
+      JSON.stringify({
+        categories: [
+          {
+            id: 'cat',
+            name: 'Cat',
+            styles: catalogStyleIds.map((id) => ({ id, name: id.toUpperCase() })),
+          },
+        ],
+      }),
+    );
     return { dir, styles, preview, catalogPath };
   };
   const run = (...args) => {
@@ -111,7 +124,13 @@ describe('validateCatalog', () => {
   };
 
   it('passes when the catalog and styles match', () => {
-    expect(run(['neon_glow', 'hand_drawn_scrapbook'], ['neon_glow', 'hand_drawn_scrapbook'], ['neon_glow', 'hand_drawn_scrapbook'])).toEqual([]);
+    expect(
+      run(
+        ['neon_glow', 'hand_drawn_scrapbook'],
+        ['neon_glow', 'hand_drawn_scrapbook'],
+        ['neon_glow', 'hand_drawn_scrapbook'],
+      ),
+    ).toEqual([]);
   });
 
   it('flags a style with previews that is missing from the catalog', () => {
@@ -125,8 +144,9 @@ describe('validateCatalog', () => {
   });
 
   it('flags a catalog entry without a YAML file', () => {
-    expect(run(['neon_glow', 'ghost_style'], ['neon_glow'], ['neon_glow']))
-      .toEqual(['catalog lists "GHOST_STYLE" but styles/ghost_style.yaml does not exist']);
+    expect(run(['neon_glow', 'ghost_style'], ['neon_glow'], ['neon_glow'])).toEqual([
+      'catalog lists "GHOST_STYLE" but styles/ghost_style.yaml does not exist',
+    ]);
   });
 
   it('reports an invalid catalog instead of crashing', () => {

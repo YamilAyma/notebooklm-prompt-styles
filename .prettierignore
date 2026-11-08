@@ -1,0 +1,14 @@
+dist/
+.astro/
+public/
+preview/
+styles/
+data/catalog.json
+package-lock.json
+README.md
+skills/
+scripts/__tests__/fixtures/
+*.md
+*.yaml
+*.yml
+*.astro

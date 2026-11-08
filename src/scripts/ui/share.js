@@ -13,7 +13,9 @@ export function initShare() {
 
   const url = window.location.href;
   const encodedUrl = encodeURIComponent(url);
-  const title = encodeURIComponent('NotebookLM Slide Styles: Curated visual design prompts for your research!');
+  const title = encodeURIComponent(
+    'NotebookLM Slide Styles: Curated visual design prompts for your research!',
+  );
 
   // Platform specific links
   const setLinks = (prefix) => {
@@ -21,7 +23,8 @@ export function initShare() {
     const reddit = document.getElementById(`${prefix}reddit`);
     const x = document.getElementById(`${prefix}x`);
 
-    if (linkedin) linkedin.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+    if (linkedin)
+      linkedin.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
     if (reddit) reddit.href = `https://www.reddit.com/submit?url=${encodedUrl}&title=${title}`;
     if (x) x.href = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${title}`;
   };
@@ -38,15 +41,15 @@ export function initShare() {
 
     const closeSocial = () => {
       socialModal.setAttribute('data-visible', 'false');
-      setTimeout(() => { 
-        socialModal.hidden = true; 
+      setTimeout(() => {
+        socialModal.hidden = true;
       }, 300);
     };
 
     modalBackdrop?.addEventListener('click', closeSocial);
-    
+
     // Close on link click
-    socialModal.querySelectorAll('.social-modal__item').forEach(item => {
+    socialModal.querySelectorAll('.social-modal__item').forEach((item) => {
       item.addEventListener('click', closeSocial);
     });
   }
@@ -55,7 +58,7 @@ export function initShare() {
     const shareData = {
       title: 'NotebookLM Slide Styles',
       text: 'Check out these awesome visual design styles for NotebookLM!',
-      url: url
+      url: url,
     };
 
     if (navigator.share && /Android|iPhone|iPad/i.test(navigator.userAgent)) {

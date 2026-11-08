@@ -22,7 +22,11 @@ describe('extractHex', () => {
 
 describe('getPalette', () => {
   it('keeps only the colors that have a HEX code', () => {
-    const palette = getPalette({ primary: 'Cream (#F9F7F2)', background: 'Soft gradient', text: '#111111' });
+    const palette = getPalette({
+      primary: 'Cream (#F9F7F2)',
+      background: 'Soft gradient',
+      text: '#111111',
+    });
     expect(palette).toEqual([
       { key: 'primary', label: 'Primary', hex: '#F9F7F2' },
       { key: 'text', label: 'Text', hex: '#111111' },
