@@ -64,6 +64,10 @@ Adds a style to the README (TOC and body).
 
 The first page of cards (12 per list, 6 on the landing) is rendered at build time by `src/components/StyleCard.astro`, so the HTML is useful without JavaScript. On load, `app.js` calls `hydrateCard()` (`ui/card.js`) to attach favorites, tooltip and bottom sheet to those cards instead of re-creating them. If the prerendered cards do not match the data, it falls back to a full client render. **`StyleCard.astro` and `createCard()` must keep the same markup**, and `PAGE_SIZE` in the pages must match `itemsToShow` in `app.js`.
 
+## 🖼️ Thumbnails in the Grid
+
+Cards (`StyleCard.astro` and `card.js`) display the 480px `thumbs` of each style, including the hover rotation, and fall back to `previews` if a style has no thumbnails. The originals are not shown anywhere else in the UI.
+
 ## 🌐 Internationalization (i18n)
 
 The site supports multiple languages (English, Spanish, Portuguese) using a custom lightweight system:
