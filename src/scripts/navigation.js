@@ -3,9 +3,11 @@
  */
 
 import { t } from './i18n.js';
+import { activateFocusTrap } from './ui/focusTrap.js';
 
 let navModal, navList, navTrigger, backdrop;
 let isOpen = false;
+let releaseFocusTrap = null;
 
 export function initNavigation(categories, currentCategory) {
   navModal = document.getElementById('nav-modal');
@@ -132,12 +134,19 @@ function open() {
   // Trigger reflow for animation
   navModal.offsetHeight;
   navModal.setAttribute('data-visible', 'true');
+  navTrigger.setAttribute('aria-expanded', 'true');
+  releaseFocusTrap = activateFocusTrap(navModal.querySelector('.nav-modal__panel'), {
+    include: [navTrigger],
+  });
 }
 
 function close() {
   isOpen = false;
   navModal.setAttribute('data-visible', 'false');
   navTrigger.classList.remove('fab--open');
+  navTrigger.setAttribute('aria-expanded', 'false');
+  releaseFocusTrap?.();
+  releaseFocusTrap = null;
   setTimeout(() => {
     navModal.hidden = true;
   }, 300);

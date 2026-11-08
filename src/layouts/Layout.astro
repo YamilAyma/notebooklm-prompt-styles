@@ -101,14 +101,14 @@ const ogImage = new URL('/og-image.png', Astro.site).href;
   <!-- YAML Bottom Sheet (Mobile) -->
   <div id="bottom-sheet" class="bottom-sheet" hidden>
     <div class="bottom-sheet__backdrop"></div>
-    <div class="bottom-sheet__panel">
+    <div class="bottom-sheet__panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
       <div class="bottom-sheet__handle"></div>
       <div class="bottom-sheet__header">
         <h3 id="sheet-title" class="bottom-sheet__title"></h3>
         <button id="sheet-close" class="bottom-sheet__close" aria-label="Close" data-i18n-aria="ariaClose">&times;</button>
       </div>
       <div class="bottom-sheet__code-wrapper">
-        <pre class="bottom-sheet__code"><code id="sheet-yaml"></code></pre>
+        <pre class="bottom-sheet__code" tabindex="0" aria-labelledby="sheet-title"><code id="sheet-yaml"></code></pre>
       </div>
       <button id="sheet-copy" class="copy-btn">
         <span class="copy-btn__icon">⎘</span>
@@ -129,7 +129,7 @@ const ogImage = new URL('/og-image.png', Astro.site).href;
   <!-- Navigation Modal -->
   <div id="nav-modal" class="nav-modal" hidden>
     <div class="nav-modal__backdrop"></div>
-    <nav class="nav-modal__panel">
+    <nav class="nav-modal__panel" aria-label="Site navigation" data-i18n-aria="ariaNav">
       <ul id="nav-list" class="nav-modal__list"></ul>
     </nav>
   </div>
