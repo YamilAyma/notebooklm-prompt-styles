@@ -4,6 +4,7 @@
 
 import { copyToClipboard } from '../utils.js';
 import { activateFocusTrap } from './focusTrap.js';
+import { stylePath } from '../../lib/stylePage.js';
 
 let releaseFocusTrap = null;
 
@@ -50,6 +51,8 @@ export function openBottomSheet(style) {
 
   title.textContent = style.name;
   yaml.textContent = style.yamlContent;
+  const pageLink = document.getElementById('sheet-page');
+  if (pageLink) pageLink.href = stylePath(style.id);
 
   sheet.hidden = false;
   sheet.offsetHeight; // reflow
