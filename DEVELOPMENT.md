@@ -70,6 +70,7 @@ Registers a style in `data/catalog.json` and regenerates the README.
 1. **Install Dependencies**: `npm install`
 2. **Start Dev Server**: `npm run dev`
 3. **Running Tests**: `npm test`
+4. **Linting**: `npm run lint` (ESLint with `eslint.config.js`: recommended rules for JavaScript and Astro; warnings fail the check). It runs in CI.
 
 ## ⚡ Prerendered Cards (SSG)
 
