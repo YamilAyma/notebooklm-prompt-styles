@@ -1,5 +1,8 @@
 import { describe, it, expect, beforeAll } from 'vitest';
+import fs from 'fs';
+import os from 'os';
 import path from 'path';
+import sharp from 'sharp';
 import { fileURLToPath } from 'url';
 import {
   parseYamlFile,
@@ -8,6 +11,8 @@ import {
   nameToId,
   scanPreviews,
   buildStylesData,
+  toThumbPath,
+  generateThumbnails,
 } from '../build-data.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -183,5 +188,59 @@ describe('buildStylesData', () => {
     const reparsed = JSON.parse(json);
     expect(reparsed.categories).toEqual(data.categories);
     expect(reparsed.meta.totalStyles).toBe(data.meta.totalStyles);
+  });
+});
+
+// ─── thumbnails ─────────────────────────────────────────────────────
+
+describe('toThumbPath', () => {
+  it('moves the image into a thumbs folder and forces .webp', () => {
+    expect(toThumbPath('/preview/style_a/style_a_1.webp')).toBe('/preview/style_a/thumbs/style_a_1.webp');
+    expect(toThumbPath('/preview/style_a/1.png')).toBe('/preview/style_a/thumbs/1.webp');
+  });
+});
+
+describe('buildStylesData thumbs', () => {
+  it('adds a thumbs list parallel to previews', () => {
+    const data = buildStylesData(MOCK_STYLES, MOCK_PREVIEW, MOCK_README);
+    const styleA = data.categories.flatMap(c => c.styles).find(s => s.id === 'style_a');
+    expect(styleA.thumbs).toEqual(styleA.previews.map(toThumbPath));
+  });
+});
+
+describe('generateThumbnails', () => {
+  it('creates resized webp thumbnails without touching the originals', async () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'thumbs-'));
+    const src = path.join(dir, 'src');
+    const dest = path.join(dir, 'dest');
+    fs.mkdirSync(path.join(src, 'demo'), { recursive: true });
+    const original = path.join(src, 'demo', 'demo_1.webp');
+    await sharp({ create: { width: 1000, height: 500, channels: 3, background: '#336699' } })
+      .webp().toFile(original);
+    const originalSize = fs.statSync(original).size;
+
+    await generateThumbnails(['/preview/demo/demo_1.webp'], src, dest, 200);
+
+    const thumb = path.join(dest, 'demo', 'thumbs', 'demo_1.webp');
+    const meta = await sharp(thumb).metadata();
+    expect(meta.width).toBe(200);
+    expect(meta.height).toBe(100);
+    expect(meta.format).toBe('webp');
+    expect(fs.statSync(original).size).toBe(originalSize);
+    fs.rmSync(dir, { recursive: true, force: true });
+  });
+
+  it('does not enlarge small images', async () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'thumbs-'));
+    const src = path.join(dir, 'src');
+    fs.mkdirSync(path.join(src, 'demo'), { recursive: true });
+    await sharp({ create: { width: 100, height: 50, channels: 3, background: '#fff' } })
+      .webp().toFile(path.join(src, 'demo', 'demo_1.webp'));
+
+    await generateThumbnails(['/preview/demo/demo_1.webp'], src, path.join(dir, 'dest'), 480);
+
+    const meta = await sharp(path.join(dir, 'dest', 'demo', 'thumbs', 'demo_1.webp')).metadata();
+    expect(meta.width).toBe(100);
+    fs.rmSync(dir, { recursive: true, force: true });
   });
 });

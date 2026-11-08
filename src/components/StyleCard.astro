@@ -10,7 +10,7 @@ const { style } = Astro.props;
   <div class="style-card__image-container">
     <img
       class="style-card__image"
-      src={style.previews[0]}
+      src={(style.thumbs ?? style.previews)[0]}
       alt={`${style.name} — slide style preview`}
       loading="lazy"
       width="400"

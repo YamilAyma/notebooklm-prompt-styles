@@ -31,7 +31,8 @@ This is the core build script. It performs the following:
 - Scans `/preview` for matching folders.
 - **Filters Styles**: Only styles that have at least one preview image are included in the final site.
 - **Asset Management**: Copies the image folders from the root `/preview` to `/public/preview`.
-- **Generates JSON**: Creates `public/data/styles.json`.
+- **Generates Thumbnails**: Creates a 480px WebP thumbnail per preview in `public/preview/<style>/thumbs/` (with `sharp`). Originals are untouched.
+- **Generates JSON**: Creates `public/data/styles.json` (each style has `previews` and `thumbs`).
 
 **Run manually:** `npm run build:data`
 
@@ -62,6 +63,10 @@ Adds a style to the README (TOC and body).
 ## ⚡ Prerendered Cards (SSG)
 
 The first page of cards (12 per list, 6 on the landing) is rendered at build time by `src/components/StyleCard.astro`, so the HTML is useful without JavaScript. On load, `app.js` calls `hydrateCard()` (`ui/card.js`) to attach favorites, tooltip and bottom sheet to those cards instead of re-creating them. If the prerendered cards do not match the data, it falls back to a full client render. **`StyleCard.astro` and `createCard()` must keep the same markup**, and `PAGE_SIZE` in the pages must match `itemsToShow` in `app.js`.
+
+## 🖼️ Thumbnails in the Grid
+
+Cards (`StyleCard.astro` and `card.js`) display the 480px `thumbs` of each style, including the hover rotation, and fall back to `previews` if a style has no thumbnails. The originals are not shown anywhere else in the UI.
 
 ## 🌐 Internationalization (i18n)
 
