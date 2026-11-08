@@ -12,6 +12,8 @@ import {
   scanPreviews,
   buildStylesData,
   toThumbPath,
+  normalizeText,
+  buildSearchText,
   generateThumbnails,
 } from '../build-data.js';
 
@@ -242,5 +244,44 @@ describe('generateThumbnails', () => {
     const meta = await sharp(path.join(dir, 'dest', 'demo', 'thumbs', 'demo_1.webp')).metadata();
     expect(meta.width).toBe(100);
     fs.rmSync(dir, { recursive: true, force: true });
+  });
+});
+
+// ─── search text ────────────────────────────────────────────────────
+
+describe('normalizeText', () => {
+  it('lowercases and strips accents', () => {
+    expect(normalizeText('Café Épico')).toBe('cafe epico');
+  });
+
+  it('tolerates null and non-string values', () => {
+    expect(normalizeText(null)).toBe('');
+    expect(normalizeText(42)).toBe('42');
+  });
+});
+
+describe('buildSearchText', () => {
+  it('joins name, category, theme, typography and key elements', () => {
+    const text = buildSearchText({
+      name: 'Neon Pulsar',
+      theme: 'Electric  glow',
+      typography: { primary_heading: 'Bold Sans', note: 7 },
+      keyElements: ['Grid lines', 'Cyan accents'],
+    }, 'Tech & Innovation');
+    expect(text).toBe('neon pulsar tech & innovation electric glow bold sans grid lines cyan accents');
+  });
+
+  it('works with missing optional fields', () => {
+    expect(buildSearchText({ name: 'Solo' })).toBe('solo');
+  });
+});
+
+describe('buildStylesData searchText', () => {
+  it('adds searchText containing the style name and category', () => {
+    const data = buildStylesData(MOCK_STYLES, MOCK_PREVIEW, MOCK_README);
+    const cat = data.categories.find(c => c.styles.some(s => s.id === 'style_a'));
+    const styleA = cat.styles.find(s => s.id === 'style_a');
+    expect(styleA.searchText).toContain(normalizeText(styleA.name));
+    expect(styleA.searchText).toContain(normalizeText(cat.name));
   });
 });

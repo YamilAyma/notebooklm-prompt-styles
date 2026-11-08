@@ -24,6 +24,30 @@ export const THUMB_WIDTH = 480;
 
 // ─── Exports for testing ────────────────────────────────────────────
 
+/** Lowercase and strip accents so searches match 'cafe' with 'Café'. */
+export function normalizeText(value) {
+  return String(value ?? '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase();
+}
+
+/**
+ * Normalized text the site search runs against: name, category, theme,
+ * typography and key visual elements.
+ */
+export function buildSearchText({ name, theme, typography, keyElements }, categoryName = '') {
+  const strings = (list) => list.filter((v) => typeof v === 'string');
+  const parts = [
+    name,
+    categoryName,
+    theme,
+    ...strings(Object.values(typography || {})),
+    ...strings(keyElements || []),
+  ];
+  return normalizeText(parts.join(' ')).replace(/\s+/g, ' ').trim();
+}
+
 /** '/preview/x/x_1.webp' -> '/preview/x/thumbs/x_1.webp' */
 export function toThumbPath(previewPath) {
   const { dir, name } = path.posix.parse(previewPath);
@@ -221,6 +245,7 @@ export function buildStylesData(stylesDir, previewDir, readmePath) {
         styles.push({
           ...styleMap[id],
           name: styleName,
+          searchText: buildSearchText({ ...styleMap[id], name: styleName }, cat.name),
         });
       }
     }
