@@ -144,6 +144,10 @@ Commit messages must follow the project standard to keep history readable.
 
 `.github/workflows/ci.yml` runs on every pull request and on pushes to `main`: `npm run validate`, `npm test` and `npm run build` (Node 22).
 
+## 🌍 Site URL
+
+The production URL is set once in `astro.config.mjs` (`site`); canonical links, `og:`/`twitter:` tags, JSON-LD and the sitemap are built from it. The only other place is the `Sitemap:` line of `public/robots.txt` (plus the links in `README.md`). To change domain, update those and see `vercel.json` for the redirect from the old one.
+
 ## 🚀 Deployment
 
 The site is built using Astro and deployed as a static site (SSG).
