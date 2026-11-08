@@ -9,6 +9,8 @@ interface Props {
   title?: string;
   description?: string;
   category?: string;
+  /** Absolute URL of the social preview image (defaults to the site image). */
+  image?: string;
   /** Structured data (schema.org) for this page, emitted as JSON-LD. */
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
@@ -19,11 +21,12 @@ const {
   title = "NotebookLM Slide Styles | Generate Beautiful Presentations with AI",
   description = DEFAULT_DESCRIPTION,
   category = "all",
+  image,
   jsonLd,
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
-const ogImage = new URL('/og-image.png', Astro.site).href;
+const ogImage = image ?? new URL('/og-image.png', Astro.site).href;
 ---
 
 <!DOCTYPE html>
@@ -110,6 +113,7 @@ const ogImage = new URL('/og-image.png', Astro.site).href;
       <div class="bottom-sheet__code-wrapper">
         <pre class="bottom-sheet__code" tabindex="0" aria-labelledby="sheet-title"><code id="sheet-yaml"></code></pre>
       </div>
+      <a id="sheet-page" class="sheet-page-link" href="#" data-i18n="sheetOpenPage">View style page</a>
       <button id="sheet-copy" class="copy-btn">
         <span class="copy-btn__icon">⎘</span>
         <span class="copy-btn__text" data-i18n="sheetCopy">Copy YAML</span>

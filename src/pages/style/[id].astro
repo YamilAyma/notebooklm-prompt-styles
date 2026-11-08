@@ -1,0 +1,153 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import stylesData from '../../../public/data/styles.json';
+import { stylePath, getPalette, getRelatedStyles } from '../../lib/stylePage.js';
+
+export function getStaticPaths() {
+  return stylesData.categories.flatMap((category) =>
+    category.styles.map((style) => ({
+      params: { id: style.id },
+      props: {
+        style,
+        category: { id: category.id, name: category.name, emoji: category.emoji },
+        related: getRelatedStyles(stylesData.categories, style.id),
+      },
+    }))
+  );
+}
+
+const { style, category, related } = Astro.props;
+
+const site = String(Astro.site);
+const pageUrl = new URL(stylePath(style.id), Astro.site).href;
+const categoryUrl = new URL(`/styles/${category.id}/`, Astro.site).href;
+const image = new URL(style.previews[0], Astro.site).href;
+const summary = style.description || style.theme;
+const description = `${style.name}: ${summary}`.slice(0, 300);
+const palette = getPalette(style.colors);
+const typography = Object.entries(style.typography ?? {}).filter(([, v]) => typeof v === 'string');
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: `${style.name} — NotebookLM slide style`,
+    description: summary,
+    url: pageUrl,
+    image,
+    genre: category.name,
+    isPartOf: { '@type': 'WebSite', name: 'NotebookLM Prompt Styles', url: site },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Styles', item: new URL('/styles', Astro.site).href },
+      { '@type': 'ListItem', position: 2, name: category.name, item: categoryUrl },
+      { '@type': 'ListItem', position: 3, name: style.name, item: pageUrl },
+    ],
+  },
+];
+---
+
+<Layout
+  category={category.id}
+  title={`${style.name} — NotebookLM Slide Style | NotebookLM Slide Styles`}
+  description={description}
+  image={image}
+  jsonLd={jsonLd}
+>
+  <main id="style-page" class="style-page" data-style-id={style.id}>
+    <nav class="style-page__crumbs" aria-label="Breadcrumb">
+      <a href="/styles" data-i18n="navAll">All Styles</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/styles/${category.id}/`}>{category.emoji} {category.name}</a>
+    </nav>
+
+    <header class="style-page__header">
+      <h1 class="style-page__title">{style.name}</h1>
+      <p class="style-page__summary">{summary}</p>
+      <div class="style-page__actions">
+        <button id="style-copy" class="copy-btn style-page__copy">
+          <span class="copy-btn__icon">⎘</span>
+          <span class="copy-btn__text" data-i18n="sheetCopy">Copy Style</span>
+        </button>
+        <a href={`/styles/${category.id}/`} class="btn btn--outline" data-i18n="pageMoreLike">More like this</a>
+      </div>
+    </header>
+
+    <section class="style-page__gallery" aria-label="Previews">
+      {style.previews.map((src, i) => (
+        <img
+          src={src}
+          alt={`${style.name} — slide style preview ${i + 1}`}
+          width="1376"
+          height="768"
+          loading={i === 0 ? 'eager' : 'lazy'}
+          fetchpriority={i === 0 ? 'high' : 'auto'}
+        />
+      ))}
+    </section>
+
+    <div class="style-page__details">
+      {palette.length > 0 && (
+        <section class="style-page__block">
+          <h2 data-i18n="pagePalette">Palette</h2>
+          <ul class="style-page__swatches">
+            {palette.map((swatch) => (
+              <li>
+                <span class="style-page__swatch" style={`background-color: ${swatch.hex}`}></span>
+                <span>{swatch.label}</span>
+                <code>{swatch.hex.toUpperCase()}</code>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {typography.length > 0 && (
+        <section class="style-page__block">
+          <h2 data-i18n="pageTypography">Typography</h2>
+          <dl class="style-page__typography">
+            {typography.map(([key, value]) => (
+              <>
+                <dt>{key.replace(/_/g, ' ')}</dt>
+                <dd>{value}</dd>
+              </>
+            ))}
+          </dl>
+        </section>
+      )}
+
+      {style.keyElements.length > 0 && (
+        <section class="style-page__block">
+          <h2 data-i18n="pageElements">Key visual elements</h2>
+          <ul class="style-page__elements">
+            {style.keyElements.map((element) => <li>{element}</li>)}
+          </ul>
+        </section>
+      )}
+    </div>
+
+    <section class="style-page__block style-page__yaml">
+      <h2>YAML</h2>
+      <pre class="style-page__code" tabindex="0" aria-label={`${style.name} YAML`}><code id="style-yaml">{style.yamlContent}</code></pre>
+    </section>
+
+    {related.length > 0 && (
+      <section class="style-page__block">
+        <h2 data-i18n="pageRelated">Related styles</h2>
+        <ul class="style-page__related">
+          {related.map((item) => (
+            <li>
+              <a href={stylePath(item.id)} class="related-card">
+                <img src={(item.thumbs ?? item.previews)[0]} alt="" width="480" height="268" loading="lazy" />
+                <span>{item.name}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </main>
+</Layout>
