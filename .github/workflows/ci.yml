@@ -20,6 +20,8 @@ jobs:
       - run: npm ci
       - name: Validate styles
         run: npm run validate
+      - name: Check style similarity (warning only)
+        run: npm run similarity
       - name: Test
         run: npm test
       - name: Build
