@@ -4,7 +4,7 @@ import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import yaml from 'js-yaml';
-import { validateStyle, validateAll, validateReadme } from '../validate-styles.js';
+import { validateStyle, validateAll, validateCatalog } from '../validate-styles.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const MOCK_STYLES = path.join(__dirname, 'fixtures', 'mock-styles');
@@ -86,9 +86,9 @@ describe('validateAll', () => {
   });
 });
 
-describe('validateReadme', () => {
-  const setup = (readme, styleIds, previewIds) => {
-    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'validate-readme-'));
+describe('validateCatalog', () => {
+  const setup = (catalogStyleIds, styleIds, previewIds) => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'validate-catalog-'));
     const styles = path.join(dir, 'styles');
     const preview = path.join(dir, 'preview');
     fs.mkdirSync(styles);
@@ -97,38 +97,43 @@ describe('validateReadme', () => {
       fs.mkdirSync(path.join(preview, id), { recursive: true });
       fs.writeFileSync(path.join(preview, id, `${id}_1.webp`), '');
     }
-    const readmePath = path.join(dir, 'README.md');
-    fs.writeFileSync(readmePath, readme);
-    return { dir, styles, preview, readmePath };
+    const catalogPath = path.join(dir, 'catalog.json');
+    fs.writeFileSync(catalogPath, JSON.stringify({
+      categories: [{ id: 'cat', name: 'Cat', styles: catalogStyleIds.map((id) => ({ id, name: id.toUpperCase() })) }],
+    }));
+    return { dir, styles, preview, catalogPath };
+  };
+  const run = (...args) => {
+    const ctx = setup(...args);
+    const { errors } = validateCatalog(ctx.styles, ctx.preview, ctx.catalogPath)[0];
+    fs.rmSync(ctx.dir, { recursive: true, force: true });
+    return errors;
   };
 
-  const readme = (names) => `## Table of Contents\n- [Cat](#cat)\n${names.map((n) => `  - [${n}](#x)`).join('\n')}\n- [How to Use](#how)\n\n---\n`;
-
-  it('passes when README index and styles match', () => {
-    const { dir, styles, preview, readmePath } = setup(readme(['Neon Glow', 'Hand-Drawn Scrapbook']),
-      ['neon_glow', 'hand_drawn_scrapbook'], ['neon_glow', 'hand_drawn_scrapbook']);
-    expect(validateReadme(styles, preview, readmePath)[0].errors).toEqual([]);
-    fs.rmSync(dir, { recursive: true, force: true });
+  it('passes when the catalog and styles match', () => {
+    expect(run(['neon_glow', 'hand_drawn_scrapbook'], ['neon_glow', 'hand_drawn_scrapbook'], ['neon_glow', 'hand_drawn_scrapbook'])).toEqual([]);
   });
 
-  it('flags a style with previews that is missing from the README index', () => {
-    const { dir, styles, preview, readmePath } = setup(readme(['Neon Glow']), ['neon_glow', 'pop_retro'], ['neon_glow', 'pop_retro']);
-    const { errors } = validateReadme(styles, preview, readmePath)[0];
+  it('flags a style with previews that is missing from the catalog', () => {
+    const errors = run(['neon_glow'], ['neon_glow', 'pop_retro'], ['neon_glow', 'pop_retro']);
     expect(errors).toHaveLength(1);
     expect(errors[0]).toContain('styles/pop_retro.yaml');
-    fs.rmSync(dir, { recursive: true, force: true });
   });
 
   it('ignores styles without previews (they are reported by validateAll)', () => {
-    const { dir, styles, preview, readmePath } = setup(readme(['Neon Glow']), ['neon_glow', 'draft'], ['neon_glow']);
-    expect(validateReadme(styles, preview, readmePath)[0].errors).toEqual([]);
-    fs.rmSync(dir, { recursive: true, force: true });
+    expect(run(['neon_glow'], ['neon_glow', 'draft'], ['neon_glow'])).toEqual([]);
   });
 
-  it('flags a README entry without a YAML file', () => {
-    const { dir, styles, preview, readmePath } = setup(readme(['Neon Glow', 'Ghost Style']), ['neon_glow'], ['neon_glow']);
-    const { errors } = validateReadme(styles, preview, readmePath)[0];
-    expect(errors).toEqual(['README index lists "Ghost Style" but styles/ghost_style.yaml does not exist']);
-    fs.rmSync(dir, { recursive: true, force: true });
+  it('flags a catalog entry without a YAML file', () => {
+    expect(run(['neon_glow', 'ghost_style'], ['neon_glow'], ['neon_glow']))
+      .toEqual(['catalog lists "GHOST_STYLE" but styles/ghost_style.yaml does not exist']);
+  });
+
+  it('reports an invalid catalog instead of crashing', () => {
+    const ctx = setup(['a'], ['a'], ['a']);
+    fs.writeFileSync(ctx.catalogPath, '{ broken');
+    const { errors } = validateCatalog(ctx.styles, ctx.preview, ctx.catalogPath)[0];
+    expect(errors).toHaveLength(1);
+    fs.rmSync(ctx.dir, { recursive: true, force: true });
   });
 });
