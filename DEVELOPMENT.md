@@ -31,7 +31,8 @@ This is the core build script. It performs the following:
 - Scans `/preview` for matching folders.
 - **Filters Styles**: Only styles that have at least one preview image are included in the final site.
 - **Asset Management**: Copies the image folders from the root `/preview` to `/public/preview`.
-- **Generates JSON**: Creates `public/data/styles.json`.
+- **Generates Thumbnails**: Creates a 480px WebP thumbnail per preview in `public/preview/<style>/thumbs/` (with `sharp`). Originals are untouched.
+- **Generates JSON**: Creates `public/data/styles.json` (each style has `previews` and `thumbs`).
 
 **Run manually:** `npm run build:data`
 
