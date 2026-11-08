@@ -33,7 +33,7 @@
   --color-surface: #FFFFFF;
   --color-text: #111111;
   --color-text-secondary: #666666;
-  --color-text-muted: #999999;
+  --color-text-muted: #6B6B6B;
   --color-border: #E5E5E5;
   --color-accent: #111111;
   --color-accent-soft: #F0F0F0;
@@ -91,7 +91,7 @@
   --color-surface: #121212;
   --color-text: #F5F5F5;
   --color-text-secondary: #A1A1A1;
-  --color-text-muted: #717171;
+  --color-text-muted: #8A8A8A;
   --color-border: #262626;
   --color-accent: #FFFFFF;
   --color-accent-soft: #1A1A1A;
@@ -111,7 +111,7 @@
     --color-surface: #121212;
     --color-text: #F5F5F5;
     --color-text-secondary: #A1A1A1;
-    --color-text-muted: #717171;
+    --color-text-muted: #8A8A8A;
     --color-border: #262626;
     --color-accent: #FFFFFF;
     --color-accent-soft: #1A1A1A;
@@ -264,6 +264,13 @@ body::before {
 .hero__subtitle span {
   font-weight: 600;
   color: var(--color-text);
+}
+
+/* ─── Keyboard focus ─────────────────────────────────────────────── */
+
+:where(a, button, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
 }
 
 /* ─── Search ─────────────────────────────────────────────────────── */

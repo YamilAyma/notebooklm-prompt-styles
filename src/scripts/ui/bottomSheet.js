@@ -3,6 +3,9 @@
  */
 
 import { copyToClipboard } from '../utils.js';
+import { activateFocusTrap } from './focusTrap.js';
+
+let releaseFocusTrap = null;
 
 export function initBottomSheet() {
   const sheet = document.getElementById('bottom-sheet');
@@ -34,7 +37,7 @@ export function initBottomSheet() {
 
   // Close on Escape
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeBottomSheet();
+    if (e.key === 'Escape' && sheet?.getAttribute('data-visible') === 'true') closeBottomSheet();
   });
 }
 
@@ -52,6 +55,11 @@ export function openBottomSheet(style) {
   sheet.offsetHeight; // reflow
   sheet.setAttribute('data-visible', 'true');
   document.body.style.overflow = 'hidden';
+
+  releaseFocusTrap?.();
+  releaseFocusTrap = activateFocusTrap(sheet.querySelector('.bottom-sheet__panel'), {
+    initialFocus: document.getElementById('sheet-close'),
+  });
 }
 
 export function closeBottomSheet() {
@@ -60,6 +68,8 @@ export function closeBottomSheet() {
 
   sheet.setAttribute('data-visible', 'false');
   document.body.style.overflow = '';
+  releaseFocusTrap?.();
+  releaseFocusTrap = null;
   setTimeout(() => { 
     sheet.hidden = true; 
   }, 400);

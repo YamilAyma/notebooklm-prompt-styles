@@ -77,6 +77,17 @@ Cards (`StyleCard.astro` and `card.js`) display the 480px `thumbs` of each style
 
 `SearchBar.astro` (in `/styles` and every category page) is wired up by `initSearch()` in `app.js`. It filters on the client against each style's `searchText` (built in `build-data.js`: name, category, theme, typography and key visual elements, lowercase and without accents). Every typed word must match (AND). The search is **global**: while a query is active the category is ignored. The query lives in the URL (`?q=`), `/` focuses the box and `Esc` clears it. `normalizeText` in `utils.js` must stay equal to the one in `build-data.js`.
 
+## 🔍 SEO
+
+`Layout.astro` accepts `title`, `description` and `jsonLd` and always emits the canonical URL and the matching `og:`/`twitter:` tags (built from `Astro.url` and `site`). Each page passes its own description; `/styles` and the category pages add `CollectionPage` (and `BreadcrumbList`) structured data, the home page adds `WebSite`, and `FAQ.astro` adds `FAQPage`. Languages are switched on the client under the same URL, so there is no `hreflang`.
+
+## ♿ Keyboard & Accessibility
+
+- Cards are keyboard-focusable (`tabindex=0`); Enter or Space opens the YAML sheet (`bindOpen()` in `ui/card.js`). The favorite button keeps its own keys.
+- The YAML sheet is a `role="dialog"` (`aria-modal`, labelled by its title) and the navigation menu traps focus too, using `ui/focusTrap.js`: Tab and Shift+Tab cycle inside, `Esc` closes, and focus returns to the element that opened it.
+- A global `:focus-visible` outline is defined in `styles.css`.
+- Muted text tokens (`--color-text-muted`) meet WCAG AA contrast (4.5:1) in light and dark themes.
+
 ## 🌐 Internationalization (i18n)
 
 The site supports multiple languages (English, Spanish, Portuguese) using a custom lightweight system:

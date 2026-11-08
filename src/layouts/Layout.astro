@@ -7,10 +7,23 @@ import PreloaderIcon from '../components/PreloaderIcon.astro';
 
 interface Props {
   title?: string;
+  description?: string;
   category?: string;
+  /** Structured data (schema.org) for this page, emitted as JSON-LD. */
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title = "NotebookLM Slide Styles | Generate Beautiful Presentations with AI", category = "all" } = Astro.props;
+const DEFAULT_DESCRIPTION = "A curated collection of visual design styles for NotebookLM slide generation. Browse, preview, and copy YAML prompts.";
+
+const {
+  title = "NotebookLM Slide Styles | Generate Beautiful Presentations with AI",
+  description = DEFAULT_DESCRIPTION,
+  category = "all",
+  jsonLd,
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL('/og-image.png', Astro.site).href;
 ---
 
 <!DOCTYPE html>
@@ -19,23 +32,26 @@ const { title = "NotebookLM Slide Styles | Generate Beautiful Presentations with
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
-  <meta name="description" content="A curated collection of visual design styles for NotebookLM slide generation. Browse, preview, and copy YAML prompts.">
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonicalUrl}>
   <meta name="google-site-verification" content="2UF3L_fQMu61h2rfdzqpw1tDhVwaZpAArh1o_1N4e3c" />
   
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content={title}>
-  <meta property="og:description" content="A curated collection of visual design styles for NotebookLM slide generation. Browse, preview, and copy YAML prompts.">
+  <meta property="og:description" content={description}>
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://notebooklm-prompt-styles.vercel.app/">
-  <meta property="og:image" content="https://notebooklm-prompt-styles.vercel.app/og-image.png">
+  <meta property="og:url" content={canonicalUrl}>
+  <meta property="og:image" content={ogImage}>
   <meta property="og:site_name" content="NotebookLM Prompt Styles">
   <meta property="og:logo" content="https://notebooklm-prompt-styles.vercel.app/icon.png" />
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content={title}>
   <meta property="twitter:domain" content="notebooklm-prompt-styles.vercel.app">
-  <meta name="twitter:description" content="A curated collection of visual design styles for NotebookLM slide generation. Browse, preview, and copy YAML prompts.">
-  <meta name="twitter:image" content="https://notebooklm-prompt-styles.vercel.app/og-image.png">
-  <meta property="twitter:url" content="https://notebooklm-prompt-styles.vercel.app/">
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={ogImage}>
+  <meta property="twitter:url" content={canonicalUrl}>
+
+  {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   
   <script is:inline>
     const theme = (() => {
@@ -85,14 +101,14 @@ const { title = "NotebookLM Slide Styles | Generate Beautiful Presentations with
   <!-- YAML Bottom Sheet (Mobile) -->
   <div id="bottom-sheet" class="bottom-sheet" hidden>
     <div class="bottom-sheet__backdrop"></div>
-    <div class="bottom-sheet__panel">
+    <div class="bottom-sheet__panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
       <div class="bottom-sheet__handle"></div>
       <div class="bottom-sheet__header">
         <h3 id="sheet-title" class="bottom-sheet__title"></h3>
         <button id="sheet-close" class="bottom-sheet__close" aria-label="Close" data-i18n-aria="ariaClose">&times;</button>
       </div>
       <div class="bottom-sheet__code-wrapper">
-        <pre class="bottom-sheet__code"><code id="sheet-yaml"></code></pre>
+        <pre class="bottom-sheet__code" tabindex="0" aria-labelledby="sheet-title"><code id="sheet-yaml"></code></pre>
       </div>
       <button id="sheet-copy" class="copy-btn">
         <span class="copy-btn__icon">⎘</span>
@@ -113,7 +129,7 @@ const { title = "NotebookLM Slide Styles | Generate Beautiful Presentations with
   <!-- Navigation Modal -->
   <div id="nav-modal" class="nav-modal" hidden>
     <div class="nav-modal__backdrop"></div>
-    <nav class="nav-modal__panel">
+    <nav class="nav-modal__panel" aria-label="Site navigation" data-i18n-aria="ariaNav">
       <ul id="nav-list" class="nav-modal__list"></ul>
     </nav>
   </div>
