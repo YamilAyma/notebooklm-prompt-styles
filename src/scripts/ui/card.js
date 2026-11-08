@@ -34,14 +34,11 @@ export function createCard(style, onFavoriteUpdate) {
   card.appendChild(imgContainer);
 
   // Favorite button
-  const favBtn = createFavoriteButton(style, onFavoriteUpdate);
-  card.appendChild(favBtn);
+  card.appendChild(createFavoriteButton(style, onFavoriteUpdate));
 
   // Info bar
-  const info = createInfoBar(style);
-  card.appendChild(info);
+  card.appendChild(createInfoBar(style));
 
-  // Interactions
   setupCardInteractions(card, img, style);
 
   // Bottom sheet on click
@@ -52,14 +49,36 @@ export function createCard(style, onFavoriteUpdate) {
   return card;
 }
 
+/**
+ * Attaches behavior to a card already rendered in the HTML (build time),
+ * so it does not need to be re-created on the client.
+ * The expected markup is the one produced by src/components/StyleCard.astro.
+ */
+export function hydrateCard(card, style, onFavoriteUpdate) {
+  const img = card.querySelector('.style-card__image');
+  const favBtn = card.querySelector('.style-card__fav');
+  if (!img || !favBtn) return false;
+
+  bindFavoriteButton(favBtn, style, onFavoriteUpdate);
+  setupCardInteractions(card, img, style);
+  card.addEventListener('click', () => {
+    openBottomSheet(style);
+  });
+  return true;
+}
+
 function createFavoriteButton(style, onFavoriteUpdate) {
   const favBtn = document.createElement('button');
   favBtn.className = 'style-card__fav';
-  
+  bindFavoriteButton(favBtn, style, onFavoriteUpdate);
+  return favBtn;
+}
+
+function bindFavoriteButton(favBtn, style, onFavoriteUpdate) {
   const updateState = () => {
     const isFav = isFavorite(style.id);
     favBtn.classList.toggle('style-card__fav--active', isFav);
-    favBtn.innerHTML = isFav ? '♥' : '♡';
+    favBtn.textContent = isFav ? '♥' : '♡';
     favBtn.setAttribute('aria-label', t(isFav ? 'ariaFavRemove' : 'ariaFavAdd'));
   };
 
@@ -68,19 +87,17 @@ function createFavoriteButton(style, onFavoriteUpdate) {
   favBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     const nowFav = toggleFavorite(style.id);
-    
+
     // Animation
     if (nowFav) {
       favBtn.classList.remove('style-card__fav--active');
       void favBtn.offsetWidth; // trigger reflow
       favBtn.classList.add('style-card__fav--active');
     }
-    
+
     updateState();
     if (onFavoriteUpdate) onFavoriteUpdate(style.id, nowFav);
   });
-
-  return favBtn;
 }
 
 function createInfoBar(style) {
@@ -101,7 +118,7 @@ function createInfoBar(style) {
 }
 
 function setupCardInteractions(card, img, style) {
-  let rotationIndex = style.previews.indexOf(img.src);
+  let rotationIndex = Math.max(0, style.previews.findIndex((p) => img.src.endsWith(p)));
 
   const startRotation = () => {
     if (style.previews.length <= 1 || imageRotationTimers.has(style.id)) return;
