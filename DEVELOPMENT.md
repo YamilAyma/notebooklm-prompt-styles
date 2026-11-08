@@ -55,8 +55,13 @@ Compares every pair of styles with Jaccard similarity on (a) words of theme, typ
 
 **Run manually:** `python scripts/optimize_and_rename.py`
 
-### 5. Adding a Style (`scripts/add-style.js`)
-Registers a style in `data/catalog.json` and in the README (TOC and body).
+### 5. README Generation (`scripts/generate-readme.js`)
+The style index and the per-style sections of `README.md` are generated from `data/catalog.json` and `preview/` between the `<!-- TOC:START/END -->` and `<!-- STYLES:START/END -->` markers; everything else in the README is hand-written. Each style gets its description, first preview and a link to its YAML (the YAML itself is not embedded).
+
+**Run manually:** `npm run readme` (CI runs `npm run readme:check` and fails if the README is out of date)
+
+### 6. Adding a Style (`scripts/add-style.js`)
+Registers a style in `data/catalog.json` and regenerates the README.
 
 **Run manually:** `node scripts/add-style.js --name "Style Name" --cat "Category" --yaml "styles/file.yaml"`
 
