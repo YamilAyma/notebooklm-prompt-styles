@@ -40,7 +40,7 @@ async function init() {
 
   const app = document.getElementById('app');
   const landing = document.getElementById('landing');
-  
+
   if (app) {
     const categoryId = app?.getAttribute('data-category') || 'all';
     initSearch(categoryId);
@@ -66,20 +66,23 @@ function renderFeaturedStyles() {
   const grid = document.getElementById('featured-grid');
   if (!grid || !stylesData) return;
 
-  const allStyles = stylesData.categories.flatMap(c => c.styles);
+  const allStyles = stylesData.categories.flatMap((c) => c.styles);
   // Get 6 unique styles for the landing
   const featured = allStyles.slice(0, 6);
 
   const prerendered = [...grid.querySelectorAll('.style-card[data-ssr]')];
-  const hydrated = prerendered.length === featured.length
-    && prerendered.every((el, i) => el.dataset.styleId === featured[i].id && hydrateCard(el, featured[i]));
+  const hydrated =
+    prerendered.length === featured.length &&
+    prerendered.every(
+      (el, i) => el.dataset.styleId === featured[i].id && hydrateCard(el, featured[i]),
+    );
   if (hydrated) {
-    prerendered.forEach(el => el.removeAttribute('data-ssr'));
+    prerendered.forEach((el) => el.removeAttribute('data-ssr'));
     return;
   }
 
   grid.innerHTML = '';
-  featured.forEach(style => {
+  featured.forEach((style) => {
     const card = createCard(style);
     grid.appendChild(card);
   });
@@ -114,24 +117,24 @@ function initI18n() {
 
   const closeMenu = () => {
     menu.setAttribute('data-visible', 'false');
-    setTimeout(() => { 
-      if (menu.getAttribute('data-visible') === 'false') menu.hidden = true; 
+    setTimeout(() => {
+      if (menu.getAttribute('data-visible') === 'false') menu.hidden = true;
     }, 300);
   };
 
   document.addEventListener('click', closeMenu);
 
-  menu.querySelectorAll('[data-lang]').forEach(btn => {
+  menu.querySelectorAll('[data-lang]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const lang = btn.getAttribute('data-lang');
       setLang(lang);
       updateTrigger();
       closeMenu();
-      
+
       // Refresh dynamic content
       const app = document.getElementById('app');
       applyFilters(app?.getAttribute('data-category') || 'all');
-      
+
       // Also notify navigation to re-render with new language
       initNavigation(stylesData.categories, app?.getAttribute('data-category') || 'all');
     });
@@ -148,7 +151,7 @@ async function handlePreloader() {
   }
 
   document.body.style.overflow = 'hidden';
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       preloader.classList.add('preloader--hidden');
       document.body.style.overflow = '';
@@ -171,18 +174,19 @@ function initPagination() {
 function applyFilters(categoryId = 'all') {
   // Search is global: while searching, the category is ignored.
   const searching = searchTerms.length > 0;
-  const visibleCategories = categoryId === 'all' || searching
-    ? stylesData.categories
-    : stylesData.categories.filter(c => c.id === categoryId);
+  const visibleCategories =
+    categoryId === 'all' || searching
+      ? stylesData.categories
+      : stylesData.categories.filter((c) => c.id === categoryId);
 
-  let filtered = visibleCategories.flatMap(c => c.styles);
+  let filtered = visibleCategories.flatMap((c) => c.styles);
 
   if (searching) {
-    filtered = filtered.filter(s => searchTerms.every(term => s.searchText.includes(term)));
+    filtered = filtered.filter((s) => searchTerms.every((term) => s.searchText.includes(term)));
   }
 
   if (showOnlyFavorites) {
-    filtered = filtered.filter(s => isFavorite(s.id));
+    filtered = filtered.filter((s) => isFavorite(s.id));
   }
 
   currentStyles = filtered;
@@ -230,7 +234,7 @@ function hydratePrerendered(grid) {
   const ok = prerendered.every((el, i) => hydrateCard(el, currentStyles[i], onFavorite));
   if (!ok) return false;
 
-  prerendered.forEach(el => el.removeAttribute('data-ssr'));
+  prerendered.forEach((el) => el.removeAttribute('data-ssr'));
   hideEmptyState();
   displayedCount = prerendered.length;
   updatePagination();
@@ -311,7 +315,7 @@ function initFavFilter() {
     showOnlyFavorites = !showOnlyFavorites;
     favTrigger.classList.toggle('fab-fav--active', showOnlyFavorites);
     favTrigger.querySelector('.fab-fav__icon').textContent = showOnlyFavorites ? '♥' : '♡';
-    
+
     const app = document.getElementById('app');
     applyFilters(app?.getAttribute('data-category') || 'all');
   });
@@ -324,7 +328,7 @@ function renderNextBatch() {
   if (!grid) return;
 
   const nextBatch = currentStyles.slice(displayedCount, displayedCount + itemsToShow);
-  
+
   for (const style of nextBatch) {
     const card = createCard(style, (id, isFav) => handleFavoriteUpdate(isFav));
     grid.appendChild(card);
@@ -342,10 +346,9 @@ function updateFavBadge() {
   if (!badge || !trigger || !stylesData) return;
 
   const count = stylesData.categories
-    .flatMap(c => c.styles)
-    .filter(s => isFavorite(s.id))
-    .length;
-  
+    .flatMap((c) => c.styles)
+    .filter((s) => isFavorite(s.id)).length;
+
   badge.textContent = count;
   trigger.classList.toggle('fab-fav--has-items', count > 0);
 }

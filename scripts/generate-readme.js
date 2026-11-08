@@ -32,7 +32,8 @@ export function generateToc(catalog) {
   return catalog.categories
     .map((category) => {
       const lines = [`- [${categoryHeading(category)}](#${slugify(categoryHeading(category))})`];
-      for (const style of category.styles) lines.push(`  - [${style.name}](#${slugify(style.name)})`);
+      for (const style of category.styles)
+        lines.push(`  - [${style.name}](#${slugify(style.name)})`);
       return lines.join('\n');
     })
     .join('\n');
@@ -41,7 +42,12 @@ export function generateToc(catalog) {
 export function firstPreview(previewDir, id) {
   const folder = path.join(previewDir, id);
   if (!fs.existsSync(folder)) return null;
-  return fs.readdirSync(folder).filter((f) => IMAGE_REGEX.test(f)).sort()[0] ?? null;
+  return (
+    fs
+      .readdirSync(folder)
+      .filter((f) => IMAGE_REGEX.test(f))
+      .sort()[0] ?? null
+  );
 }
 
 export function generateStyles(catalog, previewDir) {
@@ -55,7 +61,9 @@ export function generateStyles(catalog, previewDir) {
         lines.push(`[View Full YAML](styles/${style.id}.yaml)`);
         return lines.join('\n');
       });
-      return [`### ${categoryHeading(category)}`, '', ...sections.flatMap((s) => [s, ''])].join('\n').trimEnd();
+      return [`### ${categoryHeading(category)}`, '', ...sections.flatMap((s) => [s, ''])]
+        .join('\n')
+        .trimEnd();
     })
     .join('\n\n');
 }
@@ -93,7 +101,9 @@ function main() {
   }
 
   fs.writeFileSync(readmePath, next, 'utf-8');
-  console.log(`✅ README.md generated (${catalog.categories.reduce((n, c) => n + c.styles.length, 0)} styles).`);
+  console.log(
+    `✅ README.md generated (${catalog.categories.reduce((n, c) => n + c.styles.length, 0)} styles).`,
+  );
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(import.meta.filename)) {

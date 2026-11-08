@@ -22,8 +22,8 @@ export function initBottomSheet() {
     if (yaml) {
       const textEl = copyBtn.querySelector('.copy-btn__text');
       const original = textEl.textContent;
-      
-      copyToClipboard(yaml, 'YAML Copied!').then(success => {
+
+      copyToClipboard(yaml, 'YAML Copied!').then((success) => {
         if (success) {
           textEl.textContent = 'Copied!';
           copyBtn.classList.add('copy-btn--copied');
@@ -73,7 +73,7 @@ export function closeBottomSheet() {
   document.body.style.overflow = '';
   releaseFocusTrap?.();
   releaseFocusTrap = null;
-  setTimeout(() => { 
-    sheet.hidden = true; 
+  setTimeout(() => {
+    sheet.hidden = true;
   }, 400);
 }

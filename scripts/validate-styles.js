@@ -73,7 +73,10 @@ export function validateStyle(parsed) {
 
 export function validateAll(stylesDir, previewDir) {
   const results = [];
-  const yamlFiles = fs.readdirSync(stylesDir).filter((f) => /\.ya?ml$/.test(f)).sort();
+  const yamlFiles = fs
+    .readdirSync(stylesDir)
+    .filter((f) => /\.ya?ml$/.test(f))
+    .sort();
   const styleIds = new Set();
 
   for (const file of yamlFiles) {
@@ -88,17 +91,25 @@ export function validateAll(stylesDir, previewDir) {
     }
 
     const folder = path.join(previewDir, id);
-    const images = fs.existsSync(folder) ? fs.readdirSync(folder).filter((f) => IMAGE_REGEX.test(f)) : [];
+    const images = fs.existsSync(folder)
+      ? fs.readdirSync(folder).filter((f) => IMAGE_REGEX.test(f))
+      : [];
     if (images.length === 0) outcome.errors.push('no preview images in preview/' + id);
 
     results.push({ file: `styles/${file}`, ...outcome });
   }
 
   if (fs.existsSync(previewDir)) {
-    const folders = fs.readdirSync(previewDir, { withFileTypes: true }).filter((d) => d.isDirectory());
+    const folders = fs
+      .readdirSync(previewDir, { withFileTypes: true })
+      .filter((d) => d.isDirectory());
     for (const dir of folders) {
       if (!styleIds.has(dir.name)) {
-        results.push({ file: `preview/${dir.name}`, errors: ['preview folder has no matching YAML in styles/'], warnings: [] });
+        results.push({
+          file: `preview/${dir.name}`,
+          errors: ['preview folder has no matching YAML in styles/'],
+          warnings: [],
+        });
       }
     }
   }
@@ -124,13 +135,19 @@ export function validateCatalog(stylesDir, previewDir, catalogPath) {
     for (const style of category.styles) listed.set(style.id, style.name);
   }
 
-  const ids = fs.readdirSync(stylesDir).filter((f) => /\.ya?ml$/.test(f)).map((f) => f.replace(/\.ya?ml$/, ''));
+  const ids = fs
+    .readdirSync(stylesDir)
+    .filter((f) => /\.ya?ml$/.test(f))
+    .map((f) => f.replace(/\.ya?ml$/, ''));
 
   for (const id of ids) {
     const folder = path.join(previewDir, id);
-    const hasPreview = fs.existsSync(folder) && fs.readdirSync(folder).some((f) => IMAGE_REGEX.test(f));
+    const hasPreview =
+      fs.existsSync(folder) && fs.readdirSync(folder).some((f) => IMAGE_REGEX.test(f));
     if (hasPreview && !listed.has(id)) {
-      errors.push(`styles/${id}.yaml has previews but is not in data/catalog.json (it is hidden on the site)`);
+      errors.push(
+        `styles/${id}.yaml has previews but is not in data/catalog.json (it is hidden on the site)`,
+      );
     }
   }
   for (const [id, name] of listed) {
@@ -145,7 +162,11 @@ export function validateCatalog(stylesDir, previewDir, catalogPath) {
 function main() {
   const results = [
     ...validateAll(path.join(ROOT, 'styles'), path.join(ROOT, 'preview')),
-    ...validateCatalog(path.join(ROOT, 'styles'), path.join(ROOT, 'preview'), path.join(ROOT, 'data', 'catalog.json')),
+    ...validateCatalog(
+      path.join(ROOT, 'styles'),
+      path.join(ROOT, 'preview'),
+      path.join(ROOT, 'data', 'catalog.json'),
+    ),
   ];
   let errorCount = 0;
   let warningCount = 0;
@@ -157,7 +178,9 @@ function main() {
     warningCount += warnings.length;
   }
 
-  console.log(`\nChecked ${results.length} entries: ${errorCount} errors, ${warningCount} warnings`);
+  console.log(
+    `\nChecked ${results.length} entries: ${errorCount} errors, ${warningCount} warnings`,
+  );
   if (errorCount > 0) process.exit(1);
 }
 

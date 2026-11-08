@@ -94,7 +94,12 @@ describe('loadCatalog', () => {
   });
 
   it('rejects a style listed twice', () => {
-    const { dir, file } = write(category([{ id: 'a', name: 'A' }, { id: 'a', name: 'A again' }]));
+    const { dir, file } = write(
+      category([
+        { id: 'a', name: 'A' },
+        { id: 'a', name: 'A again' },
+      ]),
+    );
     expect(() => loadCatalog(file)).toThrow('listed more than once');
     fs.rmSync(dir, { recursive: true, force: true });
   });
@@ -113,7 +118,7 @@ describe('scanPreviews', () => {
     const previews = scanPreviews(MOCK_PREVIEW);
     expect(previews).toHaveProperty('style_a');
     expect(previews.style_a.files).toHaveLength(3);
-    previews.style_a.files.forEach(p => {
+    previews.style_a.files.forEach((p) => {
       expect(p).toMatch(/\.png$/);
       expect(p).toContain('preview/');
     });
@@ -127,7 +132,7 @@ describe('scanPreviews', () => {
   it('normalizes hyphens to underscores in folder names', () => {
     // The style_a folder uses underscores, so it should be accessible as style_a
     const previews = scanPreviews(MOCK_PREVIEW);
-    expect(Object.keys(previews).every(k => !k.includes('-'))).toBe(true);
+    expect(Object.keys(previews).every((k) => !k.includes('-'))).toBe(true);
   });
 });
 
@@ -141,19 +146,19 @@ describe('buildStylesData', () => {
   });
 
   it('excludes styles without preview images', () => {
-    const allStyleIds = data.categories.flatMap(c => c.styles.map(s => s.id));
+    const allStyleIds = data.categories.flatMap((c) => c.styles.map((s) => s.id));
     expect(allStyleIds).toContain('style_a');
     expect(allStyleIds).not.toContain('style_b');
   });
 
   it('excludes malformed YAML files gracefully', () => {
-    const allStyleIds = data.categories.flatMap(c => c.styles.map(s => s.id));
+    const allStyleIds = data.categories.flatMap((c) => c.styles.map((s) => s.id));
     expect(allStyleIds).not.toContain('invalid');
   });
 
   it('filters out categories with zero visible styles', () => {
     // Category B only has style_b which has no previews → excluded
-    const catIds = data.categories.map(c => c.id);
+    const catIds = data.categories.map((c) => c.id);
     expect(catIds).toContain('category-a');
     expect(catIds).not.toContain('category-b');
   });
@@ -175,7 +180,7 @@ describe('buildStylesData', () => {
   it('includes correct preview paths', () => {
     const styleA = data.categories[0].styles[0];
     expect(styleA.previews).toHaveLength(3);
-    styleA.previews.forEach(p => expect(p).toMatch(/\.png$/));
+    styleA.previews.forEach((p) => expect(p).toMatch(/\.png$/));
   });
 
   it('includes meta with totalStyles and generatedAt', () => {
@@ -196,7 +201,9 @@ describe('buildStylesData', () => {
 
 describe('toThumbPath', () => {
   it('moves the image into a thumbs folder and forces .webp', () => {
-    expect(toThumbPath('/preview/style_a/style_a_1.webp')).toBe('/preview/style_a/thumbs/style_a_1.webp');
+    expect(toThumbPath('/preview/style_a/style_a_1.webp')).toBe(
+      '/preview/style_a/thumbs/style_a_1.webp',
+    );
     expect(toThumbPath('/preview/style_a/1.png')).toBe('/preview/style_a/thumbs/1.webp');
   });
 });
@@ -204,7 +211,7 @@ describe('toThumbPath', () => {
 describe('buildStylesData thumbs', () => {
   it('adds a thumbs list parallel to previews', () => {
     const data = buildStylesData(MOCK_STYLES, MOCK_PREVIEW, MOCK_CATALOG);
-    const styleA = data.categories.flatMap(c => c.styles).find(s => s.id === 'style_a');
+    const styleA = data.categories.flatMap((c) => c.styles).find((s) => s.id === 'style_a');
     expect(styleA.thumbs).toEqual(styleA.previews.map(toThumbPath));
   });
 });
@@ -217,7 +224,8 @@ describe('generateThumbnails', () => {
     fs.mkdirSync(path.join(src, 'demo'), { recursive: true });
     const original = path.join(src, 'demo', 'demo_1.webp');
     await sharp({ create: { width: 1000, height: 500, channels: 3, background: '#336699' } })
-      .webp().toFile(original);
+      .webp()
+      .toFile(original);
     const originalSize = fs.statSync(original).size;
 
     await generateThumbnails(['/preview/demo/demo_1.webp'], src, dest, 200);
@@ -236,7 +244,8 @@ describe('generateThumbnails', () => {
     const src = path.join(dir, 'src');
     fs.mkdirSync(path.join(src, 'demo'), { recursive: true });
     await sharp({ create: { width: 100, height: 50, channels: 3, background: '#fff' } })
-      .webp().toFile(path.join(src, 'demo', 'demo_1.webp'));
+      .webp()
+      .toFile(path.join(src, 'demo', 'demo_1.webp'));
 
     await generateThumbnails(['/preview/demo/demo_1.webp'], src, path.join(dir, 'dest'), 480);
 
@@ -261,13 +270,18 @@ describe('normalizeText', () => {
 
 describe('buildSearchText', () => {
   it('joins name, category, theme, typography and key elements', () => {
-    const text = buildSearchText({
-      name: 'Neon Pulsar',
-      theme: 'Electric  glow',
-      typography: { primary_heading: 'Bold Sans', note: 7 },
-      keyElements: ['Grid lines', 'Cyan accents'],
-    }, 'Tech & Innovation');
-    expect(text).toBe('neon pulsar tech & innovation electric glow bold sans grid lines cyan accents');
+    const text = buildSearchText(
+      {
+        name: 'Neon Pulsar',
+        theme: 'Electric  glow',
+        typography: { primary_heading: 'Bold Sans', note: 7 },
+        keyElements: ['Grid lines', 'Cyan accents'],
+      },
+      'Tech & Innovation',
+    );
+    expect(text).toBe(
+      'neon pulsar tech & innovation electric glow bold sans grid lines cyan accents',
+    );
   });
 
   it('works with missing optional fields', () => {
@@ -278,8 +292,8 @@ describe('buildSearchText', () => {
 describe('buildStylesData searchText', () => {
   it('adds searchText containing the style name and category', () => {
     const data = buildStylesData(MOCK_STYLES, MOCK_PREVIEW, MOCK_CATALOG);
-    const cat = data.categories.find(c => c.styles.some(s => s.id === 'style_a'));
-    const styleA = cat.styles.find(s => s.id === 'style_a');
+    const cat = data.categories.find((c) => c.styles.some((s) => s.id === 'style_a'));
+    const styleA = cat.styles.find((s) => s.id === 'style_a');
     expect(styleA.searchText).toContain(normalizeText(styleA.name));
     expect(styleA.searchText).toContain(normalizeText(cat.name));
     expect(styleA.searchText).toContain('bold and modern');

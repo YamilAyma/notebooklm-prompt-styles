@@ -2,12 +2,20 @@ import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
-import { slugify, generateToc, generateStyles, firstPreview, renderReadme } from '../generate-readme.js';
+import {
+  slugify,
+  generateToc,
+  generateStyles,
+  firstPreview,
+  renderReadme,
+} from '../generate-readme.js';
 
 const catalog = {
   categories: [
     {
-      id: 'cat-a', name: 'Business & Executive', emoji: '👔',
+      id: 'cat-a',
+      name: 'Business & Executive',
+      emoji: '👔',
       styles: [
         { id: 'style_a', name: 'Style A', description: 'A bold style.' },
         { id: 'no_preview', name: "Scholar's Journal", description: '' },
@@ -34,11 +42,13 @@ describe('slugify', () => {
 
 describe('generateToc', () => {
   it('lists categories and their styles with anchors', () => {
-    expect(generateToc(catalog)).toBe([
-      '- [👔 Business & Executive](#-business--executive)',
-      '  - [Style A](#style-a)',
-      "  - [Scholar's Journal](#scholars-journal)",
-    ].join('\n'));
+    expect(generateToc(catalog)).toBe(
+      [
+        '- [👔 Business & Executive](#-business--executive)',
+        '  - [Style A](#style-a)',
+        "  - [Scholar's Journal](#scholars-journal)",
+      ].join('\n'),
+    );
   });
 });
 
@@ -48,7 +58,9 @@ describe('generateStyles', () => {
   it('writes description, first preview and YAML link', () => {
     const out = generateStyles(catalog, previews);
     expect(out).toContain('### 👔 Business & Executive');
-    expect(out).toContain('#### Style A\n\nA bold style.\n\n![Style A Preview](preview/style_a/style_a_1.webp)\n\n[View Full YAML](styles/style_a.yaml)');
+    expect(out).toContain(
+      '#### Style A\n\nA bold style.\n\n![Style A Preview](preview/style_a/style_a_1.webp)\n\n[View Full YAML](styles/style_a.yaml)',
+    );
   });
 
   it('omits the image and empty description when missing', () => {
@@ -64,7 +76,8 @@ describe('generateStyles', () => {
 
 describe('renderReadme', () => {
   const previews = makePreviews();
-  const readme = 'intro\n<!-- TOC:START -->\nold\n<!-- TOC:END -->\nmiddle\n<!-- STYLES:START -->\nold\n<!-- STYLES:END -->\noutro';
+  const readme =
+    'intro\n<!-- TOC:START -->\nold\n<!-- TOC:END -->\nmiddle\n<!-- STYLES:START -->\nold\n<!-- STYLES:END -->\noutro';
 
   it('replaces only the content between markers', () => {
     const out = renderReadme(readme, catalog, previews);

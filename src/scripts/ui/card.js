@@ -124,7 +124,7 @@ function createInfoBar(style) {
   const colorDot = document.createElement('span');
   colorDot.className = 'style-card__color-dot';
   colorDot.style.backgroundColor = style.colors?.primary || '#888';
-  
+
   const name = document.createElement('a');
   name.className = 'style-card__name';
   name.href = stylePath(style.id);
@@ -138,11 +138,14 @@ function createInfoBar(style) {
 
 function setupCardInteractions(card, img, style) {
   const images = getCardImages(style);
-  let rotationIndex = Math.max(0, images.findIndex((p) => img.src.endsWith(p)));
+  let rotationIndex = Math.max(
+    0,
+    images.findIndex((p) => img.src.endsWith(p)),
+  );
 
   const startRotation = () => {
     if (images.length <= 1 || imageRotationTimers.has(style.id)) return;
-    
+
     const timer = setInterval(() => {
       rotationIndex = (rotationIndex + 1) % images.length;
       img.classList.add('style-card__image--fading');
@@ -164,12 +167,15 @@ function setupCardInteractions(card, img, style) {
   };
 
   if (isMobile()) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) startRotation();
-        else stopRotation();
-      });
-    }, { threshold: 0.1 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) startRotation();
+          else stopRotation();
+        });
+      },
+      { threshold: 0.1 },
+    );
     observer.observe(card);
   } else {
     card.addEventListener('mouseenter', () => {
