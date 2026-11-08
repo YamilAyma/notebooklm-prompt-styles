@@ -1,0 +1,16 @@
+{
+  "categories": [
+    {
+      "id": "category-a",
+      "name": "Category A",
+      "emoji": "🏷️",
+      "styles": [{ "id": "style_a", "name": "Style A", "description": "A bold and modern test style." }]
+    },
+    {
+      "id": "category-b",
+      "name": "Category B",
+      "emoji": "🌿",
+      "styles": [{ "id": "style_b", "name": "Style B", "description": "A minimal and clean test style." }]
+    }
+  ]
+}

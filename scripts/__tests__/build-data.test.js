@@ -7,8 +7,7 @@ import { fileURLToPath } from 'url';
 import {
   parseYamlFile,
   extractDesignTokens,
-  parseTocContent,
-  nameToId,
+  loadCatalog,
   scanPreviews,
   buildStylesData,
   toThumbPath,
@@ -21,7 +20,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const FIXTURES = path.join(__dirname, 'fixtures');
 const MOCK_STYLES = path.join(FIXTURES, 'mock-styles');
 const MOCK_PREVIEW = path.join(FIXTURES, 'mock-preview');
-const MOCK_README = path.join(FIXTURES, 'mock-readme.md');
+const MOCK_CATALOG = path.join(FIXTURES, 'mock-catalog.json');
 
 // ─── parseYamlFile ──────────────────────────────────────────────────
 
@@ -65,52 +64,45 @@ describe('extractDesignTokens', () => {
   });
 });
 
-// ─── parseTocContent ────────────────────────────────────────────────
+// ─── loadCatalog ────────────────────────────────────────────────────
 
-describe('parseTocContent', () => {
-  it('extracts categories and their styles from README TOC', () => {
-    const content = `
-## 📖 Table of Contents
-- [🏷️ Category A](#-category-a)
-  - [Style A](#style-a)
-- [🌿 Category B](#-category-b)
-  - [Style B](#style-b)
-- [🚀 How to Use](#-how-to-use)
+describe('loadCatalog', () => {
+  const write = (content) => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'catalog-'));
+    const file = path.join(dir, 'catalog.json');
+    fs.writeFileSync(file, typeof content === 'string' ? content : JSON.stringify(content));
+    return { dir, file };
+  };
+  const category = (styles) => ({ categories: [{ id: 'c', name: 'C', emoji: '', styles }] });
 
----
-`;
-    const categories = parseTocContent(content);
-    expect(categories).toHaveLength(2);
-    expect(categories[0].name).toBe('Category A');
-    expect(categories[0].styleNames).toEqual(['Style A']);
-    expect(categories[1].name).toBe('Category B');
-    expect(categories[1].styleNames).toEqual(['Style B']);
+  it('loads a valid catalog', () => {
+    const catalog = loadCatalog(MOCK_CATALOG);
+    expect(catalog.categories).toHaveLength(2);
+    expect(catalog.categories[0].styles[0]).toMatchObject({ id: 'style_a', name: 'Style A' });
   });
 
-  it('excludes non-category entries like How to Use and Contribution', () => {
-    const content = `
-## 📖 Table of Contents
-- [🏷️ Real Category](#-real-category)
-  - [My Style](#my-style)
-- [🚀 How to Use](#-how-to-use)
-- [🛠️ Contribution](#-contribution)
-
----
-`;
-    const categories = parseTocContent(content);
-    expect(categories).toHaveLength(1);
-    expect(categories[0].name).toBe('Real Category');
+  it('rejects a catalog without a categories list', () => {
+    const { dir, file } = write({ categories: 'nope' });
+    expect(() => loadCatalog(file)).toThrow('"categories" must be a list');
+    fs.rmSync(dir, { recursive: true, force: true });
   });
-});
 
-// ─── nameToId ───────────────────────────────────────────────────────
+  it('rejects a style without id or name', () => {
+    const { dir, file } = write(category([{ id: 'only_id' }]));
+    expect(() => loadCatalog(file)).toThrow('without "id" or "name"');
+    fs.rmSync(dir, { recursive: true, force: true });
+  });
 
-describe('nameToId', () => {
-  it('converts style names to underscore IDs', () => {
-    expect(nameToId('Editorial Essence')).toBe('editorial_essence');
-    expect(nameToId('Neon Pulsar')).toBe('neon_pulsar');
-    expect(nameToId("Scholar's Journal")).toBe('scholars_journal');
-    expect(nameToId('Hand-Drawn Scrapbook')).toBe('hand_drawn_scrapbook');
+  it('rejects a style listed twice', () => {
+    const { dir, file } = write(category([{ id: 'a', name: 'A' }, { id: 'a', name: 'A again' }]));
+    expect(() => loadCatalog(file)).toThrow('listed more than once');
+    fs.rmSync(dir, { recursive: true, force: true });
+  });
+
+  it('rejects malformed JSON', () => {
+    const { dir, file } = write('{ not json');
+    expect(() => loadCatalog(file)).toThrow();
+    fs.rmSync(dir, { recursive: true, force: true });
   });
 });
 
@@ -145,7 +137,7 @@ describe('buildStylesData', () => {
   let data;
 
   beforeAll(() => {
-    data = buildStylesData(MOCK_STYLES, MOCK_PREVIEW, MOCK_README);
+    data = buildStylesData(MOCK_STYLES, MOCK_PREVIEW, MOCK_CATALOG);
   });
 
   it('excludes styles without preview images', () => {
@@ -172,6 +164,12 @@ describe('buildStylesData', () => {
     expect(styleA.yamlContent).toContain('color_palette:');
     // Must contain actual newlines (not one-line minified)
     expect(styleA.yamlContent.split('\n').length).toBeGreaterThan(5);
+  });
+
+  it('uses the display name and description from the catalog', () => {
+    const styleA = data.categories[0].styles[0];
+    expect(styleA.name).toBe('Style A');
+    expect(styleA.description).toBe('A bold and modern test style.');
   });
 
   it('includes correct preview paths', () => {
@@ -205,7 +203,7 @@ describe('toThumbPath', () => {
 
 describe('buildStylesData thumbs', () => {
   it('adds a thumbs list parallel to previews', () => {
-    const data = buildStylesData(MOCK_STYLES, MOCK_PREVIEW, MOCK_README);
+    const data = buildStylesData(MOCK_STYLES, MOCK_PREVIEW, MOCK_CATALOG);
     const styleA = data.categories.flatMap(c => c.styles).find(s => s.id === 'style_a');
     expect(styleA.thumbs).toEqual(styleA.previews.map(toThumbPath));
   });
@@ -279,10 +277,11 @@ describe('buildSearchText', () => {
 
 describe('buildStylesData searchText', () => {
   it('adds searchText containing the style name and category', () => {
-    const data = buildStylesData(MOCK_STYLES, MOCK_PREVIEW, MOCK_README);
+    const data = buildStylesData(MOCK_STYLES, MOCK_PREVIEW, MOCK_CATALOG);
     const cat = data.categories.find(c => c.styles.some(s => s.id === 'style_a'));
     const styleA = cat.styles.find(s => s.id === 'style_a');
     expect(styleA.searchText).toContain(normalizeText(styleA.name));
     expect(styleA.searchText).toContain(normalizeText(cat.name));
+    expect(styleA.searchText).toContain('bold and modern');
   });
 });
