@@ -10,14 +10,19 @@ import { t } from '../i18n.js';
 
 const imageRotationTimers = new Map();
 
+/** Grid images: lightweight thumbnails, falling back to the originals. */
+function getCardImages(style) {
+  return style.thumbs?.length ? style.thumbs : style.previews;
+}
+
 export function createCard(style, onFavoriteUpdate) {
   const card = document.createElement('article');
   card.className = 'style-card';
   card.setAttribute('data-style-id', style.id);
 
   // Random starting image
-  const startIndex = Math.floor(Math.random() * style.previews.length);
-  const imgSrc = style.previews[startIndex];
+  const images = getCardImages(style);
+  const imgSrc = images[Math.floor(Math.random() * images.length)];
 
   // Image
   const imgContainer = document.createElement('div');
@@ -118,16 +123,17 @@ function createInfoBar(style) {
 }
 
 function setupCardInteractions(card, img, style) {
-  let rotationIndex = Math.max(0, style.previews.findIndex((p) => img.src.endsWith(p)));
+  const images = getCardImages(style);
+  let rotationIndex = Math.max(0, images.findIndex((p) => img.src.endsWith(p)));
 
   const startRotation = () => {
-    if (style.previews.length <= 1 || imageRotationTimers.has(style.id)) return;
+    if (images.length <= 1 || imageRotationTimers.has(style.id)) return;
     
     const timer = setInterval(() => {
-      rotationIndex = (rotationIndex + 1) % style.previews.length;
+      rotationIndex = (rotationIndex + 1) % images.length;
       img.classList.add('style-card__image--fading');
       setTimeout(() => {
-        img.src = style.previews[rotationIndex];
+        img.src = images[rotationIndex];
         img.classList.remove('style-card__image--fading');
       }, 250);
     }, 2500);
