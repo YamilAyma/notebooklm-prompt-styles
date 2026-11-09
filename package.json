@@ -28,7 +28,7 @@
     "prettier": "^3.9.10",
     "sharp": "^0.34.5",
     "typescript": "^5.9.3",
-    "unplugin-icons": "^23.0.1",
+    "unplugin-icons": "^24.0.0",
     "vite": "^6.3.1",
     "vitest": "^3.1.1"
   },
