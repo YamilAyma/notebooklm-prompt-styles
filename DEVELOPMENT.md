@@ -102,7 +102,7 @@ Every style has its own static page at `/style/<id>/` (`src/pages/style/[id].ast
 
 ## 🎛️ Filters
 
-The list state (search text and category) lives in `src/lib/filters.js` (pure functions: `parseState`, `toSearchParams`, `filterStyles`) and is mirrored in the URL (`?q=&cat=`). `FilterBar.astro` renders the controls: every `button[data-filter][data-value]` (a chip) or `select[data-filter]` sets that key of the state through `updateFilters()` in `app.js`, which also syncs `aria-pressed`. On `/styles` the category chips combine with the search (AND); on a category page the page category applies, except while searching (the search stays global). To add a new filter, add its key to `filters.js` and a chip group or select with `data-filter` in the bar.
+The list state (search text and category) lives in `src/lib/filters.js` (pure functions: `parseState`, `toSearchParams`, `filterStyles`) and is mirrored in the URL (`?q=&cat=`). `FilterBar.astro` renders the controls: every `button[data-filter][data-value]` (a chip) or `select[data-filter]` sets that key of the state through `updateFilters()` in `app.js`, which also syncs `aria-pressed`. On `/styles` the category chips combine with the search (AND); on a category page the page category applies, except while searching (the search stays global). The **tone** (`light`, `dark` or `colorful`) is computed at build time by `colorTone()` in `build-data.js` from each palette (dark background; two or more saturated mid-tone colors or a saturated/mid-tone background; otherwise light) and stored as `tone` in `styles.json`; the chips also exist on category pages. To add a new filter, add its key to `filters.js` and a chip group or select with `data-filter` in the bar.
 
 ## 🌐 Internationalization (i18n)
 
