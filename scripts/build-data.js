@@ -14,6 +14,7 @@ import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
 import sharp from 'sharp';
+import { extractHex } from '../src/lib/stylePage.js';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const STYLES_DIR = path.join(ROOT, 'styles');
@@ -84,20 +85,33 @@ export function parseYamlFile(filePath) {
   return { raw, parsed };
 }
 
+/**
+ * Palette keys that can hold each site color, in order of preference. Styles name
+ * their colors differently (`primary_color`, `primary`, `accent`...), and values are
+ * often descriptive text ("Warm Cream (#F9F7F2)"), so the first one with a HEX wins.
+ */
+export const COLOR_KEYS = {
+  primary: ['primary_color', 'primary', 'accent_color', 'accent'],
+  background: ['background', 'background_main', 'background_light', 'background_dark', 'surface'],
+  text: ['text_main', 'text', 'text_primary', 'text_dark', 'text_secondary'],
+};
+
+/** HEX colors of a palette for the site (null where the palette has none). */
+export function resolveColors(palette = {}) {
+  const colors = {};
+  for (const [name, keys] of Object.entries(COLOR_KEYS)) {
+    colors[name] = keys.map((key) => extractHex(palette[key])).find(Boolean) ?? null;
+  }
+  return colors;
+}
+
 export function extractDesignTokens(parsed) {
   const gs = parsed?.design_system?.global_style;
   if (!gs) return null;
 
-  const colors = {};
-  if (gs.color_palette) {
-    colors.primary = gs.color_palette.primary_color || null;
-    colors.background = gs.color_palette.background || null;
-    colors.text = gs.color_palette.text_main || null;
-  }
-
   return {
     theme: gs.theme || '',
-    colors,
+    colors: resolveColors(gs.color_palette),
     typography: gs.typography || {},
     keyElements: gs.key_visual_elements || [],
   };

@@ -10,7 +10,7 @@
  *   - style with previews missing from data/catalog.json (hidden on the site),
  *     or catalog entry without a matching YAML
  * Warnings (do not fail):
- *   - primary_color / background / text_main missing or without a HEX code
+ *   - no HEX code found for the primary, background or text color of the palette
  *
  * Usage: node scripts/validate-styles.js
  */
@@ -18,12 +18,10 @@
 import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
-import { loadCatalog } from './build-data.js';
+import { loadCatalog, resolveColors, COLOR_KEYS } from './build-data.js';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const IMAGE_REGEX = /\.(png|jpe?g|webp)$/i;
-const HEX_REGEX = /#[0-9a-f]{3,8}\b/i;
-const REQUIRED_COLORS = ['primary_color', 'background', 'text_main'];
 
 const isObject = (v) => v !== null && typeof v === 'object' && !Array.isArray(v);
 const isText = (v) => typeof v === 'string' && v.trim().length > 0;
@@ -51,10 +49,11 @@ export function validateStyle(parsed) {
   } else if (Object.keys(gs.color_palette).length === 0) {
     errors.push('global_style.color_palette must not be empty');
   } else {
-    for (const key of REQUIRED_COLORS) {
-      const value = gs.color_palette[key];
-      if (!isText(value)) warnings.push(`color_palette.${key} is missing (used for site tokens)`);
-      else if (!HEX_REGEX.test(value)) warnings.push(`color_palette.${key} has no HEX code`);
+    const resolved = resolveColors(gs.color_palette);
+    for (const [name, keys] of Object.entries(COLOR_KEYS)) {
+      if (!resolved[name]) {
+        warnings.push(`no HEX code for the ${name} color (looked at ${keys.join(', ')})`);
+      }
     }
   }
 

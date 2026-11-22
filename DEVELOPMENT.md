@@ -38,7 +38,7 @@ This is the core build script. It performs the following:
 **Run manually:** `npm run build:data`
 
 ### 2. Style Validation (`scripts/validate-styles.js`)
-Checks every YAML in `/styles`: valid syntax, required structure (`theme`, `typography`, `color_palette`, `key_visual_elements`, `slide_layout_templates`), at least one preview image, and no preview folder without a YAML. It also checks that every style with previews is listed in `data/catalog.json` (otherwise the site hides it) and that every catalog entry has a YAML. Missing HEX colors only produce warnings.
+Checks every YAML in `/styles`: valid syntax, required structure (`theme`, `typography`, `color_palette`, `key_visual_elements`, `slide_layout_templates`), at least one preview image, and no preview folder without a YAML. It also checks that every style with previews is listed in `data/catalog.json` (otherwise the site hides it) and that every catalog entry has a YAML. Palettes are read with `resolveColors()` (`build-data.js`), which accepts the different key names the styles use (`primary_color`, `primary`, `accent`, `background`, `surface`, `text_main`...) and extracts the HEX code from descriptive text; a color without any HEX code only produces a warning.
 
 **Run manually:** `npm run validate`
 

@@ -7,6 +7,7 @@ import { fileURLToPath } from 'url';
 import {
   parseYamlFile,
   extractDesignTokens,
+  resolveColors,
   loadCatalog,
   scanPreviews,
   buildStylesData,
@@ -38,6 +39,46 @@ describe('parseYamlFile', () => {
 });
 
 // ─── extractDesignTokens ────────────────────────────────────────────
+
+describe('resolveColors', () => {
+  it('reads the usual keys', () => {
+    expect(
+      resolveColors({ primary_color: '#111111', background: '#222222', text_main: '#333333' }),
+    ).toEqual({
+      primary: '#111111',
+      background: '#222222',
+      text: '#333333',
+    });
+  });
+
+  it('falls back to alternative keys (primary, accent, surface, text_secondary)', () => {
+    expect(
+      resolveColors({ primary: '#AA0000', surface: '#FFFFFF', text_secondary: '#555555' }),
+    ).toEqual({
+      primary: '#AA0000',
+      background: '#FFFFFF',
+      text: '#555555',
+    });
+  });
+
+  it('extracts the HEX from descriptive text and skips values without one', () => {
+    expect(
+      resolveColors({
+        primary_color: 'Warm Cream (#F9F7F2)',
+        background: 'Soft gradient',
+        background_main: '#EEE',
+      }),
+    ).toEqual({
+      primary: '#F9F7F2',
+      background: '#EEE',
+      text: null,
+    });
+  });
+
+  it('returns nulls for a missing palette', () => {
+    expect(resolveColors(undefined)).toEqual({ primary: null, background: null, text: null });
+  });
+});
 
 describe('extractDesignTokens', () => {
   it('extracts colors, typography, theme, and key elements', () => {
