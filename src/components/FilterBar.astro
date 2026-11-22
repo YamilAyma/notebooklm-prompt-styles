@@ -90,6 +90,13 @@ const { showCategories = false } = Astro.props;
     </select>
   </label>
   <div class="filters__tools">
+    <button
+      type="button"
+      class="chip chip--ghost"
+      id="select-toggle"
+      aria-pressed="false"
+      data-i18n="selectMode">Select</button
+    >
     <button type="button" class="chip chip--ghost" id="fav-export" data-i18n="favExport">
       Export favorites
     </button>
@@ -97,5 +104,21 @@ const { showCategories = false } = Astro.props;
       Import favorites
     </button>
     <input type="file" id="fav-file" accept="application/json,.json" hidden />
+  </div>
+  <div
+    class="selection-bar"
+    id="selection-bar"
+    role="region"
+    aria-label="Selection"
+    data-i18n-aria="selectionLabel"
+    hidden
+  >
+    <span class="selection-bar__count" id="selection-count" aria-live="polite"></span>
+    <button type="button" class="chip" id="selection-all" data-i18n="selectionAll">Select all</button>
+    <button type="button" class="chip" id="selection-clear" data-i18n="selectionClear">Clear</button>
+    <button type="button" class="chip chip--primary" id="selection-copy" data-i18n="selectionCopy">
+      Copy YAML
+    </button>
+    <button type="button" class="chip" id="selection-done" data-i18n="selectionDone">Done</button>
   </div>
 </div>

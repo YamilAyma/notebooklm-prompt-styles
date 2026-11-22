@@ -109,6 +109,10 @@ The list state (search text and category) lives in `src/lib/filters.js` (pure fu
 
 Favorites are kept in `localStorage` (`nlm-favorites`, `src/scripts/favorites.js`). The filter bar has **Export** (downloads `notebooklm-favorites.json`) and **Import** buttons (`ui/favoritesIO.js`); the file format and its validation live in `src/lib/favoritesIO.js` (`serializeFavorites`, `parseFavorites`, `mergeFavorites`). Importing merges with the current favorites, ignores unknown style ids and never removes anything.
 
+## ☑️ Selection mode
+
+The **Select** button of the filter bar turns the lists into selection mode: cards show a checkbox, clicking a card (or Enter/Space on it) selects it instead of opening the detail sheet, and a bar shows the count with *Select all* (every style matching the filters), *Clear*, *Copy YAML* and *Done* (`Esc` also exits). The state lives in `src/scripts/selection.js` (no DOM), the bar in `ui/selectionBar.js` and the checkbox in the card markup (`StyleCard.astro` and `createCard()` must keep matching). *Copy YAML* joins the selected styles with `buildYamlBundle()` (`src/lib/bundle.js`): a valid multi-document YAML stream, each style starting with `---` and a comment with its name.
+
 ## 🌐 Internationalization (i18n)
 
 The site supports multiple languages (English, Spanish, Portuguese) using a custom lightweight system:

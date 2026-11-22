@@ -8,6 +8,7 @@ import { openBottomSheet } from './bottomSheet.js';
 import { isMobile } from '../utils.js';
 import { t } from '../i18n.js';
 import { stylePath } from '../../lib/stylePage.js';
+import { isSelecting, isSelected, toggleSelected, setSelected } from '../selection.js';
 
 const imageRotationTimers = new Map();
 
@@ -39,6 +40,12 @@ export function createCard(style, onFavoriteUpdate) {
   imgContainer.appendChild(img);
   card.appendChild(imgContainer);
 
+  // Selection checkbox (visible only in selection mode)
+  const check = document.createElement('input');
+  check.type = 'checkbox';
+  check.className = 'style-card__select';
+  card.appendChild(check);
+
   // Favorite button
   card.appendChild(createFavoriteButton(style, onFavoriteUpdate));
 
@@ -69,19 +76,42 @@ export function hydrateCard(card, style, onFavoriteUpdate) {
   return true;
 }
 
-/** Opens the YAML sheet on click, and on Enter / Space for keyboard users. */
+/**
+ * Opens the YAML sheet on click, and on Enter / Space for keyboard users. In selection
+ * mode the same gestures select or unselect the card instead.
+ */
 function bindOpen(card, style) {
   card.tabIndex = 0;
   card.setAttribute('aria-haspopup', 'dialog');
 
-  card.addEventListener('click', () => openBottomSheet(style));
+  const check = card.querySelector('.style-card__select');
+  if (check) {
+    check.setAttribute('aria-label', t('ariaSelectStyle').replace('{name}', style.name));
+    check.addEventListener('change', () => setSelected(style.id, check.checked));
+  }
+  syncCardSelection(card);
+
+  const activate = () => (isSelecting() ? toggleSelected(style.id) : openBottomSheet(style));
+
+  card.addEventListener('click', (e) => {
+    if (e.target.closest('.style-card__select')) return; // the checkbox handles itself
+    activate();
+  });
   card.addEventListener('keydown', (e) => {
     if (e.target !== card) return; // let the favorite button handle its own keys
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      openBottomSheet(style);
+      activate();
     }
   });
+}
+
+/** Reflects the selection state in a card (checkbox and highlight). */
+export function syncCardSelection(card) {
+  const selected = isSelected(card.dataset.styleId);
+  const check = card.querySelector('.style-card__select');
+  if (check) check.checked = selected;
+  card.toggleAttribute('data-selected', selected);
 }
 
 function createFavoriteButton(style, onFavoriteUpdate) {
@@ -181,7 +211,7 @@ function setupCardInteractions(card, img, style) {
     card.addEventListener('mouseenter', () => {
       startRotation();
       const rect = card.getBoundingClientRect();
-      showTooltip(style, rect);
+      if (!isSelecting()) showTooltip(style, rect);
     });
 
     card.addEventListener('mouseleave', () => {

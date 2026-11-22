@@ -19,6 +19,7 @@ const { style } = Astro.props;
       height="300"
     />
   </div>
+  <input type="checkbox" class="style-card__select" aria-label={`Select ${style.name}`} />
   <button class="style-card__fav" aria-label="Add to favorites" data-i18n-aria="ariaFavAdd">♡</button>
   <div class="style-card__info">
     <span class="style-card__color-dot" style={`background-color: ${style.colors?.primary || '#888'}`}></span>
