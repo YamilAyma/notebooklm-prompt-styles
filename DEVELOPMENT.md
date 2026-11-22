@@ -8,7 +8,7 @@ The project is a **Data-Driven Static Site**. Instead of hardcoding content into
 
 - `/styles/*.yaml`: The source of truth for the design prompts.
 - `/data/catalog.json`: Categories, order, display names and descriptions. A style that is not listed here is not shown on the site (`npm run validate` checks it).
-- `/preview/[style_id]/[style_id]_[n].webp`: Preview images for each style (WebP, generated with `scripts/optimize_and_rename.py`).
+- `/preview/[style_id]/[style_id]_[n].webp`: Preview images for each style (WebP, generated with `npm run previews -- optimize`).
 - `/src/`: The Astro source code (Layouts, Pages, Components).
 - `/src/scripts/`: Modular frontend logic.
   - `app.js`: Core orchestration, data fetching, and filtering logic.
@@ -38,7 +38,7 @@ This is the core build script. It performs the following:
 **Run manually:** `npm run build:data`
 
 ### 2. Style Validation (`scripts/validate-styles.js`)
-Checks every YAML in `/styles`: valid syntax, required structure (`theme`, `typography`, `color_palette`, `key_visual_elements`, `slide_layout_templates`), at least one preview image, and no preview folder without a YAML. It also checks that every style with previews is listed in `data/catalog.json` (otherwise the site hides it) and that every catalog entry has a YAML. Missing HEX colors only produce warnings.
+Checks every YAML in `/styles`: valid syntax, required structure (`theme`, `typography`, `color_palette`, `key_visual_elements`, `slide_layout_templates`), at least one preview image, and no preview folder without a YAML. It also checks that every style with previews is listed in `data/catalog.json` (otherwise the site hides it) and that every catalog entry has a YAML. Palettes are read with `resolveColors()` (`build-data.js`), which accepts the different key names the styles use (`primary_color`, `primary`, `accent`, `background`, `surface`, `text_main`...) and extracts the HEX code from descriptive text; a color without any HEX code only produces a warning.
 
 **Run manually:** `npm run validate`
 
@@ -47,13 +47,13 @@ Compares every pair of styles with Jaccard similarity on (a) words of theme, typ
 
 **Run manually:** `npm run similarity` (add `-- --style <id>` for the 5 closest styles, or `-- --text 0.3 --colors 0.5` to change thresholds)
 
-### 4. Image Organization (Python utilities)
-- `scripts/match_style_preview.py`: matches a pasted `input.yaml` with an existing style and creates its `/preview` folder.
-- `scripts/optimize_and_rename.py`: converts images to `.webp`, renames them to `{style}_{n}.webp` and deletes the originals.
-- `scripts/rename-previews.py`: renames images inside each preview subfolder to `{folder_name}_{index}.{ext}`.
-- `scripts/normalize-folders.py`: normalizes preview folder names (hyphens to underscores).
+### 4. Preview Images (`scripts/previews.js`)
+One Node tool (it replaces the former Python scripts) for the images in `/preview`:
+- `npm run previews -- init <style_id>`: creates `preview/<style_id>` for an existing style.
+- `npm run previews -- optimize`: converts new PNG/JPG to WebP (quality 85), numbers every image as `<style_id>_<n>.webp` after the highest existing number (nothing is overwritten) and removes the originals.
+- `npm run previews -- normalize`: renames folders with hyphens to underscores, merging into an existing folder without overwriting files.
 
-**Run manually:** `python scripts/optimize_and_rename.py`
+`optimize` and `normalize` accept `--dry-run` to list the changes without making them.
 
 ### 5. README Generation (`scripts/generate-readme.js`)
 The style index and the per-style sections of `README.md` are generated from `data/catalog.json` and `preview/` between the `<!-- TOC:START/END -->` and `<!-- STYLES:START/END -->` markers; everything else in the README is hand-written. Each style gets its description, first preview and a link to its YAML (the YAML itself is not embedded).
@@ -121,7 +121,7 @@ Managed via `src/scripts/theme.js`:
 
 ## 🎨 Design System
 
-The frontend is built with **Astro** and uses **Vanilla CSS** in `src/styles/styles.css`.
+The frontend is built with **Astro** and uses **Vanilla CSS**: `src/styles/styles.css` only imports the files in `src/styles/parts/` (base and tokens, hero, grid, cards, bottom sheet, floating buttons, responsive rules, landing...). **Keep the import order**: it is the cascade order of the original single file, and the bundled CSS is byte-identical to it.
 - **Theme**: Swiss-minimalist with Inter and JetBrains Mono.
 - **Interactivity**: Modular scripts in `src/scripts/`.
 - **Responsive**: Bento-style grid and mobile-specific modals (Social Modal, Bottom Sheet).

@@ -10,6 +10,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "similarity": "node scripts/check-similarity.js",
+    "previews": "node scripts/previews.js",
     "readme": "node scripts/generate-readme.js",
     "readme:check": "node scripts/generate-readme.js --check",
     "dev": "npm run build:data && astro dev",

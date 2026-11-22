@@ -36,26 +36,46 @@ describe('validateStyle', () => {
     );
   });
 
-  it('warns (not errors) when a site color token is missing', () => {
+  const withPalette = (palette) => {
     const parsed = loadMock('style_a.yaml');
-    delete parsed.design_system.global_style.color_palette.background;
-    const { errors, warnings } = validateStyle(parsed);
+    parsed.design_system.global_style.color_palette = palette;
+    return validateStyle(parsed);
+  };
+
+  it('accepts palettes that name their colors differently (primary, accent...)', () => {
+    const { errors, warnings } = withPalette({
+      primary: '#112233',
+      surface: '#FFFFFF',
+      text_secondary: '#444444',
+    });
     expect(errors).toEqual([]);
-    expect(warnings).toEqual(['color_palette.background is missing (used for site tokens)']);
+    expect(warnings).toEqual([]);
   });
 
-  it('warns (not errors) when a color has no HEX code', () => {
-    const parsed = loadMock('style_a.yaml');
-    parsed.design_system.global_style.color_palette.primary_color = 'Warm Cream';
-    const { errors, warnings } = validateStyle(parsed);
-    expect(errors).toEqual([]);
-    expect(warnings).toEqual(['color_palette.primary_color has no HEX code']);
+  it('accepts descriptive values that include a HEX code', () => {
+    expect(
+      withPalette({
+        primary: 'Warm Cream (#F9F7F2)',
+        background: 'Soft (#FFF)',
+        text_main: '#111111',
+      }).warnings,
+    ).toEqual([]);
   });
 
-  it('accepts descriptive colors that include a HEX code', () => {
-    const parsed = loadMock('style_a.yaml');
-    parsed.design_system.global_style.color_palette.primary_color = 'Warm Cream (#F9F7F2)';
-    expect(validateStyle(parsed).warnings).toEqual([]);
+  it('warns (not errors) for each color without a HEX code', () => {
+    const { errors, warnings } = withPalette({
+      primary: 'Warm Cream',
+      background: 'Soft gradient',
+      text_main: '#111111',
+    });
+    expect(errors).toEqual([]);
+    expect(warnings).toHaveLength(2);
+    expect(warnings[0]).toContain('primary color');
+    expect(warnings[1]).toContain('background color');
+  });
+
+  it('rejects an empty palette', () => {
+    expect(withPalette({}).errors).toContain('global_style.color_palette must not be empty');
   });
 });
 

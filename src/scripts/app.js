@@ -81,7 +81,7 @@ function renderFeaturedStyles() {
     return;
   }
 
-  grid.innerHTML = '';
+  grid.replaceChildren();
   featured.forEach((style) => {
     const card = createCard(style);
     grid.appendChild(card);
@@ -206,7 +206,7 @@ function updateUI(count) {
       if (hydratePrerendered(grid)) return;
     }
 
-    grid.innerHTML = '';
+    grid.replaceChildren();
     if (count === 0) {
       showEmptyState();
     } else {
