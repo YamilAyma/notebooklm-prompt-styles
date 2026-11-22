@@ -1,0 +1,60 @@
+/* ─── YAML Tooltip (Desktop) ─────────────────────────────────────── */
+
+.yaml-tooltip {
+  position: fixed;
+  z-index: 100;
+  width: 380px;
+  max-height: 340px;
+  background: var(--color-tooltip-bg);
+  color: var(--color-tooltip-text);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-tooltip);
+  padding: var(--space-md);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.2s ease-out,
+    transform 0.2s ease-out;
+  overflow: hidden;
+}
+
+/* Rainbow border effect for tooltip */
+.yaml-tooltip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(from var(--angle), #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  animation: rotate-gradient 3s linear infinite;
+  pointer-events: none;
+}
+
+.yaml-tooltip[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.yaml-tooltip__code {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  line-height: 1.5;
+  white-space: pre;
+  overflow: hidden;
+  max-height: 260px;
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+.yaml-tooltip .copy-btn {
+  position: absolute;
+  bottom: var(--space-sm);
+  right: var(--space-sm);
+  z-index: 2;
+}

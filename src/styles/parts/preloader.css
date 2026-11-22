@@ -1,0 +1,70 @@
+/* ─── Preloader ────────────────────────────────────────────────── */
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--color-bg);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.preloader--hidden {
+  transform: translateY(-100%);
+}
+
+.preloader__content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.preloader__icon-wrapper {
+  width: 450px;
+  max-width: 90vw;
+  height: auto;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader__icon-wrapper svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Dynamic Theme Colors for SVG */
+.preloader__icon-wrapper .stroke-main {
+  fill: #fff;
+  stroke: #1a1a1a;
+  transition: all 0.3s ease;
+}
+.preloader__icon-wrapper .stroke-line,
+.preloader__icon-wrapper .dash {
+  stroke: #1a1a1a;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .preloader__icon-wrapper .stroke-main {
+  fill: #111;
+  stroke: #fff;
+}
+[data-theme="dark"] .preloader__icon-wrapper .stroke-line,
+[data-theme="dark"] .preloader__icon-wrapper .dash {
+  stroke: #fff;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate-gradient {
+  to { --angle: 360deg; }
+}

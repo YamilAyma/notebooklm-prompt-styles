@@ -1,0 +1,31 @@
+/* ─── Hero ───────────────────────────────────────────────────────── */
+
+.hero {
+  padding: var(--space-4xl) var(--space-lg) var(--space-3xl);
+}
+
+.hero__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hero__title {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+.hero__subtitle {
+  margin-top: var(--space-lg);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  letter-spacing: -0.01em;
+}
+
+.hero__subtitle span {
+  font-weight: 600;
+  color: var(--color-text);
+}
