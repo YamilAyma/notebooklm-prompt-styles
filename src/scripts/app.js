@@ -10,6 +10,7 @@ import { initBottomSheet } from './ui/bottomSheet.js';
 import { initShare } from './ui/share.js';
 import { createCard, hydrateCard } from './ui/card.js';
 import { initStylePage } from './ui/stylePage.js';
+import { initFavoritesIO } from './ui/favoritesIO.js';
 import {
   defaultState,
   parseState,
@@ -53,6 +54,13 @@ async function init() {
     initSearch();
     applyFilters();
     initFavFilter();
+    initFavoritesIO(
+      stylesData.categories.flatMap((c) => c.styles.map((s) => s.id)),
+      () => {
+        updateFavBadge();
+        applyFilters();
+      },
+    );
     initPagination();
     updateFavBadge();
   } else if (landing) {

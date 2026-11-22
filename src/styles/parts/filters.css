@@ -67,3 +67,15 @@
   border-radius: var(--radius-pill);
   cursor: pointer;
 }
+
+.filters__tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-left: auto;
+}
+
+.chip--ghost {
+  background: transparent;
+  font-weight: 500;
+}
