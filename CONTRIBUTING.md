@@ -20,8 +20,8 @@ We have automated parts of the contribution process to keep the repository clean
 
 | Script | Purpose | When to use it |
 | :--- | :--- | :--- |
-| `scripts/match_style_preview.py` | Matches a pasted YAML code from `input.yaml` with an existing style and creates the appropriate `/preview` folder. | After you have your YAML code and want to start adding images. |
-| `scripts/optimize_and_rename.py` | Converts images to `.webp`, renames them to `{style}_{n}.webp`, updates code references, and deletes original PNGs/JPGs. | After adding new images to a preview folder. |
+| `npm run previews -- init <style_id>` | Creates the `/preview/<style_id>` folder for your style. | After you have your YAML in `/styles`. |
+| `npm run previews -- optimize` | Converts new screenshots to `.webp` and names them `{style}_{n}.webp` (originals are deleted). Add `--dry-run` to preview the changes. | After adding images to a preview folder. |
 | `npm run validate` | Validates every YAML in `/styles` (structure, previews, orphan folders). Fails on errors; color issues are warnings. | Before committing your changes. |
 | `npm run similarity` | Warns if your style is too similar to an existing one (words of the theme/typography/elements, or shared HEX colors). Use `-- --style your_style` to see its 5 closest styles. | Before committing your changes. |
 | `npm run build:data` | Rebuilds the `styles.json` file used by the website gallery. | Before committing your changes. |
@@ -69,18 +69,16 @@ To showcase your style, you need to generate a real slide deck in NotebookLM.
 
 ## Step 3: Organize & Optimize Images (Automated)
 
-1. Paste the YAML code of your style into the `input.yaml` file at the root of the project.
-2. Run the matcher script to automatically identify the style and create the folder:
+1. Create the preview folder of your style (its YAML must already be in `/styles`):
    ```bash
-   python scripts/match_style_preview.py
+   npm run previews -- init modern_dark
    ```
-   *This will create the folder `preview/your_style_name/` for you.*
-3. Place your screenshots (`.png` or `.jpg`) inside that new folder.
-4. Run the optimization script:
+2. Place your screenshots (`.png` or `.jpg`) inside `preview/modern_dark/`.
+3. Run the optimizer:
    ```bash
-   python scripts/optimize_and_rename.py
+   npm run previews -- optimize
    ```
-   *This will convert everything to `.webp`, rename files correctly, and update the repository code.*
+   *This converts everything to `.webp`, names the files `modern_dark_1.webp`, `modern_dark_2.webp`, … and deletes the originals. Existing images are never overwritten.*
 
 ## Step 4: Update the Showcase Data
 
