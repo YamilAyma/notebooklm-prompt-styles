@@ -3,6 +3,7 @@
  */
 
 import { t } from './i18n.js';
+import { escapeHtml } from './utils.js';
 import { activateFocusTrap } from './ui/focusTrap.js';
 
 let navModal, navList, navTrigger, backdrop;
@@ -59,7 +60,7 @@ function buildNavList(categories, currentCategory) {
         <span class="nav-modal__icon">
           <svg viewBox="0 0 32 32" width="20" height="20"><path fill="currentColor" d="M10 6H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m0 8H4V8h6zm18-8h-6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m0 8h-6V8h6zm-18 6H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2m0 8H4v-6h6zm18-8h-6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2m0 8h-6v-6h6z"/></svg>
         </span>
-        ${t('navAll')}
+        ${escapeHtml(t('navAll'))}
       </a>
     </li>
   `;
@@ -73,7 +74,7 @@ function buildNavList(categories, currentCategory) {
         <span class="nav-modal__icon">
           <svg viewBox="0 0 32 32" width="20" height="20"><path fill="currentColor" d="M25 11V9h-2V7h-2V5h-2V3h-2v2h-2v2H9v2H7v2H5v2H3v2h2v2h2v2h2v2h2v2h2v-2h2v-2h2v-2h2v-2h2v-2h2v-2h-2zm-4 6h-2v2h-2v2h-2v2h-2v-2H9v-2H7v-2H5v-2h2v-2h2V9h2V7h2v2h2v2h2v2h2v2z"/></svg>
         </span>
-        ${t('navGetSkill')}
+        ${escapeHtml(t('navGetSkill'))}
       </a>
     </li>
     <li class="nav-modal__divider"></li>
@@ -84,9 +85,9 @@ function buildNavList(categories, currentCategory) {
     const label = t('nav-' + cat.id) || cat.name;
     html += `
       <li class="nav-modal__item">
-        <a href="/styles/${cat.id}" class="nav-modal__link${active}">
-          <span class="nav-modal__emoji">${cat.emoji}</span>
-          ${label}
+        <a href="/styles/${escapeHtml(cat.id)}" class="nav-modal__link${active}">
+          <span class="nav-modal__emoji">${escapeHtml(cat.emoji)}</span>
+          ${escapeHtml(label)}
         </a>
       </li>
     `;
@@ -101,7 +102,7 @@ function buildNavList(categories, currentCategory) {
         <span class="nav-modal__icon">
           <svg viewBox="0 0 32 32" width="20" height="20"><path fill="currentColor" d="M26 4H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 22H6V6h20zM8 10h16v2H8zm0 5h16v2H8zm0 5h10v2H8z"/></svg>
         </span>
-        ${t('nav-how-to')}
+        ${escapeHtml(t('nav-how-to'))}
       </a>
     </li>
   `;
@@ -115,7 +116,7 @@ function buildNavList(categories, currentCategory) {
         <span class="nav-modal__icon">
           <svg viewBox="0 0 32 32" width="20" height="20"><path fill="currentColor" d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2m0 26a12 12 0 1 1 12-12a12 12 0 0 1-12 12"/><path fill="currentColor" d="M15 11h2v2h-2zm0 4h2v6h-2z"/></svg>
         </span>
-        ${t('nav-about')}
+        ${escapeHtml(t('nav-about'))}
       </a>
     </li>
   `;
