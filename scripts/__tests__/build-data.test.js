@@ -8,6 +8,7 @@ import {
   parseYamlFile,
   extractDesignTokens,
   resolveColors,
+  colorTone,
   loadCatalog,
   scanPreviews,
   buildStylesData,
@@ -338,5 +339,43 @@ describe('buildStylesData searchText', () => {
     expect(styleA.searchText).toContain(normalizeText(styleA.name));
     expect(styleA.searchText).toContain(normalizeText(cat.name));
     expect(styleA.searchText).toContain('bold and modern');
+  });
+});
+
+// ─── colorTone ──────────────────────────────────────────────────────
+
+describe('colorTone', () => {
+  it('is dark for a dark background, whatever the accents', () => {
+    expect(colorTone({ background: '#0A0A0A', accent: '#FF0066', accent_2: '#00CCFF' })).toBe(
+      'dark',
+    );
+  });
+
+  it('is colorful with at least two saturated mid-tone colors', () => {
+    expect(colorTone({ background: '#FFFFFF', primary: '#E53935', secondary: '#1E88E5' })).toBe(
+      'colorful',
+    );
+  });
+
+  it('is colorful for a saturated or mid-tone background', () => {
+    expect(colorTone({ background: '#D81B60', primary: '#111111' })).toBe('colorful');
+    expect(colorTone({ background: '#A68E74' })).toBe('colorful');
+  });
+
+  it('is light for a light neutral or pastel palette', () => {
+    expect(colorTone({ background: '#FFFFFF', primary: '#111111', text_main: '#333333' })).toBe(
+      'light',
+    );
+    expect(colorTone({ background: '#FDEFF4', primary: '#FF85A1' })).toBe('light');
+  });
+
+  it('infers from the text color when there is no background HEX', () => {
+    expect(colorTone({ background: 'Deep green texture', text_main: '#FFFFFF' })).toBe('dark');
+    expect(colorTone({ background: 'Paper texture', text_main: '#2D2D2D' })).toBe('light');
+  });
+
+  it('is null without any HEX code', () => {
+    expect(colorTone({ background: 'Warm paper' })).toBeNull();
+    expect(colorTone(undefined)).toBeNull();
   });
 });
