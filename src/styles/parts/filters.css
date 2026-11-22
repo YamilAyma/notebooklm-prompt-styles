@@ -1,0 +1,48 @@
+/* ─── Filters ────────────────────────────────────────────────────── */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md) var(--space-xl);
+  margin-top: var(--space-lg);
+}
+
+.filters[hidden] {
+  display: none;
+}
+
+.filters__group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition:
+    color var(--duration-fast),
+    background var(--duration-fast),
+    border-color var(--duration-fast);
+}
+
+.chip:hover {
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+.chip[aria-pressed='true'] {
+  color: var(--color-surface);
+  background: var(--color-text);
+  border-color: var(--color-text);
+}

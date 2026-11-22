@@ -100,6 +100,10 @@ Every style has its own static page at `/style/<id>/` (`src/pages/style/[id].ast
 - A global `:focus-visible` outline is defined in `styles.css`.
 - Muted text tokens (`--color-text-muted`) meet WCAG AA contrast (4.5:1) in light and dark themes.
 
+## 🎛️ Filters
+
+The list state (search text and category) lives in `src/lib/filters.js` (pure functions: `parseState`, `toSearchParams`, `filterStyles`) and is mirrored in the URL (`?q=&cat=`). `FilterBar.astro` renders the controls: every `button[data-filter][data-value]` (a chip) or `select[data-filter]` sets that key of the state through `updateFilters()` in `app.js`, which also syncs `aria-pressed`. On `/styles` the category chips combine with the search (AND); on a category page the page category applies, except while searching (the search stays global). To add a new filter, add its key to `filters.js` and a chip group or select with `data-filter` in the bar.
+
 ## 🌐 Internationalization (i18n)
 
 The site supports multiple languages (English, Spanish, Portuguese) using a custom lightweight system:
