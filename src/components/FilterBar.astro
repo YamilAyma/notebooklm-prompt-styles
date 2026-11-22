@@ -89,4 +89,13 @@ const { showCategories = false } = Astro.props;
       <option value="new" data-i18n="sortNew">Newest</option>
     </select>
   </label>
+  <div class="filters__tools">
+    <button type="button" class="chip chip--ghost" id="fav-export" data-i18n="favExport">
+      Export favorites
+    </button>
+    <button type="button" class="chip chip--ghost" id="fav-import" data-i18n="favImport">
+      Import favorites
+    </button>
+    <input type="file" id="fav-file" accept="application/json,.json" hidden />
+  </div>
 </div>

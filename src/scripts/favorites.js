@@ -4,7 +4,7 @@
 
 const STORAGE_KEY = 'nlm-favorites';
 
-function getFavorites() {
+export function getFavorites() {
   try {
     return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
   } catch {
@@ -12,7 +12,7 @@ function getFavorites() {
   }
 }
 
-function saveFavorites(favs) {
+export function saveFavorites(favs) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(favs));
 }
 

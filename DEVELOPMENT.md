@@ -105,6 +105,10 @@ Every style has its own static page at `/style/<id>/` (`src/pages/style/[id].ast
 
 The list state (search text and category) lives in `src/lib/filters.js` (pure functions: `parseState`, `toSearchParams`, `filterStyles`) and is mirrored in the URL (`?q=&cat=`). `FilterBar.astro` renders the controls: every `button[data-filter][data-value]` (a chip) or `select[data-filter]` sets that key of the state through `updateFilters()` in `app.js`, which also syncs `aria-pressed`. On `/styles` the category chips combine with the search (AND); on a category page the page category applies, except while searching (the search stays global). The **tone** (`light`, `dark` or `colorful`) is computed at build time by `colorTone()` in `build-data.js` from each palette (dark background; two or more saturated mid-tone colors or a saturated/mid-tone background; otherwise light) and stored as `tone` in `styles.json`; the chips also exist on category pages. The **sort** (`default` catalog order, `az`, `new`) is applied last by `sortStyles()` and uses a `select[data-filter="sort"]`; `new` orders by `added` (undated last, ties keep the catalog order). To add a new filter, add its key to `filters.js` and a chip group or select with `data-filter` in the bar.
 
+## ⭐ Favorites
+
+Favorites are kept in `localStorage` (`nlm-favorites`, `src/scripts/favorites.js`). The filter bar has **Export** (downloads `notebooklm-favorites.json`) and **Import** buttons (`ui/favoritesIO.js`); the file format and its validation live in `src/lib/favoritesIO.js` (`serializeFavorites`, `parseFavorites`, `mergeFavorites`). Importing merges with the current favorites, ignores unknown style ids and never removes anything.
+
 ## 🌐 Internationalization (i18n)
 
 The site supports multiple languages (English, Spanish, Portuguese) using a custom lightweight system:
