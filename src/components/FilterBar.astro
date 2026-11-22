@@ -22,6 +22,16 @@ const { showCategories = false } = Astro.props;
           aria-pressed="true"
           data-i18n="navAll">All Styles</button
         >
+        <button
+          type="button"
+          class="chip"
+          data-filter="category"
+          data-value="featured"
+          aria-pressed="false"
+        >
+          <span aria-hidden="true">★</span>
+          <span data-i18n="filterFeatured">Featured</span>
+        </button>
         {stylesData.categories.map((category) => (
           <button
             type="button"

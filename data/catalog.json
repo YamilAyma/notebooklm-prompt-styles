@@ -1,4 +1,12 @@
 {
+  "featured": [
+    "executive_report",
+    "geometric_mono",
+    "creative_spark",
+    "cobalt_editorial",
+    "neon_pulsar",
+    "botanical_journal"
+  ],
   "categories": [
     {
       "id": "business-&-executive",

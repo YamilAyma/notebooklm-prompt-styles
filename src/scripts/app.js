@@ -73,9 +73,9 @@ function renderFeaturedStyles() {
   const grid = document.getElementById('featured-grid');
   if (!grid || !stylesData) return;
 
-  const allStyles = stylesData.categories.flatMap((c) => c.styles);
-  // Get 6 unique styles for the landing
-  const featured = allStyles.slice(0, 6);
+  // The curated styles of the catalog (data/catalog.json, `featured`)
+  const byId = new Map(stylesData.categories.flatMap((c) => c.styles).map((s) => [s.id, s]));
+  const featured = stylesData.featured.map((id) => byId.get(id)).filter(Boolean);
 
   const prerendered = [...grid.querySelectorAll('.style-card[data-ssr]')];
   const hydrated =
@@ -255,7 +255,8 @@ function updatePagination() {
 
 function readInitialState() {
   const state = parseState(window.location.search);
-  const known = stylesData.categories.some((c) => c.id === state.category);
+  const known =
+    state.category === 'featured' || stylesData.categories.some((c) => c.id === state.category);
   return known ? state : { ...state, category: 'all' };
 }
 

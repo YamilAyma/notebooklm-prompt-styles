@@ -148,6 +148,22 @@ describe('loadCatalog', () => {
     fs.rmSync(dir, { recursive: true, force: true });
   });
 
+  it('defaults featured to an empty list and checks its ids', () => {
+    const { dir, file } = write(category([{ id: 'a', name: 'A' }]));
+    expect(loadCatalog(file).featured).toEqual([]);
+    fs.writeFileSync(
+      file,
+      JSON.stringify({ ...category([{ id: 'a', name: 'A' }]), featured: ['ghost'] }),
+    );
+    expect(() => loadCatalog(file)).toThrow('featured style "ghost" is not in any category');
+    fs.writeFileSync(
+      file,
+      JSON.stringify({ ...category([{ id: 'a', name: 'A' }]), featured: 'a' }),
+    );
+    expect(() => loadCatalog(file)).toThrow('"featured" must be a list');
+    fs.rmSync(dir, { recursive: true, force: true });
+  });
+
   it('rejects malformed JSON', () => {
     const { dir, file } = write('{ not json');
     expect(() => loadCatalog(file)).toThrow();
@@ -398,5 +414,13 @@ describe('buildStylesData added', () => {
     expect(withDates.categories[0].styles[0].added).toBe('2026-01-02T10:00:00.000Z');
     const without = buildStylesData(MOCK_STYLES, MOCK_PREVIEW, MOCK_CATALOG);
     expect(without.categories[0].styles[0].added).toBeNull();
+  });
+});
+
+describe('buildStylesData featured', () => {
+  it('flags featured styles and lists the visible ones in catalog order', () => {
+    const data = buildStylesData(MOCK_STYLES, MOCK_PREVIEW, MOCK_CATALOG);
+    expect(data.featured).toEqual(['style_a']);
+    expect(data.categories[0].styles[0].featured).toBe(true);
   });
 });
