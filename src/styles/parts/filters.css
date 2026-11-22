@@ -79,3 +79,67 @@
   background: transparent;
   font-weight: 500;
 }
+
+.chip--primary {
+  color: var(--color-surface);
+  background: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.chip:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ─── Selection mode ─────────────────────────────────────────────── */
+
+.style-card__select {
+  display: none;
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  z-index: 2;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  accent-color: var(--color-text);
+  cursor: pointer;
+}
+
+body[data-selecting] .style-card__select {
+  display: block;
+}
+
+body[data-selecting] .style-card[data-selected] {
+  border-color: var(--color-text);
+  box-shadow: 0 0 0 2px var(--color-text);
+}
+
+.selection-bar {
+  position: fixed;
+  left: 50%;
+  bottom: var(--space-lg);
+  z-index: 40;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  max-width: calc(100vw - 2 * var(--space-md));
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transform: translateX(-50%);
+}
+
+.selection-bar[hidden] {
+  display: none;
+}
+
+.selection-bar__count {
+  padding: 0 var(--space-sm);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
