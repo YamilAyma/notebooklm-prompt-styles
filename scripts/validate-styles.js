@@ -18,7 +18,7 @@
 import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
-import { loadCatalog, resolveColors, COLOR_KEYS } from './build-data.js';
+import { loadCatalog, loadAdded, resolveColors, COLOR_KEYS } from './build-data.js';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const IMAGE_REGEX = /\.(png|jpe?g|webp)$/i;
@@ -120,7 +120,7 @@ export function validateAll(stylesDir, previewDir) {
  * The site takes its categories from data/catalog.json, so a style that is not
  * listed there silently disappears.
  */
-export function validateCatalog(stylesDir, previewDir, catalogPath) {
+export function validateCatalog(stylesDir, previewDir, catalogPath, addedPath = null) {
   const errors = [];
   let catalog;
   try {
@@ -155,7 +155,20 @@ export function validateCatalog(stylesDir, previewDir, catalogPath) {
     }
   }
 
-  return [{ file: 'data/catalog.json', errors, warnings: [] }];
+  const results = [{ file: 'data/catalog.json', errors, warnings: [] }];
+
+  if (addedPath) {
+    const added = loadAdded(addedPath);
+    const missing = [...listed.keys()].filter((id) => !added[id]);
+    results.push({
+      file: 'data/added.json',
+      errors: missing.map(
+        (id) => `no added date for "${id}" (run scripts/add-style.js or add it by hand)`,
+      ),
+      warnings: [],
+    });
+  }
+  return results;
 }
 
 function main() {
@@ -165,6 +178,7 @@ function main() {
       path.join(ROOT, 'styles'),
       path.join(ROOT, 'preview'),
       path.join(ROOT, 'data', 'catalog.json'),
+      path.join(ROOT, 'data', 'added.json'),
     ),
   ];
   let errorCount = 0;
