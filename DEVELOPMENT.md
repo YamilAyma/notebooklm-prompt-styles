@@ -8,7 +8,7 @@ The project is a **Data-Driven Static Site**. Instead of hardcoding content into
 
 - `/styles/*.yaml`: The source of truth for the design prompts.
 - `/data/catalog.json`: Categories, order, display names and descriptions. A style that is not listed here is not shown on the site (`npm run validate` checks it).
-- `/preview/[style_id]/[style_id]_[n].webp`: Preview images for each style (WebP, generated with `scripts/optimize_and_rename.py`).
+- `/preview/[style_id]/[style_id]_[n].webp`: Preview images for each style (WebP, generated with `npm run previews -- optimize`).
 - `/src/`: The Astro source code (Layouts, Pages, Components).
 - `/src/scripts/`: Modular frontend logic.
   - `app.js`: Core orchestration, data fetching, and filtering logic.
@@ -47,13 +47,13 @@ Compares every pair of styles with Jaccard similarity on (a) words of theme, typ
 
 **Run manually:** `npm run similarity` (add `-- --style <id>` for the 5 closest styles, or `-- --text 0.3 --colors 0.5` to change thresholds)
 
-### 4. Image Organization (Python utilities)
-- `scripts/match_style_preview.py`: matches a pasted `input.yaml` with an existing style and creates its `/preview` folder.
-- `scripts/optimize_and_rename.py`: converts images to `.webp`, renames them to `{style}_{n}.webp` and deletes the originals.
-- `scripts/rename-previews.py`: renames images inside each preview subfolder to `{folder_name}_{index}.{ext}`.
-- `scripts/normalize-folders.py`: normalizes preview folder names (hyphens to underscores).
+### 4. Preview Images (`scripts/previews.js`)
+One Node tool (it replaces the former Python scripts) for the images in `/preview`:
+- `npm run previews -- init <style_id>`: creates `preview/<style_id>` for an existing style.
+- `npm run previews -- optimize`: converts new PNG/JPG to WebP (quality 85), numbers every image as `<style_id>_<n>.webp` after the highest existing number (nothing is overwritten) and removes the originals.
+- `npm run previews -- normalize`: renames folders with hyphens to underscores, merging into an existing folder without overwriting files.
 
-**Run manually:** `python scripts/optimize_and_rename.py`
+`optimize` and `normalize` accept `--dry-run` to list the changes without making them.
 
 ### 5. README Generation (`scripts/generate-readme.js`)
 The style index and the per-style sections of `README.md` are generated from `data/catalog.json` and `preview/` between the `<!-- TOC:START/END -->` and `<!-- STYLES:START/END -->` markers; everything else in the README is hand-written. Each style gets its description, first preview and a link to its YAML (the YAML itself is not embedded).
