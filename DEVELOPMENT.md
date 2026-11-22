@@ -8,7 +8,7 @@ The project is a **Data-Driven Static Site**. Instead of hardcoding content into
 
 - `/styles/*.yaml`: The source of truth for the design prompts.
 - `/data/added.json`: When each style was added (ISO date of the first commit of its YAML), used by the "Newest" sort. `npm run validate` requires an entry per style and `scripts/add-style.js` writes it for new ones; keep it out of the YAML files on purpose.
-- `/data/catalog.json`: Categories, order, display names and descriptions. A style that is not listed here is not shown on the site (`npm run validate` checks it).
+- `/data/catalog.json`: The `featured` list (ordered ids of the curated styles: the landing page examples and the ★ Featured chip) and the categories, order, display names and descriptions. A style that is not listed here is not shown on the site (`npm run validate` checks it).
 - `/preview/[style_id]/[style_id]_[n].webp`: Preview images for each style (WebP, generated with `npm run previews -- optimize`).
 - `/src/`: The Astro source code (Layouts, Pages, Components).
 - `/src/scripts/`: Modular frontend logic.

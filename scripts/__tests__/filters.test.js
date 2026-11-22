@@ -139,3 +139,23 @@ describe('sorting', () => {
     ]);
   });
 });
+
+describe('featured', () => {
+  const cats = [
+    { id: 'a', styles: [{ ...style('a1', ''), featured: true }, style('a2', '')] },
+    { id: 'b', styles: [{ ...style('b1', ''), featured: true }, style('b2', '')] },
+  ];
+
+  it('the featured chip shows the curated styles of every category', () => {
+    expect(ids(filterStyles(cats, { ...defaultState(), category: 'featured' }))).toEqual([
+      'a1',
+      'b1',
+    ]);
+  });
+
+  it('combines with the other filters', () => {
+    expect(ids(filterStyles(cats, { ...defaultState(), category: 'featured', q: 'zzz' }))).toEqual(
+      [],
+    );
+  });
+});

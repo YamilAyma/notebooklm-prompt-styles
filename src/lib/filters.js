@@ -61,9 +61,13 @@ export function filterStyles(
   let activeCategory = pageCategory === 'all' ? state.category : pageCategory;
   if (searching && pageCategory !== 'all') activeCategory = 'all';
 
+  // 'featured' is a special "category" of the chips: the curated styles of any category
   let styles = categories
-    .filter((c) => activeCategory === 'all' || c.id === activeCategory)
+    .filter(
+      (c) => activeCategory === 'all' || activeCategory === 'featured' || c.id === activeCategory,
+    )
     .flatMap((c) => c.styles);
+  if (activeCategory === 'featured') styles = styles.filter((s) => s.featured);
 
   if (searching) styles = styles.filter((s) => terms.every((term) => s.searchText.includes(term)));
   if (state.tone !== 'all') styles = styles.filter((s) => s.tone === state.tone);
