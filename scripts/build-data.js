@@ -105,6 +105,47 @@ export function resolveColors(palette = {}) {
   return colors;
 }
 
+const hexToRgb = (hex) => {
+  const h = hex.replace('#', '');
+  const full = h.length === 3 ? [...h].map((c) => c + c).join('') : h;
+  return [0, 2, 4].map((i) => parseInt(full.slice(i, i + 2), 16) / 255);
+};
+
+/** HSL lightness (0-1) and chroma (0-1) of a HEX color. */
+function lightnessAndChroma(hex) {
+  const [r, g, b] = hexToRgb(hex);
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  return { lightness: (max + min) / 2, chroma: max - min };
+}
+
+/**
+ * Overall look of a style, from its palette:
+ *   'dark'     - dark background
+ *   'colorful' - at least two strongly saturated mid-tone colors, or a saturated /
+ *                mid-tone background
+ *   'light'    - everything else (light, mostly neutral or pastel)
+ * Without a background HEX the style is dark when its text color is light. Returns
+ * null when the palette has no HEX code at all.
+ */
+export function colorTone(palette = {}) {
+  const { background, text } = resolveColors(palette);
+  const all = JSON.stringify(palette).match(/#(?:[0-9a-f]{6}|[0-9a-f]{3})\b/gi) ?? [];
+  if (all.length === 0) return null;
+
+  const bg = background ? lightnessAndChroma(background) : null;
+
+  const dark = bg ? bg.lightness < 0.3 : text ? lightnessAndChroma(text).lightness > 0.6 : false;
+  if (dark) return 'dark';
+
+  const saturated = all
+    .map(lightnessAndChroma)
+    .filter((c) => c.chroma >= 0.35 && c.lightness > 0.2 && c.lightness < 0.85).length;
+  if (saturated >= 2 || (bg && (bg.chroma >= 0.3 || bg.lightness < 0.6))) return 'colorful';
+
+  return 'light';
+}
+
 export function extractDesignTokens(parsed) {
   const gs = parsed?.design_system?.global_style;
   if (!gs) return null;
@@ -112,6 +153,7 @@ export function extractDesignTokens(parsed) {
   return {
     theme: gs.theme || '',
     colors: resolveColors(gs.color_palette),
+    tone: colorTone(gs.color_palette),
     typography: gs.typography || {},
     keyElements: gs.key_visual_elements || [],
   };

@@ -5,7 +5,9 @@
 
 import { normalizeText } from '../scripts/utils.js';
 
-export const defaultState = () => ({ q: '', category: 'all' });
+export const TONES = ['light', 'dark', 'colorful'];
+
+export const defaultState = () => ({ q: '', category: 'all', tone: 'all' });
 
 /** Words of a query, normalized (lowercase, no accents). */
 export const searchTerms = (q) => normalizeText(q).split(/\s+/).filter(Boolean);
@@ -17,6 +19,7 @@ export function parseState(search) {
     ...defaultState(),
     q: (params.get('q') ?? '').trim(),
     category: params.get('cat') || 'all',
+    tone: TONES.includes(params.get('tone')) ? params.get('tone') : 'all',
   };
 }
 
@@ -25,6 +28,7 @@ export function toSearchParams(state) {
   const params = new URLSearchParams();
   if (state.q.trim()) params.set('q', state.q.trim());
   if (state.category !== 'all') params.set('cat', state.category);
+  if (state.tone !== 'all') params.set('tone', state.tone);
   return params;
 }
 
@@ -50,6 +54,7 @@ export function filterStyles(
     .flatMap((c) => c.styles);
 
   if (searching) styles = styles.filter((s) => terms.every((term) => s.searchText.includes(term)));
+  if (state.tone !== 'all') styles = styles.filter((s) => s.tone === state.tone);
   if (favoritesOnly) styles = styles.filter((s) => isFavorite(s.id));
 
   return styles;

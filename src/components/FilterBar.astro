@@ -37,4 +37,38 @@ const { showCategories = false } = Astro.props;
       </div>
     )
   }
+  <div class="filters__group" role="group" aria-label="Tone" data-i18n-aria="filterTone">
+    <button
+      type="button"
+      class="chip"
+      data-filter="tone"
+      data-value="all"
+      aria-pressed="true"
+      data-i18n="toneAll">Any tone</button
+    >
+    <button
+      type="button"
+      class="chip"
+      data-filter="tone"
+      data-value="light"
+      aria-pressed="false"
+      data-i18n="toneLight">Light</button
+    >
+    <button
+      type="button"
+      class="chip"
+      data-filter="tone"
+      data-value="dark"
+      aria-pressed="false"
+      data-i18n="toneDark">Dark</button
+    >
+    <button
+      type="button"
+      class="chip"
+      data-filter="tone"
+      data-value="colorful"
+      aria-pressed="false"
+      data-i18n="toneColorful">Colorful</button
+    >
+  </div>
 </div>
