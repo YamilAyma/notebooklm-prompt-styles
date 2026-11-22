@@ -43,3 +43,13 @@ export function normalizeText(value) {
     .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase();
 }
+
+/** Escapes text before it is placed inside an HTML string. */
+export function escapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
