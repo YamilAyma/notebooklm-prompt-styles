@@ -162,7 +162,7 @@ export function extractDesignTokens(parsed) {
 
 /**
  * Loads and checks data/catalog.json:
- * { categories: [{ id, name, emoji, styles: [{ id, name, description }] }] }
+ * { featured: [styleId, ...], categories: [{ id, name, emoji, styles: [{ id, name, description }] }] }
  */
 export function loadCatalog(catalogPath) {
   const catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf-8'));
@@ -196,6 +196,15 @@ export function loadCatalog(catalogPath) {
       }
       seen.add(style.id);
     }
+  }
+
+  catalog.featured ??= [];
+  if (!Array.isArray(catalog.featured)) {
+    throw new Error(`${catalogPath}: "featured" must be a list of style ids`);
+  }
+  for (const id of catalog.featured) {
+    if (!seen.has(id))
+      throw new Error(`${catalogPath}: featured style "${id}" is not in any category`);
   }
   return catalog;
 }
@@ -293,6 +302,7 @@ export function buildStylesData(stylesDir, previewDir, catalogPath, addedPath = 
         name: entry.name,
         description,
         added: added[entry.id] ?? null,
+        featured: catalog.featured.includes(entry.id),
         searchText: buildSearchText({ ...style, name: entry.name, description }, cat.name),
       });
     }
@@ -308,9 +318,14 @@ export function buildStylesData(stylesDir, previewDir, catalogPath, addedPath = 
     }
   }
 
+  // Featured styles that are visible, in the order of the catalog's `featured` list
+  const visible = new Map(categories.flatMap((c) => c.styles).map((s) => [s.id, s]));
+  const featured = catalog.featured.filter((id) => visible.has(id));
+
   const totalStyles = categories.reduce((sum, c) => sum + c.styles.length, 0);
 
   return {
+    featured,
     categories,
     meta: {
       totalStyles,
