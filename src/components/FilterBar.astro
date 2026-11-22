@@ -1,0 +1,40 @@
+---
+/** Filter chips for the style lists. Shown by app.js once JavaScript is available. */
+import stylesData from '../../public/data/styles.json';
+
+const { showCategories = false } = Astro.props;
+---
+
+<div class="filters" id="filter-bar" hidden>
+  {
+    showCategories && (
+      <div
+        class="filters__group"
+        role="group"
+        aria-label="Category"
+        data-i18n-aria="filterCategory"
+      >
+        <button
+          type="button"
+          class="chip"
+          data-filter="category"
+          data-value="all"
+          aria-pressed="true"
+          data-i18n="navAll">All Styles</button
+        >
+        {stylesData.categories.map((category) => (
+          <button
+            type="button"
+            class="chip"
+            data-filter="category"
+            data-value={category.id}
+            aria-pressed="false"
+          >
+            <span aria-hidden="true">{category.emoji}</span>
+            <span data-i18n={`nav-${category.id}`}>{category.name}</span>
+          </button>
+        ))}
+      </div>
+    )
+  }
+</div>
