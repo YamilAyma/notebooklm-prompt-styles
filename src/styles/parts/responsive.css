@@ -1,0 +1,314 @@
+/* ─── Responsive ─────────────────────────────────────────────────── */
+
+/* ─── Top Actions ────────────────────────────────────────────────── */
+
+.top-actions {
+  position: fixed;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  display: flex;
+  gap: var(--space-sm);
+  z-index: 500;
+}
+
+.action-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-out);
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
+  padding: 0;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-text);
+}
+
+/* Social Hub & Modal */
+.social-hub {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.social-trigger {
+  display: none;
+}
+
+.social-desktop {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.social-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.social-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.social-modal[data-visible="true"] .social-modal__backdrop {
+  opacity: 1;
+}
+
+.social-modal__panel {
+  position: absolute;
+  top: 80px;
+  right: var(--space-lg);
+  width: 260px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-tooltip);
+  padding: var(--space-lg);
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.3s var(--ease-spring);
+  border: 1px solid var(--color-border);
+}
+
+.social-modal[data-visible="true"] .social-modal__panel {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.social-modal__title {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.social-modal__grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.social-modal__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.social-modal__item:hover {
+  background: var(--color-accent-soft);
+  transform: translateX(4px);
+}
+
+.social-modal__item .action-btn__icon {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 992px) {
+  .social-desktop {
+    display: none;
+  }
+  .social-trigger {
+    display: flex;
+  }
+}
+
+/* Language Selector */
+.lang-selector {
+  position: relative;
+}
+
+.lang-trigger {
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  min-width: 44px;
+}
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + var(--space-xs));
+  right: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-tooltip);
+  padding: var(--space-xs);
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+  z-index: 1100;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: all 0.2s var(--ease-spring);
+  pointer-events: none;
+}
+
+.lang-menu:not([hidden]) {
+  display: flex;
+}
+
+.lang-menu[data-visible="true"] {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lang-menu__item {
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  font-size: 0.875rem;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s;
+}
+
+.lang-menu__item:hover {
+  background: var(--color-accent-soft);
+}
+
+.action-btn__icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Icons should be monochrome and follow theme colors */
+.action-btn__icon {
+  width: 20px;
+  height: 20px;
+  filter: grayscale(1) invert(var(--icon-invert, 0));
+  opacity: 0.7;
+  transition: 
+    transform var(--duration-fast) var(--ease-spring),
+    opacity var(--duration-fast),
+    filter var(--duration-normal);
+}
+
+.action-btn:hover .action-btn__icon {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.theme-toggle__icons {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.theme-toggle__sun,
+.theme-toggle__moon {
+  position: absolute;
+  inset: 0;
+  width: 20px;
+  height: 20px;
+  transition: transform var(--duration-normal) var(--ease-spring), opacity var(--duration-normal);
+}
+
+[data-theme="dark"] .theme-toggle__sun {
+  transform: scale(0) rotate(90deg);
+  opacity: 0;
+}
+
+[data-theme="light"] .theme-toggle__moon {
+  transform: scale(0) rotate(-90deg);
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-3xl) var(--space-md) var(--space-2xl);
+  }
+
+  .hero__title {
+    font-size: clamp(2.25rem, 10vw, 3.5rem);
+  }
+
+  .grid-section {
+    padding: 0 var(--space-md) var(--space-3xl);
+  }
+
+  .bento-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--space-sm);
+  }
+
+  .style-card__fav {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .yaml-tooltip {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .fab {
+    bottom: var(--space-md);
+    right: var(--space-md);
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .bento-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1600px) {
+  .bento-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ─── Reduced Motion ─────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

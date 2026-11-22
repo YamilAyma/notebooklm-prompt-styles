@@ -121,7 +121,7 @@ Managed via `src/scripts/theme.js`:
 
 ## 🎨 Design System
 
-The frontend is built with **Astro** and uses **Vanilla CSS** in `src/styles/styles.css`.
+The frontend is built with **Astro** and uses **Vanilla CSS**: `src/styles/styles.css` only imports the files in `src/styles/parts/` (base and tokens, hero, grid, cards, bottom sheet, floating buttons, responsive rules, landing...). **Keep the import order**: it is the cascade order of the original single file, and the bundled CSS is byte-identical to it.
 - **Theme**: Swiss-minimalist with Inter and JetBrains Mono.
 - **Interactivity**: Modular scripts in `src/scripts/`.
 - **Responsive**: Bento-style grid and mobile-specific modals (Social Modal, Bottom Sheet).
