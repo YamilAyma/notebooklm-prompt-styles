@@ -71,4 +71,12 @@ const { showCategories = false } = Astro.props;
       data-i18n="toneColorful">Colorful</button
     >
   </div>
+  <label class="filters__sort">
+    <span data-i18n="filterSort">Sort by</span>
+    <select data-filter="sort">
+      <option value="default" data-i18n="sortDefault">Default order</option>
+      <option value="az" data-i18n="sortAz">A–Z</option>
+      <option value="new" data-i18n="sortNew">Newest</option>
+    </select>
+  </label>
 </div>

@@ -7,6 +7,7 @@ This document provides technical details on how the showcase website works, its 
 The project is a **Data-Driven Static Site**. Instead of hardcoding content into the HTML, the site is generated from the source YAML files and preview images located in the root of the repository.
 
 - `/styles/*.yaml`: The source of truth for the design prompts.
+- `/data/added.json`: When each style was added (ISO date of the first commit of its YAML), used by the "Newest" sort. `npm run validate` requires an entry per style and `scripts/add-style.js` writes it for new ones; keep it out of the YAML files on purpose.
 - `/data/catalog.json`: Categories, order, display names and descriptions. A style that is not listed here is not shown on the site (`npm run validate` checks it).
 - `/preview/[style_id]/[style_id]_[n].webp`: Preview images for each style (WebP, generated with `npm run previews -- optimize`).
 - `/src/`: The Astro source code (Layouts, Pages, Components).
@@ -102,7 +103,7 @@ Every style has its own static page at `/style/<id>/` (`src/pages/style/[id].ast
 
 ## 🎛️ Filters
 
-The list state (search text and category) lives in `src/lib/filters.js` (pure functions: `parseState`, `toSearchParams`, `filterStyles`) and is mirrored in the URL (`?q=&cat=`). `FilterBar.astro` renders the controls: every `button[data-filter][data-value]` (a chip) or `select[data-filter]` sets that key of the state through `updateFilters()` in `app.js`, which also syncs `aria-pressed`. On `/styles` the category chips combine with the search (AND); on a category page the page category applies, except while searching (the search stays global). The **tone** (`light`, `dark` or `colorful`) is computed at build time by `colorTone()` in `build-data.js` from each palette (dark background; two or more saturated mid-tone colors or a saturated/mid-tone background; otherwise light) and stored as `tone` in `styles.json`; the chips also exist on category pages. To add a new filter, add its key to `filters.js` and a chip group or select with `data-filter` in the bar.
+The list state (search text and category) lives in `src/lib/filters.js` (pure functions: `parseState`, `toSearchParams`, `filterStyles`) and is mirrored in the URL (`?q=&cat=`). `FilterBar.astro` renders the controls: every `button[data-filter][data-value]` (a chip) or `select[data-filter]` sets that key of the state through `updateFilters()` in `app.js`, which also syncs `aria-pressed`. On `/styles` the category chips combine with the search (AND); on a category page the page category applies, except while searching (the search stays global). The **tone** (`light`, `dark` or `colorful`) is computed at build time by `colorTone()` in `build-data.js` from each palette (dark background; two or more saturated mid-tone colors or a saturated/mid-tone background; otherwise light) and stored as `tone` in `styles.json`; the chips also exist on category pages. The **sort** (`default` catalog order, `az`, `new`) is applied last by `sortStyles()` and uses a `select[data-filter="sort"]`; `new` orders by `added` (undated last, ties keep the catalog order). To add a new filter, add its key to `filters.js` and a chip group or select with `data-filter` in the bar.
 
 ## 🌐 Internationalization (i18n)
 

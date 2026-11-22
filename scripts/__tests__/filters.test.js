@@ -5,9 +5,16 @@ import {
   toSearchParams,
   filterStyles,
   searchTerms,
+  sortStyles,
 } from '../../src/lib/filters.js';
 
-const style = (id, searchText, tone = 'light') => ({ id, searchText, tone });
+const style = (id, searchText, tone = 'light', added = null) => ({
+  id,
+  name: id.toUpperCase(),
+  searchText,
+  tone,
+  added,
+});
 const categories = [
   { id: 'a', styles: [style('a1', 'neon glow dark', 'dark'), style('a2', 'calm paper light')] },
   { id: 'b', styles: [style('b1', 'neon pastel', 'colorful'), style('b2', 'forest green')] },
@@ -20,22 +27,26 @@ describe('state in the URL', () => {
       q: 'neon glow',
       category: 'b',
       tone: 'all',
+      sort: 'default',
     });
     expect(parseState('?tone=dark').tone).toBe('dark');
     expect(parseState('?tone=sparkly').tone).toBe('all');
+    expect(parseState('?sort=new').sort).toBe('new');
+    expect(parseState('?sort=random').sort).toBe('default');
     expect(parseState('')).toEqual(defaultState());
   });
 
   it('leaves default values out of the query string', () => {
     expect(toSearchParams(defaultState()).toString()).toBe('');
-    expect(toSearchParams({ q: ' neon ', category: 'b', tone: 'all' }).toString()).toBe(
+    expect(toSearchParams({ ...defaultState(), q: ' neon ', category: 'b' }).toString()).toBe(
       'q=neon&cat=b',
     );
     expect(toSearchParams({ ...defaultState(), tone: 'dark' }).toString()).toBe('tone=dark');
+    expect(toSearchParams({ ...defaultState(), sort: 'az' }).toString()).toBe('sort=az');
   });
 
   it('round-trips', () => {
-    const state = { q: 'café & té', category: 'creative-&-playful', tone: 'colorful' };
+    const state = { q: 'café & té', category: 'creative-&-playful', tone: 'colorful', sort: 'new' };
     expect(parseState(`?${toSearchParams(state)}`)).toEqual(state);
   });
 });
@@ -94,5 +105,37 @@ describe('tone', () => {
     expect(
       ids(filterStyles(categories, { ...defaultState(), tone: 'colorful', q: 'neon' })),
     ).toEqual(['b1']);
+  });
+});
+
+describe('sorting', () => {
+  const list = [
+    style('c', '', 'light', '2026-03-01T00:00:00.000Z'),
+    style('a', '', 'light', '2026-01-01T00:00:00.000Z'),
+    style('b', '', 'light', null),
+    style('d', '', 'light', '2026-03-01T00:00:00.000Z'),
+  ];
+
+  it('keeps the catalog order by default, without changing the input', () => {
+    expect(ids(sortStyles(list, 'default'))).toEqual(['c', 'a', 'b', 'd']);
+    expect(ids(list)).toEqual(['c', 'a', 'b', 'd']);
+  });
+
+  it('sorts A-Z by name', () => {
+    expect(ids(sortStyles(list, 'az'))).toEqual(['a', 'b', 'c', 'd']);
+  });
+
+  it('puts the newest first, undated last, and keeps the catalog order on ties', () => {
+    expect(ids(sortStyles(list, 'new'))).toEqual(['c', 'd', 'a', 'b']);
+  });
+
+  it('is applied by filterStyles after filtering', () => {
+    const cats = [{ id: 'x', styles: list }];
+    expect(ids(filterStyles(cats, { ...defaultState(), sort: 'az' }))).toEqual([
+      'a',
+      'b',
+      'c',
+      'd',
+    ]);
   });
 });
