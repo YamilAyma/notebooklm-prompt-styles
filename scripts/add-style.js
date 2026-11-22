@@ -17,6 +17,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const README_PATH = path.join(ROOT, 'README.md');
 const CATALOG_PATH = path.join(ROOT, 'data', 'catalog.json');
+const ADDED_PATH = path.join(ROOT, 'data', 'added.json');
 
 const args = process.argv.slice(2);
 const getArg = (name) => {
@@ -61,6 +62,15 @@ if (catalog.categories.some((c) => c.styles.some((s) => s.id === id))) {
   target.styles.push({ id, name: styleName, description });
   fs.writeFileSync(CATALOG_PATH, JSON.stringify(catalog, null, 2) + '\n', 'utf-8');
   console.log(`✅ "${styleName}" added to "${target.name}" in data/catalog.json.`);
+}
+
+// The "newest" sort of the site reads this date
+const added = JSON.parse(fs.readFileSync(ADDED_PATH, 'utf-8'));
+if (!added[id]) {
+  added[id] = new Date().toISOString();
+  const sorted = Object.fromEntries(Object.entries(added).sort(([a], [b]) => a.localeCompare(b)));
+  fs.writeFileSync(ADDED_PATH, JSON.stringify(sorted, null, 2) + '\n', 'utf-8');
+  console.log('✅ data/added.json updated.');
 }
 
 const readme = fs.readFileSync(README_PATH, 'utf-8');

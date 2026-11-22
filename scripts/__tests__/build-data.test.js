@@ -10,6 +10,7 @@ import {
   resolveColors,
   colorTone,
   loadCatalog,
+  loadAdded,
   scanPreviews,
   buildStylesData,
   toThumbPath,
@@ -23,6 +24,7 @@ const FIXTURES = path.join(__dirname, 'fixtures');
 const MOCK_STYLES = path.join(FIXTURES, 'mock-styles');
 const MOCK_PREVIEW = path.join(FIXTURES, 'mock-preview');
 const MOCK_CATALOG = path.join(FIXTURES, 'mock-catalog.json');
+const MOCK_ADDED = path.join(FIXTURES, 'mock-added.json');
 
 // ─── parseYamlFile ──────────────────────────────────────────────────
 
@@ -377,5 +379,24 @@ describe('colorTone', () => {
   it('is null without any HEX code', () => {
     expect(colorTone({ background: 'Warm paper' })).toBeNull();
     expect(colorTone(undefined)).toBeNull();
+  });
+});
+
+// ─── added dates ────────────────────────────────────────────────────
+
+describe('loadAdded', () => {
+  it('reads the dates, and tolerates a missing file or path', () => {
+    expect(loadAdded(MOCK_ADDED).style_a).toBe('2026-01-02T10:00:00.000Z');
+    expect(loadAdded('/nonexistent/added.json')).toEqual({});
+    expect(loadAdded(null)).toEqual({});
+  });
+});
+
+describe('buildStylesData added', () => {
+  it('adds the date a style was added (null when unknown)', () => {
+    const withDates = buildStylesData(MOCK_STYLES, MOCK_PREVIEW, MOCK_CATALOG, MOCK_ADDED);
+    expect(withDates.categories[0].styles[0].added).toBe('2026-01-02T10:00:00.000Z');
+    const without = buildStylesData(MOCK_STYLES, MOCK_PREVIEW, MOCK_CATALOG);
+    expect(without.categories[0].styles[0].added).toBeNull();
   });
 });

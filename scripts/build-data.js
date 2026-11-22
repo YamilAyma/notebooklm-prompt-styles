@@ -20,6 +20,7 @@ const ROOT = path.resolve(import.meta.dirname, '..');
 const STYLES_DIR = path.join(ROOT, 'styles');
 const PREVIEW_DIR = path.join(ROOT, 'preview');
 const CATALOG_PATH = path.join(ROOT, 'data', 'catalog.json');
+const ADDED_PATH = path.join(ROOT, 'data', 'added.json');
 const OUTPUT_PATH = path.join(ROOT, 'public', 'data', 'styles.json');
 
 export const THUMB_WIDTH = 480;
@@ -223,9 +224,16 @@ export function scanPreviews(previewDir) {
   return previews;
 }
 
-export function buildStylesData(stylesDir, previewDir, catalogPath) {
+/** data/added.json: { styleId: ISO date of the first commit that added the style }. */
+export function loadAdded(addedPath) {
+  if (!addedPath || !fs.existsSync(addedPath)) return {};
+  return JSON.parse(fs.readFileSync(addedPath, 'utf-8'));
+}
+
+export function buildStylesData(stylesDir, previewDir, catalogPath, addedPath = null) {
   // 1. Load the catalog (categories, order, names and descriptions)
   const catalog = loadCatalog(catalogPath);
+  const added = loadAdded(addedPath);
 
   // 2. Scan previews (from source preview dir)
   const allPreviews = scanPreviews(previewDir);
@@ -284,6 +292,7 @@ export function buildStylesData(stylesDir, previewDir, catalogPath) {
         ...style,
         name: entry.name,
         description,
+        added: added[entry.id] ?? null,
         searchText: buildSearchText({ ...style, name: entry.name, description }, cat.name),
       });
     }
@@ -319,7 +328,7 @@ async function main() {
   console.log(`   Preview dir: ${PREVIEW_DIR}`);
   console.log(`   Catalog: ${CATALOG_PATH}`);
 
-  const data = buildStylesData(STYLES_DIR, PREVIEW_DIR, CATALOG_PATH);
+  const data = buildStylesData(STYLES_DIR, PREVIEW_DIR, CATALOG_PATH, ADDED_PATH);
 
   // Ensure output directory exists
   const outputDir = path.dirname(OUTPUT_PATH);

@@ -7,7 +7,9 @@ import { normalizeText } from '../scripts/utils.js';
 
 export const TONES = ['light', 'dark', 'colorful'];
 
-export const defaultState = () => ({ q: '', category: 'all', tone: 'all' });
+export const SORTS = ['az', 'new'];
+
+export const defaultState = () => ({ q: '', category: 'all', tone: 'all', sort: 'default' });
 
 /** Words of a query, normalized (lowercase, no accents). */
 export const searchTerms = (q) => normalizeText(q).split(/\s+/).filter(Boolean);
@@ -20,6 +22,7 @@ export function parseState(search) {
     q: (params.get('q') ?? '').trim(),
     category: params.get('cat') || 'all',
     tone: TONES.includes(params.get('tone')) ? params.get('tone') : 'all',
+    sort: SORTS.includes(params.get('sort')) ? params.get('sort') : 'default',
   };
 }
 
@@ -29,7 +32,16 @@ export function toSearchParams(state) {
   if (state.q.trim()) params.set('q', state.q.trim());
   if (state.category !== 'all') params.set('cat', state.category);
   if (state.tone !== 'all') params.set('tone', state.tone);
+  if (state.sort !== 'default') params.set('sort', state.sort);
   return params;
+}
+
+/** 'az': by name; 'new': most recently added first (undated last); otherwise the catalog order. */
+export function sortStyles(styles, sort) {
+  const sorted = [...styles]; // Array.prototype.sort is stable, so ties keep the catalog order
+  if (sort === 'az') sorted.sort((a, b) => a.name.localeCompare(b.name));
+  if (sort === 'new') sorted.sort((a, b) => (b.added ?? '').localeCompare(a.added ?? ''));
+  return sorted;
 }
 
 /**
@@ -57,5 +69,5 @@ export function filterStyles(
   if (state.tone !== 'all') styles = styles.filter((s) => s.tone === state.tone);
   if (favoritesOnly) styles = styles.filter((s) => isFavorite(s.id));
 
-  return styles;
+  return sortStyles(styles, state.sort);
 }
