@@ -10,6 +10,7 @@ import { initBottomSheet } from './ui/bottomSheet.js';
 import { initShare } from './ui/share.js';
 import { createCard, hydrateCard } from './ui/card.js';
 import { initStylePage } from './ui/stylePage.js';
+import { initComparePage } from './ui/comparePage.js';
 import { initFavoritesIO } from './ui/favoritesIO.js';
 import { initSelection } from './ui/selectionBar.js';
 import {
@@ -77,6 +78,7 @@ async function init() {
   initNavigation(stylesData.categories, getPageCategory());
   initBottomSheet();
   initStylePage();
+  initComparePage(stylesData.categories);
   initShare();
   initTheme();
   initI18n();

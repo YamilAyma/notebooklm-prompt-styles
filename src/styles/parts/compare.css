@@ -1,0 +1,120 @@
+/* ─── Compare page ───────────────────────────────────────────────── */
+
+.compare-page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-3xl) var(--space-lg) var(--space-4xl);
+}
+
+.compare-page__slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.compare-page__slots select {
+  min-width: 220px;
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+}
+
+.compare-page__hint {
+  margin-top: var(--space-md);
+  color: var(--color-text-secondary);
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--compare-columns, 1), minmax(0, 1fr));
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+}
+
+.compare-col h2,
+.compare-col h3 {
+  margin: var(--space-lg) 0 var(--space-sm);
+}
+
+.compare-col__title {
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.compare-col__title a {
+  color: inherit;
+}
+
+.compare-col h3 {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.compare-col__summary {
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.compare-col__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.compare-col__swatches {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.compare-col__swatches li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-xs) 0;
+}
+
+.compare-col__swatches code {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+}
+
+.compare-col .chip--primary {
+  margin-top: var(--space-lg);
+}
+
+.compare-col__yaml {
+  margin-top: var(--space-md);
+}
+
+.compare-col__yaml summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.compare-col__yaml pre {
+  max-height: 420px;
+  margin-top: var(--space-sm);
+  font-size: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .compare-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

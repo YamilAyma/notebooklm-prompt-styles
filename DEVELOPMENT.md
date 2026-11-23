@@ -113,6 +113,10 @@ Favorites are kept in `localStorage` (`nlm-favorites`, `src/scripts/favorites.js
 
 The **Select** button of the filter bar turns the lists into selection mode: cards show a checkbox, clicking a card (or Enter/Space on it) selects it instead of opening the detail sheet, and a bar shows the count with *Select all* (every style matching the filters), *Clear*, *Copy YAML* and *Done* (`Esc` also exits). The state lives in `src/scripts/selection.js` (no DOM), the bar in `ui/selectionBar.js` and the checkbox in the card markup (`StyleCard.astro` and `createCard()` must keep matching). *Copy YAML* joins the selected styles with `buildYamlBundle()` (`src/lib/bundle.js`): a valid multi-document YAML stream, each style starting with `---` and a comment with its name.
 
+## ⚖️ Compare
+
+`/compare/?styles=a,b,c` (`src/pages/compare.astro`, filled by `ui/comparePage.js`) shows up to three styles side by side: preview, palette, typography, key elements and the YAML with a copy button. Three selects choose the styles and the URL keeps them. It is reached from the *Compare* button of the selection bar (enabled with two or three selected), from the *Compare* button of every style page, or by URL. Ids are parsed and validated by `src/lib/compare.js`. The page is `noindex` (new `noindex` prop of `Layout`) and left out of the sitemap, since its content depends on the query.
+
 ## 🌐 Internationalization (i18n)
 
 The site supports multiple languages (English, Spanish, Portuguese) using a custom lightweight system:

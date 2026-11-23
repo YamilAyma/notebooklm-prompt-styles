@@ -12,6 +12,7 @@ import {
 } from '../selection.js';
 import { syncCardSelection } from './card.js';
 import { buildYamlBundle } from '../../lib/bundle.js';
+import { canCompare, compareUrl } from '../../lib/compare.js';
 import { copyToClipboard } from '../utils.js';
 import { t } from '../i18n.js';
 
@@ -26,6 +27,7 @@ export function initSelection(stylesById, getVisibleStyles) {
 
   const count = document.getElementById('selection-count');
   const copyBtn = document.getElementById('selection-copy');
+  const compareBtn = document.getElementById('selection-compare');
 
   const render = () => {
     const ids = selectedIds();
@@ -34,6 +36,7 @@ export function initSelection(stylesById, getVisibleStyles) {
     bar.hidden = !isSelecting();
     count.textContent = t('selectionCount').replace('{n}', ids.length);
     copyBtn.disabled = ids.length === 0;
+    compareBtn.disabled = !canCompare(ids.length);
     document.querySelectorAll('.style-card[data-style-id]').forEach(syncCardSelection);
   };
 
@@ -62,6 +65,11 @@ export function initSelection(stylesById, getVisibleStyles) {
       buildYamlBundle(styles),
       t('selectionCopied').replace('{n}', styles.length),
     );
+  });
+
+  compareBtn.addEventListener('click', () => {
+    const ids = selectedIds();
+    if (canCompare(ids.length)) window.location.href = compareUrl(ids);
   });
 
   document.addEventListener('keydown', (e) => {
