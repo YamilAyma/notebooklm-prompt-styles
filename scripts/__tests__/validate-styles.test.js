@@ -176,4 +176,15 @@ describe('validateCatalog', () => {
     expect(errors).toHaveLength(1);
     fs.rmSync(ctx.dir, { recursive: true, force: true });
   });
+
+  it('requires an added date for every catalog style when data/added.json is checked', () => {
+    const ctx = setup(['a', 'b'], ['a', 'b'], ['a', 'b']);
+    const addedPath = path.join(ctx.dir, 'added.json');
+    fs.writeFileSync(addedPath, JSON.stringify({ a: '2026-01-01T00:00:00.000Z' }));
+    const results = validateCatalog(ctx.styles, ctx.preview, ctx.catalogPath, addedPath);
+    expect(results[1].file).toBe('data/added.json');
+    expect(results[1].errors).toHaveLength(1);
+    expect(results[1].errors[0]).toContain('"b"');
+    fs.rmSync(ctx.dir, { recursive: true, force: true });
+  });
 });

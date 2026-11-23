@@ -7,7 +7,8 @@ This document provides technical details on how the showcase website works, its 
 The project is a **Data-Driven Static Site**. Instead of hardcoding content into the HTML, the site is generated from the source YAML files and preview images located in the root of the repository.
 
 - `/styles/*.yaml`: The source of truth for the design prompts.
-- `/data/catalog.json`: Categories, order, display names and descriptions. A style that is not listed here is not shown on the site (`npm run validate` checks it).
+- `/data/added.json`: When each style was added (ISO date of the first commit of its YAML), used by the "Newest" sort. `npm run validate` requires an entry per style and `scripts/add-style.js` writes it for new ones; keep it out of the YAML files on purpose.
+- `/data/catalog.json`: The `featured` list (ordered ids of the curated styles: the landing page examples and the ★ Featured chip) and the categories, order, display names and descriptions. A style that is not listed here is not shown on the site (`npm run validate` checks it).
 - `/preview/[style_id]/[style_id]_[n].webp`: Preview images for each style (WebP, generated with `npm run previews -- optimize`).
 - `/src/`: The Astro source code (Layouts, Pages, Components).
 - `/src/scripts/`: Modular frontend logic.
@@ -99,6 +100,22 @@ Every style has its own static page at `/style/<id>/` (`src/pages/style/[id].ast
 - The YAML sheet is a `role="dialog"` (`aria-modal`, labelled by its title) and the navigation menu traps focus too, using `ui/focusTrap.js`: Tab and Shift+Tab cycle inside, `Esc` closes, and focus returns to the element that opened it.
 - A global `:focus-visible` outline is defined in `styles.css`.
 - Muted text tokens (`--color-text-muted`) meet WCAG AA contrast (4.5:1) in light and dark themes.
+
+## 🎛️ Filters
+
+The list state (search text and category) lives in `src/lib/filters.js` (pure functions: `parseState`, `toSearchParams`, `filterStyles`) and is mirrored in the URL (`?q=&cat=`). `FilterBar.astro` renders the controls: every `button[data-filter][data-value]` (a chip) or `select[data-filter]` sets that key of the state through `updateFilters()` in `app.js`, which also syncs `aria-pressed`. On `/styles` the category chips combine with the search (AND); on a category page the page category applies, except while searching (the search stays global). The **tone** (`light`, `dark` or `colorful`) is computed at build time by `colorTone()` in `build-data.js` from each palette (dark background; two or more saturated mid-tone colors or a saturated/mid-tone background; otherwise light) and stored as `tone` in `styles.json`; the chips also exist on category pages. The **sort** (`default` catalog order, `az`, `new`) is applied last by `sortStyles()` and uses a `select[data-filter="sort"]`; `new` orders by `added` (undated last, ties keep the catalog order). To add a new filter, add its key to `filters.js` and a chip group or select with `data-filter` in the bar.
+
+## ⭐ Favorites
+
+Favorites are kept in `localStorage` (`nlm-favorites`, `src/scripts/favorites.js`). The filter bar has **Export** (downloads `notebooklm-favorites.json`) and **Import** buttons (`ui/favoritesIO.js`); the file format and its validation live in `src/lib/favoritesIO.js` (`serializeFavorites`, `parseFavorites`, `mergeFavorites`). Importing merges with the current favorites, ignores unknown style ids and never removes anything.
+
+## ☑️ Selection mode
+
+The **Select** button of the filter bar turns the lists into selection mode: cards show a checkbox, clicking a card (or Enter/Space on it) selects it instead of opening the detail sheet, and a bar shows the count with *Select all* (every style matching the filters), *Clear*, *Copy YAML* and *Done* (`Esc` also exits). The state lives in `src/scripts/selection.js` (no DOM), the bar in `ui/selectionBar.js` and the checkbox in the card markup (`StyleCard.astro` and `createCard()` must keep matching). *Copy YAML* joins the selected styles with `buildYamlBundle()` (`src/lib/bundle.js`): a valid multi-document YAML stream, each style starting with `---` and a comment with its name.
+
+## ⚖️ Compare
+
+`/compare/?styles=a,b,c` (`src/pages/compare.astro`, filled by `ui/comparePage.js`) shows up to three styles side by side: preview, palette, typography, key elements and the YAML with a copy button. Three selects choose the styles and the URL keeps them. It is reached from the *Compare* button of the selection bar (enabled with two or three selected), from the *Compare* button of every style page, or by URL. Ids are parsed and validated by `src/lib/compare.js`. The page is `noindex` (new `noindex` prop of `Layout`) and left out of the sitemap, since its content depends on the query.
 
 ## 🌐 Internationalization (i18n)
 

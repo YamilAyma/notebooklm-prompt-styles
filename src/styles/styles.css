@@ -4,7 +4,9 @@
 @import "./parts/hero.css";
 @import "./parts/style-page.css";
 @import "./parts/focus-search.css";
+@import "./parts/filters.css";
 @import "./parts/grid.css";
+@import "./parts/compare.css";
 @import "./parts/card.css";
 @import "./parts/tooltip.css";
 @import "./parts/sheet.css";

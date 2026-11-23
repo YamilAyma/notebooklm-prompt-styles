@@ -1,0 +1,127 @@
+---
+/** Filter chips for the style lists. Shown by app.js once JavaScript is available. */
+import stylesData from '../../public/data/styles.json';
+
+const { showCategories = false } = Astro.props;
+---
+
+<div class="filters" id="filter-bar" hidden>
+  {
+    showCategories && (
+      <div
+        class="filters__group"
+        role="group"
+        aria-label="Category"
+        data-i18n-aria="filterCategory"
+      >
+        <button
+          type="button"
+          class="chip"
+          data-filter="category"
+          data-value="all"
+          aria-pressed="true"
+          data-i18n="navAll">All Styles</button
+        >
+        <button
+          type="button"
+          class="chip"
+          data-filter="category"
+          data-value="featured"
+          aria-pressed="false"
+        >
+          <span aria-hidden="true">★</span>
+          <span data-i18n="filterFeatured">Featured</span>
+        </button>
+        {stylesData.categories.map((category) => (
+          <button
+            type="button"
+            class="chip"
+            data-filter="category"
+            data-value={category.id}
+            aria-pressed="false"
+          >
+            <span aria-hidden="true">{category.emoji}</span>
+            <span data-i18n={`nav-${category.id}`}>{category.name}</span>
+          </button>
+        ))}
+      </div>
+    )
+  }
+  <div class="filters__group" role="group" aria-label="Tone" data-i18n-aria="filterTone">
+    <button
+      type="button"
+      class="chip"
+      data-filter="tone"
+      data-value="all"
+      aria-pressed="true"
+      data-i18n="toneAll">Any tone</button
+    >
+    <button
+      type="button"
+      class="chip"
+      data-filter="tone"
+      data-value="light"
+      aria-pressed="false"
+      data-i18n="toneLight">Light</button
+    >
+    <button
+      type="button"
+      class="chip"
+      data-filter="tone"
+      data-value="dark"
+      aria-pressed="false"
+      data-i18n="toneDark">Dark</button
+    >
+    <button
+      type="button"
+      class="chip"
+      data-filter="tone"
+      data-value="colorful"
+      aria-pressed="false"
+      data-i18n="toneColorful">Colorful</button
+    >
+  </div>
+  <label class="filters__sort">
+    <span data-i18n="filterSort">Sort by</span>
+    <select data-filter="sort">
+      <option value="default" data-i18n="sortDefault">Default order</option>
+      <option value="az" data-i18n="sortAz">A–Z</option>
+      <option value="new" data-i18n="sortNew">Newest</option>
+    </select>
+  </label>
+  <div class="filters__tools">
+    <button
+      type="button"
+      class="chip chip--ghost"
+      id="select-toggle"
+      aria-pressed="false"
+      data-i18n="selectMode">Select</button
+    >
+    <button type="button" class="chip chip--ghost" id="fav-export" data-i18n="favExport">
+      Export favorites
+    </button>
+    <button type="button" class="chip chip--ghost" id="fav-import" data-i18n="favImport">
+      Import favorites
+    </button>
+    <input type="file" id="fav-file" accept="application/json,.json" hidden />
+  </div>
+  <div
+    class="selection-bar"
+    id="selection-bar"
+    role="region"
+    aria-label="Selection"
+    data-i18n-aria="selectionLabel"
+    hidden
+  >
+    <span class="selection-bar__count" id="selection-count" aria-live="polite"></span>
+    <button type="button" class="chip" id="selection-all" data-i18n="selectionAll">Select all</button>
+    <button type="button" class="chip" id="selection-clear" data-i18n="selectionClear">Clear</button>
+    <button type="button" class="chip" id="selection-compare" data-i18n="selectionCompare" disabled>
+      Compare
+    </button>
+    <button type="button" class="chip chip--primary" id="selection-copy" data-i18n="selectionCopy">
+      Copy YAML
+    </button>
+    <button type="button" class="chip" id="selection-done" data-i18n="selectionDone">Done</button>
+  </div>
+</div>

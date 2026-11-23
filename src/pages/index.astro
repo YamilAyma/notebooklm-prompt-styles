@@ -6,8 +6,9 @@ import PortfolioIcon from '~icons/carbon/portfolio';
 import HelpIcon from '~icons/carbon/help';
 import stylesData from '../../public/data/styles.json';
 
-// First 6 styles for the featured section (keep in sync with app.js)
-const featuredStyles = stylesData.categories.flatMap((cat) => cat.styles).slice(0, 6);
+// Curated styles for the landing (`featured` in data/catalog.json; same list as app.js)
+const byId = new Map(stylesData.categories.flatMap((cat) => cat.styles).map((s) => [s.id, s]));
+const featuredStyles = stylesData.featured.map((id) => byId.get(id)).filter(Boolean);
 
 // Get all preview images from all styles
 const allPreviews = stylesData.categories.flatMap(cat => 

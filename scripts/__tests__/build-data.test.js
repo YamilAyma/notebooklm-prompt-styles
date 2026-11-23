@@ -8,7 +8,9 @@ import {
   parseYamlFile,
   extractDesignTokens,
   resolveColors,
+  colorTone,
   loadCatalog,
+  loadAdded,
   scanPreviews,
   buildStylesData,
   toThumbPath,
@@ -22,6 +24,7 @@ const FIXTURES = path.join(__dirname, 'fixtures');
 const MOCK_STYLES = path.join(FIXTURES, 'mock-styles');
 const MOCK_PREVIEW = path.join(FIXTURES, 'mock-preview');
 const MOCK_CATALOG = path.join(FIXTURES, 'mock-catalog.json');
+const MOCK_ADDED = path.join(FIXTURES, 'mock-added.json');
 
 // ─── parseYamlFile ──────────────────────────────────────────────────
 
@@ -142,6 +145,22 @@ describe('loadCatalog', () => {
       ]),
     );
     expect(() => loadCatalog(file)).toThrow('listed more than once');
+    fs.rmSync(dir, { recursive: true, force: true });
+  });
+
+  it('defaults featured to an empty list and checks its ids', () => {
+    const { dir, file } = write(category([{ id: 'a', name: 'A' }]));
+    expect(loadCatalog(file).featured).toEqual([]);
+    fs.writeFileSync(
+      file,
+      JSON.stringify({ ...category([{ id: 'a', name: 'A' }]), featured: ['ghost'] }),
+    );
+    expect(() => loadCatalog(file)).toThrow('featured style "ghost" is not in any category');
+    fs.writeFileSync(
+      file,
+      JSON.stringify({ ...category([{ id: 'a', name: 'A' }]), featured: 'a' }),
+    );
+    expect(() => loadCatalog(file)).toThrow('"featured" must be a list');
     fs.rmSync(dir, { recursive: true, force: true });
   });
 
@@ -338,5 +357,70 @@ describe('buildStylesData searchText', () => {
     expect(styleA.searchText).toContain(normalizeText(styleA.name));
     expect(styleA.searchText).toContain(normalizeText(cat.name));
     expect(styleA.searchText).toContain('bold and modern');
+  });
+});
+
+// ─── colorTone ──────────────────────────────────────────────────────
+
+describe('colorTone', () => {
+  it('is dark for a dark background, whatever the accents', () => {
+    expect(colorTone({ background: '#0A0A0A', accent: '#FF0066', accent_2: '#00CCFF' })).toBe(
+      'dark',
+    );
+  });
+
+  it('is colorful with at least two saturated mid-tone colors', () => {
+    expect(colorTone({ background: '#FFFFFF', primary: '#E53935', secondary: '#1E88E5' })).toBe(
+      'colorful',
+    );
+  });
+
+  it('is colorful for a saturated or mid-tone background', () => {
+    expect(colorTone({ background: '#D81B60', primary: '#111111' })).toBe('colorful');
+    expect(colorTone({ background: '#A68E74' })).toBe('colorful');
+  });
+
+  it('is light for a light neutral or pastel palette', () => {
+    expect(colorTone({ background: '#FFFFFF', primary: '#111111', text_main: '#333333' })).toBe(
+      'light',
+    );
+    expect(colorTone({ background: '#FDEFF4', primary: '#FF85A1' })).toBe('light');
+  });
+
+  it('infers from the text color when there is no background HEX', () => {
+    expect(colorTone({ background: 'Deep green texture', text_main: '#FFFFFF' })).toBe('dark');
+    expect(colorTone({ background: 'Paper texture', text_main: '#2D2D2D' })).toBe('light');
+  });
+
+  it('is null without any HEX code', () => {
+    expect(colorTone({ background: 'Warm paper' })).toBeNull();
+    expect(colorTone(undefined)).toBeNull();
+  });
+});
+
+// ─── added dates ────────────────────────────────────────────────────
+
+describe('loadAdded', () => {
+  it('reads the dates, and tolerates a missing file or path', () => {
+    expect(loadAdded(MOCK_ADDED).style_a).toBe('2026-01-02T10:00:00.000Z');
+    expect(loadAdded('/nonexistent/added.json')).toEqual({});
+    expect(loadAdded(null)).toEqual({});
+  });
+});
+
+describe('buildStylesData added', () => {
+  it('adds the date a style was added (null when unknown)', () => {
+    const withDates = buildStylesData(MOCK_STYLES, MOCK_PREVIEW, MOCK_CATALOG, MOCK_ADDED);
+    expect(withDates.categories[0].styles[0].added).toBe('2026-01-02T10:00:00.000Z');
+    const without = buildStylesData(MOCK_STYLES, MOCK_PREVIEW, MOCK_CATALOG);
+    expect(without.categories[0].styles[0].added).toBeNull();
+  });
+});
+
+describe('buildStylesData featured', () => {
+  it('flags featured styles and lists the visible ones in catalog order', () => {
+    const data = buildStylesData(MOCK_STYLES, MOCK_PREVIEW, MOCK_CATALOG);
+    expect(data.featured).toEqual(['style_a']);
+    expect(data.categories[0].styles[0].featured).toBe(true);
   });
 });

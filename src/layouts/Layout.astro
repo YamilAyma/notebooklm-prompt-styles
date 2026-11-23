@@ -11,6 +11,8 @@ interface Props {
   category?: string;
   /** Absolute URL of the social preview image (defaults to the site image). */
   image?: string;
+  /** Keep the page out of search engines (pages whose content depends on the URL query). */
+  noindex?: boolean;
   /** Structured data (schema.org) for this page, emitted as JSON-LD. */
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
@@ -21,6 +23,7 @@ const {
   title = "NotebookLM Slide Styles | Generate Beautiful Presentations with AI",
   description = DEFAULT_DESCRIPTION,
   image,
+  noindex = false,
   jsonLd,
 } = Astro.props;
 
@@ -38,6 +41,7 @@ const siteHost = Astro.site?.host;
   <title>{title}</title>
   <meta name="description" content={description}>
   <link rel="canonical" href={canonicalUrl}>
+  {noindex && <meta name="robots" content="noindex, follow">}
   <meta name="google-site-verification" content="2UF3L_fQMu61h2rfdzqpw1tDhVwaZpAArh1o_1N4e3c" />
   
   <!-- Open Graph / Social Media Meta Tags -->

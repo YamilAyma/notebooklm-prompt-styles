@@ -10,7 +10,16 @@ import { initBottomSheet } from './ui/bottomSheet.js';
 import { initShare } from './ui/share.js';
 import { createCard, hydrateCard } from './ui/card.js';
 import { initStylePage } from './ui/stylePage.js';
-import { normalizeText } from './utils.js';
+import { initComparePage } from './ui/comparePage.js';
+import { initFavoritesIO } from './ui/favoritesIO.js';
+import { initSelection } from './ui/selectionBar.js';
+import {
+  defaultState,
+  parseState,
+  toSearchParams,
+  filterStyles,
+  searchTerms,
+} from '../lib/filters.js';
 import { applyTranslations, setLang, getLang, t } from './i18n.js';
 
 // ─── State ──────────────────────────────────────────────────────────
@@ -20,7 +29,7 @@ let currentStyles = [];
 let itemsToShow = 12;
 let displayedCount = 0;
 let showOnlyFavorites = false;
-let searchTerms = []; // normalized words of the current search (empty = no search)
+let filterState = defaultState(); // search text and chips, mirrored in the URL (?q=&cat=)
 let needsHydration = true; // first render adopts prerendered cards
 
 // ─── Init ───────────────────────────────────────────────────────────
@@ -42,10 +51,22 @@ async function init() {
   const landing = document.getElementById('landing');
 
   if (app) {
-    const categoryId = app?.getAttribute('data-category') || 'all';
-    initSearch(categoryId);
-    applyFilters(categoryId);
+    filterState = readInitialState();
+    initFilters();
+    initSearch();
+    applyFilters();
     initFavFilter();
+    initFavoritesIO(
+      stylesData.categories.flatMap((c) => c.styles.map((s) => s.id)),
+      () => {
+        updateFavBadge();
+        applyFilters();
+      },
+    );
+    initSelection(
+      new Map(stylesData.categories.flatMap((c) => c.styles).map((s) => [s.id, s])),
+      () => currentStyles,
+    );
     initPagination();
     updateFavBadge();
   } else if (landing) {
@@ -54,9 +75,10 @@ async function init() {
 
   // Initialize modules
   initTooltip();
-  initNavigation(stylesData.categories, app?.getAttribute('data-category') || 'all');
+  initNavigation(stylesData.categories, getPageCategory());
   initBottomSheet();
   initStylePage();
+  initComparePage(stylesData.categories);
   initShare();
   initTheme();
   initI18n();
@@ -66,9 +88,9 @@ function renderFeaturedStyles() {
   const grid = document.getElementById('featured-grid');
   if (!grid || !stylesData) return;
 
-  const allStyles = stylesData.categories.flatMap((c) => c.styles);
-  // Get 6 unique styles for the landing
-  const featured = allStyles.slice(0, 6);
+  // The curated styles of the catalog (data/catalog.json, `featured`)
+  const byId = new Map(stylesData.categories.flatMap((c) => c.styles).map((s) => [s.id, s]));
+  const featured = stylesData.featured.map((id) => byId.get(id)).filter(Boolean);
 
   const prerendered = [...grid.querySelectorAll('.style-card[data-ssr]')];
   const hydrated =
@@ -132,11 +154,10 @@ function initI18n() {
       closeMenu();
 
       // Refresh dynamic content
-      const app = document.getElementById('app');
-      applyFilters(app?.getAttribute('data-category') || 'all');
+      applyFilters();
 
       // Also notify navigation to re-render with new language
-      initNavigation(stylesData.categories, app?.getAttribute('data-category') || 'all');
+      initNavigation(stylesData.categories, getPageCategory());
     });
   });
 }
@@ -171,23 +192,16 @@ function initPagination() {
 
 // ─── Filtering & State ──────────────────────────────────────────────
 
-function applyFilters(categoryId = 'all') {
-  // Search is global: while searching, the category is ignored.
-  const searching = searchTerms.length > 0;
-  const visibleCategories =
-    categoryId === 'all' || searching
-      ? stylesData.categories
-      : stylesData.categories.filter((c) => c.id === categoryId);
+function getPageCategory() {
+  return document.getElementById('app')?.getAttribute('data-category') || 'all';
+}
 
-  let filtered = visibleCategories.flatMap((c) => c.styles);
-
-  if (searching) {
-    filtered = filtered.filter((s) => searchTerms.every((term) => s.searchText.includes(term)));
-  }
-
-  if (showOnlyFavorites) {
-    filtered = filtered.filter((s) => isFavorite(s.id));
-  }
+function applyFilters() {
+  const filtered = filterStyles(stylesData.categories, filterState, {
+    pageCategory: getPageCategory(),
+    favoritesOnly: showOnlyFavorites,
+    isFavorite,
+  });
 
   currentStyles = filtered;
   displayedCount = 0;
@@ -245,8 +259,7 @@ function handleFavoriteUpdate(isFav) {
   updateFavBadge();
   // If we are in favorites view and removed one, re-apply filters
   if (showOnlyFavorites && !isFav) {
-    const app = document.getElementById('app');
-    applyFilters(app?.getAttribute('data-category') || 'all');
+    applyFilters();
   }
 }
 
@@ -255,47 +268,73 @@ function updatePagination() {
   if (pagination) pagination.hidden = displayedCount >= currentStyles.length;
 }
 
+function readInitialState() {
+  const state = parseState(window.location.search);
+  const known =
+    state.category === 'featured' || stylesData.categories.some((c) => c.id === state.category);
+  return known ? state : { ...state, category: 'all' };
+}
+
+/** Changes part of the filter state, then updates the URL, the controls and the list. */
+function updateFilters(patch) {
+  filterState = { ...filterState, ...patch };
+
+  const query = toSearchParams(filterState).toString();
+  history.replaceState(null, '', window.location.pathname + (query ? `?${query}` : ''));
+
+  syncFilterControls();
+  applyFilters();
+}
+
+function syncFilterControls() {
+  document.querySelectorAll('[data-filter]').forEach((el) => {
+    const value = filterState[el.dataset.filter];
+    if (el.tagName === 'SELECT') el.value = value;
+    else el.setAttribute('aria-pressed', String(el.dataset.value === value));
+  });
+
+  const note = document.getElementById('category-note');
+  if (note) note.hidden = searchTerms(filterState.q).length > 0;
+}
+
+function initFilters() {
+  const bar = document.getElementById('filter-bar');
+  if (!bar) return;
+
+  bar.hidden = false;
+  bar.addEventListener('click', (e) => {
+    const chip = e.target.closest('button[data-filter]');
+    if (chip) updateFilters({ [chip.dataset.filter]: chip.dataset.value });
+  });
+  bar.addEventListener('change', (e) => {
+    if (e.target.matches('select[data-filter]')) {
+      updateFilters({ [e.target.dataset.filter]: e.target.value });
+    }
+  });
+  syncFilterControls();
+}
+
 // ─── Search ─────────────────────────────────────────────────────────
 
-function initSearch(categoryId) {
+function initSearch() {
   const bar = document.getElementById('search-bar');
   const input = document.getElementById('style-search');
   if (!bar || !input) return;
 
   bar.hidden = false;
-
-  const apply = () => {
-    searchTerms = normalizeText(input.value).split(/\s+/).filter(Boolean);
-
-    const url = new URL(window.location.href);
-    if (input.value.trim()) url.searchParams.set('q', input.value.trim());
-    else url.searchParams.delete('q');
-    history.replaceState(null, '', url);
-
-    const note = document.getElementById('category-note');
-    if (note) note.hidden = searchTerms.length > 0;
-
-    applyFilters(categoryId);
-  };
-
-  const initial = new URLSearchParams(window.location.search).get('q');
-  if (initial) {
-    input.value = initial;
-    searchTerms = normalizeText(initial).split(/\s+/).filter(Boolean);
-    const note = document.getElementById('category-note');
-    if (note) note.hidden = true;
-  }
+  input.value = filterState.q;
+  syncFilterControls();
 
   let timer;
   input.addEventListener('input', () => {
     clearTimeout(timer);
-    timer = setTimeout(apply, 150);
+    timer = setTimeout(() => updateFilters({ q: input.value }), 150);
   });
 
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && input.value) {
       input.value = '';
-      apply();
+      updateFilters({ q: '' });
       e.stopPropagation();
     }
   });
@@ -316,8 +355,7 @@ function initFavFilter() {
     favTrigger.classList.toggle('fab-fav--active', showOnlyFavorites);
     favTrigger.querySelector('.fab-fav__icon').textContent = showOnlyFavorites ? '♥' : '♡';
 
-    const app = document.getElementById('app');
-    applyFilters(app?.getAttribute('data-category') || 'all');
+    applyFilters();
   });
 }
 
@@ -360,7 +398,7 @@ function showEmptyState() {
   if (empty) {
     // Remember the page's own message, and swap it only for search misses
     empty.defaultMessage ??= { key: empty.getAttribute('data-i18n'), text: empty.textContent };
-    if (searchTerms.length > 0) {
+    if (searchTerms(filterState.q).length > 0) {
       empty.setAttribute('data-i18n', 'emptySearch');
       empty.textContent = t('emptySearch');
     } else {

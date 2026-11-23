@@ -20,6 +20,7 @@ const ROOT = path.resolve(import.meta.dirname, '..');
 const STYLES_DIR = path.join(ROOT, 'styles');
 const PREVIEW_DIR = path.join(ROOT, 'preview');
 const CATALOG_PATH = path.join(ROOT, 'data', 'catalog.json');
+const ADDED_PATH = path.join(ROOT, 'data', 'added.json');
 const OUTPUT_PATH = path.join(ROOT, 'public', 'data', 'styles.json');
 
 export const THUMB_WIDTH = 480;
@@ -105,6 +106,47 @@ export function resolveColors(palette = {}) {
   return colors;
 }
 
+const hexToRgb = (hex) => {
+  const h = hex.replace('#', '');
+  const full = h.length === 3 ? [...h].map((c) => c + c).join('') : h;
+  return [0, 2, 4].map((i) => parseInt(full.slice(i, i + 2), 16) / 255);
+};
+
+/** HSL lightness (0-1) and chroma (0-1) of a HEX color. */
+function lightnessAndChroma(hex) {
+  const [r, g, b] = hexToRgb(hex);
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  return { lightness: (max + min) / 2, chroma: max - min };
+}
+
+/**
+ * Overall look of a style, from its palette:
+ *   'dark'     - dark background
+ *   'colorful' - at least two strongly saturated mid-tone colors, or a saturated /
+ *                mid-tone background
+ *   'light'    - everything else (light, mostly neutral or pastel)
+ * Without a background HEX the style is dark when its text color is light. Returns
+ * null when the palette has no HEX code at all.
+ */
+export function colorTone(palette = {}) {
+  const { background, text } = resolveColors(palette);
+  const all = JSON.stringify(palette).match(/#(?:[0-9a-f]{6}|[0-9a-f]{3})\b/gi) ?? [];
+  if (all.length === 0) return null;
+
+  const bg = background ? lightnessAndChroma(background) : null;
+
+  const dark = bg ? bg.lightness < 0.3 : text ? lightnessAndChroma(text).lightness > 0.6 : false;
+  if (dark) return 'dark';
+
+  const saturated = all
+    .map(lightnessAndChroma)
+    .filter((c) => c.chroma >= 0.35 && c.lightness > 0.2 && c.lightness < 0.85).length;
+  if (saturated >= 2 || (bg && (bg.chroma >= 0.3 || bg.lightness < 0.6))) return 'colorful';
+
+  return 'light';
+}
+
 export function extractDesignTokens(parsed) {
   const gs = parsed?.design_system?.global_style;
   if (!gs) return null;
@@ -112,6 +154,7 @@ export function extractDesignTokens(parsed) {
   return {
     theme: gs.theme || '',
     colors: resolveColors(gs.color_palette),
+    tone: colorTone(gs.color_palette),
     typography: gs.typography || {},
     keyElements: gs.key_visual_elements || [],
   };
@@ -119,7 +162,7 @@ export function extractDesignTokens(parsed) {
 
 /**
  * Loads and checks data/catalog.json:
- * { categories: [{ id, name, emoji, styles: [{ id, name, description }] }] }
+ * { featured: [styleId, ...], categories: [{ id, name, emoji, styles: [{ id, name, description }] }] }
  */
 export function loadCatalog(catalogPath) {
   const catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf-8'));
@@ -154,6 +197,15 @@ export function loadCatalog(catalogPath) {
       seen.add(style.id);
     }
   }
+
+  catalog.featured ??= [];
+  if (!Array.isArray(catalog.featured)) {
+    throw new Error(`${catalogPath}: "featured" must be a list of style ids`);
+  }
+  for (const id of catalog.featured) {
+    if (!seen.has(id))
+      throw new Error(`${catalogPath}: featured style "${id}" is not in any category`);
+  }
   return catalog;
 }
 
@@ -181,9 +233,16 @@ export function scanPreviews(previewDir) {
   return previews;
 }
 
-export function buildStylesData(stylesDir, previewDir, catalogPath) {
+/** data/added.json: { styleId: ISO date of the first commit that added the style }. */
+export function loadAdded(addedPath) {
+  if (!addedPath || !fs.existsSync(addedPath)) return {};
+  return JSON.parse(fs.readFileSync(addedPath, 'utf-8'));
+}
+
+export function buildStylesData(stylesDir, previewDir, catalogPath, addedPath = null) {
   // 1. Load the catalog (categories, order, names and descriptions)
   const catalog = loadCatalog(catalogPath);
+  const added = loadAdded(addedPath);
 
   // 2. Scan previews (from source preview dir)
   const allPreviews = scanPreviews(previewDir);
@@ -242,6 +301,8 @@ export function buildStylesData(stylesDir, previewDir, catalogPath) {
         ...style,
         name: entry.name,
         description,
+        added: added[entry.id] ?? null,
+        featured: catalog.featured.includes(entry.id),
         searchText: buildSearchText({ ...style, name: entry.name, description }, cat.name),
       });
     }
@@ -257,9 +318,14 @@ export function buildStylesData(stylesDir, previewDir, catalogPath) {
     }
   }
 
+  // Featured styles that are visible, in the order of the catalog's `featured` list
+  const visible = new Map(categories.flatMap((c) => c.styles).map((s) => [s.id, s]));
+  const featured = catalog.featured.filter((id) => visible.has(id));
+
   const totalStyles = categories.reduce((sum, c) => sum + c.styles.length, 0);
 
   return {
+    featured,
     categories,
     meta: {
       totalStyles,
@@ -277,7 +343,7 @@ async function main() {
   console.log(`   Preview dir: ${PREVIEW_DIR}`);
   console.log(`   Catalog: ${CATALOG_PATH}`);
 
-  const data = buildStylesData(STYLES_DIR, PREVIEW_DIR, CATALOG_PATH);
+  const data = buildStylesData(STYLES_DIR, PREVIEW_DIR, CATALOG_PATH, ADDED_PATH);
 
   // Ensure output directory exists
   const outputDir = path.dirname(OUTPUT_PATH);
