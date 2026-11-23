@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Compare NotebookLM Slide Styles | NotebookLM Slide Styles"
+  description="Compare up to three NotebookLM slide styles side by side: previews, palette, typography and YAML."
+  noindex
+>
+  <main id="compare-page" class="compare-page">
+    <header class="compare-page__header">
+      <h1 class="style-page__title" data-i18n="compareTitle">Compare styles</h1>
+      <p class="style-page__summary" data-i18n="compareIntro">
+        Pick two or three styles to see them side by side.
+      </p>
+      <div class="compare-page__slots">
+        {
+          [1, 2, 3].map((n) => (
+            <select data-compare-slot aria-label={`Style ${n}`}>
+              <option value="">—</option>
+            </select>
+          ))
+        }
+      </div>
+      <p id="compare-hint" class="compare-page__hint" data-i18n="compareHint">
+        Choose at least two styles to compare them.
+      </p>
+    </header>
+    <div id="compare-grid" class="compare-grid"></div>
+    <noscript><p>Comparing styles needs JavaScript.</p></noscript>
+  </main>
+</Layout>

@@ -86,6 +86,13 @@
   border-color: var(--color-text);
 }
 
+.chip--primary:hover,
+.chip[aria-pressed='true']:hover {
+  color: var(--color-surface);
+  border-color: var(--color-text);
+  opacity: 0.88;
+}
+
 .chip:disabled {
   opacity: 0.45;
   cursor: not-allowed;
