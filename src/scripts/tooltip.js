@@ -21,7 +21,7 @@ export function initTooltip() {
       const textEl = tooltipCopy.querySelector('.copy-btn__text');
       const original = textEl.textContent;
 
-      copyToClipboard(currentStyleData.yamlContent, 'YAML Copied!').then((success) => {
+      copyToClipboard(currentStyleData.yamlContent, 'Prompt Copied!').then((success) => {
         if (success) {
           textEl.textContent = 'Copied!';
           tooltipCopy.classList.add('copy-btn--copied');

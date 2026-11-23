@@ -20,7 +20,7 @@ const PAGE_SIZE = 12; // keep in sync with itemsToShow in app.js
 const initialStyles = styles.slice(0, PAGE_SIZE);
 
 const examples = styles.slice(0, 3).map((s) => s.name).join(', ');
-const description = `${styles.length} ${name} styles for NotebookLM slides, such as ${examples}. Preview each one and copy its YAML prompt.`;
+const description = `${styles.length} ${name} styles for NotebookLM slides, such as ${examples}. Preview each one and copy its prompt.`;
 const pageUrl = new URL(`/styles/${category}/`, Astro.site).href;
 const jsonLd = [
   {
@@ -48,7 +48,7 @@ const jsonLd = [
       <div class="hero__container">
         <h1 class="hero__title">{name}</h1>
         <p class="hero__subtitle">
-          <span id="style-count">{styles.length}</span> curated YAML prompts<span id="category-note"> in this category</span>
+          <span id="style-count">{styles.length}</span> curated prompts<span id="category-note"> in this category</span>
         </p>
         <SearchBar />
         <FilterBar />

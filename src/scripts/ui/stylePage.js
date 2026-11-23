@@ -16,7 +16,7 @@ export function initStylePage() {
     const textEl = copyBtn.querySelector('.copy-btn__text');
     const original = textEl.textContent;
 
-    copyToClipboard(yaml, 'YAML Copied!').then((success) => {
+    copyToClipboard(yaml, 'Prompt Copied!').then((success) => {
       if (!success) return;
       textEl.textContent = 'Copied!';
       copyBtn.classList.add('copy-btn--copied');

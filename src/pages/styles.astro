@@ -13,7 +13,7 @@ const initialStyles = allStyles.slice(0, PAGE_SIZE);
 <Layout
   category="all"
   title="All Slide Styles for NotebookLM | NotebookLM Slide Styles"
-  description={`Browse ${allStyles.length} visual styles for NotebookLM slides. Preview each one, search by keyword and copy its YAML prompt.`}
+  description={`Browse ${allStyles.length} visual styles for NotebookLM slides. Preview each one, search by keyword and copy its prompt.`}
   jsonLd={{
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -28,7 +28,7 @@ const initialStyles = allStyles.slice(0, PAGE_SIZE);
       <div class="hero__container">
         <h1 class="hero__title" data-i18n="heroTitle">Styles for slides</h1>
         <p class="hero__subtitle">
-          <span id="style-count">{allStyles.length}</span> <span data-i18n="heroSub">curated YAML prompts for NotebookLM</span>
+          <span id="style-count">{allStyles.length}</span> <span data-i18n="heroSub">curated prompts for NotebookLM</span>
         </p>
         <SearchBar />
         <FilterBar showCategories />

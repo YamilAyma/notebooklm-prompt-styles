@@ -10,9 +10,9 @@ import stylesData from '../../public/data/styles.json';
 const byId = new Map(stylesData.categories.flatMap((cat) => cat.styles).map((s) => [s.id, s]));
 const featuredStyles = stylesData.featured.map((id) => byId.get(id)).filter(Boolean);
 
-// Get all preview images from all styles
-const allPreviews = stylesData.categories.flatMap(cat => 
-  cat.styles.flatMap(style => style.previews)
+// Hero images: build-time thumbnails (480px), never the full-size previews (1376px)
+const allPreviews = stylesData.categories.flatMap((cat) =>
+  cat.styles.flatMap((style) => style.thumbs ?? style.previews)
 );
 
 // Select 12 images for the hero grid (shuffled for variety)
@@ -45,7 +45,7 @@ const columns = [
           {columns.map((col, idx) => (
             <div class={`hero-bg-grid__col ${idx % 2 !== 0 ? 'hero-bg-grid__col--reverse' : ''}`}>
               {col.map(img => (
-                <img src={img} alt="" loading="lazy" />
+                <img src={img} alt="" width="480" height="268" loading="lazy" decoding="async" />
               ))}
             </div>
           ))}
@@ -56,7 +56,7 @@ const columns = [
         <div class="hero-content-box hero-entrance">
           <div class="hero-content-inner">
             <h1 class="landing-hero__title" data-i18n="landingHeroTitle">Elevate Your NotebookLM Slides</h1>
-            <p class="landing-hero__subtitle" data-i18n="landingHeroSub">The ultimate collection of professional YAML styles for high-impact presentations.</p>
+            <p class="landing-hero__subtitle" data-i18n="landingHeroSub">The ultimate collection of professional prompt styles for high-impact presentations.</p>
             <div class="landing-hero__actions">
               <a href="/styles" class="btn btn--primary">
                 <PortfolioIcon class="btn__icon" />
@@ -298,12 +298,12 @@ const columns = [
           <div class="how-card">
             <div class="how-card__number">01</div>
             <h3 class="how-card__title" data-i18n="step1Title">Choose a Style</h3>
-            <p class="how-card__desc" data-i18n="step1Desc">Explore our collection and copy the YAML code of your favorite style.</p>
+            <p class="how-card__desc" data-i18n="step1Desc">Explore our collection and copy the prompt of your favorite style.</p>
           </div>
           <div class="how-card">
             <div class="how-card__number">02</div>
             <h3 class="how-card__title" data-i18n="step4Title">Paste Prompt</h3>
-            <p class="how-card__desc" data-i18n="step4Desc">Paste the YAML code you copied into the custom instructions box in NotebookLM Studio.</p>
+            <p class="how-card__desc" data-i18n="step4Desc">Paste the prompt you copied into the custom instructions box in NotebookLM Studio.</p>
           </div>
           <div class="how-card">
             <div class="how-card__number">03</div>
@@ -326,7 +326,7 @@ const columns = [
         <h2 class="landing-section__title" data-i18n="landingFaqTitle">Questions? We have answers</h2>
         <div class="faq-list">
           <details class="faq-item">
-            <summary class="faq-item__question" data-i18n="faqQ1">What are these YAML prompts?</summary>
+            <summary class="faq-item__question" data-i18n="faqQ1">What are these prompts?</summary>
             <div class="faq-item__answer" data-i18n="faqA1">They are configuration blocks that tell NotebookLM exactly how to style your slides, from colors to typography.</div>
           </details>
           <details class="faq-item">
