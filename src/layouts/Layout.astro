@@ -4,6 +4,9 @@ import FAQ from '../components/FAQ.astro';
 import SunIcon from '~icons/carbon/sun';
 import MoonIcon from '~icons/carbon/moon';
 import PreloaderIcon from '../components/PreloaderIcon.astro';
+import '@fontsource-variable/inter/wght.css';
+import '@fontsource-variable/jetbrains-mono/wght.css';
+import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 
 interface Props {
   title?: string;
@@ -17,7 +20,7 @@ interface Props {
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const DEFAULT_DESCRIPTION = "A curated collection of visual design styles for NotebookLM slide generation. Browse, preview, and copy YAML prompts.";
+const DEFAULT_DESCRIPTION = "A curated collection of visual design styles for NotebookLM slide generation. Browse, preview, and copy prompts.";
 
 const {
   title = "NotebookLM Slide Styles | Generate Beautiful Presentations with AI",
@@ -85,9 +88,8 @@ const siteHost = Astro.site?.host;
   <link rel="apple-touch-icon" href="/icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Self-hosted fonts (imported above): no third-party requests blocking the first paint -->
+  <link rel="preload" as="font" type="font/woff2" href={interLatin} crossorigin>
   <slot name="head" />
 </head>
 <body>
@@ -121,7 +123,7 @@ const siteHost = Astro.site?.host;
       <a id="sheet-page" class="sheet-page-link" href="#" data-i18n="sheetOpenPage">View style page</a>
       <button id="sheet-copy" class="copy-btn">
         <span class="copy-btn__icon">⎘</span>
-        <span class="copy-btn__text" data-i18n="sheetCopy">Copy YAML</span>
+        <span class="copy-btn__text" data-i18n="sheetCopy">Copy Prompt</span>
       </button>
     </div>
   </div>
