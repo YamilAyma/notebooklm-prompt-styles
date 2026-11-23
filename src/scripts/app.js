@@ -35,12 +35,17 @@ let needsHydration = true; // first render adopts prerendered cards
 // ─── Init ───────────────────────────────────────────────────────────
 
 async function init() {
+  // The data request starts right away, in parallel with the preloader animation
+  const dataRequest = fetch('/data/styles.json').then((res) => {
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  });
+  dataRequest.catch(() => {}); // handled below; avoids an unhandled rejection while waiting
+
   await handlePreloader();
 
   try {
-    const res = await fetch('/data/styles.json');
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    stylesData = await res.json();
+    stylesData = await dataRequest;
   } catch (err) {
     console.error('Failed to load styles data:', err);
     showEmptyState();
@@ -180,8 +185,8 @@ async function handlePreloader() {
       setTimeout(() => {
         preloader.style.display = 'none';
         resolve();
-      }, 500);
-    }, 800);
+      }, 450);
+    }, 300);
   });
 }
 

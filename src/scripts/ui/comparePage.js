@@ -99,9 +99,9 @@ export function initComparePage(categories) {
 
     const copy = el('button', 'chip chip--primary', t('sheetCopy'));
     copy.type = 'button';
-    copy.addEventListener('click', () => copyToClipboard(style.yamlContent, 'YAML Copied!'));
+    copy.addEventListener('click', () => copyToClipboard(style.yamlContent, 'Prompt Copied!'));
     const details = el('details', 'compare-col__yaml');
-    details.append(el('summary', '', 'YAML'), el('pre', 'style-page__code', style.yamlContent));
+    details.append(el('summary', '', 'Prompt'), el('pre', 'style-page__code', style.yamlContent));
     box.append(copy, details);
 
     return box;

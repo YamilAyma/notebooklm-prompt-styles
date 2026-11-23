@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 1s cubic-bezier(0.85, 0, 0.15, 1);
+  transition: transform 0.45s cubic-bezier(0.85, 0, 0.15, 1);
 }
 
 .preloader--hidden {
