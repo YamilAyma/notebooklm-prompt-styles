@@ -8,7 +8,17 @@ const check = (condition, message) => {
   if (!condition) errors.push(message);
 };
 const read = (file) => fs.readFileSync(path.join(dist, file), 'utf8');
-const locations = (xml) => [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+// Sitemap XML and HTML attributes escape ampersands in category URLs.
+const decodeEntities = (value) =>
+  value.replace(/&(?:amp|lt|gt|quot|apos|#\d+|#x[0-9a-f]+);/gi, (entity) => {
+    const named = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'" };
+    const key = entity.slice(1, -1);
+    if (key.startsWith('#x')) return String.fromCodePoint(parseInt(key.slice(2), 16));
+    if (key.startsWith('#')) return String.fromCodePoint(Number(key.slice(1)));
+    return named[key] ?? entity;
+  });
+const locations = (xml) =>
+  [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => decodeEntities(match[1]));
 const index = locations(read('sitemap.xml'));
 check(index.length > 0, 'Empty sitemap index');
 const urls = new Set();
@@ -26,9 +36,9 @@ for (const location of index) {
     check(fs.existsSync(file), 'Missing HTML: ' + location);
     if (!fs.existsSync(file)) continue;
     const html = fs.readFileSync(file, 'utf8');
-    const canonical = html.match(/<link\s+rel="canonical"\s+href="([^"]+)"/g) ?? [];
+    const canonical = [...html.matchAll(/<link\s+rel="canonical"\s+href="([^"]+)"/g)];
     check(
-      canonical.length === 1 && canonical[0].includes('href="' + location + '"'),
+      canonical.length === 1 && decodeEntities(canonical[0][1]) === location,
       'Canonical mismatch: ' + location,
     );
     const noindex = /<meta\s+name="robots"\s+content="[^"]*noindex/i.test(html);
