@@ -5,7 +5,7 @@ import Icons from 'unplugin-icons/vite';
 export default defineConfig({
   site: 'https://www.slidestyleshub.com',
   output: 'static',
-  integrations: [sitemap({ filter: (page) => !page.includes('/compare/') })],
+  integrations: [sitemap({ filter: (page) => !/^\/compare\/?$/.test(new URL(page).pathname) })],
   vite: {
     plugins: [
       Icons({
