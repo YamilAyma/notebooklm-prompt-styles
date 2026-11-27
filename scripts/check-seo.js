@@ -31,9 +31,11 @@ for (const location of index) {
       canonical.length === 1 && canonical[0].includes('href="' + location + '"'),
       'Canonical mismatch: ' + location,
     );
-    check(!/<meta\s+name="robots"\s+content="[^"]*noindex/i.test(html), 'Noindex in sitemap: ' + location);
+    const noindex = /<meta\s+name="robots"\s+content="[^"]*noindex/i.test(html);
+    check(!noindex, 'Noindex in sitemap: ' + location);
     check(/<title>[^<]+<\/title>/.test(html), 'Missing title: ' + location);
-    check(/<meta\s+name="description"\s+content="[^"]+"/.test(html), 'Missing description: ' + location);
+    const hasDescription = /<meta\s+name="description"\s+content="[^"]+"/.test(html);
+    check(hasDescription, 'Missing description: ' + location);
   }
 }
 
