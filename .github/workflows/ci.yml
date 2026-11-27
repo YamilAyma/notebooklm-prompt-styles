@@ -3,7 +3,7 @@ name: CI
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [main, fix/seo-indexing]
 
 permissions:
   contents: read
@@ -32,3 +32,6 @@ jobs:
         run: npm test
       - name: Build
         run: npm run build
+
+      - name: Audit SEO
+        run: node scripts/check-seo.js
