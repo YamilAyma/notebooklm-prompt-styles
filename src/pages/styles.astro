@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import StyleCard from '../components/StyleCard.astro';
 import SearchBar from '../components/SearchBar.astro';
 import FilterBar from '../components/FilterBar.astro';
+import { stylePath } from '../lib/stylePage.js';
 import stylesData from '../../public/data/styles.json';
 
 const PAGE_SIZE = 12; // keep in sync with itemsToShow in app.js
@@ -47,6 +48,21 @@ const initialStyles = allStyles.slice(0, PAGE_SIZE);
       <p id="empty-state" class="empty-state" hidden data-i18n="emptyState">
         No styles with preview images available yet. Check back soon.
       </p>
+    </section>
+    <section class="grid-section" aria-label="Style directory">
+      <details>
+        <summary>Browse the complete style directory</summary>
+        {stylesData.categories.map((category) => (
+          <div>
+            <h2><a href={`/styles/${category.id}/`}>{category.name}</a></h2>
+            <ul>
+              {category.styles.map((style) => (
+                <li><a href={stylePath(style.id)}>{style.name}</a></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </details>
     </section>
   </main>
 </Layout>
